@@ -1021,7 +1021,6 @@
             background: var(--white);
         }
 
-        /* Background image - MUCH MORE VISIBLE */
         .service-card .card-bg {
             position: absolute;
             inset: 0;
@@ -1037,7 +1036,6 @@
             transform: scale(1.08);
         }
 
-        /* Dark overlay for better text contrast */
         .service-card::after {
             content: '';
             position: absolute;
@@ -1056,7 +1054,6 @@
             opacity: 0.55;
         }
 
-        /* Gold accent line at top */
         .service-card::before {
             content: '';
             position: absolute;
@@ -1074,13 +1071,11 @@
             opacity: 1;
         }
 
-        /* All content above the overlay */
         .service-card>*:not(.card-bg) {
             position: relative;
             z-index: 1;
         }
 
-        /* Text colors - WHITE on dark background */
         .service-card .icon {
             font-size: 3rem;
             margin-bottom: 16px;
@@ -1268,7 +1263,7 @@
         }
 
         /* ============================================
-                   ABOUT SECTION
+                   ABOUT SECTION - WITH IMAGE
                    ============================================ */
         .about {
             padding: 100px 0;
@@ -1298,31 +1293,21 @@
 
         .about-image {
             position: relative;
-        }
-
-        .about-image .image-placeholder {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
             border-radius: var(--border-radius);
-            height: 450px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 6rem;
-            position: relative;
             overflow: hidden;
+            box-shadow: var(--shadow-hover);
         }
 
-        .about-image .image-placeholder::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
+        .about-image img {
             width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(244, 196, 48, 0.2), transparent 70%);
-            border-radius: 50%;
-            animation: float-bg 15s ease-in-out infinite;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03);
         }
 
         .about-image .exp-badge {
@@ -1340,6 +1325,7 @@
             color: var(--primary);
             box-shadow: var(--shadow-gold);
             animation: pulse-badge 3s ease-in-out infinite;
+            z-index: 2;
         }
 
         @keyframes pulse-badge {
@@ -1364,6 +1350,18 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 600;
+        }
+
+        /* Fallback if image doesn't load */
+        .about-image .image-fallback {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 6rem;
         }
 
         .about-content h2 {
@@ -1787,6 +1785,10 @@
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .about-image img,
+            .about-image .image-fallback {
+                height: 350px;
+            }
             .about-image .exp-badge {
                 width: 100px;
                 height: 100px;
@@ -1918,6 +1920,10 @@
                 width: 44px;
                 height: 44px;
             }
+            .about-image img,
+            .about-image .image-fallback {
+                height: 280px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1967,8 +1973,9 @@
                 font-size: 0.5rem;
                 letter-spacing: 1px;
             }
-            .about-image .image-placeholder {
-                height: 300px;
+            .about-image img,
+            .about-image .image-fallback {
+                height: 220px;
             }
             .about-image .exp-badge {
                 width: 80px;
@@ -2332,18 +2339,16 @@
     </section>
 
     <!-- ============================================
-    ABOUT SECTION
+    ABOUT SECTION - WITH IMAGE
     ============================================ -->
     <section class="about" id="about">
         <div class="container">
             <div class="about-grid">
                 <div class="about-image" data-aos="fade-right">
-                    <div class="image-placeholder">
-                        <span>🇸🇸</span>
-                        <div class="exp-badge">
-                            <span class="number">3+</span>
-                            <span class="label">Years of Excellence</span>
-                        </div>
+                    <img src="rtt.jpg" alt="Jolong Enterprises - Building South Sudan" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'image-fallback\'><span>🏢</span></div>';" />
+                    <div class="exp-badge">
+                        <span class="number">3+</span>
+                        <span class="label">Years of Excellence</span>
                     </div>
                 </div>
                 <div class="about-content" data-aos="fade-left">
