@@ -119,46 +119,6 @@
             transform: translateY(-3px);
         }
 
-        .btn-secondary {
-            display: inline-block;
-            padding: 16px 40px;
-            background: var(--primary);
-            color: var(--white);
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-light);
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(10, 26, 58, 0.3);
-        }
-
-        .btn-green {
-            display: inline-block;
-            padding: 16px 40px;
-            background: linear-gradient(135deg, var(--accent-green), var(--accent-green-light));
-            color: var(--white);
-            border: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.3);
-        }
-
-        .btn-green:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 12px 40px rgba(46, 125, 50, 0.4);
-        }
-
         /* ============================================
                    SECTION HEADERS
                    ============================================ */
@@ -385,14 +345,14 @@
         }
 
         /* ============================================
-                   HERO WITH ROTATING BANNERS
+                   HERO WITH ROTATING BANNERS (REDUCED HEIGHT)
                    ============================================ */
         .hero {
-            min-height: 100vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
             position: relative;
-            padding: 120px 0 80px;
+            padding: 100px 0 60px;
             overflow: hidden;
             background: var(--primary);
         }
@@ -440,7 +400,7 @@
 
         .slide-dots {
             position: absolute;
-            bottom: 40px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 5;
@@ -499,7 +459,7 @@
             font-size: 0.8rem;
             font-weight: 600;
             letter-spacing: 0.5px;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             border: 1px solid rgba(244, 196, 48, 0.12);
             backdrop-filter: blur(8px);
         }
@@ -526,10 +486,10 @@
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.6rem, 8vw, 5rem);
+            font-size: clamp(2.2rem, 6vw, 4rem);
             font-weight: 800;
             line-height: 1.05;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             color: var(--white);
             opacity: 0;
             animation: fadeUp 1s ease 0.2s forwards;
@@ -554,11 +514,11 @@
         }
 
         .hero p {
-            font-size: clamp(1rem, 1.4vw, 1.25rem);
+            font-size: clamp(0.95rem, 1.2vw, 1.1rem);
             color: rgba(255, 255, 255, 0.75);
             max-width: 580px;
             line-height: 1.8;
-            margin-bottom: 36px;
+            margin-bottom: 28px;
             opacity: 0;
             animation: fadeUp 1s ease 0.4s forwards;
         }
@@ -571,49 +531,19 @@
             animation: fadeUp 1s ease 0.6s forwards;
         }
 
-        .hero-stats {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 56px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-            opacity: 0;
-            animation: fadeUp 1s ease 0.8s forwards;
-        }
-
-        .hero-stats .stat {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .hero-stats .stat .number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--secondary);
-        }
-
-        .hero-stats .stat .label {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.5);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 400;
-        }
-
+        /* Service Grid in Hero */
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
-            gap: 16px;
-            margin-top: 40px;
+            gap: 12px;
+            margin-top: 30px;
         }
 
         .hero-grid-item {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border-radius: var(--border-radius-sm);
-            padding: 24px 20px;
+            padding: 18px 14px;
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: var(--transition);
@@ -622,31 +552,31 @@
 
         .hero-grid-item:hover {
             background: rgba(255, 255, 255, 0.12);
-            transform: translateY(-8px);
+            transform: translateY(-6px);
             border-color: var(--secondary);
         }
 
         .hero-grid-item .icon {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
+            font-size: 1.8rem;
+            margin-bottom: 6px;
             display: block;
         }
 
         .hero-grid-item .name {
             color: var(--white);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
         }
 
         .hero-grid-item .status {
             display: inline-block;
-            padding: 2px 12px;
+            padding: 2px 10px;
             border-radius: 50px;
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-top: 6px;
+            margin-top: 4px;
         }
 
         .status-operational {
@@ -661,7 +591,7 @@
 
         .scroll-indicator {
             position: absolute;
-            bottom: 90px;
+            bottom: 70px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 5;
@@ -719,7 +649,7 @@
         }
 
         /* ============================================
-                   SOUTH SUDAN FLAG STRIP
+                   FLAG STRIP
                    ============================================ */
         .flag-strip {
             display: flex;
@@ -749,11 +679,144 @@
         }
 
         /* ============================================
-                   SERVICES SECTION
+                   STATS SECTION (NEW - SEPARATED FROM BANNER)
+                   ============================================ */
+        .stats-section {
+            padding: 60px 0;
+            background: var(--primary);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(244, 196, 48, 0.05), transparent 70%);
+            border-radius: 50%;
+            animation: float-bg 20s ease-in-out infinite;
+        }
+
+        .stats-section::after {
+            content: '★ ★ ★';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.02;
+            left: -100px;
+            bottom: -80px;
+            pointer-events: none;
+            color: var(--secondary);
+        }
+
+        @keyframes float-bg {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            padding: 32px 24px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold-gradient);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(244, 196, 48, 0.2);
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-card .stat-icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 12px;
+            color: var(--secondary);
+        }
+
+        .stat-card .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--secondary);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-card .stat-number .plus {
+            font-size: 2rem;
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        .stat-card .stat-label .highlight-text {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* ============================================
+                   SERVICES SECTION (ENHANCED)
                    ============================================ */
         .services {
             padding: 100px 0;
             background: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services::before {
+            content: '◆ ◆ ◆';
+            position: absolute;
+            font-size: 180px;
+            opacity: 0.02;
+            right: -80px;
+            top: -60px;
+            pointer-events: none;
+            color: var(--primary);
         }
 
         .services-grid {
@@ -855,6 +918,18 @@
         .projects {
             padding: 100px 0;
             background: var(--white);
+            position: relative;
+        }
+
+        .projects::before {
+            content: '◇ ◇ ◇';
+            position: absolute;
+            font-size: 160px;
+            opacity: 0.015;
+            left: -60px;
+            bottom: -40px;
+            pointer-events: none;
+            color: var(--primary);
         }
 
         .projects-grid {
@@ -933,11 +1008,24 @@
         }
 
         /* ============================================
-                   ABOUT SECTION
+                   ABOUT SECTION (ENHANCED)
                    ============================================ */
         .about {
             padding: 100px 0;
             background: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '✦ ✦ ✦';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.02;
+            right: -80px;
+            bottom: -60px;
+            pointer-events: none;
+            color: var(--primary);
         }
 
         .about-grid {
@@ -976,16 +1064,6 @@
             animation: float-bg 15s ease-in-out infinite;
         }
 
-        @keyframes float-bg {
-            0%,
-            100% {
-                transform: translate(0, 0) scale(1);
-            }
-            50% {
-                transform: translate(30px, -30px) scale(1.1);
-            }
-        }
-
         .about-image .exp-badge {
             position: absolute;
             bottom: -20px;
@@ -1000,6 +1078,17 @@
             justify-content: center;
             color: var(--primary);
             box-shadow: var(--shadow-gold);
+            animation: pulse-badge 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-badge {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
         }
 
         .about-image .exp-badge .number {
@@ -1059,11 +1148,23 @@
         }
 
         /* ============================================
-                   TESTIMONIALS
+                   TESTIMONIALS (ENHANCED)
                    ============================================ */
         .testimonials {
             padding: 100px 0;
             background: var(--white);
+            position: relative;
+        }
+
+        .testimonials::before {
+            content: '" " "';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.015;
+            left: -60px;
+            top: -40px;
+            pointer-events: none;
+            color: var(--primary);
         }
 
         .testimonials-grid {
@@ -1078,6 +1179,23 @@
             padding: 36px 32px;
             transition: var(--transition);
             border: 1px solid rgba(0, 0, 0, 0.04);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold-gradient);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover::before {
+            opacity: 1;
         }
 
         .testimonial-card:hover {
@@ -1194,12 +1312,13 @@
         }
 
         /* ============================================
-                   FOOTER
+                   FOOTER WITH BACK TO TOP
                    ============================================ */
         .footer {
             background: var(--primary-dark);
             color: var(--white);
             padding: 60px 0 0;
+            position: relative;
         }
 
         .footer-grid {
@@ -1300,13 +1419,89 @@
 
         .footer-bottom {
             padding: 24px 0;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
             color: rgba(255, 255, 255, 0.3);
             font-size: 0.85rem;
+            text-align: center;
         }
 
         .footer-bottom .gold {
             color: var(--secondary);
+        }
+
+        .footer-bottom .footer-bottom-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* ============================================
+                   BACK TO TOP BUTTON
+                   ============================================ */
+        .back-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: var(--shadow-gold);
+            z-index: 900;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.9);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .back-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .back-top:hover {
+            transform: translateY(-6px) scale(1.08);
+            box-shadow: 0 12px 40px rgba(244, 196, 48, 0.4);
+        }
+
+        .back-top:active {
+            transform: scale(0.95);
+        }
+
+        /* Mobile-friendly back to top - bigger touch target */
+        @media (max-width: 768px) {
+            .back-top {
+                width: 64px;
+                height: 64px;
+                font-size: 1.6rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .back-top {
+                width: 60px;
+                height: 60px;
+                font-size: 1.4rem;
+                bottom: 16px;
+                right: 16px;
+            }
         }
 
         /* ============================================
@@ -1315,6 +1510,9 @@
         @media (max-width: 1200px) {
             .hero-grid {
                 grid-template-columns: 1fr 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -1332,9 +1530,6 @@
                 margin-right: auto;
             }
             .hero-buttons {
-                justify-content: center;
-            }
-            .hero-stats {
                 justify-content: center;
             }
             .hero-grid {
@@ -1355,8 +1550,20 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .hero-stats {
-                grid-template-columns: repeat(3, 1fr);
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-image .exp-badge {
+                width: 100px;
+                height: 100px;
+                bottom: -10px;
+                right: -10px;
+            }
+            .about-image .exp-badge .number {
+                font-size: 2rem;
+            }
+            .about-image .exp-badge .label {
+                font-size: 0.6rem;
             }
         }
 
@@ -1387,18 +1594,22 @@
             .nav-links a::after {
                 display: none;
             }
+            .hero {
+                min-height: 70vh;
+                padding: 90px 0 40px;
+            }
             .hero-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 10px;
             }
             .hero-grid-item {
-                padding: 16px;
+                padding: 14px 10px;
             }
             .hero-grid-item .icon {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
             .hero-grid-item .name {
-                font-size: 0.75rem;
+                font-size: 0.7rem;
             }
             .services-grid {
                 grid-template-columns: 1fr;
@@ -1419,27 +1630,18 @@
             .section-title {
                 font-size: 2.2rem;
             }
-            .hero-stats {
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: 12px;
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
             }
-            .hero-stats .stat .number {
-                font-size: 1.6rem;
+            .stat-card {
+                padding: 24px 16px;
             }
-            .hero-stats .stat .label {
-                font-size: 0.7rem;
+            .stat-card .stat-number {
+                font-size: 2.2rem;
             }
-            .about-image .exp-badge {
-                width: 100px;
-                height: 100px;
-                bottom: -10px;
-                right: -10px;
-            }
-            .about-image .exp-badge .number {
-                font-size: 2rem;
-            }
-            .about-image .exp-badge .label {
-                font-size: 0.6rem;
+            .stat-card .stat-label {
+                font-size: 0.75rem;
             }
             .cta h2 {
                 font-size: 2.2rem;
@@ -1462,7 +1664,7 @@
                 text-align: center;
             }
             .slide-dots {
-                bottom: 20px;
+                bottom: 16px;
                 gap: 10px;
             }
             .slide-dots .dot {
@@ -1483,36 +1685,47 @@
                 font-size: 0.55rem;
                 letter-spacing: 2px;
             }
+            .footer-bottom .footer-bottom-row {
+                flex-direction: column;
+                align-items: center;
+            }
         }
 
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             .hero-grid {
                 grid-template-columns: 1fr 1fr;
             }
             .hero-grid-item .icon {
-                font-size: 1.4rem;
-            }
-            .hero-grid-item .name {
-                font-size: 0.65rem;
-            }
-            .hero-grid-item .status {
-                font-size: 0.5rem;
-                padding: 1px 8px;
-            }
-            .hero-stats {
-                grid-template-columns: 1fr 1fr 1fr;
-            }
-            .hero-stats .stat .number {
                 font-size: 1.2rem;
             }
-            .hero-stats .stat .label {
+            .hero-grid-item .name {
                 font-size: 0.6rem;
+            }
+            .hero-grid-item .status {
+                font-size: 0.45rem;
+                padding: 1px 6px;
             }
             .section-title {
                 font-size: 1.8rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .stat-card {
+                padding: 18px 12px;
+            }
+            .stat-card .stat-number {
+                font-size: 1.8rem;
+            }
+            .stat-card .stat-icon {
+                font-size: 1.8rem;
+            }
+            .stat-card .stat-label {
+                font-size: 0.65rem;
             }
             .navbar-brand .logo-wrapper {
                 width: 34px;
@@ -1524,6 +1737,21 @@
             .navbar-brand .brand-text span {
                 font-size: 0.5rem;
                 letter-spacing: 1px;
+            }
+            .about-image .image-placeholder {
+                height: 300px;
+            }
+            .about-image .exp-badge {
+                width: 80px;
+                height: 80px;
+                bottom: -8px;
+                right: -8px;
+            }
+            .about-image .exp-badge .number {
+                font-size: 1.6rem;
+            }
+            .about-image .exp-badge .label {
+                font-size: 0.5rem;
             }
         }
     </style>
@@ -1537,7 +1765,6 @@
         <div class="container">
             <a href="#" class="navbar-brand">
                 <div class="logo-wrapper">
-                    <!-- REPLACE "logo.png" WITH YOUR ACTUAL LOGO FILE NAME -->
                     <img src="logo.png" alt="Jolong Enterprises Logo" id="logoImage" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-placeholder\'>J</span>';" />
                     <span class="logo-placeholder" style="display:none;">J</span>
                 </div>
@@ -1581,13 +1808,13 @@
     <section class="hero" id="home">
         <div class="hero-slideshow" id="heroSlideshow">
             <!-- Banner 1: Bar & Restaurant -->
-            <div class="slide active" style="background-image: url('br.jpg');">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&h=700&fit=crop');">
             </div>
             <!-- Banner 2: Apartments -->
-            <div class="slide" style="background-image: url('banner-living-room.jpg');">
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1400&h=700&fit=crop');">
             </div>
             <!-- Banner 3: Transportation -->
-            <div class="slide" style="background-image: url('tr.jpg');">
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1400&h=700&fit=crop');">
             </div>
         </div>
 
@@ -1627,21 +1854,6 @@
                     </a>
                 </div>
 
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="number" data-count="15">0</span>
-                        <span class="label">Years of Excellence</span>
-                    </div>
-                    <div class="stat">
-                        <span class="number" data-count="50">0</span>
-                        <span class="label">Projects Delivered</span>
-                    </div>
-                    <div class="stat">
-                        <span class="number" data-count="100">0</span>
-                        <span class="label">Happy Clients</span>
-                    </div>
-                </div>
-
                 <!-- Service Grid -->
                 <div class="hero-grid" data-aos="fade-up" data-aos-delay="200">
                     <div class="hero-grid-item">
@@ -1674,6 +1886,36 @@
                         <div class="name">Ferry Crossing</div>
                         <span class="status status-coming">Coming Soon</span>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    STATS SECTION (SEPARATED FROM BANNER)
+    ============================================ -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="stat-icon">🏆</span>
+                    <span class="stat-number" data-count="3">0<span class="plus">+</span></span>
+                    <span class="stat-label">Years of <span class="highlight-text">Excellence</span></span>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="stat-icon">📋</span>
+                    <span class="stat-number" data-count="15">0<span class="plus">+</span></span>
+                    <span class="stat-label">Projects <span class="highlight-text">Delivered</span></span>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <span class="stat-icon">😊</span>
+                    <span class="stat-number" data-count="50">0<span class="plus">+</span></span>
+                    <span class="stat-label">Happy <span class="highlight-text">Clients</span></span>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                    <span class="stat-icon">🌟</span>
+                    <span class="stat-number" data-count="100">0<span class="plus">%</span></span>
+                    <span class="stat-label">Client <span class="highlight-text">Satisfaction</span></span>
                 </div>
             </div>
         </div>
@@ -1857,7 +2099,7 @@
                     <div class="image-placeholder">
                         <span>🇸🇸</span>
                         <div class="exp-badge">
-                            <span class="number">15+</span>
+                            <span class="number">3+</span>
                             <span class="label">Years of Excellence</span>
                         </div>
                     </div>
@@ -1994,7 +2236,7 @@
     <!-- ============================================
     FOOTER
     ============================================ -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
@@ -2046,10 +2288,24 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 <span class="gold">Jolong Enterprises Limited</span>. All Rights Reserved. 🇸🇸</p>
+                <div class="footer-bottom-row">
+                    <span>&copy; 2026 <span class="gold">Jolong Enterprises Limited</span>. All Rights Reserved. 🇸🇸</span>
+                    <span>
+                        <a href="#" class="back-top-link" id="backTopLink" style="color: var(--secondary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                            <i class="fas fa-arrow-up"></i> Back to Top
+                        </a>
+                    </span>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- ============================================
+    BACK TO TOP BUTTON (FLOATING)
+    ============================================ -->
+    <button class="back-top" id="backTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <!-- ============================================
     SCRIPTS
@@ -2164,8 +2420,16 @@
                             const eased = 1 - Math.pow(1 - progress, 3);
                             const current = Math.floor(eased * target);
                             el.textContent = current.toLocaleString();
+                            // Add plus sign
+                            if (current < target) {
+                                el.innerHTML = current.toLocaleString() + '<span class="plus">+</span>';
+                            } else {
+                                el.innerHTML = target.toLocaleString() + '<span class="plus">+</span>';
+                            }
                             if (progress < 1) requestAnimationFrame(updateCounter);
-                            else el.textContent = target.toLocaleString();
+                            else {
+                                el.innerHTML = target.toLocaleString() + '<span class="plus">+</span>';
+                            }
                         }
                         requestAnimationFrame(updateCounter);
                         counterObserver.unobserve(el);
@@ -2198,6 +2462,36 @@
             });
 
             // ============================================
+            // BACK TO TOP BUTTON (FLOATING)
+            // ============================================
+            const backTop = document.getElementById('backTop');
+            const backTopLink = document.getElementById('backTopLink');
+
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 400) {
+                    backTop.classList.add('visible');
+                } else {
+                    backTop.classList.remove('visible');
+                }
+            });
+
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            backTop.addEventListener('click', scrollToTop);
+
+            if (backTopLink) {
+                backTopLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    scrollToTop();
+                });
+            }
+
+            // ============================================
             // ACTIVE NAV LINK
             // ============================================
             const sections = document.querySelectorAll('section[id], .hero');
@@ -2223,14 +2517,17 @@
             // ============================================
             // DYNAMIC YEAR IN FOOTER
             // ============================================
-            document.querySelector('.footer-bottom p').textContent =
-                '© ' + new Date().getFullYear() + ' Jolong Enterprises Limited. All Rights Reserved. 🇸🇸';
+            const footerYear = document.querySelector('.footer-bottom-row span:first-child');
+            if (footerYear) {
+                footerYear.innerHTML = footerYear.innerHTML.replace('2026', new Date().getFullYear());
+            }
 
             console.log('🚀 Jolong Enterprises Limited - South Sudan');
             console.log('📧 Contact: info@jolonges.com');
             console.log('📞 Phone: +211 922 005 177');
             console.log('🖼️ 3 Banners: Restaurant | Apartments | Transportation');
             console.log('🇸🇸 Proudly Serving South Sudan');
+            console.log('📊 Stats: 3+ Years | 15+ Projects | 50+ Clients | 100% Satisfaction');
 
         });
     </script>
