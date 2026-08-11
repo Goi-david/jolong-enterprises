@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jolong Enterprises Limited - Building South Sudan's Future</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Jolong Enterprises provides Bar & Restaurant, Apartments, Transportation, Warehouse Building, Farming, and Ferry Crossing services in Juba, South Sudan." />
+    <meta property="og:title" content="Jolong Enterprises Limited" />
+    <meta property="og:description" content="Building South Sudan's Future, One Enterprise at a Time" />
+    <meta property="og:type" content="website" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+    <style>
+        /* ============================================
+                   RESET & VARIABLES
+                   ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a2a6c;
+            --primary-light: #2c3e8a;
+            --primary-dark: #0d1b4a;
+            --secondary: #c9a84c;
+            --secondary-light: #e8d5a3;
+            --secondary-dark: #a8892e;
+            --accent-green: #2ecc71;
+            --accent-red: #e74c3c;
+            --white: #ffffff;
+            --light-gray: #f8f7f4;
+            --gray: #6b7280;
+            --dark: #1a1a2e;
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.15);
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --border-radius: 20px;
+            --border-radius-sm: 12px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============================================
+                   BUTTONS
+                   ============================================ */
+        .btn-primary {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(201, 168, 76, 0.4);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 16px 40px;
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(26, 42, 108, 0.3);
+        }
+
+        /* ============================================
+                   SECTION HEADERS
+                   ============================================ */
+        .section-badge {
+            display: inline-block;
+            padding: 8px 24px;
+            background: rgba(201, 168, 76, 0.15);
+            color: var(--secondary);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .section-title .highlight {
+            color: var(--secondary);
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin-bottom: 48px;
+        }
+
+        /* ============================================
+                   NAVBAR
+                   ============================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(26, 42, 108, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 12px 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .navbar-brand .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--white);
+            font-weight: 800;
+        }
+
+        .navbar-brand .brand-text {
+            color: var(--white);
+        }
+
+        .navbar-brand .brand-text h2 {
+            font-size: 1.3rem;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .navbar-brand .brand-text span {
+            font-size: 0.7rem;
+            opacity: 0.8;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a .badge {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            margin-left: 4px;
+            animation: pulse-dot 2s infinite;
+        }
+
+        .nav-links .contact-btn {
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            color: var(--white) !important;
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+
+        .nav-links .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+            background: linear-gradient(135deg, var(--secondary-light), var(--secondary));
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: var(--white);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ============================================
+                   HERO SECTION
+                   ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.15), transparent 70%);
+            border-radius: 50%;
+            animation: float-bg 20s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.08), transparent 70%);
+            border-radius: 50%;
+            animation: float-bg 25s ease-in-out infinite reverse;
+        }
+
+        @keyframes float-bg {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4.2rem;
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero-content h1 .highlight {
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .hero-content h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 4px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 500px;
+            margin-bottom: 36px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+
+        .hero-stat {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+        }
+
+        .hero-stat:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .hero-stat .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero-stat .label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 4px;
+        }
+
+        /* Hero Right - Service Grid */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+
+        .hero-grid-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-sm);
+            padding: 24px 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+            cursor: default;
+        }
+
+        .hero-grid-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-8px);
+            border-color: var(--secondary);
+        }
+
+        .hero-grid-item .icon {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .hero-grid-item .name {
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .hero-grid-item .status {
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 50px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 6px;
+        }
+
+        .status-operational {
+            background: rgba(46, 204, 113, 0.2);
+            color: var(--accent-green);
+        }
+
+        .status-coming {
+            background: rgba(201, 168, 76, 0.2);
+            color: var(--secondary);
+        }
+
+        /* ============================================
+                   SERVICES SECTION
+                   ============================================ */
+        .services {
+            padding: 100px 0;
+            background: var(--light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary), var(--secondary-dark));
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card .icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .service-card .status-badge {
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .service-card .learn-more {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .service-card .learn-more:hover {
+            gap: 14px;
+            color: var(--secondary-dark);
+        }
+
+        /* ============================================
+                   PROJECTS SECTION
+                   ============================================ */
+        .projects {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .project-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            background: var(--white);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-image {
+            height: 220px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .project-image .project-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+        }
+
+        .project-content {
+            padding: 24px 28px;
+        }
+
+        .project-content h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .project-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .project-content .meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .project-content .meta i {
+            color: var(--secondary);
+            width: 16px;
+        }
+
+        /* ============================================
+                   ABOUT SECTION
+                   ============================================ */
+        .about {
+            padding: 100px 0;
+            background: var(--light-gray);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image .image-placeholder {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: var(--border-radius);
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image .image-placeholder::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.2), transparent 70%);
+            border-radius: 50%;
+            animation: float-bg 15s ease-in-out infinite;
+        }
+
+        .about-image .exp-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            box-shadow: 0 20px 40px rgba(201, 168, 76, 0.3);
+        }
+
+        .about-image .exp-badge .number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        .about-image .exp-badge .label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        .about-content h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .about-content p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .about-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--white);
+            border-radius: var(--border-radius-sm);
+            list-style: none;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+        }
+
+        .about-features li:hover {
+            transform: translateX(6px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-features li i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        /* ============================================
+                   TESTIMONIALS
+                   ============================================ */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+            padding: 36px 32px;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+            background: var(--white);
+        }
+
+        .testimonial-card .stars {
+            color: var(--secondary);
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 1rem;
+            color: var(--dark);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-card .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-card .author .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-card .author .info .name {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .testimonial-card .author .info .company {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* ============================================
+                   CTA SECTION
+                   ============================================ */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -30%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.1), transparent 70%);
+            border-radius: 50%;
+            animation: float-bg 20s ease-in-out infinite;
+        }
+
+        .cta::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.08), transparent 70%);
+            border-radius: 50%;
+            animation: float-bg 25s ease-in-out infinite reverse;
+        }
+
+        .cta .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .cta p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .cta .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* ============================================
+                   FOOTER
+                   ============================================ */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-social a:hover {
+            background: var(--secondary);
+            transform: translateY(-4px);
+            border-color: var(--secondary);
+        }
+
+        .footer h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(4px);
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+
+        .footer-contact li i {
+            color: var(--secondary);
+            width: 20px;
+            margin-top: 4px;
+        }
+
+        .footer-bottom {
+            padding: 24px 0;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        /* ============================================
+                   ANIMATIONS
+                   ============================================ */
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.5);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 1200px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-stats {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary);
+                padding: 20px;
+                gap: 4px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-links a {
+                padding: 12px 20px;
+                width: 100%;
+                border-radius: 8px;
+            }
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .hero-grid-item {
+                padding: 16px;
+            }
+            .hero-grid-item .icon {
+                font-size: 1.8rem;
+            }
+            .hero-grid-item .name {
+                font-size: 0.75rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+            .hero-stats {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 12px;
+            }
+            .hero-stat .number {
+                font-size: 1.8rem;
+            }
+            .hero-stat .label {
+                font-size: 0.75rem;
+            }
+            .about-image .exp-badge {
+                width: 100px;
+                height: 100px;
+                bottom: -10px;
+                right: -10px;
+            }
+            .about-image .exp-badge .number {
+                font-size: 2rem;
+            }
+            .about-image .exp-badge .label {
+                font-size: 0.6rem;
+            }
+            .cta h2 {
+                font-size: 2.2rem;
+            }
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .hero-buttons .btn-primary,
+            .hero-buttons .btn-outline {
+                text-align: center;
+                width: 100%;
+            }
+            .cta .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-grid-item .icon {
+                font-size: 1.4rem;
+            }
+            .hero-grid-item .name {
+                font-size: 0.65rem;
+            }
+            .hero-grid-item .status {
+                font-size: 0.5rem;
+                padding: 1px 8px;
+            }
+            .hero-stats {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            .hero-stat .number {
+                font-size: 1.4rem;
+            }
+            .hero-stat .label {
+                font-size: 0.65rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .navbar-brand .brand-text h2 {
+                font-size: 1rem;
+            }
+            .navbar-brand .brand-text span {
+                font-size: 0.6rem;
+            }
+            .navbar-brand .logo-icon {
+                width: 38px;
+                height: 38px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    NAVBAR
+    ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <div class="logo-icon">J</div>
+                <div class="brand-text">
+                    <h2>Jolong Enterprises</h2>
+                    <span>Building South Sudan's Future</span>
+                </div>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact" class="contact-btn">Get in Touch</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================
+    HERO SECTION
+    ============================================ -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-right">
+                <span class="section-badge" style="background:rgba(255,255,255,0.1);color:var(--secondary);">Welcome to Jolong Enterprises</span>
+                <h1>
+                    Building South Sudan's<br />
+                    <span class="highlight">Future</span>, One Enterprise at a Time
+                </h1>
+                <p>
+                    From hospitality to infrastructure, we deliver excellence across
+                    six business divisions, serving Juba and beyond with integrity and innovation.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn-primary">
+                        <i class="fas fa-rocket"></i> Explore Our Services
+                    </a>
+                    <a href="#projects" class="btn-outline">
+                        View Our Projects <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat" data-aos="fade-up" data-aos-delay="200">
+                        <div class="number" data-count="15">0</div>
+                        <div class="label">Years of Excellence</div>
+                    </div>
+                    <div class="hero-stat" data-aos="fade-up" data-aos-delay="300">
+                        <div class="number" data-count="50">0</div>
+                        <div class="label">Projects Delivered</div>
+                    </div>
+                    <div class="hero-stat" data-aos="fade-up" data-aos-delay="400">
+                        <div class="number" data-count="100">0</div>
+                        <div class="label">Happy Clients</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-grid" data-aos="fade-left">
+                <div class="hero-grid-item" data-aos="zoom-in" data-aos-delay="100">
+                    <span class="icon">🍽️</span>
+                    <div class="name">Bar & Restaurant</div>
+                    <span class="status status-operational">Operational</span>
+                </div>
+                <div class="hero-grid-item" data-aos="zoom-in" data-aos-delay="200">
+                    <span class="icon">🏢</span>
+                    <div class="name">Apartments</div>
+                    <span class="status status-coming">Coming Soon</span>
+                </div>
+                <div class="hero-grid-item" data-aos="zoom-in" data-aos-delay="300">
+                    <span class="icon">🚚</span>
+                    <div class="name">Transportation</div>
+                    <span class="status status-operational">Operational</span>
+                </div>
+                <div class="hero-grid-item" data-aos="zoom-in" data-aos-delay="400">
+                    <span class="icon">🏗️</span>
+                    <div class="name">Warehouse</div>
+                    <span class="status status-coming">Coming Soon</span>
+                </div>
+                <div class="hero-grid-item" data-aos="zoom-in" data-aos-delay="500">
+                    <span class="icon">🌾</span>
+                    <div class="name">Farming</div>
+                    <span class="status status-coming">Coming Soon</span>
+                </div>
+                <div class="hero-grid-item" data-aos="zoom-in" data-aos-delay="600">
+                    <span class="icon">⛴️</span>
+                    <div class="name">Ferry Crossing</div>
+                    <span class="status status-coming">Coming Soon</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    SERVICES SECTION
+    ============================================ -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge">What We Do</span>
+                <h2 class="section-title">
+                    Our <span class="highlight">Services</span>
+                </h2>
+                <p class="section-subtitle" style="margin:0 auto 48px;">
+                    Delivering excellence across six diverse business divisions, serving
+                    Juba and the surrounding regions with professionalism and care.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1: Bar & Restaurant -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="icon">🍽️</span>
+                    <span class="status-badge status-operational">● Operational</span>
+                    <h3>Bar & Restaurant</h3>
+                    <p>
+                        Experience premium dining and entertainment at our flagship establishment.
+                        Offering a diverse menu, signature cocktails, and an elegant atmosphere.
+                    </p>
+                    <a href="#" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2: Apartments -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+                    <span class="icon">🏢</span>
+                    <span class="status-badge status-coming">● Coming Soon</span>
+                    <h3>Apartments</h3>
+                    <p>
+                        Modern, secure, and comfortable residential spaces in prime locations.
+                        Designed for both short-term stays and long-term living.
+                    </p>
+                    <a href="#" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3: Transportation -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="icon">🚚</span>
+                    <span class="status-badge status-operational">● Operational</span>
+                    <h3>Transportation</h3>
+                    <p>
+                        Reliable logistics and passenger transport services across South Sudan.
+                        Well-maintained vehicles and professional drivers ensure safety and punctuality.
+                    </p>
+                    <a href="#" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4: Warehouse Building -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+                    <span class="icon">🏗️</span>
+                    <span class="status-badge status-coming">● Coming Soon</span>
+                    <h3>Warehouse Building</h3>
+                    <p>
+                        State-of-the-art warehousing solutions for businesses and organizations.
+                        Secure, accessible, and designed to meet modern storage needs.
+                    </p>
+                    <a href="#" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5: Farming -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <span class="icon">🌾</span>
+                    <span class="status-badge status-coming">● Coming Soon</span>
+                    <h3>Farming</h3>
+                    <p>
+                        Sustainable agricultural practices for food security and economic growth.
+                        Modern farming techniques to support South Sudan's agricultural sector.
+                    </p>
+                    <a href="#" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6: Ferry Crossing -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="350">
+                    <span class="icon">⛴️</span>
+                    <span class="status-badge status-coming">● Coming Soon</span>
+                    <h3>Ferry Crossing</h3>
+                    <p>
+                        Connecting communities through South Sudan's new ferry crossing service.
+                        Safe, reliable, and efficient water transportation for people and goods.
+                    </p>
+                    <a href="#" class="learn-more">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    PROJECTS SECTION
+    ============================================ -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge">Our Portfolio</span>
+                <h2 class="section-title">
+                    Featured <span class="highlight">Projects</span>
+                </h2>
+                <p class="section-subtitle" style="margin:0 auto 48px;">
+                    Showcasing our commitment to quality and excellence across all our business divisions.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-aos="flip-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <span>🏢</span>
+                        <span class="project-badge">Completed</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>56 Leonard: Building New York's Jenga Tower</h3>
+                        <p>Iconic residential tower development featuring innovative architectural design.</p>
+                        <div class="meta">
+                            <span><i class="fas fa-map-marker-alt"></i> New York</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-aos="flip-up" data-aos-delay="200">
+                    <div class="project-image" style="background:linear-gradient(135deg, var(--secondary), var(--secondary-dark));">
+                        <span>🍽️</span>
+                        <span class="project-badge">Operational</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Jolong Bar & Restaurant</h3>
+                        <p>Premium dining and entertainment experience in the heart of Juba.</p>
+                        <div class="meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Juba</span>
+                            <span><i class="fas fa-calendar"></i> 2023</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-aos="flip-up" data-aos-delay="300">
+                    <div class="project-image" style="background:linear-gradient(135deg, var(--accent-green), #1a9c54);">
+                        <span>🚚</span>
+                        <span class="project-badge">Operational</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Jolong Transport Services</h3>
+                        <p>Reliable logistics and passenger transport solutions across South Sudan.</p>
+                        <div class="meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Nationwide</span>
+                            <span><i class="fas fa-calendar"></i> 2020</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    ABOUT SECTION
+    ============================================ -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image" data-aos="fade-right">
+                    <div class="image-placeholder">
+                        <span>🏢</span>
+                        <div class="exp-badge">
+                            <span class="number">15+</span>
+                            <span class="label">Years of Excellence</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content" data-aos="fade-left">
+                    <span class="section-badge">About Us</span>
+                    <h2>Building South Sudan's <span class="highlight">Future</span></h2>
+                    <p>
+                        Jolong Enterprises Limited provides reliable and efficient services designed to meet the needs
+                        of individuals, businesses, and organizations in Juba, South Sudan. We focus on safe, timely,
+                        and well-coordinated solutions across all our business divisions.
+                    </p>
+                    <p>
+                        Our transportation services include the movement of goods, equipment, and supplies, ensuring
+                        secure handling and delivery. We use well-maintained vehicles suitable for different types of
+                        transport needs, including local distribution and project support services.
+                    </p>
+                    <ul class="about-features">
+                        <li><i class="fas fa-check-circle"></i> Professional & Reliable</li>
+                        <li><i class="fas fa-check-circle"></i> Customer-Focused Solutions</li>
+                        <li><i class="fas fa-check-circle"></i> Well-Maintained Facilities</li>
+                        <li><i class="fas fa-check-circle"></i> Punctual & Safe Operations</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    TESTIMONIALS SECTION
+    ============================================ -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge">Testimonials</span>
+                <h2 class="section-title">
+                    What Our <span class="highlight">Clients Say</span>
+                </h2>
+                <p class="section-subtitle" style="margin:0 auto 48px;">
+                    Real feedback from real clients who trust Jolong Enterprises for their business needs.
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>
+                        "Their transport services are designed to support businesses, projects, and individual clients
+                        with dependable and customer-focused solutions. Well-maintained vehicles and professional drivers."
+                    </blockquote>
+                    <div class="author">
+                        <div class="avatar">JD</div>
+                        <div class="info">
+                            <div class="name">John Doe</div>
+                            <div class="company">Regional Logistics Director</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>
+                        "Jolong Enterprises has been instrumental in our project logistics. Their commitment to safety
+                        and punctuality has made them our preferred partner in South Sudan."
+                    </blockquote>
+                    <div class="author">
+                        <div class="avatar">MS</div>
+                        <div class="info">
+                            <div class="name">Mary Smith</div>
+                            <div class="company">Project Manager, NGO</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>
+                        "The Bar & Restaurant is the go-to spot in Juba for business meetings and special occasions.
+                        Excellent service, great food, and a wonderful atmosphere."
+                    </blockquote>
+                    <div class="author">
+                        <div class="avatar">PK</div>
+                        <div class="info">
+                            <div class="name">Peter Khamis</div>
+                            <div class="company">Business Executive</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    CTA SECTION
+    ============================================ -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <div data-aos="zoom-in">
+                <h2>Ready to Partner with <span style="color:var(--secondary);">Jolong</span>?</h2>
+                <p>
+                    Contact us today to discuss your project needs. From transportation to hospitality,
+                    we're here to help you succeed.
+                </p>
+                <div class="buttons">
+                    <a href="mailto:info@jolonges.com" class="btn-primary">
+                        <i class="fas fa-envelope"></i> Email Us
+                    </a>
+                    <a href="tel:+211922005177" class="btn-outline">
+                        <i class="fas fa-phone"></i> Call Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Jolong Enterprises <span style="color:var(--secondary);">Ltd</span></h3>
+                    <p>
+                        Building South Sudan's future through excellence in hospitality,
+                        infrastructure, transportation, and agriculture.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Bar & Restaurant</a></li>
+                        <li><a href="#">Apartments</a></li>
+                        <li><a href="#">Transportation</a></li>
+                        <li><a href="#">Warehouse Building</a></li>
+                        <li><a href="#">Farming</a></li>
+                        <li><a href="#">Ferry Crossing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
+                        <li><i class="fas fa-envelope"></i> info@jolonges.com</li>
+                        <li><i class="fas fa-phone"></i> +211 922 005 177</li>
+                        <li><i class="fas fa-phone"></i> +1 315 254 6046</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Jolong Enterprises Limited. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    SCRIPTS
+    ============================================ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js">
+    </script>
+    <script>
+        // ============================================
+        // Initialize AOS
+        // ============================================
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 80,
+            easing: 'ease-in-out'
+        });
+
+        // ============================================
+        // Navbar Scroll Effect
+        // ============================================
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ============================================
+        // Mobile Menu Toggle
+        // ============================================
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('open');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // ============================================
+        // Counter Animation
+        // ============================================
+        function animateCounters() {
+            const counters = document.querySelectorAll('.hero-stat .number');
+
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                let current = 0;
+                const increment = target / 60;
+                const duration = 2000;
+                const stepTime = duration / 60;
+
+                const updateCounter = () => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target + '+';
+                        return;
+                    }
+                    counter.textContent = Math.floor(current) + '+';
+                    setTimeout(updateCounter, stepTime);
+                };
+
+                updateCounter();
+            });
+        }
+
+        // Trigger counter animation when section is visible
+        const heroSection = document.querySelector('.hero');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(heroSection);
+
+        // ============================================
+        // Smooth Scroll for Anchor Links
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ============================================
+        // Add floating animation to service icons
+        // ============================================
+        document.querySelectorAll('.service-card .icon').forEach((icon, index) => {
+            icon.style.animation = `float-bg ${3 + index * 0.5}s ease-in-out infinite`;
+            icon.style.display = 'inline-block';
+        });
+
+        // ============================================
+        // Dynamic Year in Footer
+        // ============================================
+        document.querySelector('.footer-bottom p').textContent =
+            `© ${new Date().getFullYear()} Jolong Enterprises Limited. All Rights Reserved.`;
+
+        // ============================================
+        // Parallax effect on hero
+        // ============================================
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.backgroundPosition = `center ${scrolled * 0.5}px`;
+            }
+        });
+
+        console.log('🚀 Jolong Enterprises Limited - Website Loaded Successfully!');
+        console.log('📧 Contact: info@jolonges.com');
+        console.log('📞 Phone: +211 922 005 177');
+    </script>
+
+</body>
+</html>
