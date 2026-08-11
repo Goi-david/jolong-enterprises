@@ -358,7 +358,7 @@
         }
 
         /* ============================================
-                   MOBILE DROPDOWN MENU (ENHANCED)
+                   MOBILE DROPDOWN MENU
                    ============================================ */
         .mobile-menu-overlay {
             position: fixed;
@@ -533,17 +533,19 @@
         }
 
         /* ============================================
-                   HERO WITH ROTATING BANNERS
+                   HERO WITH ROTATING BANNERS - CENTERED
                    ============================================ */
         .hero {
             min-height: 80vh;
             display: flex;
             align-items: center;
+            justify-content: center;
             position: relative;
             padding: 100px 0 60px;
             overflow: hidden;
             background: var(--primary);
             width: 100%;
+            text-align: center;
         }
 
         .hero-slideshow {
@@ -633,10 +635,17 @@
             z-index: 2;
             width: 100%;
             max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .hero-content {
-            max-width: 780px;
+            max-width: 900px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .hero-badge {
@@ -677,13 +686,14 @@
 
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(2.2rem, 6vw, 4rem);
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
             font-weight: 800;
             line-height: 1.05;
             margin-bottom: 16px;
             color: var(--white);
             opacity: 0;
             animation: fadeUp 1s ease 0.2s forwards;
+            text-align: center;
         }
 
         .hero h1 .highlight {
@@ -705,28 +715,32 @@
         }
 
         .hero p {
-            font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+            font-size: clamp(1rem, 1.2vw, 1.2rem);
             color: rgba(255, 255, 255, 0.75);
-            max-width: 580px;
+            max-width: 680px;
             line-height: 1.8;
-            margin-bottom: 28px;
+            margin: 0 auto 28px;
             opacity: 0;
             animation: fadeUp 1s ease 0.4s forwards;
+            text-align: center;
         }
 
         .hero-buttons {
             display: flex;
             flex-wrap: wrap;
             gap: 14px;
+            justify-content: center;
             opacity: 0;
             animation: fadeUp 1s ease 0.6s forwards;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
             gap: 12px;
             margin-top: 30px;
+            width: 100%;
+            max-width: 800px;
         }
 
         .hero-grid-item {
@@ -960,7 +974,7 @@
         }
 
         /* ============================================
-                   SERVICES SECTION - WITH IMAGES
+                   SERVICES SECTION
                    ============================================ */
         .services {
             padding: 100px 0;
@@ -1007,7 +1021,6 @@
             justify-content: flex-end;
         }
 
-        /* Service card background images */
         .service-card .card-bg {
             position: absolute;
             inset: 0;
@@ -1101,7 +1114,7 @@
         }
 
         /* ============================================
-                   PROJECTS SECTION - WITH IMAGES
+                   PROJECTS SECTION
                    ============================================ */
         .projects {
             padding: 100px 0;
@@ -1714,21 +1727,6 @@
         }
 
         @media (max-width: 992px) {
-            .hero .container {
-                flex-direction: column;
-            }
-            .hero-content {
-                max-width: 100%;
-                text-align: center;
-            }
-            .hero p {
-                max-width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .hero-buttons {
-                justify-content: center;
-            }
             .hero-grid {
                 grid-template-columns: 1fr 1fr 1fr;
             }
@@ -1781,6 +1779,7 @@
             .hero-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 10px;
+                max-width: 100%;
             }
             .hero-grid-item {
                 padding: 14px 10px;
@@ -1999,7 +1998,7 @@
     </nav>
 
     <!-- ============================================
-    MOBILE MENU OVERLAY (ENHANCED)
+    MOBILE MENU OVERLAY
     ============================================ -->
     <div class="mobile-menu-overlay" id="mobileMenuOverlay">
         <button class="menu-close" id="mobileMenuClose">
@@ -2037,17 +2036,14 @@
     </div>
 
     <!-- ============================================
-    HERO SECTION
+    HERO SECTION - CENTERED
     ============================================ -->
     <section class="hero" id="home">
         <div class="hero-slideshow" id="heroSlideshow">
-            <!-- Banner 1: Bar & Restaurant -->
             <div class="slide active" style="background-image: url('br.jpg');">
             </div>
-            <!-- Banner 2: Apartments -->
             <div class="slide" style="background-image: url('banner-living-room.jpg');">
             </div>
-            <!-- Banner 3: Transportation -->
             <div class="slide" style="background-image: url('tr.jpg');">
             </div>
         </div>
@@ -2153,7 +2149,7 @@
     </section>
 
     <!-- ============================================
-    SERVICES SECTION (WITH BACKGROUND IMAGES)
+    SERVICES SECTION
     ============================================ -->
     <section class="services" id="services">
         <div class="container">
@@ -2169,101 +2165,65 @@
             </div>
 
             <div class="services-grid">
-                <!-- Service 1 - Bar & Restaurant -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop');"></div>
+                    <div class="card-bg" style="background-image: url('br.jpg');"></div>
                     <span class="icon">🍽️</span>
                     <span class="status-badge operational">● Operational</span>
                     <h3>Bar & Restaurant</h3>
-                    <p>
-                        Experience premium dining and entertainment at our flagship establishment.
-                        Offering a diverse menu, signature cocktails, and an elegant atmosphere.
-                    </p>
-                    <a href="#" class="learn-more">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <p>Experience premium dining and entertainment at our flagship establishment.</p>
+                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <!-- Service 2 - Apartments -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="150">
-                    <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop');"></div>
+                    <div class="card-bg" style="background-image: url('ap.jpg');"></div>
                     <span class="icon">🏢</span>
                     <span class="status-badge coming">● Coming Soon</span>
                     <h3>Apartments</h3>
-                    <p>
-                        Modern, secure, and comfortable residential spaces in prime locations.
-                        Designed for both short-term stays and long-term living.
-                    </p>
-                    <a href="#" class="learn-more">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <p>Modern, secure, and comfortable residential spaces in prime locations.</p>
+                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <!-- Service 3 - Transportation -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&h=400&fit=crop');"></div>
+                    <div class="card-bg" style="background-image: url('tr.jpg');"></div>
                     <span class="icon">🚚</span>
                     <span class="status-badge operational">● Operational</span>
                     <h3>Transportation</h3>
-                    <p>
-                        Reliable logistics and passenger transport services across South Sudan.
-                        Well-maintained vehicles and professional drivers ensure safety and punctuality.
-                    </p>
-                    <a href="#" class="learn-more">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <p>Reliable logistics and passenger transport services across South Sudan.</p>
+                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <!-- Service 4 - Warehouse -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="250">
-                    <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop');"></div>
+                    <div class="card-bg" style="background-image: url('https:Modern Warehousing.jpg');"></div>
                     <span class="icon">🏗️</span>
                     <span class="status-badge coming">● Coming Soon</span>
                     <h3>Warehouse Building</h3>
-                    <p>
-                        State-of-the-art warehousing solutions for businesses and organizations.
-                        Secure, accessible, and designed to meet modern storage needs.
-                    </p>
-                    <a href="#" class="learn-more">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <p>State-of-the-art warehousing solutions for businesses and organizations.</p>
+                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <!-- Service 5 - Farming -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&h=400&fit=crop');"></div>
                     <span class="icon">🌾</span>
                     <span class="status-badge coming">● Coming Soon</span>
                     <h3>Farming</h3>
-                    <p>
-                        Sustainable agricultural practices for food security and economic growth.
-                        Modern farming techniques to support South Sudan's agricultural sector.
-                    </p>
-                    <a href="#" class="learn-more">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <p>Sustainable agricultural practices for food security and economic growth.</p>
+                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <!-- Service 6 - Ferry Crossing -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="350">
                     <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600&h=400&fit=crop');"></div>
                     <span class="icon">⛴️</span>
                     <span class="status-badge coming">● Coming Soon</span>
                     <h3>Ferry Crossing</h3>
-                    <p>
-                        Connecting communities through South Sudan's new ferry crossing service.
-                        Safe, reliable, and efficient water transportation for people and goods.
-                    </p>
-                    <a href="#" class="learn-more">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <p>Connecting communities through South Sudan's new ferry crossing service.</p>
+                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================
-    PROJECTS SECTION (WITH IMAGES)
+    PROJECTS SECTION
     ============================================ -->
     <section class="projects" id="projects">
         <div class="container">
@@ -2278,7 +2238,6 @@
             </div>
 
             <div class="projects-grid">
-                <!-- Project 1 - 56 Leonard -->
                 <div class="project-card" data-aos="flip-up" data-aos-delay="100">
                     <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=500&fit=crop');">
                         <span class="project-overlay-icon">🏢</span>
@@ -2294,7 +2253,6 @@
                     </div>
                 </div>
 
-                <!-- Project 2 - Bar & Restaurant -->
                 <div class="project-card" data-aos="flip-up" data-aos-delay="200">
                     <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=500&fit=crop');">
                         <span class="project-overlay-icon">🍽️</span>
@@ -2310,7 +2268,6 @@
                     </div>
                 </div>
 
-                <!-- Project 3 - Transport Services -->
                 <div class="project-card" data-aos="flip-up" data-aos-delay="300">
                     <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&h=500&fit=crop');">
                         <span class="project-overlay-icon">🚚</span>
@@ -2556,9 +2513,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
-            // ============================================
             // AOS INIT
-            // ============================================
             AOS.init({
                 duration: 800,
                 once: true,
@@ -2566,9 +2521,7 @@
                 easing: 'ease-in-out'
             });
 
-            // ============================================
             // HERO SLIDESHOW
-            // ============================================
             (function() {
                 const slides = document.querySelectorAll('.hero-slideshow .slide');
                 const dots = document.querySelectorAll('.slide-dots .dot');
@@ -2611,9 +2564,7 @@
                 hero.addEventListener('mouseleave', startSlideshow);
             })();
 
-            // ============================================
             // NAVBAR SCROLL
-            // ============================================
             const navbar = document.getElementById('navbar');
             window.addEventListener('scroll', function() {
                 if (window.pageYOffset > 50) {
@@ -2623,9 +2574,7 @@
                 }
             });
 
-            // ============================================
-            // MOBILE MENU (ENHANCED)
-            // ============================================
+            // MOBILE MENU
             const menuToggle = document.getElementById('menuToggle');
             const mobileOverlay = document.getElementById('mobileMenuOverlay');
             const mobileClose = document.getElementById('mobileMenuClose');
@@ -2645,28 +2594,19 @@
             menuToggle.addEventListener('click', openMobileMenu);
             mobileClose.addEventListener('click', closeMobileMenu);
 
-            // Close mobile menu when clicking a link
             mobileOverlay.querySelectorAll('a').forEach(function(link) {
                 link.addEventListener('click', function() {
                     closeMobileMenu();
-                    // Update active state
-                    document.querySelectorAll('.mobile-menu-content ul a').forEach(function(l) {
-                        l.classList.remove('active');
-                    });
-                    this.classList.add('active');
                 });
             });
 
-            // Close on overlay click (outside content)
             mobileOverlay.addEventListener('click', function(e) {
                 if (e.target === this) {
                     closeMobileMenu();
                 }
             });
 
-            // ============================================
             // COUNTER ANIMATION
-            // ============================================
             const counters = document.querySelectorAll('[data-count]');
 
             const counterObserver = new IntersectionObserver(function(entries) {
@@ -2700,9 +2640,7 @@
                 counterObserver.observe(counter);
             });
 
-            // ============================================
             // SMOOTH SCROLL
-            // ============================================
             document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
                 anchor.addEventListener('click', function(e) {
                     const targetId = this.getAttribute('href');
@@ -2720,9 +2658,7 @@
                 });
             });
 
-            // ============================================
             // BACK TO TOP
-            // ============================================
             const backTop = document.getElementById('backTop');
             const backTopLink = document.getElementById('backTopLink');
 
@@ -2750,9 +2686,7 @@
                 });
             }
 
-            // ============================================
             // ACTIVE NAV LINK
-            // ============================================
             const sections = document.querySelectorAll('section[id], .hero');
             const navLinksAll = document.querySelectorAll('.nav-links a, .mobile-menu-content ul a');
 
@@ -2773,9 +2707,7 @@
                 });
             });
 
-            // ============================================
             // DYNAMIC YEAR
-            // ============================================
             const footerYear = document.querySelector('.footer-bottom-row span:first-child');
             if (footerYear) {
                 footerYear.innerHTML = footerYear.innerHTML.replace('2026', new Date().getFullYear());
