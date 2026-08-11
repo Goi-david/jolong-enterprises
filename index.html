@@ -974,7 +974,7 @@
         }
 
         /* ============================================
-                   SERVICES SECTION
+                   SERVICES SECTION - WITH VISIBLE IMAGES
                    ============================================ */
         .services {
             padding: 100px 0;
@@ -1007,7 +1007,6 @@
         }
 
         .service-card {
-            background: var(--white);
             border-radius: var(--border-radius);
             padding: 40px 30px;
             box-shadow: var(--shadow);
@@ -1015,27 +1014,49 @@
             position: relative;
             overflow: hidden;
             border: 1px solid rgba(0, 0, 0, 0.04);
-            min-height: 320px;
+            min-height: 340px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
+            background: var(--white);
         }
 
+        /* Background image - MUCH MORE VISIBLE */
         .service-card .card-bg {
             position: absolute;
             inset: 0;
             background-size: cover;
             background-position: center;
-            opacity: 0.08;
+            opacity: 0.35;
             transition: var(--transition);
             z-index: 0;
         }
 
         .service-card:hover .card-bg {
-            opacity: 0.15;
-            transform: scale(1.05);
+            opacity: 0.60;
+            transform: scale(1.08);
         }
 
+        /* Dark overlay for better text contrast */
+        .service-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom,
+                    rgba(10, 26, 58, 0.40) 0%,
+                    rgba(10, 26, 58, 0.60) 25%,
+                    rgba(10, 26, 58, 0.80) 55%,
+                    rgba(10, 26, 58, 0.95) 100%);
+            z-index: 0;
+            opacity: 0.70;
+            transition: var(--transition);
+        }
+
+        .service-card:hover::after {
+            opacity: 0.55;
+        }
+
+        /* Gold accent line at top */
         .service-card::before {
             content: '';
             position: absolute;
@@ -1053,21 +1074,25 @@
             opacity: 1;
         }
 
+        /* All content above the overlay */
         .service-card>*:not(.card-bg) {
             position: relative;
             z-index: 1;
         }
 
+        /* Text colors - WHITE on dark background */
         .service-card .icon {
             font-size: 3rem;
             margin-bottom: 16px;
             display: block;
+            color: var(--secondary);
         }
 
         .service-card h3 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 8px;
-            color: var(--primary);
+            color: var(--white);
+            font-weight: 700;
         }
 
         .service-card .status-badge {
@@ -1079,10 +1104,26 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 12px;
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--secondary);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            width: fit-content;
+        }
+
+        .service-card .status-badge.operational {
+            background: rgba(46, 125, 50, 0.25);
+            color: #81c784;
+            border-color: rgba(46, 125, 50, 0.2);
+        }
+
+        .service-card .status-badge.coming {
+            background: rgba(244, 196, 48, 0.2);
+            color: var(--secondary);
+            border-color: rgba(244, 196, 48, 0.15);
         }
 
         .service-card p {
-            color: var(--gray);
+            color: rgba(255, 255, 255, 0.85);
             font-size: 0.95rem;
             line-height: 1.7;
             margin-bottom: 16px;
@@ -1096,21 +1137,19 @@
             align-items: center;
             gap: 8px;
             transition: var(--transition);
+            background: rgba(244, 196, 48, 0.15);
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(244, 196, 48, 0.2);
+            width: fit-content;
         }
 
         .service-card .learn-more:hover {
             gap: 14px;
-            color: var(--secondary-dark);
-        }
-
-        .status-badge.operational {
-            background: rgba(46, 125, 50, 0.12);
-            color: var(--accent-green);
-        }
-
-        .status-badge.coming {
-            background: rgba(244, 196, 48, 0.12);
-            color: var(--secondary-dark);
+            color: var(--primary);
+            background: var(--secondary);
+            border-color: var(--secondary);
+            transform: translateX(4px);
         }
 
         /* ============================================
@@ -1869,7 +1908,7 @@
                 align-items: center;
             }
             .service-card {
-                min-height: 240px;
+                min-height: 220px;
             }
             .mobile-menu-content ul a {
                 font-size: 1.1rem;
@@ -2149,7 +2188,7 @@
     </section>
 
     <!-- ============================================
-    SERVICES SECTION
+    SERVICES SECTION - WITH VISIBLE IMAGES
     ============================================ -->
     <section class="services" id="services">
         <div class="container">
@@ -2165,6 +2204,7 @@
             </div>
 
             <div class="services-grid">
+                <!-- Service 1 - Bar & Restaurant -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="card-bg" style="background-image: url('brr.jpg');"></div>
                     <span class="icon">🍽️</span>
@@ -2174,6 +2214,7 @@
                     <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
+                <!-- Service 2 - Apartments -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="150">
                     <div class="card-bg" style="background-image: url('ap.jpg');"></div>
                     <span class="icon">🏢</span>
@@ -2183,6 +2224,7 @@
                     <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
+                <!-- Service 3 - Transportation -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="card-bg" style="background-image: url('hgk.jpg');"></div>
                     <span class="icon">🚚</span>
@@ -2192,6 +2234,7 @@
                     <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
+                <!-- Service 4 - Warehouse -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="250">
                     <div class="card-bg" style="background-image: url('Modern Warehousing.jpg');"></div>
                     <span class="icon">🏗️</span>
@@ -2201,6 +2244,7 @@
                     <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
+                <!-- Service 5 - Farming -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="card-bg" style="background-image: url('farming.jpg');"></div>
                     <span class="icon">🌾</span>
@@ -2210,6 +2254,7 @@
                     <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
 
+                <!-- Service 6 - Ferry Crossing -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="350">
                     <div class="card-bg" style="background-image: url('fr.jpg');"></div>
                     <span class="icon">⛴️</span>
