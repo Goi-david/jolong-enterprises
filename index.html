@@ -122,26 +122,6 @@
             transform: translateY(-3px);
         }
 
-        .btn-secondary {
-            display: inline-block;
-            padding: 16px 40px;
-            background: var(--primary);
-            color: var(--white);
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-light);
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(26, 42, 108, 0.3);
-        }
-
         /* ============================================
                    SECTION HEADERS
                    ============================================ */
@@ -188,11 +168,13 @@
             z-index: 1000;
             padding: 20px 0;
             transition: var(--transition);
+            background: rgba(26, 42, 108, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 2px solid rgba(201, 168, 76, 0.15);
         }
 
         .navbar.scrolled {
-            background: rgba(26, 42, 108, 0.95);
-            backdrop-filter: blur(20px);
+            background: rgba(26, 42, 108, 0.98);
             padding: 12px 0;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
         }
@@ -260,9 +242,29 @@
             position: relative;
         }
 
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 60%;
+        }
+
         .nav-links a:hover {
             color: var(--white);
-            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-links a.active {
+            color: var(--secondary);
         }
 
         .nav-links .contact-btn {
@@ -273,10 +275,13 @@
             font-weight: 600;
         }
 
+        .nav-links .contact-btn::after {
+            display: none !important;
+        }
+
         .nav-links .contact-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
-            background: linear-gradient(135deg, var(--secondary-light), var(--secondary));
         }
 
         .menu-toggle {
@@ -311,325 +316,231 @@
         }
 
         /* ============================================
-                   BANNER SLIDER - NEW!
-                   ============================================ */
-        .banner-slider {
-            margin-top: 80px;
-            position: relative;
-            height: 500px;
-            overflow: hidden;
-        }
-
-        .banner-slider .slides {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .banner-slide {
-            min-width: 100%;
-            height: 100%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .banner-slide::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(26, 42, 108, 0.7), rgba(13, 27, 74, 0.5));
-            z-index: 1;
-        }
-
-        .banner-slide .banner-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: var(--white);
-            max-width: 700px;
-            padding: 40px;
-        }
-
-        .banner-slide .banner-content .banner-icon {
-            font-size: 4rem;
-            display: block;
-            margin-bottom: 16px;
-            animation: float-icon 3s ease-in-out infinite;
-        }
-
-        @keyframes float-icon {
-            0%,
-            100% {
-                transform: translateY(0) scale(1);
-            }
-            50% {
-                transform: translateY(-15px) scale(1.1);
-            }
-        }
-
-        .banner-slide .banner-content h2 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .banner-slide .banner-content h2 .highlight {
-            color: var(--secondary);
-        }
-
-        .banner-slide .banner-content p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 24px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .banner-slide .banner-content .banner-btn {
-            display: inline-block;
-            padding: 14px 36px;
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-            color: var(--white);
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
-        }
-
-        .banner-slide .banner-content .banner-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(201, 168, 76, 0.4);
-        }
-
-        .banner-slide .banner-content .banner-btn-outline {
-            display: inline-block;
-            padding: 14px 36px;
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: var(--transition);
-            margin-left: 12px;
-        }
-
-        .banner-slide .banner-content .banner-btn-outline:hover {
-            background: var(--white);
-            color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        /* Banner Controls */
-        .banner-controls {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 12px;
-            z-index: 10;
-        }
-
-        .banner-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-            cursor: pointer;
-            transition: var(--transition);
-            border: 2px solid transparent;
-        }
-
-        .banner-dot.active {
-            background: var(--secondary);
-            border-color: var(--white);
-            transform: scale(1.3);
-        }
-
-        .banner-dot:hover {
-            background: var(--secondary);
-        }
-
-        .banner-arrows {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 20px;
-            z-index: 10;
-            pointer-events: none;
-        }
-
-        .banner-arrow {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: var(--white);
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            pointer-events: all;
-        }
-
-        .banner-arrow:hover {
-            background: var(--secondary);
-            transform: scale(1.1);
-            border-color: var(--secondary);
-        }
-
-        /* ============================================
-                   HERO SECTION (UNCHANGED)
+                   HERO WITH ROTATING BANNERS (DJML STYLE)
                    ============================================ */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            padding: 120px 0 80px;
             overflow: hidden;
-            padding-top: 80px;
+            background: var(--primary);
         }
 
-        .hero::before {
+        .hero-slideshow {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .hero-slideshow .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: scale(1.05);
+            transition: opacity 1.5s ease, transform 8s ease;
+        }
+
+        .hero-slideshow .slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .hero-slideshow .slide::after {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -30%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(201, 168, 76, 0.15), transparent 70%);
-            border-radius: 50%;
-            animation: float-bg 20s ease-in-out infinite;
+            inset: 0;
+            background: rgba(13, 27, 62, 0.65);
         }
 
-        .hero::after {
+        .hero-slideshow .slide::before {
             content: '';
             position: absolute;
-            bottom: -30%;
-            left: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(201, 168, 76, 0.08), transparent 70%);
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 50%, rgba(201, 168, 76, 0.08) 0%, transparent 70%),
+                radial-gradient(ellipse at 70% 80%, rgba(201, 168, 76, 0.05) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        /* Slide Dots */
+        .slide-dots {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            display: flex;
+            gap: 14px;
+        }
+
+        .slide-dots .dot {
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
-            animation: float-bg 25s ease-in-out infinite reverse;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
         }
 
-        @keyframes float-bg {
-            0%,
-            100% {
-                transform: translate(0, 0) scale(1);
-            }
-            50% {
-                transform: translate(30px, -30px) scale(1.1);
-            }
+        .slide-dots .dot::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            transition: var(--transition);
         }
 
+        .slide-dots .dot.active::after {
+            border-color: var(--secondary);
+        }
+
+        .slide-dots .dot.active {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            box-shadow: 0 0 30px rgba(201, 168, 76, 0.3);
+            transform: scale(1.2);
+        }
+
+        /* Hero Content */
         .hero .container {
             position: relative;
             z-index: 2;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+        }
+
+        .hero-content {
+            max-width: 780px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
             align-items: center;
-        }
-
-        .hero-content h1 {
-            font-size: 4.2rem;
-            font-weight: 900;
-            color: var(--white);
-            line-height: 1.1;
-            margin-bottom: 24px;
-        }
-
-        .hero-content h1 .highlight {
+            gap: 8px;
+            background: rgba(201, 168, 76, 0.1);
             color: var(--secondary);
-            position: relative;
+            padding: 6px 18px 6px 8px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(201, 168, 76, 0.12);
+            backdrop-filter: blur(8px);
         }
 
-        .hero-content h1 .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 4px;
-            left: 0;
-            right: 0;
-            height: 4px;
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
             background: var(--secondary);
-            border-radius: 4px;
+            animation: pulse-dot 2s infinite;
         }
 
-        .hero-content p {
-            font-size: 1.2rem;
-            color: rgba(255, 255, 255, 0.85);
-            max-width: 500px;
-            margin-bottom: 36px;
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.4;
+                transform: scale(0.8);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.6rem, 8vw, 5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            color: var(--white);
+            opacity: 0;
+            animation: fadeUp 1s ease 0.2s forwards;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 1.4vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 580px;
             line-height: 1.8;
+            margin-bottom: 36px;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.4s forwards;
         }
 
         .hero-buttons {
             display: flex;
-            gap: 16px;
             flex-wrap: wrap;
+            gap: 14px;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.6s forwards;
         }
 
         .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-            margin-top: 48px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 56px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            opacity: 0;
+            animation: fadeUp 1s ease 0.8s forwards;
         }
 
-        .hero-stat {
-            text-align: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: var(--border-radius-sm);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: var(--transition);
+        .hero-stats .stat {
+            display: flex;
+            flex-direction: column;
         }
 
-        .hero-stat:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .hero-stat .number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--secondary);
+        .hero-stats .stat .number {
             font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary);
         }
 
-        .hero-stat .label {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-top: 4px;
+        .hero-stats .stat .label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
         }
 
+        /* Service Grid inside Hero */
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 16px;
+            margin-top: 40px;
         }
 
         .hero-grid-item {
@@ -680,6 +591,65 @@
         .status-coming {
             background: rgba(201, 168, 76, 0.2);
             color: var(--secondary);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            animation: bounceDown 2.5s infinite;
+        }
+
+        .scroll-indicator .mouse {
+            width: 22px;
+            height: 34px;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .scroll-indicator .mouse::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 2px;
+            animation: scrollWheel 1.8s infinite;
+        }
+
+        @keyframes scrollWheel {
+            0% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(16px);
+            }
+        }
+
+        @keyframes bounceDown {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(6px);
+            }
         }
 
         /* ============================================
@@ -898,6 +868,16 @@
             background: radial-gradient(circle, rgba(201, 168, 76, 0.2), transparent 70%);
             border-radius: 50%;
             animation: float-bg 15s ease-in-out infinite;
+        }
+
+        @keyframes float-bg {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
         }
 
         .about-image .exp-badge {
@@ -1214,57 +1194,35 @@
         }
 
         /* ============================================
-                   ANIMATIONS
-                   ============================================ */
-        @keyframes pulse-dot {
-            0%,
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            50% {
-                opacity: 0.5;
-                transform: scale(1.5);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-fade-up {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        /* ============================================
                    RESPONSIVE
                    ============================================ */
         @media (max-width: 1200px) {
-            .hero-content h1 {
-                font-size: 3.5rem;
-            }
             .hero-grid {
                 grid-template-columns: 1fr 1fr;
-            }
-            .banner-slide .banner-content h2 {
-                font-size: 2.5rem;
             }
         }
 
         @media (max-width: 992px) {
             .hero .container {
-                grid-template-columns: 1fr;
-                gap: 40px;
+                flex-direction: column;
             }
-            .hero-content h1 {
-                font-size: 3rem;
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+            .hero p {
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .hero-grid {
+                grid-template-columns: 1fr 1fr 1fr;
             }
             .services-grid {
                 grid-template-columns: 1fr 1fr;
@@ -1283,15 +1241,6 @@
             }
             .hero-stats {
                 grid-template-columns: repeat(3, 1fr);
-            }
-            .banner-slider {
-                height: 400px;
-            }
-            .banner-slide .banner-content h2 {
-                font-size: 2rem;
-            }
-            .banner-slide .banner-content p {
-                font-size: 1rem;
             }
         }
 
@@ -1319,8 +1268,8 @@
                 width: 100%;
                 border-radius: 8px;
             }
-            .hero-content h1 {
-                font-size: 2.4rem;
+            .nav-links a::after {
+                display: none;
             }
             .hero-grid {
                 grid-template-columns: 1fr 1fr;
@@ -1391,30 +1340,21 @@
                 flex-direction: column;
                 align-items: center;
             }
-            .banner-slider {
-                height: 350px;
+            .slide-dots {
+                bottom: 20px;
+                gap: 10px;
             }
-            .banner-slide .banner-content h2 {
-                font-size: 1.6rem;
+            .slide-dots .dot {
+                width: 10px;
+                height: 10px;
             }
-            .banner-slide .banner-content p {
-                font-size: 0.9rem;
-            }
-            .banner-slide .banner-content .banner-icon {
-                font-size: 3rem;
-            }
-            .banner-slide .banner-content .banner-btn,
-            .banner-slide .banner-content .banner-btn-outline {
-                padding: 10px 24px;
-                font-size: 0.9rem;
-            }
-            .banner-arrows {
+            .scroll-indicator {
                 display: none;
             }
         }
 
         @media (max-width: 480px) {
-            .hero-content h1 {
+            .hero h1 {
                 font-size: 2rem;
             }
             .hero-grid {
@@ -1433,10 +1373,10 @@
             .hero-stats {
                 grid-template-columns: 1fr 1fr 1fr;
             }
-            .hero-stat .number {
+            .hero-stats .stat .number {
                 font-size: 1.4rem;
             }
-            .hero-stat .label {
+            .hero-stats .stat .label {
                 font-size: 0.65rem;
             }
             .section-title {
@@ -1452,28 +1392,6 @@
                 width: 38px;
                 height: 38px;
                 font-size: 1.2rem;
-            }
-            .banner-slider {
-                height: 300px;
-            }
-            .banner-slide .banner-content h2 {
-                font-size: 1.3rem;
-            }
-            .banner-slide .banner-content p {
-                font-size: 0.8rem;
-            }
-            .banner-slide .banner-content .banner-icon {
-                font-size: 2.5rem;
-            }
-            .banner-slide .banner-content .banner-btn,
-            .banner-slide .banner-content .banner-btn-outline {
-                padding: 8px 18px;
-                font-size: 0.8rem;
-                display: block;
-                margin: 6px auto;
-            }
-            .banner-slide .banner-content .banner-btn-outline {
-                margin-left: auto;
             }
         }
     </style>
@@ -1500,6 +1418,7 @@
             </button>
 
             <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About</a></li>
@@ -1510,71 +1429,40 @@
     </nav>
 
     <!-- ============================================
-    BANNER SLIDER - 3 ROTATING BANNERS
-    ============================================ -->
-    <section class="banner-slider" id="bannerSlider">
-        <div class="slides" id="bannerSlides">
-            <!-- Banner 1: Bar & Restaurant -->
-            <div class="banner-slide" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&h=600&fit=crop');">
-                <div class="banner-content">
-                    <span class="banner-icon">🍽️</span>
-                    <h2>Jolong <span class="highlight">Bar & Restaurant</span></h2>
-                    <p>Experience premium dining and entertainment at our flagship establishment in Juba.</p>
-                    <div>
-                        <a href="#" class="banner-btn"><i class="fas fa-utensils"></i> View Menu</a>
-                        <a href="#" class="banner-btn-outline">Book a Table</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Banner 2: Transportation -->
-            <div class="banner-slide" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&h=600&fit=crop');">
-                <div class="banner-content">
-                    <span class="banner-icon">🚚</span>
-                    <h2>Jolong <span class="highlight">Transport Services</span></h2>
-                    <p>Reliable logistics and passenger transport solutions across South Sudan. Safe, punctual, and professional.</p>
-                    <div>
-                        <a href="#" class="banner-btn"><i class="fas fa-truck"></i> Logistics Services</a>
-                        <a href="#" class="banner-btn-outline">Get a Quote</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Banner 3: Apartments & Development -->
-            <div class="banner-slide" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&h=600&fit=crop');">
-                <div class="banner-content">
-                    <span class="banner-icon">🏢</span>
-                    <h2>Jolong <span class="highlight">Apartments</span></h2>
-                    <p>Modern, secure, and comfortable residential spaces in prime locations across Juba.</p>
-                    <div>
-                        <a href="#" class="banner-btn"><i class="fas fa-home"></i> View Properties</a>
-                        <a href="#" class="banner-btn-outline">Inquire Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Banner Controls -->
-        <div class="banner-controls">
-            <span class="banner-dot active" data-index="0"></span>
-            <span class="banner-dot" data-index="1"></span>
-            <span class="banner-dot" data-index="2"></span>
-        </div>
-
-        <!-- Banner Arrows -->
-        <div class="banner-arrows">
-            <button class="banner-arrow" id="bannerPrev"><i class="fas fa-chevron-left"></i></button>
-            <button class="banner-arrow" id="bannerNext"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </section>
-
-    <!-- ============================================
-    HERO SECTION (UNCHANGED)
+    HERO WITH ROTATING BANNERS (DJML STYLE)
     ============================================ -->
     <section class="hero" id="home">
+        <div class="hero-slideshow" id="heroSlideshow">
+            <!-- Banner 1: Bar & Restaurant -->
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1400&h=800&fit=crop');">
+            </div>
+            <!-- Banner 2: Apartments -->
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1400&h=800&fit=crop');">
+            </div>
+            <!-- Banner 3: Transportation -->
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1400&h=800&fit=crop');">
+            </div>
+        </div>
+
+        <!-- Slide Dots -->
+        <div class="slide-dots" id="slideDots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="mouse"></div>
+        </div>
+
         <div class="container">
-            <div class="hero-content" data-aos="fade-right">
-                <span class="section-badge" style="background:rgba(255,255,255,0.1);color:var(--secondary);">Welcome to Jolong Enterprises</span>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    Welcome to Jolong Enterprises
+                </div>
                 <h1>
                     Building South Sudan's<br />
                     <span class="highlight">Future</span>, One Enterprise at a Time
@@ -1591,52 +1479,54 @@
                         View Our Projects <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
-                <div class="hero-stats">
-                    <div class="hero-stat" data-aos="fade-up" data-aos-delay="200">
-                        <div class="number" data-count="15">0</div>
-                        <div class="label">Years of Excellence</div>
-                    </div>
-                    <div class="hero-stat" data-aos="fade-up" data-aos-delay="300">
-                        <div class="number" data-count="50">0</div>
-                        <div class="label">Projects Delivered</div>
-                    </div>
-                    <div class="hero-stat" data-aos="fade-up" data-aos-delay="400">
-                        <div class="number" data-count="100">0</div>
-                        <div class="label">Happy Clients</div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="hero-grid" data-aos="fade-left">
-                <div class="hero-grid-item" data-aos="zoom-in" data-aos-delay="100">
-                    <span class="icon">🍽️</span>
-                    <div class="name">Bar & Restaurant</div>
-                    <span class="status status-operational">Operational</span>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="number" data-count="15">0</span>
+                        <span class="label">Years of Excellence</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number" data-count="50">0</span>
+                        <span class="label">Projects Delivered</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number" data-count="100">0</span>
+                        <span class="label">Happy Clients</span>
+                    </div>
                 </div>
-                <div class="hero-grid-item" data-aos="zoom-in" data-aos-delay="200">
-                    <span class="icon">🏢</span>
-                    <div class="name">Apartments</div>
-                    <span class="status status-coming">Coming Soon</span>
-                </div>
-                <div class="hero-grid-item" data-aos="zoom-in" data-aos-delay="300">
-                    <span class="icon">🚚</span>
-                    <div class="name">Transportation</div>
-                    <span class="status status-operational">Operational</span>
-                </div>
-                <div class="hero-grid-item" data-aos="zoom-in" data-aos-delay="400">
-                    <span class="icon">🏗️</span>
-                    <div class="name">Warehouse</div>
-                    <span class="status status-coming">Coming Soon</span>
-                </div>
-                <div class="hero-grid-item" data-aos="zoom-in" data-aos-delay="500">
-                    <span class="icon">🌾</span>
-                    <div class="name">Farming</div>
-                    <span class="status status-coming">Coming Soon</span>
-                </div>
-                <div class="hero-grid-item" data-aos="zoom-in" data-aos-delay="600">
-                    <span class="icon">⛴️</span>
-                    <div class="name">Ferry Crossing</div>
-                    <span class="status status-coming">Coming Soon</span>
+
+                <!-- Service Grid -->
+                <div class="hero-grid" data-aos="fade-up" data-aos-delay="200">
+                    <div class="hero-grid-item">
+                        <span class="icon">🍽️</span>
+                        <div class="name">Bar & Restaurant</div>
+                        <span class="status status-operational">Operational</span>
+                    </div>
+                    <div class="hero-grid-item">
+                        <span class="icon">🏢</span>
+                        <div class="name">Apartments</div>
+                        <span class="status status-coming">Coming Soon</span>
+                    </div>
+                    <div class="hero-grid-item">
+                        <span class="icon">🚚</span>
+                        <div class="name">Transportation</div>
+                        <span class="status status-operational">Operational</span>
+                    </div>
+                    <div class="hero-grid-item">
+                        <span class="icon">🏗️</span>
+                        <div class="name">Warehouse</div>
+                        <span class="status status-coming">Coming Soon</span>
+                    </div>
+                    <div class="hero-grid-item">
+                        <span class="icon">🌾</span>
+                        <div class="name">Farming</div>
+                        <span class="status status-coming">Coming Soon</span>
+                    </div>
+                    <div class="hero-grid-item">
+                        <span class="icon">⛴️</span>
+                        <div class="name">Ferry Crossing</div>
+                        <span class="status status-coming">Coming Soon</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1659,7 +1549,7 @@
             </div>
 
             <div class="services-grid">
-                <!-- Service 1: Bar & Restaurant -->
+                <!-- Service 1 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <span class="icon">🍽️</span>
                     <span class="status-badge status-operational">● Operational</span>
@@ -1673,7 +1563,7 @@
                     </a>
                 </div>
 
-                <!-- Service 2: Apartments -->
+                <!-- Service 2 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="150">
                     <span class="icon">🏢</span>
                     <span class="status-badge status-coming">● Coming Soon</span>
@@ -1687,7 +1577,7 @@
                     </a>
                 </div>
 
-                <!-- Service 3: Transportation -->
+                <!-- Service 3 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <span class="icon">🚚</span>
                     <span class="status-badge status-operational">● Operational</span>
@@ -1701,7 +1591,7 @@
                     </a>
                 </div>
 
-                <!-- Service 4: Warehouse Building -->
+                <!-- Service 4 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="250">
                     <span class="icon">🏗️</span>
                     <span class="status-badge status-coming">● Coming Soon</span>
@@ -1715,7 +1605,7 @@
                     </a>
                 </div>
 
-                <!-- Service 5: Farming -->
+                <!-- Service 5 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <span class="icon">🌾</span>
                     <span class="status-badge status-coming">● Coming Soon</span>
@@ -1729,7 +1619,7 @@
                     </a>
                 </div>
 
-                <!-- Service 6: Ferry Crossing -->
+                <!-- Service 6 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="350">
                     <span class="icon">⛴️</span>
                     <span class="status-badge status-coming">● Coming Soon</span>
@@ -1762,7 +1652,6 @@
             </div>
 
             <div class="projects-grid">
-                <!-- Project 1 -->
                 <div class="project-card" data-aos="flip-up" data-aos-delay="100">
                     <div class="project-image">
                         <span>🏢</span>
@@ -1778,7 +1667,6 @@
                     </div>
                 </div>
 
-                <!-- Project 2 -->
                 <div class="project-card" data-aos="flip-up" data-aos-delay="200">
                     <div class="project-image" style="background:linear-gradient(135deg, var(--secondary), var(--secondary-dark));">
                         <span>🍽️</span>
@@ -1794,7 +1682,6 @@
                     </div>
                 </div>
 
-                <!-- Project 3 -->
                 <div class="project-card" data-aos="flip-up" data-aos-delay="300">
                     <div class="project-image" style="background:linear-gradient(135deg, var(--accent-green), #1a9c54);">
                         <span>🚚</span>
@@ -1868,7 +1755,6 @@
             </div>
 
             <div class="testimonials-grid">
-                <!-- Testimonial 1 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -1890,7 +1776,6 @@
                     </div>
                 </div>
 
-                <!-- Testimonial 2 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -1912,7 +1797,6 @@
                     </div>
                 </div>
 
-                <!-- Testimonial 3 -->
                 <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="stars">
                         <i class="fas fa-star"></i>
@@ -1983,6 +1867,7 @@
                 <div>
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#about">About Us</a></li>
@@ -2024,183 +1909,182 @@
     ============================================ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js">
     </script>
+
     <script>
-        // ============================================
-        // Banner Slider
-        // ============================================
-        const slides = document.getElementById('bannerSlides');
-        const dots = document.querySelectorAll('.banner-dot');
-        const prevBtn = document.getElementById('bannerPrev');
-        const nextBtn = document.getElementById('bannerNext');
-        let currentIndex = 0;
-        const totalSlides = 3;
-        let autoSlideInterval;
+        document.addEventListener('DOMContentLoaded', function() {
 
-        function goToSlide(index) {
-            if (index < 0) index = totalSlides - 1;
-            if (index >= totalSlides) index = 0;
-            currentIndex = index;
-            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentIndex);
+            // ============================================
+            // AOS INIT
+            // ============================================
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 80,
+                easing: 'ease-in-out'
             });
-        }
 
-        function nextSlide() {
-            goToSlide(currentIndex + 1);
-        }
-
-        function prevSlide() {
-            goToSlide(currentIndex - 1);
-        }
-
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(nextSlide, 5000);
-        }
-
-        function stopAutoSlide() {
-            clearInterval(autoSlideInterval);
-        }
-
-        // Dot click handlers
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                stopAutoSlide();
-                goToSlide(index);
-                startAutoSlide();
-            });
-        });
-
-        // Arrow click handlers
-        prevBtn.addEventListener('click', () => {
-            stopAutoSlide();
-            prevSlide();
-            startAutoSlide();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            stopAutoSlide();
-            nextSlide();
-            startAutoSlide();
-        });
-
-        // Pause on hover
-        const slider = document.getElementById('bannerSlider');
-        slider.addEventListener('mouseenter', stopAutoSlide);
-        slider.addEventListener('mouseleave', startAutoSlide);
-
-        // Start auto-slide
-        startAutoSlide();
-
-        // ============================================
-        // Initialize AOS
-        // ============================================
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 80,
-            easing: 'ease-in-out'
-        });
-
-        // ============================================
-        // Navbar Scroll Effect
-        // ============================================
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // ============================================
-        // Mobile Menu Toggle
-        // ============================================
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
-
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('open');
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('open');
-            });
-        });
-
-        // ============================================
-        // Counter Animation
-        // ============================================
-        function animateCounters() {
-            const counters = document.querySelectorAll('.hero-stat .number');
-
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-count'));
+            // ============================================
+            // HERO SLIDESHOW (DJML STYLE)
+            // ============================================
+            (function() {
+                const slides = document.querySelectorAll('.hero-slideshow .slide');
+                const dots = document.querySelectorAll('.slide-dots .dot');
                 let current = 0;
-                const increment = target / 60;
-                const duration = 2000;
-                const stepTime = duration / 60;
+                let interval;
 
-                const updateCounter = () => {
-                    current += increment;
-                    if (current >= target) {
-                        counter.textContent = target + '+';
-                        return;
-                    }
-                    counter.textContent = Math.floor(current) + '+';
-                    setTimeout(updateCounter, stepTime);
-                };
-
-                updateCounter();
-            });
-        }
-
-        const heroSection = document.querySelector('.hero');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    observer.unobserve(entry.target);
+                function goTo(index) {
+                    slides.forEach(s => s.classList.remove('active'));
+                    dots.forEach(d => d.classList.remove('active'));
+                    slides[index].classList.add('active');
+                    dots[index].classList.add('active');
+                    current = index;
                 }
-            });
-        }, { threshold: 0.3 });
 
-        observer.observe(heroSection);
+                function nextSlide() {
+                    goTo((current + 1) % slides.length);
+                }
 
-        // ============================================
-        // Smooth Scroll for Anchor Links
-        // ============================================
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
+                function startSlideshow() {
+                    interval = setInterval(nextSlide, 5500);
+                }
 
-                const target = document.querySelector(targetId);
-                if (target) {
-                    e.preventDefault();
-                    const offsetTop = target.offsetTop - 80;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
+                function stopSlideshow() {
+                    clearInterval(interval);
+                }
+
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', function() {
+                        stopSlideshow();
+                        goTo(index);
+                        startSlideshow();
                     });
+                });
+
+                goTo(0);
+                startSlideshow();
+
+                const hero = document.querySelector('.hero');
+                hero.addEventListener('mouseenter', stopSlideshow);
+                hero.addEventListener('mouseleave', startSlideshow);
+            })();
+
+            // ============================================
+            // NAVBAR SCROLL EFFECT
+            // ============================================
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
                 }
             });
+
+            // ============================================
+            // MOBILE MENU TOGGLE
+            // ============================================
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            menuToggle.addEventListener('click', function() {
+                menuToggle.classList.toggle('active');
+                navLinks.classList.toggle('open');
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    menuToggle.classList.remove('active');
+                    navLinks.classList.remove('open');
+                });
+            });
+
+            // ============================================
+            // COUNTER ANIMATION
+            // ============================================
+            const counters = document.querySelectorAll('[data-count]');
+
+            const counterObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.dataset.count);
+                        const duration = 2000;
+                        const startTime = performance.now();
+
+                        function updateCounter(currentTime) {
+                            const elapsed = currentTime - startTime;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            const current = Math.floor(eased * target);
+                            el.textContent = current.toLocaleString();
+                            if (progress < 1) requestAnimationFrame(updateCounter);
+                            else el.textContent = target.toLocaleString();
+                        }
+                        requestAnimationFrame(updateCounter);
+                        counterObserver.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(function(counter) {
+                counterObserver.observe(counter);
+            });
+
+            // ============================================
+            // SMOOTH SCROLL FOR ANCHOR LINKS
+            // ============================================
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const offsetTop = target.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // ============================================
+            // ACTIVE NAV LINK
+            // ============================================
+            const sections = document.querySelectorAll('section[id], .hero');
+            const navLinksAll = document.querySelectorAll('.nav-links a');
+
+            window.addEventListener('scroll', function() {
+                let current = 'home';
+                sections.forEach(function(section) {
+                    const sectionTop = section.offsetTop - 150;
+                    if (window.pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id') || 'home';
+                    }
+                });
+
+                navLinksAll.forEach(function(link) {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // ============================================
+            // DYNAMIC YEAR IN FOOTER
+            // ============================================
+            document.querySelector('.footer-bottom p').textContent =
+                '© ' + new Date().getFullYear() + ' Jolong Enterprises Limited. All Rights Reserved.';
+
+            console.log('🚀 Jolong Enterprises Limited - Website Loaded Successfully!');
+            console.log('📧 Contact: info@jolonges.com');
+            console.log('📞 Phone: +211 922 005 177');
+            console.log('🖼️ 3 Banners: Restaurant | Apartments | Transportation');
+
         });
-
-        // ============================================
-        // Dynamic Year in Footer
-        // ============================================
-        document.querySelector('.footer-bottom p').textContent =
-            `© ${new Date().getFullYear()} Jolong Enterprises Limited. All Rights Reserved.`;
-
-        console.log('🚀 Jolong Enterprises Limited - Website Loaded Successfully!');
-        console.log('📧 Contact: info@jolonges.com');
-        console.log('📞 Phone: +211 922 005 177');
     </script>
 
 </body>
