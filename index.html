@@ -7,7 +7,7 @@
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Jolong Enterprises provides Bar & Restaurant, Apartments, Transportation, Warehouse Building, Farming, and Ferry Crossing services in Juba, South Sudan." />
-    <meta property="og:title" content="Jolong Enterprises Limited" />
+    <meta property="og:title" content="Jolong Enterprises Limited | South Sudan" />
     <meta property="og:description" content="Building South Sudan's Future, One Enterprise at a Time" />
     <meta property="og:type" content="website" />
 
@@ -22,32 +22,29 @@
 
     <style>
         /* ============================================
-                   RESET & VARIABLES
+                   ROOT VARIABLES - SOUTH SUDAN INSPIRED
                    ============================================ */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         :root {
-            --primary: #1a2a6c;
-            --primary-light: #2c3e8a;
-            --primary-dark: #0d1b4a;
-            --secondary: #c9a84c;
-            --secondary-light: #e8d5a3;
-            --secondary-dark: #a8892e;
-            --accent-green: #2ecc71;
-            --accent-red: #e74c3c;
+            --primary: #0a1a3a;
+            --primary-light: #1a305a;
+            --primary-dark: #060e1f;
+            --secondary: #f4c430;
+            --secondary-light: #fada5e;
+            --secondary-dark: #d4a820;
+            --accent-green: #2e7d32;
+            --accent-green-light: #4caf50;
+            --accent-red: #c41e3a;
             --white: #ffffff;
-            --light-gray: #f8f7f4;
+            --light-gray: #f8f6f0;
             --gray: #6b7280;
-            --dark: #1a1a2e;
+            --dark: #0d1b3e;
             --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
             --shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.15);
+            --shadow-gold: 0 8px 32px rgba(244, 196, 48, 0.25);
             --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             --border-radius: 20px;
             --border-radius-sm: 12px;
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
         }
 
         html {
@@ -83,23 +80,23 @@
         .btn-primary {
             display: inline-block;
             padding: 16px 40px;
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-            color: var(--white);
+            background: var(--gold-gradient);
+            color: var(--primary);
             border: none;
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1rem;
             cursor: pointer;
             transition: var(--transition);
             text-decoration: none;
-            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+            box-shadow: var(--shadow-gold);
             position: relative;
             overflow: hidden;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(201, 168, 76, 0.4);
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 40px rgba(244, 196, 48, 0.4);
         }
 
         .btn-outline {
@@ -122,13 +119,53 @@
             transform: translateY(-3px);
         }
 
+        .btn-secondary {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(10, 26, 58, 0.3);
+        }
+
+        .btn-green {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--accent-green), var(--accent-green-light));
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.3);
+        }
+
+        .btn-green:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 40px rgba(46, 125, 50, 0.4);
+        }
+
         /* ============================================
                    SECTION HEADERS
                    ============================================ */
         .section-badge {
             display: inline-block;
             padding: 8px 24px;
-            background: rgba(201, 168, 76, 0.15);
+            background: rgba(244, 196, 48, 0.15);
             color: var(--secondary);
             border-radius: 50px;
             font-size: 0.8rem;
@@ -136,6 +173,7 @@
             letter-spacing: 2px;
             text-transform: uppercase;
             margin-bottom: 16px;
+            border: 1px solid rgba(244, 196, 48, 0.12);
         }
 
         .section-title {
@@ -148,6 +186,18 @@
 
         .section-title .highlight {
             color: var(--secondary);
+            position: relative;
+        }
+
+        .section-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold-gradient);
+            border-radius: 2px;
         }
 
         .section-subtitle {
@@ -166,17 +216,17 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 20px 0;
+            padding: 16px 0;
             transition: var(--transition);
-            background: rgba(26, 42, 108, 0.92);
+            background: rgba(10, 26, 58, 0.92);
             backdrop-filter: blur(16px);
-            border-bottom: 2px solid rgba(201, 168, 76, 0.15);
+            border-bottom: 2px solid rgba(244, 196, 48, 0.12);
         }
 
         .navbar.scrolled {
-            background: rgba(26, 42, 108, 0.98);
-            padding: 12px 0;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            background: rgba(10, 26, 58, 0.98);
+            padding: 10px 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
 
         .navbar .container {
@@ -188,21 +238,34 @@
         .navbar-brand {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             text-decoration: none;
         }
 
-        .navbar-brand .logo-icon {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+        .navbar-brand .logo-wrapper {
+            width: 50px;
+            height: 50px;
             border-radius: 12px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            color: var(--white);
+            background: var(--white);
+            border: 2px solid var(--secondary);
+            flex-shrink: 0;
+        }
+
+        .navbar-brand .logo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .navbar-brand .logo-wrapper .logo-placeholder {
+            font-size: 1.8rem;
             font-weight: 800;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
         }
 
         .navbar-brand .brand-text {
@@ -210,34 +273,40 @@
         }
 
         .navbar-brand .brand-text h2 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin: 0;
             line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-brand .brand-text h2 .gold {
+            color: var(--secondary);
         }
 
         .navbar-brand .brand-text span {
-            font-size: 0.7rem;
-            opacity: 0.8;
+            font-size: 0.65rem;
+            opacity: 0.7;
             letter-spacing: 3px;
             text-transform: uppercase;
             font-weight: 400;
             font-family: 'Inter', sans-serif;
+            display: block;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             list-style: none;
         }
 
         .nav-links a {
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             padding: 8px 18px;
             border-radius: 50px;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: var(--transition);
             position: relative;
         }
@@ -268,11 +337,11 @@
         }
 
         .nav-links .contact-btn {
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
-            color: var(--white) !important;
+            background: var(--gold-gradient);
+            color: var(--primary) !important;
             padding: 10px 28px;
             border-radius: 50px;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .nav-links .contact-btn::after {
@@ -281,7 +350,7 @@
 
         .nav-links .contact-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+            box-shadow: var(--shadow-gold);
         }
 
         .menu-toggle {
@@ -297,9 +366,9 @@
         .menu-toggle span {
             display: block;
             width: 28px;
-            height: 3px;
+            height: 2px;
             background: var(--white);
-            border-radius: 3px;
+            border-radius: 2px;
             transition: var(--transition);
         }
 
@@ -316,7 +385,7 @@
         }
 
         /* ============================================
-                   HERO WITH ROTATING BANNERS (DJML STYLE)
+                   HERO WITH ROTATING BANNERS
                    ============================================ */
         .hero {
             min-height: 100vh;
@@ -356,7 +425,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(13, 27, 62, 0.65);
+            background: rgba(10, 26, 58, 0.7);
         }
 
         .hero-slideshow .slide::before {
@@ -364,12 +433,11 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse at 30% 50%, rgba(201, 168, 76, 0.08) 0%, transparent 70%),
-                radial-gradient(ellipse at 70% 80%, rgba(201, 168, 76, 0.05) 0%, transparent 50%);
+                radial-gradient(ellipse at 30% 50%, rgba(244, 196, 48, 0.08) 0%, transparent 70%),
+                radial-gradient(ellipse at 70% 80%, rgba(244, 196, 48, 0.05) 0%, transparent 50%);
             z-index: 1;
         }
 
-        /* Slide Dots */
         .slide-dots {
             position: absolute;
             bottom: 40px;
@@ -407,11 +475,10 @@
         .slide-dots .dot.active {
             background: var(--secondary);
             border-color: var(--secondary);
-            box-shadow: 0 0 30px rgba(201, 168, 76, 0.3);
+            box-shadow: 0 0 30px rgba(244, 196, 48, 0.3);
             transform: scale(1.2);
         }
 
-        /* Hero Content */
         .hero .container {
             position: relative;
             z-index: 2;
@@ -425,7 +492,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(201, 168, 76, 0.1);
+            background: rgba(244, 196, 48, 0.1);
             color: var(--secondary);
             padding: 6px 18px 6px 8px;
             border-radius: 50px;
@@ -433,7 +500,7 @@
             font-weight: 600;
             letter-spacing: 0.5px;
             margin-bottom: 24px;
-            border: 1px solid rgba(201, 168, 76, 0.12);
+            border: 1px solid rgba(244, 196, 48, 0.12);
             backdrop-filter: blur(8px);
         }
 
@@ -469,7 +536,7 @@
         }
 
         .hero h1 .highlight {
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -488,7 +555,7 @@
 
         .hero p {
             font-size: clamp(1rem, 1.4vw, 1.25rem);
-            color: rgba(255, 255, 255, 0.7);
+            color: rgba(255, 255, 255, 0.75);
             max-width: 580px;
             line-height: 1.8;
             margin-bottom: 36px;
@@ -535,7 +602,6 @@
             font-weight: 400;
         }
 
-        /* Service Grid inside Hero */
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -584,12 +650,12 @@
         }
 
         .status-operational {
-            background: rgba(46, 204, 113, 0.2);
-            color: var(--accent-green);
+            background: rgba(46, 125, 50, 0.25);
+            color: #81c784;
         }
 
         .status-coming {
-            background: rgba(201, 168, 76, 0.2);
+            background: rgba(244, 196, 48, 0.2);
             color: var(--secondary);
         }
 
@@ -653,6 +719,36 @@
         }
 
         /* ============================================
+                   SOUTH SUDAN FLAG STRIP
+                   ============================================ */
+        .flag-strip {
+            display: flex;
+            height: 6px;
+            width: 100%;
+        }
+
+        .flag-strip .black {
+            flex: 1;
+            background: #000000;
+        }
+        .flag-strip .red {
+            flex: 1;
+            background: #c41e3a;
+        }
+        .flag-strip .green {
+            flex: 1;
+            background: #2e7d32;
+        }
+        .flag-strip .blue {
+            flex: 1;
+            background: #0a1a3a;
+        }
+        .flag-strip .yellow {
+            flex: 1;
+            background: #f4c430;
+        }
+
+        /* ============================================
                    SERVICES SECTION
                    ============================================ */
         .services {
@@ -684,7 +780,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--secondary), var(--secondary-dark));
+            background: var(--gold-gradient);
             opacity: 0;
             transition: var(--transition);
         }
@@ -740,6 +836,16 @@
 
         .service-card .learn-more:hover {
             gap: 14px;
+            color: var(--secondary-dark);
+        }
+
+        .status-badge.operational {
+            background: rgba(46, 125, 50, 0.12);
+            color: var(--accent-green);
+        }
+
+        .status-badge.coming {
+            background: rgba(244, 196, 48, 0.12);
             color: var(--secondary-dark);
         }
 
@@ -865,7 +971,7 @@
             right: -50%;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(201, 168, 76, 0.2), transparent 70%);
+            background: radial-gradient(circle, rgba(244, 196, 48, 0.2), transparent 70%);
             border-radius: 50%;
             animation: float-bg 15s ease-in-out infinite;
         }
@@ -886,14 +992,14 @@
             right: -20px;
             width: 140px;
             height: 140px;
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            background: var(--gold-gradient);
             border-radius: 50%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            color: var(--white);
-            box-shadow: 0 20px 40px rgba(201, 168, 76, 0.3);
+            color: var(--primary);
+            box-shadow: var(--shadow-gold);
         }
 
         .about-image .exp-badge .number {
@@ -907,7 +1013,7 @@
             font-size: 0.7rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .about-content h2 {
@@ -1004,12 +1110,12 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--secondary), var(--secondary-dark));
+            background: var(--gold-gradient);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
-            font-weight: 600;
+            color: var(--primary);
+            font-weight: 700;
             font-size: 1.2rem;
         }
 
@@ -1041,7 +1147,7 @@
             left: -30%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(201, 168, 76, 0.1), transparent 70%);
+            background: radial-gradient(circle, rgba(244, 196, 48, 0.08), transparent 70%);
             border-radius: 50%;
             animation: float-bg 20s ease-in-out infinite;
         }
@@ -1053,7 +1159,7 @@
             right: -20%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(201, 168, 76, 0.08), transparent 70%);
+            background: radial-gradient(circle, rgba(244, 196, 48, 0.06), transparent 70%);
             border-radius: 50%;
             animation: float-bg 25s ease-in-out infinite reverse;
         }
@@ -1069,8 +1175,12 @@
             margin-bottom: 16px;
         }
 
+        .cta h2 .highlight {
+            color: var(--secondary);
+        }
+
         .cta p {
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.75);
             font-size: 1.2rem;
             max-width: 600px;
             margin: 0 auto 32px;
@@ -1105,6 +1215,10 @@
             margin-bottom: 8px;
         }
 
+        .footer-brand h3 .gold {
+            color: var(--secondary);
+        }
+
         .footer-brand p {
             color: rgba(255, 255, 255, 0.6);
             font-size: 0.95rem;
@@ -1125,7 +1239,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
+            color: rgba(255, 255, 255, 0.4);
             text-decoration: none;
             transition: var(--transition);
             border: 1px solid rgba(255, 255, 255, 0.06);
@@ -1133,15 +1247,18 @@
 
         .footer-social a:hover {
             background: var(--secondary);
+            color: var(--primary);
             transform: translateY(-4px);
             border-color: var(--secondary);
         }
 
         .footer h4 {
             font-size: 1rem;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 20px;
             color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .footer-links {
@@ -1153,10 +1270,10 @@
         }
 
         .footer-links a {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.5);
             text-decoration: none;
             transition: var(--transition);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             display: inline-flex;
             align-items: center;
             gap: 8px;
@@ -1171,8 +1288,8 @@
             display: flex;
             gap: 12px;
             margin-bottom: 12px;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
         }
 
         .footer-contact li i {
@@ -1184,13 +1301,12 @@
         .footer-bottom {
             padding: 24px 0;
             text-align: center;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
         }
 
-        .footer-bottom a {
+        .footer-bottom .gold {
             color: var(--secondary);
-            text-decoration: none;
         }
 
         /* ============================================
@@ -1307,11 +1423,11 @@
                 grid-template-columns: 1fr 1fr 1fr;
                 gap: 12px;
             }
-            .hero-stat .number {
-                font-size: 1.8rem;
+            .hero-stats .stat .number {
+                font-size: 1.6rem;
             }
-            .hero-stat .label {
-                font-size: 0.75rem;
+            .hero-stats .stat .label {
+                font-size: 0.7rem;
             }
             .about-image .exp-badge {
                 width: 100px;
@@ -1340,6 +1456,11 @@
                 flex-direction: column;
                 align-items: center;
             }
+            .cta .buttons .btn-primary,
+            .cta .buttons .btn-outline {
+                width: 100%;
+                text-align: center;
+            }
             .slide-dots {
                 bottom: 20px;
                 gap: 10px;
@@ -1350,6 +1471,17 @@
             }
             .scroll-indicator {
                 display: none;
+            }
+            .navbar-brand .logo-wrapper {
+                width: 40px;
+                height: 40px;
+            }
+            .navbar-brand .brand-text h2 {
+                font-size: 1rem;
+            }
+            .navbar-brand .brand-text span {
+                font-size: 0.55rem;
+                letter-spacing: 2px;
             }
         }
 
@@ -1374,24 +1506,24 @@
                 grid-template-columns: 1fr 1fr 1fr;
             }
             .hero-stats .stat .number {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
             }
             .hero-stats .stat .label {
-                font-size: 0.65rem;
+                font-size: 0.6rem;
             }
             .section-title {
                 font-size: 1.8rem;
             }
+            .navbar-brand .logo-wrapper {
+                width: 34px;
+                height: 34px;
+            }
             .navbar-brand .brand-text h2 {
-                font-size: 1rem;
+                font-size: 0.85rem;
             }
             .navbar-brand .brand-text span {
-                font-size: 0.6rem;
-            }
-            .navbar-brand .logo-icon {
-                width: 38px;
-                height: 38px;
-                font-size: 1.2rem;
+                font-size: 0.5rem;
+                letter-spacing: 1px;
             }
         }
     </style>
@@ -1404,9 +1536,13 @@
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#" class="navbar-brand">
-                <div class="logo-icon">J</div>
+                <div class="logo-wrapper">
+                    <!-- REPLACE "logo.png" WITH YOUR ACTUAL LOGO FILE NAME -->
+                    <img src="logo.png" alt="Jolong Enterprises Logo" id="logoImage" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-placeholder\'>J</span>';" />
+                    <span class="logo-placeholder" style="display:none;">J</span>
+                </div>
                 <div class="brand-text">
-                    <h2>Jolong Enterprises</h2>
+                    <h2>Jolong <span class="gold">Enterprises</span></h2>
                     <span>Building South Sudan's Future</span>
                 </div>
             </a>
@@ -1429,7 +1565,18 @@
     </nav>
 
     <!-- ============================================
-    HERO WITH ROTATING BANNERS (DJML STYLE)
+    SOUTH SUDAN FLAG STRIP
+    ============================================ -->
+    <div class="flag-strip">
+        <div class="black"></div>
+        <div class="red"></div>
+        <div class="green"></div>
+        <div class="blue"></div>
+        <div class="yellow"></div>
+    </div>
+
+    <!-- ============================================
+    HERO WITH ROTATING BANNERS
     ============================================ -->
     <section class="hero" id="home">
         <div class="hero-slideshow" id="heroSlideshow">
@@ -1461,7 +1608,7 @@
             <div class="hero-content">
                 <div class="hero-badge">
                     <span class="dot"></span>
-                    Welcome to Jolong Enterprises
+                    🇸🇸 Proudly Serving South Sudan
                 </div>
                 <h1>
                     Building South Sudan's<br />
@@ -1552,7 +1699,7 @@
                 <!-- Service 1 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <span class="icon">🍽️</span>
-                    <span class="status-badge status-operational">● Operational</span>
+                    <span class="status-badge operational">● Operational</span>
                     <h3>Bar & Restaurant</h3>
                     <p>
                         Experience premium dining and entertainment at our flagship establishment.
@@ -1566,7 +1713,7 @@
                 <!-- Service 2 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="150">
                     <span class="icon">🏢</span>
-                    <span class="status-badge status-coming">● Coming Soon</span>
+                    <span class="status-badge coming">● Coming Soon</span>
                     <h3>Apartments</h3>
                     <p>
                         Modern, secure, and comfortable residential spaces in prime locations.
@@ -1580,7 +1727,7 @@
                 <!-- Service 3 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <span class="icon">🚚</span>
-                    <span class="status-badge status-operational">● Operational</span>
+                    <span class="status-badge operational">● Operational</span>
                     <h3>Transportation</h3>
                     <p>
                         Reliable logistics and passenger transport services across South Sudan.
@@ -1594,7 +1741,7 @@
                 <!-- Service 4 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="250">
                     <span class="icon">🏗️</span>
-                    <span class="status-badge status-coming">● Coming Soon</span>
+                    <span class="status-badge coming">● Coming Soon</span>
                     <h3>Warehouse Building</h3>
                     <p>
                         State-of-the-art warehousing solutions for businesses and organizations.
@@ -1608,7 +1755,7 @@
                 <!-- Service 5 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <span class="icon">🌾</span>
-                    <span class="status-badge status-coming">● Coming Soon</span>
+                    <span class="status-badge coming">● Coming Soon</span>
                     <h3>Farming</h3>
                     <p>
                         Sustainable agricultural practices for food security and economic growth.
@@ -1622,7 +1769,7 @@
                 <!-- Service 6 -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="350">
                     <span class="icon">⛴️</span>
-                    <span class="status-badge status-coming">● Coming Soon</span>
+                    <span class="status-badge coming">● Coming Soon</span>
                     <h3>Ferry Crossing</h3>
                     <p>
                         Connecting communities through South Sudan's new ferry crossing service.
@@ -1676,14 +1823,14 @@
                         <h3>Jolong Bar & Restaurant</h3>
                         <p>Premium dining and entertainment experience in the heart of Juba.</p>
                         <div class="meta">
-                            <span><i class="fas fa-map-marker-alt"></i> Juba</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</span>
                             <span><i class="fas fa-calendar"></i> 2023</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card" data-aos="flip-up" data-aos-delay="300">
-                    <div class="project-image" style="background:linear-gradient(135deg, var(--accent-green), #1a9c54);">
+                    <div class="project-image" style="background:linear-gradient(135deg, var(--accent-green), var(--accent-green-light));">
                         <span>🚚</span>
                         <span class="project-badge">Operational</span>
                     </div>
@@ -1708,7 +1855,7 @@
             <div class="about-grid">
                 <div class="about-image" data-aos="fade-right">
                     <div class="image-placeholder">
-                        <span>🏢</span>
+                        <span>🇸🇸</span>
                         <div class="exp-badge">
                             <span class="number">15+</span>
                             <span class="label">Years of Excellence</span>
@@ -1813,7 +1960,7 @@
                         <div class="avatar">PK</div>
                         <div class="info">
                             <div class="name">Peter Khamis</div>
-                            <div class="company">Business Executive</div>
+                            <div class="company">Business Executive, Juba</div>
                         </div>
                     </div>
                 </div>
@@ -1827,10 +1974,10 @@
     <section class="cta" id="contact">
         <div class="container">
             <div data-aos="zoom-in">
-                <h2>Ready to Partner with <span style="color:var(--secondary);">Jolong</span>?</h2>
+                <h2>Ready to Partner with <span class="highlight">Jolong</span>?</h2>
                 <p>
                     Contact us today to discuss your project needs. From transportation to hospitality,
-                    we're here to help you succeed.
+                    we're here to help you succeed in South Sudan.
                 </p>
                 <div class="buttons">
                     <a href="mailto:info@jolonges.com" class="btn-primary">
@@ -1851,7 +1998,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <h3>Jolong Enterprises <span style="color:var(--secondary);">Ltd</span></h3>
+                    <h3>Jolong <span class="gold">Enterprises</span> Ltd</h3>
                     <p>
                         Building South Sudan's future through excellence in hospitality,
                         infrastructure, transportation, and agriculture.
@@ -1899,7 +2046,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Jolong Enterprises Limited. All Rights Reserved.</p>
+                <p>&copy; 2026 <span class="gold">Jolong Enterprises Limited</span>. All Rights Reserved. 🇸🇸</p>
             </div>
         </div>
     </footer>
@@ -1924,7 +2071,7 @@
             });
 
             // ============================================
-            // HERO SLIDESHOW (DJML STYLE)
+            // HERO SLIDESHOW
             // ============================================
             (function() {
                 const slides = document.querySelectorAll('.hero-slideshow .slide');
@@ -2077,12 +2224,13 @@
             // DYNAMIC YEAR IN FOOTER
             // ============================================
             document.querySelector('.footer-bottom p').textContent =
-                '© ' + new Date().getFullYear() + ' Jolong Enterprises Limited. All Rights Reserved.';
+                '© ' + new Date().getFullYear() + ' Jolong Enterprises Limited. All Rights Reserved. 🇸🇸';
 
-            console.log('🚀 Jolong Enterprises Limited - Website Loaded Successfully!');
+            console.log('🚀 Jolong Enterprises Limited - South Sudan');
             console.log('📧 Contact: info@jolonges.com');
             console.log('📞 Phone: +211 922 005 177');
             console.log('🖼️ 3 Banners: Restaurant | Apartments | Transportation');
+            console.log('🇸🇸 Proudly Serving South Sudan');
 
         });
     </script>
