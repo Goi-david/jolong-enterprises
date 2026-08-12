@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Services - Jolong Enterprises Limited</title>
 
-    <meta name="description" content="Jolong Enterprises provides Bar & Restaurant, Apartments, Transportation, Warehouse Building, Farming, and Ferry Crossing services in Juba, South Sudan." />
+    <meta name="description" content="Jolong Enterprises provides Bar & Restaurant in Sherikat, Apartments in Sherikat, Transportation in Rockcity Juba, Warehouse Building in Rockcity Juba, Farming in Jonglei & Duk, and Ferry Crossing in Juba, South Sudan." />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -17,7 +17,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
     <style>
-        /* ===== BASE STYLES ===== */
+        /* ============================================
+                   RESET & VARIABLES
+                   ============================================ */
         * {
             margin: 0;
             padding: 0;
@@ -74,7 +76,9 @@
             padding: 0 24px;
         }
 
-        /* ===== BUTTONS ===== */
+        /* ============================================
+                   BUTTONS
+                   ============================================ */
         .btn-primary {
             display: inline-block;
             padding: 16px 40px;
@@ -135,6 +139,26 @@
             box-shadow: 0 20px 40px rgba(10, 26, 58, 0.3);
         }
 
+        .btn-gold {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--gold-gradient);
+            color: var(--primary);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(244, 196, 48, 0.4);
+        }
+
         .section-badge {
             display: inline-block;
             padding: 8px 24px;
@@ -180,7 +204,9 @@
             margin-bottom: 48px;
         }
 
-        /* ===== NAVBAR ===== */
+        /* ============================================
+                   NAVBAR
+                   ============================================ */
         .navbar {
             position: fixed;
             top: 0;
@@ -357,7 +383,9 @@
             transform: rotate(-45deg) translate(5px, -5px);
         }
 
-        /* ===== MOBILE MENU ===== */
+        /* ============================================
+                   MOBILE MENU
+                   ============================================ */
         .mobile-menu-overlay {
             position: fixed;
             top: 0;
@@ -500,7 +528,9 @@
             transform: translateY(-4px);
         }
 
-        /* ===== FLAG STRIP ===== */
+        /* ============================================
+                   FLAG STRIP
+                   ============================================ */
         .flag-strip {
             display: flex;
             height: 6px;
@@ -528,7 +558,9 @@
             background: #f4c430;
         }
 
-        /* ===== PAGE HEADER ===== */
+        /* ============================================
+                   PAGE HEADER
+                   ============================================ */
         .page-header {
             padding: 140px 0 60px;
             background: linear-gradient(135deg, var(--primary), var(--primary-light));
@@ -590,7 +622,7 @@
         .page-header p {
             color: rgba(255, 255, 255, 0.7);
             font-size: 1.2rem;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
         }
 
@@ -613,17 +645,41 @@
             color: var(--white);
         }
 
-        /* ===== SERVICES DETAIL PAGE ===== */
+        /* ============================================
+                   SERVICES DETAIL PAGE
+                   ============================================ */
         .services-detail {
             padding: 80px 0;
             background: var(--light-gray);
         }
 
-        .services-detail-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 40px;
+        .services-detail .service-filters {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .services-detail .service-filters button {
+            padding: 10px 28px;
+            border-radius: 50px;
+            border: 2px solid rgba(0, 0, 0, 0.06);
+            background: var(--white);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--gray);
+        }
+
+        .services-detail .service-filters button:hover,
+        .services-detail .service-filters button.active {
+            background: var(--gold-gradient);
+            color: var(--primary);
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
         }
 
         .service-detail-card {
@@ -632,15 +688,25 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
+            margin-bottom: 40px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
         }
 
         .service-detail-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
         }
 
+        .service-detail-card .service-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            min-height: 300px;
+        }
+
         .service-detail-card .service-image {
-            height: 250px;
+            height: 100%;
+            min-height: 300px;
             background-size: cover;
             background-position: center;
             position: relative;
@@ -648,9 +714,9 @@
 
         .service-detail-card .service-image .service-status {
             position: absolute;
-            top: 16px;
-            right: 16px;
-            padding: 6px 18px;
+            top: 20px;
+            right: 20px;
+            padding: 6px 20px;
             border-radius: 50px;
             font-size: 0.7rem;
             font-weight: 600;
@@ -670,51 +736,212 @@
             color: var(--primary);
         }
 
-        .service-detail-card .service-body {
-            padding: 30px;
+        .service-detail-card .service-image .service-location-tag {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background: rgba(10, 26, 58, 0.8);
+            backdrop-filter: blur(10px);
+            color: var(--white);
         }
 
-        .service-detail-card .service-body .service-icon {
-            font-size: 2.5rem;
+        .service-detail-card .service-image .service-location-tag i {
+            color: var(--secondary);
+            margin-right: 6px;
+        }
+
+        .service-detail-card .service-info {
+            padding: 40px 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .service-detail-card .service-info .service-icon {
+            font-size: 2.8rem;
             margin-bottom: 12px;
             display: block;
         }
 
-        .service-detail-card .service-body h3 {
-            font-size: 1.5rem;
+        .service-detail-card .service-info h3 {
+            font-size: 1.8rem;
             color: var(--primary);
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
-        .service-detail-card .service-body p {
+        .service-detail-card .service-info .service-location {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+            background: rgba(244, 196, 48, 0.08);
+            padding: 4px 16px;
+            border-radius: 50px;
+            width: fit-content;
+        }
+
+        .service-detail-card .service-info .service-location i {
+            font-size: 0.9rem;
+        }
+
+        .service-detail-card .service-info p {
             color: var(--gray);
             line-height: 1.8;
             margin-bottom: 16px;
         }
 
-        .service-detail-card .service-body .feature-list {
-            list-style: none;
-            padding: 0;
+        .service-detail-card .service-info .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
             margin-bottom: 20px;
         }
 
-        .service-detail-card .service-body .feature-list li {
+        .service-detail-card .service-info .feature-grid .feature-item {
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-            color: var(--gray);
-            font-size: 0.95rem;
+            padding: 8px 12px;
+            background: var(--light-gray);
+            border-radius: var(--border-radius-sm);
+            font-size: 0.9rem;
+            color: var(--dark);
+            transition: var(--transition);
         }
 
-        .service-detail-card .service-body .feature-list li i {
+        .service-detail-card .service-info .feature-grid .feature-item:hover {
+            background: rgba(244, 196, 48, 0.08);
+            transform: translateX(4px);
+        }
+
+        .service-detail-card .service-info .feature-grid .feature-item i {
             color: var(--secondary);
-            font-size: 1rem;
-            width: 20px;
+            font-size: 0.9rem;
+            width: 18px;
         }
 
-        /* ===== FOOTER ===== */
+        .service-detail-card .service-info .service-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 8px;
+        }
+
+        .service-detail-card .service-info .service-actions a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ============================================
+                   LOCATION MAP SECTION
+                   ============================================ */
+        .location-section {
+            padding: 60px 0;
+            background: var(--white);
+        }
+
+        .location-section .location-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .location-card {
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+            padding: 30px 24px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .location-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+            background: var(--white);
+        }
+
+        .location-card .location-icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 12px;
+            color: var(--secondary);
+        }
+
+        .location-card h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .location-card .area {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 8px;
+        }
+
+        .location-card .service-list {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        .location-card .service-list span {
+            display: inline-block;
+            background: rgba(244, 196, 48, 0.08);
+            padding: 2px 12px;
+            border-radius: 50px;
+            margin: 2px 4px;
+            font-size: 0.75rem;
+            color: var(--secondary-dark);
+        }
+
+        /* ============================================
+                   CTA SECTION
+                   ============================================ */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            text-align: center;
+            width: 100%;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .cta-section h2 .highlight {
+            color: var(--secondary);
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .cta-section .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* ============================================
+                   FOOTER
+                   ============================================ */
         .footer {
             background: var(--primary-dark);
             color: var(--white);
@@ -843,7 +1070,9 @@
             gap: 12px;
         }
 
-        /* ===== BACK TO TOP ===== */
+        /* ============================================
+                   BACK TO TOP
+                   ============================================ */
         .back-top {
             position: fixed;
             bottom: 30px;
@@ -879,16 +1108,27 @@
             box-shadow: 0 12px 40px rgba(244, 196, 48, 0.4);
         }
 
-        /* ===== RESPONSIVE ===== */
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
         @media (max-width: 992px) {
-            .services-detail-grid {
+            .service-detail-card .service-header {
                 grid-template-columns: 1fr;
+            }
+            .service-detail-card .service-image {
+                min-height: 250px;
+            }
+            .location-section .location-grid {
+                grid-template-columns: 1fr 1fr;
             }
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
             .page-header h1 {
                 font-size: 2.8rem;
+            }
+            .service-detail-card .service-info .feature-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -899,7 +1139,7 @@
             .nav-links {
                 display: none !important;
             }
-            .services-detail-grid {
+            .location-section .location-grid {
                 grid-template-columns: 1fr;
             }
             .footer-grid {
@@ -930,8 +1170,40 @@
                 font-size: 0.55rem;
                 letter-spacing: 2px;
             }
+            .service-detail-card .service-info {
+                padding: 24px 20px;
+            }
+            .service-detail-card .service-info h3 {
+                font-size: 1.4rem;
+            }
             .service-detail-card .service-image {
-                height: 200px;
+                min-height: 200px;
+            }
+            .service-detail-card .service-info .service-actions {
+                flex-direction: column;
+            }
+            .service-detail-card .service-info .service-actions a {
+                width: 100%;
+                justify-content: center;
+            }
+            .services-detail .service-filters {
+                gap: 8px;
+            }
+            .services-detail .service-filters button {
+                padding: 8px 16px;
+                font-size: 0.8rem;
+            }
+            .cta-section h2 {
+                font-size: 2.2rem;
+            }
+            .cta-section .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cta-section .buttons .btn-primary,
+            .cta-section .buttons .btn-outline {
+                width: 100%;
+                text-align: center;
             }
         }
 
@@ -959,6 +1231,21 @@
                 font-size: 1.4rem;
                 bottom: 16px;
                 right: 16px;
+            }
+            .service-detail-card .service-image {
+                min-height: 160px;
+            }
+            .service-detail-card .service-image .service-status {
+                font-size: 0.6rem;
+                padding: 4px 12px;
+            }
+            .service-detail-card .service-image .service-location-tag {
+                font-size: 0.65rem;
+                padding: 4px 12px;
+            }
+            .service-detail-card .service-info .feature-grid .feature-item {
+                font-size: 0.8rem;
+                padding: 6px 10px;
             }
         }
     </style>
@@ -1034,7 +1321,7 @@
     <section class="page-header">
         <div class="container">
             <h1>Our <span class="highlight">Services</span></h1>
-            <p>Delivering excellence across six diverse business divisions in South Sudan</p>
+            <p>From hospitality in Sherikat to agriculture in Jonglei and Duk, we deliver excellence across six business divisions in South Sudan.</p>
             <div class="breadcrumb">
                 <a href="index.html">Home</a>
                 <span>/</span>
@@ -1044,157 +1331,343 @@
     </section>
 
     <!-- ===== SERVICES DETAIL ===== -->
-    <section class="services-detail">
+    <section class="services-detail" id="services">
         <div class="container">
             <div class="text-center" data-aos="fade-up">
                 <span class="section-badge">What We Do</span>
-                <h2 class="section-title">Our <span class="highlight">Services</span></h2>
+                <h2 class="section-title">Explore Our <span class="highlight">Services</span></h2>
                 <p class="section-subtitle" style="margin:0 auto 48px;">
-                    From hospitality to infrastructure, we deliver excellence across six
-                    business divisions, serving Juba and beyond with integrity and innovation.
+                    From hospitality to infrastructure, we deliver excellence across six business divisions,
+                    serving Juba, Sherikat, Rockcity, Jonglei, Duk, and beyond.
                 </p>
             </div>
 
-            <div class="services-detail-grid">
-                <!-- Service 1: Bar & Restaurant -->
-                <div class="service-detail-card" data-aos="fade-up" data-aos-delay="100">
+            <!-- Service Filters -->
+            <div class="service-filters" data-aos="fade-up">
+                <button class="active" data-filter="all">All Services</button>
+                <button data-filter="operational">Operational</button>
+                <button data-filter="coming">Coming Soon</button>
+                <button data-filter="sherikat">Sherikat</button>
+                <button data-filter="juba">Juba</button>
+                <button data-filter="jonglei">Jonglei</button>
+            </div>
+
+            <!-- ========================================
+            SERVICE 1: BAR & RESTAURANT
+            ======================================== -->
+            <div class="service-detail-card" data-aos="fade-up" data-aos-delay="100" data-category="operational sherikat" id="bar-restaurant">
+                <div class="service-header">
                     <div class="service-image" style="background-image: url('brr.jpg');">
                         <span class="service-status operational">● Operational</span>
+                        <span class="service-location-tag"><i class="fas fa-map-marker-alt"></i> Sherikat, Juba</span>
                     </div>
-                    <div class="service-body">
+                    <div class="service-info">
                         <span class="service-icon">🍽️</span>
                         <h3>Bar & Restaurant</h3>
-                        <p>Experience premium dining and entertainment at our flagship establishment in Juba. Offering a diverse menu, signature cocktails, and an elegant atmosphere perfect for business meetings, special occasions, and casual dining.</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Fine Dining Restaurant</li>
-                            <li><i class="fas fa-check-circle"></i> Signature Cocktail Bar</li>
-                            <li><i class="fas fa-check-circle"></i> Event Space & Private Dining</li>
-                            <li><i class="fas fa-check-circle"></i> Outdoor Seating Area</li>
-                            <li><i class="fas fa-check-circle"></i> Live Entertainment Nights</li>
-                        </ul>
-                        <a href="bar-restaurant.html" class="btn-secondary">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <div class="service-location">
+                            <i class="fas fa-map-pin"></i> Sherikat, Juba
+                        </div>
+                        <p>
+                            Experience premium dining and entertainment at our flagship establishment in Sherikat, Juba.
+                            Offering a diverse menu of local and international cuisine, signature cocktails,
+                            and an elegant atmosphere perfect for business meetings, special occasions, and casual dining.
+                        </p>
+                        <div class="feature-grid">
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Fine Dining Restaurant</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Signature Cocktail Bar</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Event Space & Private Dining</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Outdoor Seating Area</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Live Entertainment Nights</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Business Lunch Specials</div>
+                        </div>
+                        <div class="service-actions">
+                            <a href="#" class="btn-gold"><i class="fas fa-utensils"></i> View Menu</a>
+                            <a href="contact.html" class="btn-secondary"><i class="fas fa-calendar-check"></i> Book a Table</a>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Service 2: Apartments -->
-                <div class="service-detail-card" data-aos="fade-up" data-aos-delay="150">
+            <!-- ========================================
+            SERVICE 2: APARTMENTS
+            ======================================== -->
+            <div class="service-detail-card" data-aos="fade-up" data-aos-delay="150" data-category="coming sherikat" id="apartments">
+                <div class="service-header">
                     <div class="service-image" style="background-image: url('ap.jpg');">
                         <span class="service-status coming">● Coming Soon</span>
+                        <span class="service-location-tag"><i class="fas fa-map-marker-alt"></i> Sherikat, Juba</span>
                     </div>
-                    <div class="service-body">
+                    <div class="service-info">
                         <span class="service-icon">🏢</span>
                         <h3>Apartments</h3>
-                        <p>Modern, secure, and comfortable residential spaces in prime locations across Juba. Designed for both short-term stays and long-term living with premium amenities and professional management.</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Modern Architecture & Design</li>
-                            <li><i class="fas fa-check-circle"></i> 24/7 Security & Surveillance</li>
-                            <li><i class="fas fa-check-circle"></i> Fully Furnished Options</li>
-                            <li><i class="fas fa-check-circle"></i> Parking & Amenities</li>
-                            <li><i class="fas fa-check-circle"></i> Prime Location Access</li>
-                        </ul>
-                        <a href="apartments.html" class="btn-secondary">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <div class="service-location">
+                            <i class="fas fa-map-pin"></i> Sherikat, Juba
+                        </div>
+                        <p>
+                            Modern, secure, and comfortable residential spaces in prime locations in Sherikat, Juba.
+                            Designed for both short-term stays and long-term living with premium amenities,
+                            professional management, and 24/7 security.
+                        </p>
+                        <div class="feature-grid">
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Modern Architecture & Design</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> 24/7 Security & Surveillance</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Fully Furnished Options</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Secure Parking</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Prime Location Access</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Property Management Services</div>
+                        </div>
+                        <div class="service-actions">
+                            <a href="#" class="btn-gold"><i class="fas fa-image"></i> View Gallery</a>
+                            <a href="contact.html" class="btn-secondary"><i class="fas fa-home"></i> Inquire Now</a>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Service 3: Transportation -->
-                <div class="service-detail-card" data-aos="fade-up" data-aos-delay="200">
+            <!-- ========================================
+            SERVICE 3: TRANSPORTATION
+            ======================================== -->
+            <div class="service-detail-card" data-aos="fade-up" data-aos-delay="200" data-category="operational juba" id="transportation">
+                <div class="service-header">
                     <div class="service-image" style="background-image: url('hgk.jpg');">
                         <span class="service-status operational">● Operational</span>
+                        <span class="service-location-tag"><i class="fas fa-map-marker-alt"></i> Rockcity, Juba</span>
                     </div>
-                    <div class="service-body">
+                    <div class="service-info">
                         <span class="service-icon">🚚</span>
                         <h3>Transportation</h3>
-                        <p>Reliable logistics and passenger transport services across South Sudan. Well-maintained vehicles and professional drivers ensure safety, punctuality, and customer satisfaction.</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Goods & Equipment Transport</li>
-                            <li><i class="fas fa-check-circle"></i> Passenger Transportation</li>
-                            <li><i class="fas fa-check-circle"></i> Local Distribution Services</li>
-                            <li><i class="fas fa-check-circle"></i> Project Support Logistics</li>
-                            <li><i class="fas fa-check-circle"></i> Professional Drivers</li>
-                        </ul>
-                        <a href="transportation.html" class="btn-secondary">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <div class="service-location">
+                            <i class="fas fa-map-pin"></i> Rockcity, Juba
+                        </div>
+                        <p>
+                            Reliable logistics and passenger transport services based in Rockcity, Juba, serving all of South Sudan.
+                            Well-maintained vehicles and professional drivers ensure safety, punctuality,
+                            and customer satisfaction for all your transportation needs.
+                        </p>
+                        <div class="feature-grid">
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Goods & Equipment Transport</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Passenger Transportation</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Local Distribution Services</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Project Support Logistics</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Professional Drivers</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Fleet of Well-Maintained Vehicles</div>
+                        </div>
+                        <div class="service-actions">
+                            <a href="#" class="btn-gold"><i class="fas fa-truck"></i> Request a Quote</a>
+                            <a href="contact.html" class="btn-secondary"><i class="fas fa-phone"></i> Call for Booking</a>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Service 4: Warehouse Building -->
-                <div class="service-detail-card" data-aos="fade-up" data-aos-delay="250">
+            <!-- ========================================
+            SERVICE 4: WAREHOUSE BUILDING
+            ======================================== -->
+            <div class="service-detail-card" data-aos="fade-up" data-aos-delay="250" data-category="coming juba" id="warehouse">
+                <div class="service-header">
                     <div class="service-image" style="background-image: url('Modern Warehousing.jpg');">
                         <span class="service-status coming">● Coming Soon</span>
+                        <span class="service-location-tag"><i class="fas fa-map-marker-alt"></i> Rockcity, Juba</span>
                     </div>
-                    <div class="service-body">
+                    <div class="service-info">
                         <span class="service-icon">🏗️</span>
                         <h3>Warehouse Building</h3>
-                        <p>State-of-the-art warehousing solutions for businesses and organizations. Secure, accessible, and designed to meet modern storage and distribution needs in South Sudan.</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Modern Storage Facilities</li>
-                            <li><i class="fas fa-check-circle"></i> Secure & Accessible Locations</li>
-                            <li><i class="fas fa-check-circle"></i> Custom Storage Solutions</li>
-                            <li><i class="fas fa-check-circle"></i> Inventory Management</li>
-                            <li><i class="fas fa-check-circle"></i> Distribution Support</li>
-                        </ul>
-                        <a href="warehouse.html" class="btn-secondary">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <div class="service-location">
+                            <i class="fas fa-map-pin"></i> Rockcity, Juba
+                        </div>
+                        <p>
+                            State-of-the-art warehousing solutions for businesses and organizations in Rockcity, Juba.
+                            Secure, accessible, and designed to meet modern storage and distribution needs
+                            with professional management and 24/7 security.
+                        </p>
+                        <div class="feature-grid">
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Modern Storage Facilities</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Secure & Accessible Locations</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Custom Storage Solutions</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Inventory Management</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Distribution Support</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> 24/7 Security</div>
+                        </div>
+                        <div class="service-actions">
+                            <a href="#" class="btn-gold"><i class="fas fa-warehouse"></i> View Facilities</a>
+                            <a href="contact.html" class="btn-secondary"><i class="fas fa-clipboard-list"></i> Inquire Now</a>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Service 5: Farming -->
-                <div class="service-detail-card" data-aos="fade-up" data-aos-delay="300">
+            <!-- ========================================
+            SERVICE 5: FARMING
+            ======================================== -->
+            <div class="service-detail-card" data-aos="fade-up" data-aos-delay="300" data-category="coming jonglei" id="farming">
+                <div class="service-header">
                     <div class="service-image" style="background-image: url('farming.jpg');">
                         <span class="service-status coming">● Coming Soon</span>
+                        <span class="service-location-tag"><i class="fas fa-map-marker-alt"></i> Jonglei &amp; Duk</span>
                     </div>
-                    <div class="service-body">
+                    <div class="service-info">
                         <span class="service-icon">🌾</span>
                         <h3>Farming</h3>
-                        <p>Sustainable agricultural practices for food security and economic growth. Modern farming techniques to support South Sudan's agricultural sector and local communities.</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Sustainable Agriculture</li>
-                            <li><i class="fas fa-check-circle"></i> Crop Production & Management</li>
-                            <li><i class="fas fa-check-circle"></i> Livestock Farming</li>
-                            <li><i class="fas fa-check-circle"></i> Food Security Initiatives</li>
-                            <li><i class="fas fa-check-circle"></i> Community Support Programs</li>
-                        </ul>
-                        <a href="farming.html" class="btn-secondary">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <div class="service-location">
+                            <i class="fas fa-map-pin"></i> Jonglei &amp; Duk
+                        </div>
+                        <p>
+                            Sustainable agricultural practices for food security and economic growth in Jonglei and Duk.
+                            Modern farming techniques to support South Sudan's agricultural sector,
+                            empower local communities, and ensure food sovereignty.
+                        </p>
+                        <div class="feature-grid">
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Sustainable Agriculture</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Crop Production & Management</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Livestock Farming</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Food Security Initiatives</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Community Support Programs</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Modern Farming Techniques</div>
+                        </div>
+                        <div class="service-actions">
+                            <a href="#" class="btn-gold"><i class="fas fa-seedling"></i> Learn More</a>
+                            <a href="contact.html" class="btn-secondary"><i class="fas fa-handshake"></i> Partner with Us</a>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Service 6: Ferry Crossing -->
-                <div class="service-detail-card" data-aos="fade-up" data-aos-delay="350">
+            <!-- ========================================
+            SERVICE 6: FERRY CROSSING
+            ======================================== -->
+            <div class="service-detail-card" data-aos="fade-up" data-aos-delay="350" data-category="coming juba" id="ferry">
+                <div class="service-header">
                     <div class="service-image" style="background-image: url('fr.jpg');">
                         <span class="service-status coming">● Coming Soon</span>
+                        <span class="service-location-tag"><i class="fas fa-map-marker-alt"></i> Juba</span>
                     </div>
-                    <div class="service-body">
+                    <div class="service-info">
                         <span class="service-icon">⛴️</span>
                         <h3>Ferry Crossing</h3>
-                        <p>Connecting communities through South Sudan's new ferry crossing service. Safe, reliable, and efficient water transportation for people and goods across rivers and waterways.</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check-circle"></i> Passenger Ferry Services</li>
-                            <li><i class="fas fa-check-circle"></i> Goods & Vehicle Transport</li>
-                            <li><i class="fas fa-check-circle"></i> Safe & Reliable Operations</li>
-                            <li><i class="fas fa-check-circle"></i> Multiple Crossing Points</li>
-                            <li><i class="fas fa-check-circle"></i> Community Connection</li>
-                        </ul>
-                        <a href="ferry.html" class="btn-secondary">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <div class="service-location">
+                            <i class="fas fa-map-pin"></i> Juba
+                        </div>
+                        <p>
+                            Connecting communities through South Sudan's new ferry crossing service based in Juba.
+                            Safe, reliable, and efficient water transportation for people and goods across rivers
+                            and waterways, serving communities and facilitating trade.
+                        </p>
+                        <div class="feature-grid">
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Passenger Ferry Services</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Goods & Vehicle Transport</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Safe & Reliable Operations</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Multiple Crossing Points</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Community Connection</div>
+                            <div class="feature-item"><i class="fas fa-check-circle"></i> Professional Crew</div>
+                        </div>
+                        <div class="service-actions">
+                            <a href="#" class="btn-gold"><i class="fas fa-ship"></i> View Schedule</a>
+                            <a href="contact.html" class="btn-secondary"><i class="fas fa-ticket-alt"></i> Book Passage</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== CTA SECTION ===== -->
-    <section class="cta" style="padding:80px 0; background:linear-gradient(135deg, var(--primary), var(--primary-dark)); text-align:center; width:100%;">
+    <!-- ============================================
+    LOCATION MAP SECTION
+    ============================================ -->
+    <section class="location-section">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge">Where We Operate</span>
+                <h2 class="section-title">Our <span class="highlight">Locations</span></h2>
+                <p class="section-subtitle" style="margin:0 auto 48px;">
+                    Serving communities across South Sudan with excellence in every location.
+                </p>
+            </div>
+
+            <div class="location-grid">
+                <!-- Sherikat -->
+                <div class="location-card" data-aos="flip-up" data-aos-delay="100">
+                    <span class="location-icon">🏙️</span>
+                    <h4>Sherikat</h4>
+                    <div class="area">Juba</div>
+                    <div class="service-list">
+                        <span>🍽️ Bar & Restaurant</span>
+                        <span>🏢 Apartments</span>
+                    </div>
+                </div>
+
+                <!-- Rockcity -->
+                <div class="location-card" data-aos="flip-up" data-aos-delay="200">
+                    <span class="location-icon">🏗️</span>
+                    <h4>Rockcity</h4>
+                    <div class="area">Juba</div>
+                    <div class="service-list">
+                        <span>🚚 Transportation</span>
+                        <span>🏗️ Warehouse Building</span>
+                    </div>
+                </div>
+
+                <!-- Jonglei & Duk -->
+                <div class="location-card" data-aos="flip-up" data-aos-delay="300">
+                    <span class="location-icon">🌾</span>
+                    <h4>Jonglei &amp; Duk</h4>
+                    <div class="area">Greater Jonglei Region</div>
+                    <div class="service-list">
+                        <span>🌾 Farming</span>
+                    </div>
+                </div>
+
+                <!-- Juba (Ferry) -->
+                <div class="location-card" data-aos="flip-up" data-aos-delay="400">
+                    <span class="location-icon">⛴️</span>
+                    <h4>Juba</h4>
+                    <div class="area">Central Equatoria</div>
+                    <div class="service-list">
+                        <span>⛴️ Ferry Crossing</span>
+                    </div>
+                </div>
+
+                <!-- Nationwide -->
+                <div class="location-card" data-aos="flip-up" data-aos-delay="500">
+                    <span class="location-icon">🇸🇸</span>
+                    <h4>Nationwide</h4>
+                    <div class="area">Across South Sudan</div>
+                    <div class="service-list">
+                        <span>🚚 Transportation</span>
+                        <span>🚛 Logistics</span>
+                    </div>
+                </div>
+
+                <!-- Headquarters -->
+                <div class="location-card" data-aos="flip-up" data-aos-delay="600">
+                    <span class="location-icon">🏢</span>
+                    <h4>Head Office</h4>
+                    <div class="area">Juba</div>
+                    <div class="service-list">
+                        <span>📋 Administration</span>
+                        <span>📞 Customer Service</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    CTA SECTION
+    ============================================ -->
+    <section class="cta-section">
         <div class="container" data-aos="zoom-in">
-            <h2 style="font-size:3rem; color:var(--white); margin-bottom:16px;">Ready to Partner with <span style="color:var(--secondary);">Jolong</span>?</h2>
-            <p style="color:rgba(255,255,255,0.75); font-size:1.2rem; max-width:600px; margin:0 auto 32px;">
-                Contact us today to discuss your project needs. From transportation to hospitality,
-                we're here to help you succeed in South Sudan.
-            </p>
-            <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+            <h2>Ready to Partner with <span class="highlight">Jolong</span>?</h2>
+            <p>Contact us today to discuss your project needs. From hospitality to agriculture, we're here to help you succeed in South Sudan.</p>
+            <div class="buttons">
                 <a href="contact.html" class="btn-primary"><i class="fas fa-envelope"></i> Contact Us</a>
                 <a href="tel:+211922005177" class="btn-outline"><i class="fas fa-phone"></i> Call Us</a>
             </div>
         </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -1224,12 +1697,12 @@
                 <div>
                     <h4>Our Services</h4>
                     <ul class="footer-links">
-                        <li><a href="bar-restaurant.html">Bar & Restaurant</a></li>
-                        <li><a href="apartments.html">Apartments</a></li>
-                        <li><a href="transportation.html">Transportation</a></li>
-                        <li><a href="warehouse.html">Warehouse Building</a></li>
-                        <li><a href="farming.html">Farming</a></li>
-                        <li><a href="ferry.html">Ferry Crossing</a></li>
+                        <li><a href="#bar-restaurant">Bar & Restaurant</a></li>
+                        <li><a href="#apartments">Apartments</a></li>
+                        <li><a href="#transportation">Transportation</a></li>
+                        <li><a href="#warehouse">Warehouse Building</a></li>
+                        <li><a href="#farming">Farming</a></li>
+                        <li><a href="#ferry">Ferry Crossing</a></li>
                     </ul>
                 </div>
 
@@ -1267,6 +1740,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
+            // AOS INIT
             AOS.init({
                 duration: 800,
                 once: true,
@@ -1316,6 +1790,34 @@
                 }
             });
 
+            // SERVICE FILTERS
+            const filterButtons = document.querySelectorAll('.service-filters button');
+            const serviceCards = document.querySelectorAll('.service-detail-card');
+
+            filterButtons.forEach(function(button) {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(function(btn) {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+
+                    const filter = this.dataset.filter;
+
+                    serviceCards.forEach(function(card) {
+                        if (filter === 'all') {
+                            card.style.display = 'block';
+                        } else {
+                            const categories = card.dataset.category.split(' ');
+                            if (categories.includes(filter)) {
+                                card.style.display = 'block';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+
             // BACK TO TOP
             const backTop = document.getElementById('backTop');
             const backTopLink = document.getElementById('backTopLink');
@@ -1346,6 +1848,9 @@
             if (footerYear) {
                 footerYear.innerHTML = footerYear.innerHTML.replace('2026', new Date().getFullYear());
             }
+
+            console.log('🚀 Jolong Enterprises Limited - Services Page');
+            console.log('📍 Locations: Sherikat | Rockcity | Jonglei | Duk | Juba');
 
         });
     </script>
