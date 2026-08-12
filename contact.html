@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us - Jolong Enterprises Limited</title>
 
-    <meta name="description" content="Contact Jolong Enterprises for Bar & Restaurant, Apartments, Transportation, Warehouse Building, Farming, and Ferry Crossing services in Juba, South Sudan." />
+    <meta name="description" content="Contact Jolong Enterprises at Sudken Sherikat, Juba. Reach us for Bar & Restaurant, Apartments, Transportation, Warehouse, Farming, and Ferry services in South Sudan." />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -17,9 +17,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
     <style>
-        /* Use the same styles as testimonials.html - copy all CSS */
-        /* (For brevity, I'm reusing the same styles as the other pages) */
-
+        /* ============================================
+                   RESET & VARIABLES
+                   ============================================ */
         * {
             margin: 0;
             padding: 0;
@@ -165,7 +165,7 @@
         }
 
         /* ============================================
-                   NAVBAR (same as other pages)
+                   NAVBAR
                    ============================================ */
         .navbar {
             position: fixed;
@@ -783,6 +783,52 @@
             box-shadow: 0 12px 40px rgba(244, 196, 48, 0.4);
         }
 
+        .contact-form .submit-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Success Message */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .form-success.show {
+            display: block;
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .form-success .success-icon {
+            font-size: 4rem;
+            color: var(--accent-green);
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .form-success h4 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .form-success p {
+            color: var(--gray);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* ============================================
                    MAP SECTION
                    ============================================ */
@@ -802,6 +848,7 @@
             justify-content: center;
             color: var(--gray);
             font-size: 1.2rem;
+            position: relative;
         }
 
         .map-section .map-container iframe {
@@ -819,6 +866,31 @@
             color: var(--secondary);
             display: block;
             margin-bottom: 12px;
+        }
+
+        .map-section .map-container .map-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(10, 26, 58, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 12px 20px;
+            border-radius: var(--border-radius-sm);
+            color: var(--white);
+            border-left: 3px solid var(--secondary);
+        }
+
+        .map-section .map-container .map-overlay .map-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .map-section .map-container .map-overlay .map-address {
+            font-size: 0.95rem;
+            font-weight: 500;
         }
 
         /* ============================================
@@ -1087,6 +1159,26 @@
             .map-section .map-container {
                 height: 250px;
             }
+            .map-section .map-container .map-overlay {
+                bottom: 12px;
+                left: 12px;
+                padding: 10px 16px;
+            }
+            .map-section .map-container .map-overlay .map-address {
+                font-size: 0.8rem;
+            }
+            .cta-section h2 {
+                font-size: 2.2rem;
+            }
+            .cta-section .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cta-section .buttons .btn-primary,
+            .cta-section .buttons .btn-outline {
+                width: 100%;
+                text-align: center;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1121,6 +1213,17 @@
             }
             .contact-details .detail-item .icon {
                 margin-bottom: 8px;
+            }
+            .map-section .map-container {
+                height: 200px;
+            }
+            .map-section .map-container .map-overlay {
+                bottom: 8px;
+                left: 8px;
+                padding: 8px 12px;
+            }
+            .map-section .map-container .map-overlay .map-address {
+                font-size: 0.7rem;
             }
         }
     </style>
@@ -1196,7 +1299,7 @@
     <section class="page-header">
         <div class="container">
             <h1>Get in <span class="highlight">Touch</span></h1>
-            <p>We're here to help. Reach out to us for any inquiries about our services.</p>
+            <p>Visit us at Sudken Sherikat, Juba. We're here to help with all your service needs.</p>
             <div class="breadcrumb">
                 <a href="index.html">Home</a>
                 <span>/</span>
@@ -1223,7 +1326,7 @@
                             <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                             <div class="info">
                                 <div class="label">Location</div>
-                                <div class="value">Juba, South Sudan</div>
+                                <div class="value">Sudken Sherikat, Juba, South Sudan</div>
                             </div>
                         </div>
 
@@ -1279,7 +1382,8 @@
                     <h3>Send Us a <span class="highlight">Message</span></h3>
                     <p class="form-sub">We'll get back to you within 24 hours.</p>
 
-                    <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                    <!-- Form -->
+                    <form id="contactForm">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Full Name <span class="required">*</span></label>
@@ -1315,10 +1419,17 @@
                             <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
                         </div>
 
-                        <button type="submit" class="submit-btn">
+                        <button type="submit" class="submit-btn" id="submitBtn">
                             <i class="fas fa-paper-plane"></i> Send Message
                         </button>
                     </form>
+
+                    <!-- Success Message -->
+                    <div class="form-success" id="formSuccess">
+                        <span class="success-icon">✅</span>
+                        <h4>Message Sent Successfully!</h4>
+                        <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1328,13 +1439,19 @@
     <section class="map-section">
         <div class="container">
             <div class="map-container" data-aos="fade-up">
-                <!-- Replace the src with your actual Google Maps embed URL -->
+                <!-- Google Maps Embed for Sudken Sherikat, Juba -->
                 <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.14751027391!2d31.5833!3d4.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1769b6f5b8b3b3b3%3A0x8b8b8b8b8b8b8b8b!2sJuba%2C%20South%20Sudan!5e0!3m2!1sen!2sus!4v1700000000000"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
             </iframe>
+
+            <!-- Location Overlay -->
+            <div class="map-overlay">
+                <div class="map-label"><i class="fas fa-map-pin"></i> Our Location</div>
+                <div class="map-address">Sudken Sherikat, Juba, South Sudan</div>
+            </div>
         </div>
     </div>
 </section>
@@ -1393,7 +1510,7 @@
             <div>
                 <h4>Contact Info</h4>
                 <ul class="footer-contact">
-                    <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Sudken Sherikat, Juba</li>
                     <li><i class="fas fa-envelope"></i> info@jolonges.com</li>
                     <li><i class="fas fa-phone"></i> +211 922 005 177</li>
                     <li><i class="fas fa-phone"></i> +1 315 254 6046</li>
@@ -1421,9 +1538,14 @@
 
 <!-- ===== SCRIPTS ===== -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<!-- EmailJS Library for sending emails -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
 
+        // AOS INIT
         AOS.init({
             duration: 800,
             once: true,
@@ -1504,22 +1626,136 @@
             footerYear.innerHTML = footerYear.innerHTML.replace('2026', new Date().getFullYear());
         }
 
-        // FORM SUBMISSION
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                // Form will submit to Formspree - this is just a fallback message
-                const submitBtn = this.querySelector('.submit-btn');
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                submitBtn.disabled = true;
+        // ============================================
+        // EMAILJS - Send Email to goidavid2000@gmail.com
+        // ============================================
 
-                // The form will submit to Formspree automatically
-                // After a delay, show success message
-                setTimeout(function() {
-                    // Note: The actual success will be handled by Formspree's redirect
-                }, 2000);
-            });
+        // Initialize EmailJS with your Public Key
+        // Sign up at https://www.emailjs.com/ to get your keys
+        // Replace "YOUR_PUBLIC_KEY" with your actual EmailJS public key
+        // Replace "YOUR_SERVICE_ID" with your EmailJS service ID
+        // Replace "YOUR_TEMPLATE_ID" with your EmailJS template ID
+
+        const emailjsPublicKey = "YOUR_PUBLIC_KEY"; // Get from EmailJS dashboard
+        const emailjsServiceID = "YOUR_SERVICE_ID"; // Get from EmailJS dashboard
+        const emailjsTemplateID = "YOUR_TEMPLATE_ID"; // Get from EmailJS dashboard
+
+        // If you have EmailJS keys, uncomment the line below
+        // emailjs.init(emailjsPublicKey);
+
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formSuccess = document.getElementById('formSuccess');
+
+        // Fallback: Use Formspree if EmailJS is not set up
+        // This sends the form to goidavid2000@gmail.com via Formspree
+        // Replace with your actual Formspree endpoint
+        // Updated Formspree endpoint
+        const formspreeEndpoint = "https://formspree.io/f/xkjwragk";
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value.trim();
+
+            // Validate
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            // Disable button and show loading
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
+            // Prepare data for EmailJS or Formspree
+            const formData = {
+                from_name: name,
+                from_email: email,
+                phone: phone || 'Not provided',
+                service: service || 'Not specified',
+                message: message,
+                to_email: 'goidavid2000@gmail.com'
+            };
+
+            // Try EmailJS first (if configured), otherwise use Formspree
+            if (emailjsPublicKey !== "YOUR_PUBLIC_KEY" &&
+                emailjsServiceID !== "YOUR_SERVICE_ID" &&
+                emailjsTemplateID !== "YOUR_TEMPLATE_ID") {
+
+                // Send via EmailJS
+                emailjs.send(emailjsServiceID, emailjsTemplateID, formData)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        showSuccess();
+                    })
+                    .catch(function(error) {
+                        console.log('FAILED...', error);
+                        // Fallback to Formspree
+                        sendViaFormspree(formData);
+                    });
+            } else {
+                // Send via Formspree
+                sendViaFormspree(formData);
+            }
+        });
+
+        function sendViaFormspree(formData) {
+            // Format data for Formspree
+            const formspreeData = new FormData();
+            formspreeData.append('name', formData.from_name);
+            formspreeData.append('email', formData.from_email);
+            formspreeData.append('phone', formData.phone);
+            formspreeData.append('service', formData.service);
+            formspreeData.append('message', formData.message);
+
+            fetch('https://formspree.io/f/mqkryaqa', { // Replace with your Formspree endpoint
+                    method: 'POST',
+                    body: formspreeData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(function(response) {
+                    if (response.ok) {
+                        showSuccess();
+                    } else {
+                        alert('Something went wrong. Please try again or call us directly.');
+                        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                        submitBtn.disabled = false;
+                    }
+                })
+                .catch(function(error) {
+                    alert('Something went wrong. Please try again or call us directly.');
+                    submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                    submitBtn.disabled = false;
+                });
         }
+
+        function showSuccess() {
+            // Hide form, show success message
+            contactForm.style.display = 'none';
+            formSuccess.classList.add('show');
+
+            // Reset button
+            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+            submitBtn.disabled = false;
+
+            // Auto-hide success after 5 seconds (optional)
+            // setTimeout(function() {
+            //     formSuccess.classList.remove('show');
+            //     contactForm.style.display = 'block';
+            //     contactForm.reset();
+            // }, 5000);
+        }
+
+        console.log('📍 Location: Sudken Sherikat, Juba');
+        console.log('📧 Emails sent to: goidavid2000@gmail.com');
 
     });
 </script>
