@@ -690,7 +690,9 @@
             color: var(--secondary);
         }
 
-        /* Contact Form */
+        /* ============================================
+                   CONTACT FORM - FIXED VERSION
+                   ============================================ */
         .contact-form {
             background: var(--light-gray);
             border-radius: var(--border-radius);
@@ -855,17 +857,6 @@
             width: 100%;
             height: 100%;
             border: none;
-        }
-
-        .map-section .map-container .map-placeholder {
-            text-align: center;
-        }
-
-        .map-section .map-container .map-placeholder i {
-            font-size: 3rem;
-            color: var(--secondary);
-            display: block;
-            margin-bottom: 12px;
         }
 
         .map-section .map-container .map-overlay {
@@ -1377,13 +1368,19 @@
                     </div>
                 </div>
 
-                <!-- Contact Form -->
+                <!-- ============================================
+                CONTACT FORM - DIRECT FORMSPREE
+                ============================================ -->
                 <div class="contact-form" data-aos="fade-left">
                     <h3>Send Us a <span class="highlight">Message</span></h3>
                     <p class="form-sub">We'll get back to you within 24 hours.</p>
 
-                    <!-- Form -->
-                    <form id="contactForm">
+                    <!-- 
+                        FORM ACTION: https://formspree.io/f/xkjwragk
+                        METHOD: POST
+                        Each input has a 'name' attribute
+                    -->
+                    <form id="contactForm" action="https://formspree.io/f/xkjwragk" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Full Name <span class="required">*</span></label>
@@ -1418,6 +1415,9 @@
                             <label for="message">Message <span class="required">*</span></label>
                             <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
                         </div>
+
+                        <!-- Honeypot field to prevent spam -->
+                        <input type="text" name="_gotcha" style="display:none" />
 
                         <button type="submit" class="submit-btn" id="submitBtn">
                             <i class="fas fa-paper-plane"></i> Send Message
@@ -1539,9 +1539,6 @@
 <!-- ===== SCRIPTS ===== -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-<!-- EmailJS Library for sending emails -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
 
@@ -1627,104 +1624,42 @@
         }
 
         // ============================================
-        // EMAILJS - Send Email to goidavid2000@gmail.com
+        // FORM HANDLER - Formspree Direct Submit
         // ============================================
-
-        // Initialize EmailJS with your Public Key
-        // Sign up at https://www.emailjs.com/ to get your keys
-        // Replace "YOUR_PUBLIC_KEY" with your actual EmailJS public key
-        // Replace "YOUR_SERVICE_ID" with your EmailJS service ID
-        // Replace "YOUR_TEMPLATE_ID" with your EmailJS template ID
-
-        const emailjsPublicKey = "YOUR_PUBLIC_KEY"; // Get from EmailJS dashboard
-        const emailjsServiceID = "YOUR_SERVICE_ID"; // Get from EmailJS dashboard
-        const emailjsTemplateID = "YOUR_TEMPLATE_ID"; // Get from EmailJS dashboard
-
-        // If you have EmailJS keys, uncomment the line below
-        // emailjs.init(emailjsPublicKey);
 
         const contactForm = document.getElementById('contactForm');
         const submitBtn = document.getElementById('submitBtn');
         const formSuccess = document.getElementById('formSuccess');
 
-        // Fallback: Use Formspree if EmailJS is not set up
-        // This sends the form to goidavid2000@gmail.com via Formspree
-        // Replace with your actual Formspree endpoint
-        // Updated Formspree endpoint
-        const formspreeEndpoint = "https://formspree.io/f/xkjwragk";
-
+        // Add form submit handler for AJAX submission with success message
         contactForm.addEventListener('submit', function(e) {
+            // Prevent default form submission
             e.preventDefault();
-
-            // Get form data
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const phone = document.getElementById('phone').value.trim();
-            const service = document.getElementById('service').value;
-            const message = document.getElementById('message').value.trim();
-
-            // Validate
-            if (!name || !email || !message) {
-                alert('Please fill in all required fields.');
-                return;
-            }
 
             // Disable button and show loading
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
 
-            // Prepare data for EmailJS or Formspree
-            const formData = {
-                from_name: name,
-                from_email: email,
-                phone: phone || 'Not provided',
-                service: service || 'Not specified',
-                message: message,
-                to_email: 'goidavid2000@gmail.com'
-            };
+            // Create FormData object
+            const formData = new FormData(this);
 
-            // Try EmailJS first (if configured), otherwise use Formspree
-            if (emailjsPublicKey !== "YOUR_PUBLIC_KEY" &&
-                emailjsServiceID !== "YOUR_SERVICE_ID" &&
-                emailjsTemplateID !== "YOUR_TEMPLATE_ID") {
-
-                // Send via EmailJS
-                emailjs.send(emailjsServiceID, emailjsTemplateID, formData)
-                    .then(function(response) {
-                        console.log('SUCCESS!', response.status, response.text);
-                        showSuccess();
-                    })
-                    .catch(function(error) {
-                        console.log('FAILED...', error);
-                        // Fallback to Formspree
-                        sendViaFormspree(formData);
-                    });
-            } else {
-                // Send via Formspree
-                sendViaFormspree(formData);
-            }
-        });
-
-        function sendViaFormspree(formData) {
-            // Format data for Formspree
-            const formspreeData = new FormData();
-            formspreeData.append('name', formData.from_name);
-            formspreeData.append('email', formData.from_email);
-            formspreeData.append('phone', formData.phone);
-            formspreeData.append('service', formData.service);
-            formspreeData.append('message', formData.message);
-
-            fetch('https://formspree.io/f/mqkryaqa', { // Replace with your Formspree endpoint
+            // Send to Formspree via fetch
+            fetch('https://formspree.io/f/xkjwragk', {
                     method: 'POST',
-                    body: formspreeData,
+                    body: formData,
                     headers: {
                         'Accept': 'application/json'
                     }
                 })
                 .then(function(response) {
                     if (response.ok) {
-                        showSuccess();
+                        // Success!
+                        contactForm.style.display = 'none';
+                        formSuccess.classList.add('show');
+                        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                        submitBtn.disabled = false;
                     } else {
+                        // Error
                         alert('Something went wrong. Please try again or call us directly.');
                         submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
                         submitBtn.disabled = false;
@@ -1735,27 +1670,11 @@
                     submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
                     submitBtn.disabled = false;
                 });
-        }
-
-        function showSuccess() {
-            // Hide form, show success message
-            contactForm.style.display = 'none';
-            formSuccess.classList.add('show');
-
-            // Reset button
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-            submitBtn.disabled = false;
-
-            // Auto-hide success after 5 seconds (optional)
-            // setTimeout(function() {
-            //     formSuccess.classList.remove('show');
-            //     contactForm.style.display = 'block';
-            //     contactForm.reset();
-            // }, 5000);
-        }
+        });
 
         console.log('📍 Location: Sudken Sherikat, Juba');
-        console.log('📧 Emails sent to: goidavid2000@gmail.com');
+        console.log('📧 Formspree Endpoint: https://formspree.io/f/xkjwragk');
+        console.log('📨 Messages sent to: goidavid2000@gmail.com');
 
     });
 </script>
