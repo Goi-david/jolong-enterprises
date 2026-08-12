@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Jolong Enterprises Limited</title>
+
+    <meta name="description" content="Contact Jolong Enterprises for Bar & Restaurant, Apartments, Transportation, Warehouse Building, Farming, and Ferry Crossing services in Juba, South Sudan." />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+    <style>
+        /* Use the same styles as testimonials.html - copy all CSS */
+        /* (For brevity, I'm reusing the same styles as the other pages) */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a1a3a;
+            --primary-light: #1a305a;
+            --primary-dark: #060e1f;
+            --secondary: #f4c430;
+            --secondary-light: #fada5e;
+            --secondary-dark: #d4a820;
+            --accent-green: #2e7d32;
+            --accent-green-light: #4caf50;
+            --accent-red: #c41e3a;
+            --white: #ffffff;
+            --light-gray: #f8f6f0;
+            --gray: #6b7280;
+            --dark: #0d1b3e;
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.15);
+            --shadow-gold: 0 8px 32px rgba(244, 196, 48, 0.25);
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --border-radius: 20px;
+            --border-radius-sm: 12px;
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--white);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ============================================
+                   BUTTONS
+                   ============================================ */
+        .btn-primary {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--gold-gradient);
+            color: var(--primary);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            box-shadow: var(--shadow-gold);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 40px rgba(244, 196, 48, 0.4);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 16px 40px;
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 8px 24px;
+            background: rgba(244, 196, 48, 0.15);
+            color: var(--secondary);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            border: 1px solid rgba(244, 196, 48, 0.12);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .section-title .highlight {
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .section-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold-gradient);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin-bottom: 48px;
+        }
+
+        /* ============================================
+                   NAVBAR (same as other pages)
+                   ============================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: var(--transition);
+            background: rgba(10, 26, 58, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 2px solid rgba(244, 196, 48, 0.12);
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 26, 58, 0.98);
+            padding: 10px 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+        }
+
+        .navbar-brand .logo-wrapper {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border: 2px solid var(--secondary);
+            flex-shrink: 0;
+        }
+
+        .navbar-brand .logo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .navbar-brand .logo-wrapper .logo-placeholder {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .navbar-brand .brand-text {
+            color: var(--white);
+        }
+
+        .navbar-brand .brand-text h2 {
+            font-size: 1.2rem;
+            margin: 0;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-brand .brand-text h2 .gold {
+            color: var(--secondary);
+        }
+
+        .navbar-brand .brand-text span {
+            font-size: 0.65rem;
+            opacity: 0.7;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 400;
+            font-family: 'Inter', sans-serif;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 60%;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-links a.active {
+            color: var(--secondary);
+        }
+
+        .nav-links .contact-btn {
+            background: var(--gold-gradient);
+            color: var(--primary) !important;
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+        }
+
+        .nav-links .contact-btn::after {
+            display: none !important;
+        }
+
+        .nav-links .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ============================================
+                   MOBILE MENU
+                   ============================================ */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 26, 58, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-content {
+            text-align: center;
+            padding: 40px;
+            transform: translateY(40px) scale(0.95);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            max-width: 90%;
+        }
+
+        .mobile-menu-overlay.open .mobile-menu-content {
+            transform: translateY(0) scale(1);
+        }
+
+        .mobile-menu-content .menu-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 2rem;
+            color: var(--white);
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: var(--transition);
+            padding: 10px;
+        }
+
+        .mobile-menu-content .menu-close:hover {
+            color: var(--secondary);
+            transform: rotate(90deg);
+        }
+
+        .mobile-menu-content .mobile-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 8px;
+        }
+
+        .mobile-menu-content .mobile-tagline {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .mobile-menu-content ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mobile-menu-content ul a {
+            display: block;
+            padding: 16px 32px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            border-radius: var(--border-radius-sm);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .mobile-menu-content ul a:hover,
+        .mobile-menu-content ul a.active {
+            color: var(--secondary);
+            background: rgba(244, 196, 48, 0.08);
+            border-color: rgba(244, 196, 48, 0.15);
+            transform: translateX(8px);
+        }
+
+        .mobile-menu-content ul a .icon {
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        .mobile-menu-content ul a.contact-mobile {
+            background: var(--gold-gradient);
+            color: var(--primary) !important;
+            margin-top: 16px;
+            font-weight: 700;
+            border: none;
+        }
+
+        .mobile-menu-content ul a.contact-mobile:hover {
+            transform: translateX(8px) scale(1.02);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .mobile-menu-content .mobile-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .mobile-menu-content .mobile-social a {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .mobile-menu-content .mobile-social a:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        /* ============================================
+                   FLAG STRIP
+                   ============================================ */
+        .flag-strip {
+            display: flex;
+            height: 6px;
+            width: 100%;
+        }
+
+        .flag-strip .black {
+            flex: 1;
+            background: #000000;
+        }
+        .flag-strip .red {
+            flex: 1;
+            background: #c41e3a;
+        }
+        .flag-strip .green {
+            flex: 1;
+            background: #2e7d32;
+        }
+        .flag-strip .blue {
+            flex: 1;
+            background: #0a1a3a;
+        }
+        .flag-strip .yellow {
+            flex: 1;
+            background: #f4c430;
+        }
+
+        /* ============================================
+                   PAGE HEADER
+                   ============================================ */
+        .page-header {
+            padding: 140px 0 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(244, 196, 48, 0.05), transparent 70%);
+            border-radius: 50%;
+            animation: float-bg 20s ease-in-out infinite;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(244, 196, 48, 0.04), transparent 70%);
+            border-radius: 50%;
+            animation: float-bg 25s ease-in-out infinite reverse;
+        }
+
+        @keyframes float-bg {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+        }
+
+        .page-header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-header h1 {
+            color: var(--white);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .page-header h1 .highlight {
+            color: var(--secondary);
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .page-header .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
+
+        .page-header .breadcrumb a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .page-header .breadcrumb a:hover {
+            color: var(--white);
+        }
+
+        /* ============================================
+                   CONTACT CONTENT
+                   ============================================ */
+        .contact-content {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .contact-info p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-details .detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 20px;
+            background: var(--light-gray);
+            border-radius: var(--border-radius-sm);
+            transition: var(--transition);
+        }
+
+        .contact-details .detail-item:hover {
+            transform: translateX(6px);
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-details .detail-item .icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(244, 196, 48, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details .detail-item .info .label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray);
+            font-weight: 600;
+        }
+
+        .contact-details .detail-item .info .value {
+            font-size: 1rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .contact-details .detail-item .info .value a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-details .detail-item .info .value a:hover {
+            color: var(--secondary);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+            padding: 40px;
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .contact-form .form-sub {
+            color: var(--gray);
+            margin-bottom: 24px;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--dark);
+            margin-bottom: 6px;
+        }
+
+        .contact-form .form-group label .required {
+            color: var(--accent-red);
+        }
+
+        .contact-form .form-group input,
+        .contact-form .form-group select,
+        .contact-form .form-group textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid rgba(0, 0, 0, 0.06);
+            border-radius: var(--border-radius-sm);
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        .contact-form .form-group input:focus,
+        .contact-form .form-group select:focus,
+        .contact-form .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 4px rgba(244, 196, 48, 0.1);
+        }
+
+        .contact-form .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .contact-form .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+
+        .contact-form .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--gold-gradient);
+            color: var(--primary);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .contact-form .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(244, 196, 48, 0.4);
+        }
+
+        /* ============================================
+                   MAP SECTION
+                   ============================================ */
+        .map-section {
+            padding: 0 0 80px;
+            background: var(--white);
+        }
+
+        .map-section .map-container {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 400px;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-size: 1.2rem;
+        }
+
+        .map-section .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .map-section .map-container .map-placeholder {
+            text-align: center;
+        }
+
+        .map-section .map-container .map-placeholder i {
+            font-size: 3rem;
+            color: var(--secondary);
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* ============================================
+                   CTA SECTION
+                   ============================================ */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            text-align: center;
+            width: 100%;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .cta-section h2 .highlight {
+            color: var(--secondary);
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .cta-section .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* ============================================
+                   FOOTER
+                   ============================================ */
+        .footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 0 0;
+            position: relative;
+            width: 100%;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand h3 .gold {
+            color: var(--secondary);
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-social a:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-4px);
+            border-color: var(--secondary);
+        }
+
+        .footer h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(4px);
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .footer-contact li i {
+            color: var(--secondary);
+            width: 20px;
+            margin-top: 4px;
+        }
+
+        .footer-bottom {
+            padding: 24px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .footer-bottom .gold {
+            color: var(--secondary);
+        }
+
+        .footer-bottom .footer-bottom-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* ============================================
+                   BACK TO TOP
+                   ============================================ */
+        .back-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: var(--shadow-gold);
+            z-index: 900;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.9);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .back-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .back-top:hover {
+            transform: translateY(-6px) scale(1.08);
+            box-shadow: 0 12px 40px rgba(244, 196, 48, 0.4);
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            .map-section .map-container {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            .nav-links {
+                display: none !important;
+            }
+            .contact-form .form-row {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .footer-bottom .footer-bottom-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            .page-header p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+            .navbar-brand .logo-wrapper {
+                width: 40px;
+                height: 40px;
+            }
+            .navbar-brand .brand-text h2 {
+                font-size: 1rem;
+            }
+            .navbar-brand .brand-text span {
+                font-size: 0.55rem;
+                letter-spacing: 2px;
+            }
+            .contact-form {
+                padding: 24px;
+            }
+            .map-section .map-container {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .navbar-brand .logo-wrapper {
+                width: 34px;
+                height: 34px;
+            }
+            .navbar-brand .brand-text h2 {
+                font-size: 0.85rem;
+            }
+            .navbar-brand .brand-text span {
+                font-size: 0.5rem;
+                letter-spacing: 1px;
+            }
+            .back-top {
+                width: 60px;
+                height: 60px;
+                font-size: 1.4rem;
+                bottom: 16px;
+                right: 16px;
+            }
+            .contact-details .detail-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .contact-details .detail-item .icon {
+                margin-bottom: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <div class="logo-wrapper">
+                    <img src="logo.png" alt="Jolong Enterprises Logo" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-placeholder\'>J</span>';" />
+                    <span class="logo-placeholder" style="display:none;">J</span>
+                </div>
+                <div class="brand-text">
+                    <h2>Jolong <span class="gold">Enterprises</span></h2>
+                    <span>Building South Sudan's Future</span>
+                </div>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html" class="contact-btn active">Get in Touch</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <button class="menu-close" id="mobileMenuClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-content">
+            <div class="mobile-logo">Jolong Enterprises</div>
+            <div class="mobile-tagline">Building South Sudan's Future</div>
+            <ul>
+                <li><a href="index.html"><span class="icon">🏠</span> Home</a></li>
+                <li><a href="services.html"><span class="icon">⚡</span> Services</a></li>
+                <li><a href="projects.html"><span class="icon">📋</span> Projects</a></li>
+                <li><a href="about.html"><span class="icon">ℹ️</span> About</a></li>
+                <li><a href="testimonials.html"><span class="icon">💬</span> Testimonials</a></li>
+                <li><a href="contact.html" class="contact-mobile active"><span class="icon">📞</span> Get in Touch</a></li>
+            </ul>
+            <div class="mobile-social">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FLAG STRIP ===== -->
+    <div class="flag-strip">
+        <div class="black"></div>
+        <div class="red"></div>
+        <div class="green"></div>
+        <div class="blue"></div>
+        <div class="yellow"></div>
+    </div>
+
+    <!-- ===== PAGE HEADER ===== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Get in <span class="highlight">Touch</span></h1>
+            <p>We're here to help. Reach out to us for any inquiries about our services.</p>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Contact</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTENT ===== -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info" data-aos="fade-right">
+                    <span class="section-badge">Contact Us</span>
+                    <h2>Let's Start a <span class="highlight">Conversation</span></h2>
+                    <p>
+                        Have a project in mind or need more information about our services?
+                        We'd love to hear from you. Reach out to us and we'll get back to you promptly.
+                    </p>
+
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="info">
+                                <div class="label">Location</div>
+                                <div class="value">Juba, South Sudan</div>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="icon"><i class="fas fa-envelope"></i></div>
+                            <div class="info">
+                                <div class="label">Email</div>
+                                <div class="value"><a href="mailto:info@jolonges.com">info@jolonges.com</a></div>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="icon"><i class="fas fa-phone"></i></div>
+                            <div class="info">
+                                <div class="label">Phone</div>
+                                <div class="value">
+                                    <a href="tel:+211922005177">+211 922 005 177</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-item">
+                            <div class="icon"><i class="fas fa-clock"></i></div>
+                            <div class="info">
+                                <div class="label">Working Hours</div>
+                                <div class="value">Mon - Fri: 8:00 AM - 6:00 PM</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div style="margin-top: 32px;">
+                        <p style="font-weight:600; margin-bottom:12px;">Connect with us:</p>
+                        <div style="display:flex; gap:12px;">
+                            <a href="#" style="width:44px;height:44px;border-radius:50%;background:var(--light-gray);display:flex;align-items:center;justify-content:center;color:var(--gray);transition:var(--transition);text-decoration:none;">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" style="width:44px;height:44px;border-radius:50%;background:var(--light-gray);display:flex;align-items:center;justify-content:center;color:var(--gray);transition:var(--transition);text-decoration:none;">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" style="width:44px;height:44px;border-radius:50%;background:var(--light-gray);display:flex;align-items:center;justify-content:center;color:var(--gray);transition:var(--transition);text-decoration:none;">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" style="width:44px;height:44px;border-radius:50%;background:var(--light-gray);display:flex;align-items:center;justify-content:center;color:var(--gray);transition:var(--transition);text-decoration:none;">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form" data-aos="fade-left">
+                    <h3>Send Us a <span class="highlight">Message</span></h3>
+                    <p class="form-sub">We'll get back to you within 24 hours.</p>
+
+                    <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name <span class="required">*</span></label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required">*</span></label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+211 922 005 177" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service...</option>
+                                <option value="bar-restaurant">Bar & Restaurant</option>
+                                <option value="apartments">Apartments</option>
+                                <option value="transportation">Transportation</option>
+                                <option value="warehouse">Warehouse Building</option>
+                                <option value="farming">Farming</option>
+                                <option value="ferry">Ferry Crossing</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAP SECTION ===== -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-container" data-aos="fade-up">
+                <!-- Replace the src with your actual Google Maps embed URL -->
+                <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.14751027391!2d31.5833!3d4.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1769b6f5b8b3b3b3%3A0x8b8b8b8b8b8b8b8b!2sJuba%2C%20South%20Sudan!5e0!3m2!1sen!2sus!4v1700000000000"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA SECTION ===== -->
+<section class="cta-section">
+    <div class="container" data-aos="zoom-in">
+        <h2>Ready to Work with <span class="highlight">Jolong</span>?</h2>
+        <p>Let's discuss how we can help bring your vision to life.</p>
+        <div class="buttons">
+            <a href="tel:+211922005177" class="btn-primary"><i class="fas fa-phone"></i> Call Us</a>
+            <a href="mailto:info@jolonges.com" class="btn-outline"><i class="fas fa-envelope"></i> Email Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Jolong <span class="gold">Enterprises</span> Ltd</h3>
+                <p>Building South Sudan's future through excellence in hospitality, infrastructure, transportation, and agriculture.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Our Services</h4>
+                <ul class="footer-links">
+                    <li><a href="bar-restaurant.html">Bar & Restaurant</a></li>
+                    <li><a href="apartments.html">Apartments</a></li>
+                    <li><a href="transportation.html">Transportation</a></li>
+                    <li><a href="warehouse.html">Warehouse Building</a></li>
+                    <li><a href="farming.html">Farming</a></li>
+                    <li><a href="ferry.html">Ferry Crossing</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Contact Info</h4>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
+                    <li><i class="fas fa-envelope"></i> info@jolonges.com</li>
+                    <li><i class="fas fa-phone"></i> +211 922 005 177</li>
+                    <li><i class="fas fa-phone"></i> +1 315 254 6046</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-row">
+                <span>&copy; 2026 <span class="gold">Jolong Enterprises Limited</span>. All Rights Reserved. 🇸🇸</span>
+                <span>
+                    <a href="#" class="back-top-link" id="backTopLink" style="color: var(--secondary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fas fa-arrow-up"></i> Back to Top
+                    </a>
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ===== BACK TO TOP ===== -->
+<button class="back-top" id="backTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<!-- ===== SCRIPTS ===== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 80,
+            easing: 'ease-in-out'
+        });
+
+        // NAVBAR SCROLL
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // MOBILE MENU
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileOverlay = document.getElementById('mobileMenuOverlay');
+        const mobileClose = document.getElementById('mobileMenuClose');
+
+        function openMobileMenu() {
+            mobileOverlay.classList.add('open');
+            menuToggle.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileOverlay.classList.remove('open');
+            menuToggle.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuToggle.addEventListener('click', openMobileMenu);
+        mobileClose.addEventListener('click', closeMobileMenu);
+
+        mobileOverlay.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                closeMobileMenu();
+            });
+        });
+
+        mobileOverlay.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeMobileMenu();
+            }
+        });
+
+        // BACK TO TOP
+        const backTop = document.getElementById('backTop');
+        const backTopLink = document.getElementById('backTopLink');
+
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 400) {
+                backTop.classList.add('visible');
+            } else {
+                backTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        backTop.addEventListener('click', scrollToTop);
+
+        if (backTopLink) {
+            backTopLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                scrollToTop();
+            });
+        }
+
+        // DYNAMIC YEAR
+        const footerYear = document.querySelector('.footer-bottom-row span:first-child');
+        if (footerYear) {
+            footerYear.innerHTML = footerYear.innerHTML.replace('2026', new Date().getFullYear());
+        }
+
+        // FORM SUBMISSION
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                // Form will submit to Formspree - this is just a fallback message
+                const submitBtn = this.querySelector('.submit-btn');
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.disabled = true;
+
+                // The form will submit to Formspree automatically
+                // After a delay, show success message
+                setTimeout(function() {
+                    // Note: The actual success will be handled by Formspree's redirect
+                }, 2000);
+            });
+        }
+
+    });
+</script>
+
+</body>
+</html>
