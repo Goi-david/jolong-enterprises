@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jolong Heights - Premium Apartments in Juba</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Jolong Heights - Premium 3-bedroom apartments in Juba, South Sudan. Modern living with 24/7 security, swimming pool, and gym access.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        /* ============================================
+                   ROOT VARIABLES
+                   ============================================ */
+        :root {
+            --primary-navy: #0a1a3a;
+            --primary-navy-light: #1a305a;
+            --primary-navy-dark: #060e1f;
+            --primary-gold: #f4c430;
+            --primary-gold-light: #fada5e;
+            --primary-gold-dark: #d4a820;
+            --accent-green: #2e7d32;
+            --accent-blue: #1a5276;
+            --warm-cream: #fdf8f0;
+            --warm-ivory: #faf3e8;
+            --dark-charcoal: #1a1a2e;
+            --gray: #6b7280;
+            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 30px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+            --navy-gradient: linear-gradient(135deg, #0a1a3a, #1a305a);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-charcoal);
+            background-color: var(--warm-cream);
+            line-height: 1.6;
+            padding-top: 56px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .gold-text {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   TOP BAR
+                   ============================================ */
+        .top-bar {
+            background: var(--primary-navy);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .top-bar::before {
+            content: '🏢';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0.2;
+        }
+
+        .top-bar a {
+            color: var(--primary-gold-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* ============================================
+                   NAVBAR
+                   ============================================ */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .navbar-brand .brand-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gold-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .navbar-brand .brand-sub {
+            display: block;
+            font-size: 0.55rem;
+            font-weight: 400;
+            color: var(--primary-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            margin-top: -2px;
+        }
+
+        .nav-link {
+            color: var(--dark-charcoal) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 2px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 80%;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-gold) !important;
+        }
+
+        .btn-inquire {
+            background: var(--gold-gradient);
+            color: var(--primary-navy) !important;
+            padding: 8px 24px !important;
+            border-radius: 50px !important;
+            font-weight: 700 !important;
+            box-shadow: 0 5px 15px rgba(244, 196, 48, 0.3);
+        }
+
+        .btn-inquire:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 196, 48, 0.4);
+            color: var(--primary-navy) !important;
+        }
+
+        /* ============================================
+                   PROPERTY HERO
+                   ============================================ */
+        .property-hero {
+            background: linear-gradient(rgba(10, 26, 58, 0.7), rgba(10, 26, 58, 0.8)), 
+                        url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&h=600&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 0 3rem;
+            color: white;
+            position: relative;
+        }
+
+        .property-hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .property-hero .breadcrumb-custom {
+            display: flex;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .property-hero .breadcrumb-custom a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .property-hero .breadcrumb-custom a:hover {
+            color: white;
+        }
+
+        .property-hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .property-hero h1 .highlight {
+            color: var(--primary-gold);
+        }
+
+        .property-hero .location {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 16px;
+        }
+
+        .property-hero .location i {
+            color: var(--primary-gold);
+            margin-right: 8px;
+        }
+
+        .property-hero .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .property-hero .price .period {
+            font-size: 1rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.5);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .property-hero .badge-status {
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(46, 125, 50, 0.9);
+            color: white;
+            margin-top: 12px;
+        }
+
+        /* ============================================
+                   PROPERTY DETAIL
+                   ============================================ */
+        .property-detail {
+            padding: 60px 0;
+            background: var(--warm-cream);
+        }
+
+        .property-gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .property-gallery .main-image {
+            height: 400px;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+        }
+
+        .property-gallery .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .property-gallery .thumbnails {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .property-gallery .thumbnails .thumb {
+            height: 192px;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .property-gallery .thumbnails .thumb:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-md);
+        }
+
+        .property-gallery .thumbnails .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .property-description h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .property-description p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .property-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+            padding: 24px;
+            background: white;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .property-specs .spec-item {
+            text-align: center;
+        }
+
+        .property-specs .spec-item .icon {
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .property-specs .spec-item .value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .property-specs .spec-item .label {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        .property-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .property-features .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px;
+            background: white;
+            border-radius: var(--border-radius-sm);
+            transition: var(--transition);
+        }
+
+        .property-features .feature:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .property-features .feature i {
+            color: var(--primary-gold);
+            width: 20px;
+        }
+
+        /* ============================================
+                   INQUIRY FORM SIDEBAR
+                   ============================================ */
+        .inquiry-sidebar {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--primary-gold);
+            position: sticky;
+            top: 100px;
+        }
+
+        .inquiry-sidebar h4 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .inquiry-sidebar .subtitle {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .inquiry-sidebar .form-control {
+            border: 2px solid #dee2e6;
+            border-radius: var(--border-radius-sm);
+            padding: 12px 16px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+            background: white;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        .inquiry-sidebar .form-control:focus {
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(244, 196, 48, 0.15);
+        }
+
+        .btn-inquiry-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-inquiry-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 196, 48, 0.3);
+        }
+
+        /* ============================================
+                   SIMILAR PROPERTIES
+                   ============================================ */
+        .similar-properties {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .similar-card {
+            background: var(--warm-cream);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .similar-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .similar-card .similar-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .similar-card .similar-body {
+            padding: 16px 20px;
+        }
+
+        .similar-card .similar-body h5 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .similar-card .similar-body .similar-location {
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+        }
+
+        .similar-card .similar-body .similar-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .similar-card .similar-body .similar-link {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .similar-card .similar-body .similar-link:hover {
+            color: var(--primary-gold-dark);
+            padding-left: 8px;
+        }
+
+        /* ============================================
+                   FOOTER
+                   ============================================ */
+        .footer {
+            background: var(--primary-navy-dark);
+            color: white;
+            padding: 60px 0 0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand .gold {
+            color: var(--primary-gold);
+        }
+
+        .footer-about {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 350px;
+        }
+
+        .footer h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            color: var(--primary-gold);
+            font-size: 0.7rem;
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact li i {
+            color: var(--primary-gold);
+            width: 20px;
+            margin-top: 4px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            transform: translateY(-4px);
+            border-color: var(--primary-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 24px 0;
+            margin-top: 48px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .gold {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   TOAST
+                   ============================================ */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-navy);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-lg);
+            z-index: 9999;
+            border-left: 4px solid var(--primary-gold);
+            transform: translateX(500px);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 400px;
+        }
+
+        .toast-notification.show {
+            transform: translateX(0);
+        }
+
+        .toast-notification .toast-icon {
+            color: var(--primary-gold);
+            margin-right: 10px;
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 992px) {
+            .property-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .property-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .property-gallery .thumbnails {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            
+            .property-gallery .thumbnails .thumb {
+                height: 120px;
+            }
+            
+            .inquiry-sidebar {
+                position: relative;
+                top: 0;
+                margin-top: 30px;
+            }
+            
+            .property-specs {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .property-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .property-hero .price {
+                font-size: 2rem;
+            }
+            
+            .property-gallery .main-image {
+                height: 250px;
+            }
+            
+            .property-gallery .thumbnails {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .property-gallery .thumbnails .thumb {
+                height: 100px;
+            }
+            
+            .property-specs {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .property-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            
+            .navbar-brand .brand-sub {
+                font-size: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .property-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .property-hero .price {
+                font-size: 1.6rem;
+            }
+            
+            .navbar-brand .brand-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .property-gallery .main-image {
+                height: 200px;
+            }
+            
+            .property-gallery .thumbnails {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .property-gallery .thumbnails .thumb {
+                height: 80px;
+            }
+            
+            .property-specs {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ============================================
+                   SCROLLBAR
+                   ============================================ */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-gradient);
+            border-radius: var(--border-radius-xl);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    TOP BAR
+    ============================================ -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span class="status-dot"></span>
+                    <span class="me-3"><strong>Open Now</strong> • 7:00 AM - 11:00 PM</span>
+                    <i class="fas fa-phone-alt me-2"></i> <a href="tel:+211922005177">+211 922 005 177</a>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="apartments.html"><i class="fas fa-arrow-left me-1"></i> Back to Apartments</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+    NAVBAR
+    ============================================ -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="apartments.html">
+                <span class="brand-icon"><i class="fas fa-building"></i></span>
+                <div>
+                    Jolong <span class="gold-text">Apartments</span>
+                    <span class="brand-sub">Premium Living in Juba</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="apartments.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="properties.html">Properties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="floor-plans.html">Floor Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-apartments.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery-apartments.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-apartments.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="property-detail.html">Property Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: var(--primary-gold) !important;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="contact-apartments.html" class="btn btn-inquire">
+                        <i class="fas fa-home me-2"></i> Inquire Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+    PROPERTY HERO
+    ============================================ -->
+    <section class="property-hero">
+        <div class="container">
+            <div class="breadcrumb-custom">
+                <a href="apartments.html">Home</a>
+                <span>/</span>
+                <a href="properties.html">Properties</a>
+                <span>/</span>
+                <span>Jolong Heights</span>
+            </div>
+            <div class="row">
+                <div class="col-lg-8">
+                    <span class="badge-status">● Available</span>
+                    <h1>Jolong <span class="highlight">Heights</span></h1>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"></i> Juba, South Sudan
+                    </div>
+                    <div class="price">
+                        SSP 1,200,000 <span class="period">/ year</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    PROPERTY DETAIL
+    ============================================ -->
+    <section class="property-detail">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <!-- Gallery -->
+                    <div class="property-gallery" data-aos="fade-up">
+                        <div class="main-image">
+                            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop" alt="Jolong Heights Main">
+                        </div>
+                        <div class="thumbnails">
+                            <div class="thumb" onclick="changeMainImage(this)">
+                                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=300&fit=crop" alt="Living Room">
+                            </div>
+                            <div class="thumb" onclick="changeMainImage(this)">
+                                <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=400&h=300&fit=crop" alt="Kitchen">
+                            </div>
+                            <div class="thumb" onclick="changeMainImage(this)">
+                                <img src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=400&h=300&fit=crop" alt="Bedroom">
+                            </div>
+                            <div class="thumb" onclick="changeMainImage(this)">
+                                <img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=400&h=300&fit=crop" alt="Pool">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="property-description" data-aos="fade-up">
+                        <h2>About This <span class="gold-text">Property</span></h2>
+                        <p>
+                            Jolong Heights is a premium residential development located in the heart 
+                            of Juba, South Sudan. This modern 3-bedroom apartment offers the perfect 
+                            blend of comfort, style, and convenience.
+                        </p>
+                        <p>
+                            Designed with your lifestyle in mind, each apartment features spacious 
+                            living areas, high-quality finishes, and breathtaking views of the city. 
+                            Whether you're a family looking for your dream home or a professional 
+                            seeking a stylish urban retreat, Jolong Heights has everything you need.
+                        </p>
+                    </div>
+
+                    <!-- Specs -->
+                    <div class="property-specs" data-aos="fade-up">
+                        <div class="spec-item">
+                            <span class="icon"><i class="fas fa-vector-square"></i></span>
+                            <span class="value">1,500 sq.ft</span>
+                            <span class="label">Size</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="icon"><i class="fas fa-bed"></i></span>
+                            <span class="value">3</span>
+                            <span class="label">Bedrooms</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="icon"><i class="fas fa-bath"></i></span>
+                            <span class="value">2</span>
+                            <span class="label">Bathrooms</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="icon"><i class="fas fa-car"></i></span>
+                            <span class="value">2</span>
+                            <span class="label">Parking Spaces</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="icon"><i class="fas fa-calendar-alt"></i></span>
+                            <span class="value">2023</span>
+                            <span class="label">Year Built</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="icon"><i class="fas fa-utensils"></i></span>
+                            <span class="value">Fully Equipped</span>
+                            <span class="label">Kitchen</span>
+                        </div>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="property-features" data-aos="fade-up">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 Security Surveillance</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Swimming Pool Access</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fully Equipped Gym</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Landscaped Gardens</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Backup Power Generator</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Water Supply System</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Modern Kitchen Appliances</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Balcony with City Views</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>High-Speed Internet Ready</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Professional Property Management</span>
+                        </div>
+                    </div>
+
+                    <!-- Floor Plan -->
+                    <div class="mt-4" data-aos="fade-up">
+                        <h3>Floor <span class="gold-text">Plan</span></h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-vector-square" style="font-size: 3rem; color: var(--primary-gold);"></i>
+                                        <h5 class="mt-2">3 Bedroom Layout</h5>
+                                        <p class="text-muted">1,500 sq.ft • 2 Bathrooms</p>
+                                        <button class="btn btn-sm" style="background:var(--gold-gradient); color:var(--primary-navy); border:none; border-radius:50px; padding:8px 24px;" onclick="showToast('📐 Floor plan loaded!')">
+                                            <i class="fas fa-eye me-1"></i> View Plan
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card border-0 shadow-sm">
+                                    <div class="card-body text-center">
+                                        <i class="fas fa-download" style="font-size: 3rem; color: var(--primary-gold);"></i>
+                                        <h5 class="mt-2">Download PDF</h5>
+                                        <p class="text-muted">Detailed floor plan with dimensions</p>
+                                        <button class="btn btn-sm" style="background:var(--gold-gradient); color:var(--primary-navy); border:none; border-radius:50px; padding:8px 24px;" onclick="showToast('📥 Downloading floor plan...')">
+                                            <i class="fas fa-download me-1"></i> Download
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inquiry Sidebar -->
+                <div class="col-lg-4" data-aos="fade-left">
+                    <div class="inquiry-sidebar">
+                        <h4>Interested in <span class="gold-text">This Property</span>?</h4>
+                        <p class="subtitle">Fill in your details and we'll get back to you within 24 hours.</p>
+                        
+                        <form id="inquiryForm" onsubmit="return submitInquiry(event)">
+                            <input type="text" class="form-control" id="inqName" placeholder="Full Name" required>
+                            <input type="email" class="form-control" id="inqEmail" placeholder="Email Address" required>
+                            <input type="tel" class="form-control" id="inqPhone" placeholder="Phone Number">
+                            <textarea class="form-control" id="inqMessage" rows="3" placeholder="Your message..."></textarea>
+                            <button type="submit" class="btn-inquiry-submit">
+                                <i class="fas fa-paper-plane me-2"></i> Send Inquiry
+                            </button>
+                        </form>
+                        
+                        <hr>
+                        
+                        <div class="text-center">
+                            <p class="text-muted small">Or contact us directly:</p>
+                            <a href="tel:+211922005177" style="color: var(--primary-gold); font-weight: 600; text-decoration: none;">
+                                <i class="fas fa-phone"></i> +211 922 005 177
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    SIMILAR PROPERTIES
+    ============================================ -->
+    <section class="similar-properties">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge" style="display:inline-block; padding:6px 20px; background:rgba(244,196,48,0.12); color:var(--primary-gold); border-radius:50px; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; margin-bottom:12px;">
+                    Similar Properties
+                </span>
+                <h2 class="section-title">You May Also <span class="gold-text">Like</span></h2>
+                <p class="section-subtitle" style="color:var(--gray); max-width:600px; margin:0 auto 50px;">
+                    Explore these similar premium apartments in Juba.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="similar-card">
+                        <div class="similar-image" style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&h=400&fit=crop');"></div>
+                        <div class="similar-body">
+                            <h5>Jolong Gardens</h5>
+                            <div class="similar-location"><i class="fas fa-map-marker-alt" style="color:var(--primary-gold);"></i> Juba, South Sudan</div>
+                            <div class="similar-price">SSP 900,000 <small style="font-size:0.8rem; color:var(--gray); font-weight:400;">/ year</small></div>
+                            <a href="property-detail.html" class="similar-link">View Details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="similar-card">
+                        <div class="similar-image" style="background-image: url('https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=600&h=400&fit=crop');"></div>
+                        <div class="similar-body">
+                            <h5>Jolong Towers</h5>
+                            <div class="similar-location"><i class="fas fa-map-marker-alt" style="color:var(--primary-gold);"></i> Juba, South Sudan</div>
+                            <div class="similar-price">SSP 1,800,000 <small style="font-size:0.8rem; color:var(--gray); font-weight:400;">/ year</small></div>
+                            <a href="property-detail.html" class="similar-link">View Details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="similar-card">
+                        <div class="similar-image" style="background-image: url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&h=400&fit=crop');"></div>
+                        <div class="similar-body">
+                            <h5>Jolong Residence</h5>
+                            <div class="similar-location"><i class="fas fa-map-marker-alt" style="color:var(--primary-gold);"></i> Juba, South Sudan</div>
+                            <div class="similar-price">SSP 1,500,000 <small style="font-size:0.8rem; color:var(--gray); font-weight:400;">/ year</small></div>
+                            <a href="property-detail.html" class="similar-link">View Details <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">Jolong <span class="gold">Apartments</span></div>
+                    <p class="footer-about">
+                        Premium living in Juba, South Sudan. Modern, secure, and comfortable 
+                        residential spaces designed for your lifestyle.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="apartments.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                        <li><a href="floor-plans.html"><i class="fas fa-chevron-right"></i> Floor Plans</a></li>
+                        <li><a href="about-apartments.html"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="contact-apartments.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
+                        <li><i class="fas fa-phone"></i> +211 922 005 177</li>
+                        <li><i class="fas fa-envelope"></i> info@jolonges.com</li>
+                        <li><i class="fas fa-clock"></i> 7:00 AM - 11:00 PM Daily</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Office Hours</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-clock"></i> Monday - Sunday</li>
+                        <li style="color: var(--primary-gold); font-weight: 600;">7:00 AM - 11:00 PM</li>
+                        <li><i class="fas fa-calendar-check"></i> Viewings by Appointment</li>
+                        <li><i class="fas fa-home"></i> 24/7 Security</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2026 <span class="gold">Jolong Apartments</span>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="index.html" style="color: var(--primary-gold); text-decoration: none;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    TOAST
+    ============================================ -->
+    <div class="toast-notification" id="toast">
+        <div>
+            <i class="fas fa-check-circle toast-icon"></i>
+            <span id="toastMessage">Inquiry sent successfully!</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+    SCRIPTS
+    ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        AOS.init({ duration: 600, once: true, offset: 50, easing: 'ease-in-out' });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            navbar.classList.toggle('scrolled', window.pageYOffset > 50);
+        });
+
+        // ============================================
+        // GALLERY - CHANGE MAIN IMAGE
+        // ============================================
+        function changeMainImage(thumbElement) {
+            const mainImage = document.querySelector('.property-gallery .main-image img');
+            const thumbImage = thumbElement.querySelector('img');
+            const tempSrc = mainImage.src;
+            mainImage.src = thumbImage.src;
+            thumbImage.src = tempSrc;
+            
+            // Add a subtle animation effect
+            mainImage.style.transition = 'opacity 0.3s ease';
+            mainImage.style.opacity = '0.5';
+            setTimeout(() => {
+                mainImage.style.opacity = '1';
+            }, 100);
+            
+            showToast('📸 Image changed');
+        }
+
+        // ============================================
+        // INQUIRY FORM
+        // ============================================
+        function submitInquiry(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('inqName').value.trim();
+            const email = document.getElementById('inqEmail').value.trim();
+            
+            if (!name || !email) {
+                showToast('Please fill in your name and email.', 'error');
+                return false;
+            }
+            
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                showToast('Please enter a valid email address.', 'error');
+                return false;
+            }
+            
+            showToast(`Thank you ${name}! We'll contact you about Jolong Heights within 24 hours.`, 'success');
+            document.getElementById('inquiryForm').reset();
+            return false;
+        }
+
+        // ============================================
+        // SHOW TOAST
+        // ============================================
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            const icon = toast.querySelector('.toast-icon');
+            
+            toastMessage.textContent = message;
+            
+            if (type === 'error') {
+                icon.className = 'fas fa-exclamation-circle toast-icon';
+                toast.style.borderLeftColor = '#c41e3a';
+            } else {
+                icon.className = 'fas fa-check-circle toast-icon';
+                toast.style.borderLeftColor = 'var(--primary-gold)';
+            }
+            
+            toast.classList.add('show');
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => toast.classList.remove('show'), 5000);
+        }
+
+        // ============================================
+        // DYNAMIC YEAR
+        // ============================================
+        const footerYear = document.querySelector('.footer-bottom p');
+        if (footerYear) {
+            footerYear.textContent = footerYear.textContent.replace('2026', new Date().getFullYear());
+        }
+
+        console.log('🏢 Jolong Apartments - Property Detail Page');
+        console.log('📍 Jolong Heights - Premium 3 Bedroom Apartment');
+        console.log('📞 Call: +211 922 005 177');
+    </script>
+</body>
+</html>
