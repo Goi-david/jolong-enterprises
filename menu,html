@@ -1,0 +1,1807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Jolong Bar & Restaurant</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore our menu at Jolong Bar & Restaurant - Authentic South Sudanese cuisine, international dishes, grills, seafood, and desserts in Juba.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        /* ============================================
+                   ROOT VARIABLES
+                   ============================================ */
+        :root {
+            --primary-navy: #0a1a3a;
+            --primary-navy-light: #1a305a;
+            --primary-navy-dark: #060e1f;
+            --primary-gold: #f4c430;
+            --primary-gold-light: #fada5e;
+            --primary-gold-dark: #d4a820;
+            --accent-green: #2e7d32;
+            --accent-red: #c41e3a;
+            --warm-cream: #fdf8f0;
+            --warm-ivory: #faf3e8;
+            --dark-charcoal: #1a1a2e;
+            --warm-brown: #5d4037;
+            --soft-gold: #f5e6b8;
+            --white: #ffffff;
+            --light-gray: #f8f6f0;
+            --gray: #6b7280;
+            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 30px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+            --navy-gradient: linear-gradient(135deg, #0a1a3a, #1a305a);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-charcoal);
+            background-color: var(--warm-cream);
+            line-height: 1.6;
+            padding-top: 56px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .gold-text {
+            color: var(--primary-gold);
+        }
+
+        .navy-text {
+            color: var(--primary-navy);
+        }
+
+        /* ============================================
+                   TOP BAR
+                   ============================================ */
+        .top-bar {
+            background: var(--primary-navy);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .top-bar::before {
+            content: '🍽️';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0.2;
+        }
+
+        .top-bar a {
+            color: var(--primary-gold-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .top-bar .status-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #2ecc71;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        /* ============================================
+                   NAVBAR
+                   ============================================ */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+            background: rgba(255, 255, 255, 0.98) !important;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .navbar-brand .brand-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gold-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .navbar-brand .brand-sub {
+            display: block;
+            font-size: 0.55rem;
+            font-weight: 400;
+            color: var(--primary-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            margin-top: -2px;
+        }
+
+        .nav-link {
+            color: var(--dark-charcoal) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 2px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 80%;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-gold) !important;
+        }
+
+        .btn-reserve {
+            background: var(--gold-gradient);
+            color: var(--primary-navy) !important;
+            padding: 8px 24px !important;
+            border-radius: 50px !important;
+            font-weight: 700 !important;
+            box-shadow: 0 5px 15px rgba(244, 196, 48, 0.3);
+        }
+
+        .btn-reserve::before {
+            display: none !important;
+        }
+
+        .btn-reserve:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 196, 48, 0.4);
+            color: var(--primary-navy) !important;
+        }
+
+        /* ============================================
+                   PAGE HEADER
+                   ============================================ */
+        .page-header {
+            background: linear-gradient(rgba(10, 26, 58, 0.8), rgba(10, 26, 58, 0.8)), 
+                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 0 3rem;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .page-header h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .page-header h1 .highlight {
+            color: var(--primary-gold);
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb-custom {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-custom a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb-custom a:hover {
+            color: white;
+        }
+
+        /* ============================================
+                   CATEGORY NAVIGATION
+                   ============================================ */
+        .category-nav-section {
+            padding: 30px 0;
+            background: white;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 76px;
+            z-index: 99;
+        }
+
+        .category-nav-section .nav-pills .nav-link {
+            color: var(--dark-charcoal);
+            border: 1px solid #dee2e6;
+            margin: 0.2rem;
+            border-radius: 50px;
+            padding: 10px 24px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            background: var(--warm-cream);
+        }
+
+        .category-nav-section .nav-pills .nav-link:hover {
+            background: var(--soft-gold);
+            border-color: var(--primary-gold);
+        }
+
+        .category-nav-section .nav-pills .nav-link.active {
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border-color: var(--primary-gold);
+            font-weight: 700;
+        }
+
+        .category-nav-section .nav-pills .nav-link .badge {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            margin-left: 6px;
+            font-weight: 600;
+        }
+
+        /* ============================================
+                   MENU ITEMS
+                   ============================================ */
+        .menu-section {
+            padding: 60px 0;
+            background: var(--warm-cream);
+        }
+
+        .menu-category-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .menu-category-title .icon {
+            font-size: 2rem;
+        }
+
+        .menu-category-title .line {
+            flex: 1;
+            height: 2px;
+            background: var(--gold-gradient);
+            opacity: 0.3;
+        }
+
+        .menu-category-subtitle {
+            color: var(--gray);
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: var(--border-radius-md);
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--primary-gold);
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-item:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .menu-item .item-info {
+            flex: 1;
+        }
+
+        .menu-item .item-info h5 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+            color: var(--primary-navy);
+        }
+
+        .menu-item .item-info .description {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 6px;
+        }
+
+        .menu-item .item-info .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        .menu-item .item-info .meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .menu-item .item-info .meta i {
+            color: var(--primary-gold);
+        }
+
+        .menu-item .item-info .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .menu-item .item-info .tags .tag {
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tag-local {
+            background: rgba(46, 125, 50, 0.12);
+            color: var(--accent-green);
+        }
+
+        .tag-spicy {
+            background: rgba(196, 30, 58, 0.12);
+            color: var(--accent-red);
+        }
+
+        .tag-popular {
+            background: rgba(244, 196, 48, 0.15);
+            color: var(--primary-gold-dark);
+        }
+
+        .tag-veggie {
+            background: rgba(46, 125, 50, 0.12);
+            color: var(--accent-green);
+        }
+
+        .tag-new {
+            background: rgba(26, 48, 90, 0.12);
+            color: var(--primary-navy-light);
+        }
+
+        .menu-item .item-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            text-align: right;
+            min-width: 120px;
+            margin-left: 20px;
+        }
+
+        .menu-item .item-price .old-price {
+            font-size: 0.9rem;
+            color: var(--gray);
+            text-decoration: line-through;
+            font-weight: 400;
+            display: block;
+        }
+
+        .menu-item .item-actions {
+            display: flex;
+            gap: 8px;
+            margin-left: 16px;
+        }
+
+        .btn-order-item {
+            padding: 8px 18px;
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .btn-order-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244, 196, 48, 0.3);
+        }
+
+        /* ============================================
+                   FILTERS SIDEBAR
+                   ============================================ */
+        .filters-sidebar {
+            background: white;
+            border-radius: var(--border-radius-md);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 180px;
+        }
+
+        .filters-sidebar h5 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--soft-gold);
+        }
+
+        .filter-group {
+            margin-bottom: 20px;
+        }
+
+        .filter-group label {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: var(--dark-charcoal);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 12px;
+            border-radius: var(--border-radius-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .filter-option:hover {
+            background: var(--warm-cream);
+            color: var(--primary-navy);
+        }
+
+        .filter-option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary-gold);
+            cursor: pointer;
+        }
+
+        .filter-option .count {
+            margin-left: auto;
+            background: var(--warm-cream);
+            padding: 0 10px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gray);
+        }
+
+        .price-range-slider {
+            width: 100%;
+            margin: 10px 0;
+            height: 6px;
+            background: var(--soft-gold);
+            border-radius: 4px;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .price-range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--gold-gradient);
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid white;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .price-display {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .price-display span {
+            font-weight: 600;
+            color: var(--primary-navy);
+        }
+
+        /* ============================================
+                   FOOTER
+                   ============================================ */
+        .footer {
+            background: var(--primary-navy-dark);
+            color: white;
+            padding: 60px 0 0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand .gold {
+            color: var(--primary-gold);
+        }
+
+        .footer-about {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 350px;
+        }
+
+        .footer h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            color: var(--primary-gold);
+            font-size: 0.7rem;
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact li i {
+            color: var(--primary-gold);
+            width: 20px;
+            margin-top: 4px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            transform: translateY(-4px);
+            border-color: var(--primary-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 24px 0;
+            margin-top: 48px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .gold {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   TOAST NOTIFICATION
+                   ============================================ */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-navy);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-lg);
+            z-index: 9999;
+            border-left: 4px solid var(--primary-gold);
+            transform: translateX(500px);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 400px;
+        }
+
+        .toast-notification.show {
+            transform: translateX(0);
+        }
+
+        .toast-notification .toast-icon {
+            color: var(--primary-gold);
+            margin-right: 10px;
+        }
+
+        .toast-notification .toast-price {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .category-nav-section {
+                top: 70px;
+                padding: 20px 0;
+            }
+            
+            .filters-sidebar {
+                position: relative;
+                top: 0;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+            
+            .menu-item {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 16px;
+            }
+            
+            .menu-item .item-price {
+                text-align: left;
+                min-width: auto;
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            
+            .menu-item .item-actions {
+                margin-left: 0;
+                margin-top: 10px;
+                width: 100%;
+            }
+            
+            .btn-order-item {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .category-nav-section .nav-pills .nav-link {
+                padding: 6px 14px;
+                font-size: 0.8rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            
+            .navbar-brand .brand-sub {
+                font-size: 0.5rem;
+            }
+            
+            .menu-category-title {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-brand .brand-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .menu-item .item-info h5 {
+                font-size: 1rem;
+            }
+            
+            .menu-item .item-info .description {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ============================================
+                   SCROLLBAR
+                   ============================================ */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-gradient);
+            border-radius: var(--border-radius-xl);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--primary-gold-dark), var(--primary-gold));
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    TOP BAR
+    ============================================ -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span class="status-dot"></span>
+                    <span class="me-3"><strong>Open Now</strong> • 7:00 AM - 11:00 PM</span>
+                    <i class="fas fa-phone-alt me-2"></i> <a href="tel:+211922005177">+211 922 005 177</a>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="reservations.html"><i class="fas fa-calendar-check me-1"></i> Book a Table</a>
+                    <a href="bar-restaurant.html" class="ms-3"><i class="fas fa-arrow-left me-1"></i> Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+    NAVBAR
+    ============================================ -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="bar-restaurant.html">
+                <span class="brand-icon"><i class="fas fa-utensils"></i></span>
+                <div>
+                    Jolong <span class="gold-text">Bar & Restaurant</span>
+                    <span class="brand-sub">Where Juba Dines & Unwinds</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="bar-restaurant.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bar.html">Bar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-bar.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-bar.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: var(--primary-gold) !important;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="reservations.html" class="btn btn-reserve">
+                        <i class="fas fa-calendar-check me-2"></i> Book Table
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+    PAGE HEADER
+    ============================================ -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our <span class="highlight">Menu</span></h1>
+            <p>Discover authentic South Sudanese cuisine and international favorites, 
+            crafted with fresh ingredients and served with warm hospitality.</p>
+            <div class="breadcrumb-custom">
+                <a href="bar-restaurant.html">Home</a>
+                <span>/</span>
+                <span>Menu</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    CATEGORY NAVIGATION
+    ============================================ -->
+    <section class="category-nav-section" id="categoryNav">
+        <div class="container">
+            <ul class="nav nav-pills justify-content-center flex-wrap" id="categoryPills">
+                <li class="nav-item">
+                    <a class="nav-link active" data-category="all" onclick="filterCategory('all')">
+                        <i class="fas fa-utensils me-1"></i> All Items <span class="badge" id="countAll">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-category="appetizers" onclick="filterCategory('appetizers')">
+                        <i class="fas fa-seedling me-1"></i> Appetizers <span class="badge" id="countAppetizers">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-category="mains" onclick="filterCategory('mains')">
+                        <i class="fas fa-drumstick-bite me-1"></i> Main Courses <span class="badge" id="countMains">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-category="local" onclick="filterCategory('local')">
+                        <i class="fas fa-flag me-1"></i> South Sudanese <span class="badge" id="countLocal">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-category="grills" onclick="filterCategory('grills')">
+                        <i class="fas fa-fire me-1"></i> Grills & BBQ <span class="badge" id="countGrills">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-category="seafood" onclick="filterCategory('seafood')">
+                        <i class="fas fa-fish me-1"></i> Seafood <span class="badge" id="countSeafood">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-category="desserts" onclick="filterCategory('desserts')">
+                        <i class="fas fa-cake me-1"></i> Desserts <span class="badge" id="countDesserts">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================
+    MENU SECTION
+    ============================================ -->
+    <section class="menu-section" id="menuSection">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Filters -->
+                <div class="col-lg-3">
+                    <div class="filters-sidebar" id="filtersSidebar">
+                        <h5><i class="fas fa-sliders-h me-2"></i> Filters</h5>
+                        
+                        <!-- Price Range -->
+                        <div class="filter-group">
+                            <label>Price Range</label>
+                            <input type="range" class="price-range-slider" id="priceRange" min="0" max="50000" value="50000" step="1000">
+                            <div class="price-display">
+                                <span>0 SSP</span>
+                                <span id="priceDisplay">50,000 SSP</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Dietary Options -->
+                        <div class="filter-group">
+                            <label>Dietary Options</label>
+                            <div class="filter-option" onclick="toggleDietary('local')">
+                                <input type="checkbox" id="dietLocal">
+                                <label for="dietLocal">South Sudanese Cuisine</label>
+                                <span class="count" id="dietLocalCount">0</span>
+                            </div>
+                            <div class="filter-option" onclick="toggleDietary('spicy')">
+                                <input type="checkbox" id="dietSpicy">
+                                <label for="dietSpicy">🌶️ Spicy</label>
+                                <span class="count" id="dietSpicyCount">0</span>
+                            </div>
+                            <div class="filter-option" onclick="toggleDietary('veggie')">
+                                <input type="checkbox" id="dietVeggie">
+                                <label for="dietVeggie">🥬 Vegetarian</label>
+                                <span class="count" id="dietVeggieCount">0</span>
+                            </div>
+                            <div class="filter-option" onclick="toggleDietary('popular')">
+                                <input type="checkbox" id="dietPopular">
+                                <label for="dietPopular">⭐ Popular</label>
+                                <span class="count" id="dietPopularCount">0</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Reset Filters -->
+                        <button class="btn btn-outline-primary w-100 mt-3" onclick="resetFilters()" style="border-color: var(--primary-gold); color: var(--primary-gold);">
+                            <i class="fas fa-redo me-2"></i> Reset Filters
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Menu Items -->
+                <div class="col-lg-9">
+                    <div id="menuItemsContainer">
+                        <!-- Appetizers -->
+                        <div class="menu-category" data-category="appetizers">
+                            <div class="menu-category-title">
+                                <span class="icon">🍤</span>
+                                <span>Appetizers</span>
+                                <span class="line"></span>
+                            </div>
+                            <p class="menu-category-subtitle">Start your meal with these delicious starters</p>
+                            
+                            <div class="menu-item" data-price="8000" data-dietary="veggie">
+                                <div class="item-info">
+                                    <h5>Bruschetta</h5>
+                                    <p class="description">Toasted bread with fresh tomato, garlic, basil, and balsamic glaze</p>
+                                    <div class="meta">
+                                        <span><i class="fas fa-clock"></i> 10 min</span>
+                                        <span><i class="fas fa-utensils"></i> Starter</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag tag-veggie">🌱 Vegetarian</span>
+                                        <span class="tag tag-popular">⭐ Popular</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">SSP 8,000</div>
+                                <div class="item-actions">
+                                    <button class="btn-order-item" onclick="addToOrder('Bruschetta', 8000)">
+                                        <i class="fas fa-plus"></i> Order
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item" data-price="10000" data-dietary="local">
+                                <div class="item-info">
+                                    <h5>Sambusa</h5>
+                                    <p class="description">Crispy pastry filled with spiced meat or vegetables, served with dipping sauce</p>
+                                    <div class="meta">
+                                        <span><i class="fas fa-clock"></i> 12 min</span>
+                                        <span><i class="fas fa-flag"></i> South Sudanese</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag tag-local">🇸🇸 Local</span>
+                                        <span class="tag tag-spicy">🌶️ Spicy</span>
+                                        <span class="tag tag-popular">⭐ Popular</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">SSP 10,000</div>
+                                <div class="item-actions">
+                                    <button class="btn-order-item" onclick="addToOrder('Sambusa', 10000)">
+                                        <i class="fas fa-plus"></i> Order
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item" data-price="7000" data-dietary="veggie">
+                                <div class="item-info">
+                                    <h5>Spring Rolls</h5>
+                                    <p class="description">Crispy rolls with fresh vegetable filling, served with sweet chili sauce</p>
+                                    <div class="meta">
+                                        <span><i class="fas fa-clock"></i> 10 min</span>
+                                        <span><i class="fas fa-utensils"></i> Starter</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag tag-veggie">🌱 Vegetarian</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">SSP 7,000</div>
+                                <div class="item-actions">
+                                    <button class="btn-order-item" onclick="addToOrder('Spring Rolls', 7000)">
+                                        <i class="fas fa-plus"></i> Order
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Main Courses -->
+                        <div class="menu-category" data-category="mains">
+                            <div class="menu-category-title">
+                                <span class="icon">🥩</span>
+                                <span>Main Courses</span>
+                                <span class="line"></span>
+                            </div>
+                            <p class="menu-category-subtitle">Hearty and satisfying main dishes</p>
+                            
+                            <div class="menu-item" data-price="18000" data-dietary="local popular">
+                                <div class="item-info">
+                                    <h5>Jolof Rice with Grilled Chicken</h5>
+                                    <p class="description">Classic West African rice dish with tender grilled chicken, vegetables, and aromatic spices</p>
+                                    <div class="meta">
+                                        <span><i class="fas fa-clock"></i> 25 min</span>
+                                        <span><i class="fas fa-flag"></i> South Sudanese</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag tag-local">🇸🇸 Local</span>
+                                        <span class="tag tag-popular">⭐ Popular</span>
+                                        <span class="tag tag-spicy">🌶️ Spicy</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">SSP 18,000</div>
+                                <div class="item-actions">
+                                    <button class="btn-order-item" onclick="addToOrder('Jolof Rice with Grilled Chicken', 18000)">
+                                        <i class="fas fa-plus"></i> Order
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item" data-price="22000" data-dietary="popular">
+                                <div class="item-info">
+                                    <h5>Beef Steak</h5>
+                                    <p class="description">Prime cut beef cooked to your preference, served with mashed potatoes and seasonal vegetables</p>
+                                    <div class="meta">
+                                        <span><i class="fas fa-clock"></i> 30 min</span>
+                                        <span><i class="fas fa-utensils"></i> Main</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag tag-popular">⭐ Popular</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">SSP 22,000</div>
+                                <div class="item-actions">
+                                    <button class="btn-order-item" onclick="addToOrder('Beef Steak', 22000)">
+                                        <i class="fas fa-plus"></i> Order
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- South Sudanese Dishes -->
+                        <div class="menu-category" data-category="local">
+                            <div class="menu-category-title">
+                                <span class="icon">🇸🇸</span>
+                                <span>South Sudanese Dishes</span>
+                                <span class="line"></span>
+                            </div>
+                            <p class="menu-category-subtitle">Authentic flavors from the heart of South Sudan</p>
+                            
+                            <div class="menu-item" data-price="12000" data-dietary="local">
+                                <div class="item-info">
+                                    <h5>Asida with Meat Stew</h5>
+                                    <p class="description">Traditional South Sudanese porridge served with rich, slow-cooked meat stew and vegetables</p>
+                                    <div class="meta">
+                                        <span><i class="fas fa-clock"></i> 35 min</span>
+                                        <span><i class="fas fa-flag"></i> South Sudanese</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag tag-local">🇸🇸 Local</span>
+                                        <span class="tag tag-popular">⭐ Popular</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">SSP 12,000</div>
+                                <div class="item-actions">
+                                    <button class="btn-order-item" onclick="addToOrder('Asida with Meat Stew', 12000)">
+                                        <i class="fas fa-plus"></i> Order
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item" data-price="8000" data-dietary="local veggie">
+                                <div class="item-info">
+                                    <h5>Kisra with Ful</h5>
+                                    <p class="description">Fermented sorghum bread served with slow-cooked fava beans and spices</p>
+                                    <div class="meta">
+                                        <span><i class="fas fa-clock"></i> 15 min</span>
+                                        <span><i class="fas fa-flag"></i> South Sudanese</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag tag-local">🇸🇸 Local</span>
+                                        <span class="tag tag-veggie">🌱 Vegetarian</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">SSP 8,000</div>
+                                <div class="item-actions">
+                                    <button class="btn-order-item" onclick="addToOrder('Kisra with Ful', 8000)">
+                                        <i class="fas fa-plus"></i> Order
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item" data-price="18000" data-dietary="local">
+                                <div class="item-info">
+                                    <h5>Mullah (Meat & Vegetable Stew)</h5>
+                                    <p class="description">Rich and hearty stew with tender meat, okra, tomatoes, and traditional spices</p>
+                                    <div class="meta">
+                                        <span><i class="fas fa-clock"></i> 40 min</span>
+                                        <span><i class="fas fa-flag"></i> South Sudanese</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag tag-local">🇸🇸 Local</span>
+                                        <span class="tag tag-spicy">🌶️ Spicy</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">SSP 18,000</div>
+                                <div class="item-actions">
+                                    <button class="btn-order-item" onclick="addToOrder('Mullah', 18000)">
+                                        <i class="fas fa-plus"></i> Order
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Grills & BBQ -->
+                        <div class="menu-category" data-category="grills">
+                            <div class="menu-category-title">
+                                <span class="icon">🔥</span>
+                                <span>Grills & BBQ</span>
+                                <span class="line"></span>
+                            </div>
+                            <p class="menu-category-subtitle">Perfectly grilled meats and barbecue specialties</p>
+                            
+                            <div class="menu-item" data-price="25000" data-dietary="popular">
+                                <div class="item-info">
+                                    <h5>Mixed Grill Platter</h5>
+                                    <p class="description">Selection of grilled meats including beef, chicken, and sausages, served with sides</p>
+                                    <div class="meta">
+                                        <span><i class="fas fa-clock"></i> 35 min</span>
+                                        <span><i class="fas fa-fire"></i> BBQ</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag tag-popular">⭐ Popular</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">SSP 25,000</div>
+                                <div class="item-actions">
+                                    <button class="btn-order-item" onclick="addToOrder('Mixed Grill Platter', 25000)">
+                                        <i class="fas fa-plus"></i> Order
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item" data-price="15000" data-dietary="local">
+                                <div class="item-info">
+                                    <h5>Grilled Chicken with Spicy Sauce</h5>
+                                    <p class="description">Marinated grilled chicken served with a spicy South Sudanese sauce</p>
+                                    <div class="meta">
+                                        <span><i class="fas fa-clock"></i> 25 min</span>
+                                        <span><i class="fas fa-fire"></i> BBQ</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag tag-local">🇸🇸 Local</span>
+                                        <span class="tag tag-spicy">🌶️ Spicy</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">SSP 15,000</div>
+                                <div class="item-actions">
+                                    <button class="btn-order-item" onclick="addToOrder('Grilled Chicken with Spicy Sauce', 15000)">
+                                        <i class="fas fa-plus"></i> Order
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Seafood -->
+                        <div class="menu-category" data-category="seafood">
+                            <div class="menu-category-title">
+                                <span class="icon">🐟</span>
+                                <span>Seafood</span>
+                                <span class="line"></span>
+                            </div>
+                            <p class="menu-category-subtitle">Fresh seafood from the Nile and beyond</p>
+                            
+                            <div class="menu-item" data-price="20000" data-dietary="popular">
+                                <div class="item-info">
+                                    <h5>Grilled Nile Tilapia</h5>
+                                    <p class="description">Fresh Nile tilapia grilled to perfection with lemon, herbs, and served with seasonal vegetables</p>
+                                    <div class="meta">
+                                        <span><i class="fas fa-clock"></i> 25 min</span>
+                                        <span><i class="fas fa-fish"></i> Fresh</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag tag-popular">⭐ Popular</span>
+                                        <span class="tag tag-local">🇸🇸 Local</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">SSP 20,000</div>
+                                <div class="item-actions">
+                                    <button class="btn-order-item" onclick="addToOrder('Grilled Nile Tilapia', 20000)">
+                                        <i class="fas fa-plus"></i> Order
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Desserts -->
+                        <div class="menu-category" data-category="desserts">
+                            <div class="menu-category-title">
+                                <span class="icon">🍰</span>
+                                <span>Desserts</span>
+                                <span class="line"></span>
+                            </div>
+                            <p class="menu-category-subtitle">Sweet endings to your meal</p>
+                            
+                            <div class="menu-item" data-price="6000" data-dietary="veggie">
+                                <div class="item-info">
+                                    <h5>Traditional Sudanese Pudding</h5>
+                                    <p class="description">Rich and creamy pudding with cardamom and nuts</p>
+                                    <div class="meta">
+                                        <span><i class="fas fa-clock"></i> 10 min</span>
+                                        <span><i class="fas fa-flag"></i> South Sudanese</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag tag-local">🇸🇸 Local</span>
+                                        <span class="tag tag-veggie">🌱 Vegetarian</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">SSP 6,000</div>
+                                <div class="item-actions">
+                                    <button class="btn-order-item" onclick="addToOrder('Traditional Sudanese Pudding', 6000)">
+                                        <i class="fas fa-plus"></i> Order
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <div class="menu-item" data-price="7000" data-dietary="veggie">
+                                <div class="item-info">
+                                    <h5>Fresh Fruit Platter</h5>
+                                    <p class="description">Seasonal fresh fruits with honey and mint</p>
+                                    <div class="meta">
+                                        <span><i class="fas fa-clock"></i> 10 min</span>
+                                        <span><i class="fas fa-apple-alt"></i> Fresh</span>
+                                    </div>
+                                    <div class="tags">
+                                        <span class="tag tag-veggie">🌱 Vegetarian</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">SSP 7,000</div>
+                                <div class="item-actions">
+                                    <button class="btn-order-item" onclick="addToOrder('Fresh Fruit Platter', 7000)">
+                                        <i class="fas fa-plus"></i> Order
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- No Results -->
+                        <div id="noResults" style="display: none; text-align: center; padding: 60px 0;">
+                            <div style="font-size: 4rem; margin-bottom: 20px;">🍽️</div>
+                            <h3>No items found</h3>
+                            <p class="text-muted">Try adjusting your filters or search terms</p>
+                            <button class="btn btn-primary mt-3" onclick="resetFilters()" style="background: var(--gold-gradient); border: none; color: var(--primary-navy);">
+                                <i class="fas fa-redo me-2"></i> Reset Filters
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">Jolong <span class="gold">Bar & Restaurant</span></div>
+                    <p class="footer-about">
+                        Where Juba dines and unwinds. Experience authentic South Sudanese 
+                        cuisine, premium drinks, and warm hospitality in an elegant setting.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="bar-restaurant.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Menu</a></li>
+                        <li><a href="bar.html"><i class="fas fa-chevron-right"></i> Bar</a></li>
+                        <li><a href="events.html"><i class="fas fa-chevron-right"></i> Events</a></li>
+                        <li><a href="reservations.html"><i class="fas fa-chevron-right"></i> Reservations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
+                        <li><i class="fas fa-phone"></i> +211 922 005 177</li>
+                        <li><i class="fas fa-envelope"></i> info@jolonges.com</li>
+                        <li><i class="fas fa-clock"></i> 7:00 AM - 11:00 PM Daily</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Opening Hours</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-clock"></i> Monday - Sunday</li>
+                        <li style="color: var(--primary-gold); font-weight: 600;">7:00 AM - 11:00 PM</li>
+                        <li><i class="fas fa-music"></i> Live Music: Fridays</li>
+                        <li><i class="fas fa-glass-cheers"></i> Happy Hour: 5-7 PM Weekdays</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2026 <span class="gold">Jolong Bar & Restaurant</span>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="index.html" style="color: var(--primary-gold); text-decoration: none;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    TOAST NOTIFICATION
+    ============================================ -->
+    <div class="toast-notification" id="toast">
+        <div>
+            <i class="fas fa-check-circle toast-icon"></i>
+            <span id="toastMessage">Item added to order!</span>
+            <br>
+            <span class="toast-price" id="toastPrice">SSP 0</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+    SCRIPTS
+    ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // ============================================
+        // AOS INIT
+        // ============================================
+        AOS.init({
+            duration: 600,
+            once: true,
+            offset: 50,
+            easing: 'ease-in-out'
+        });
+
+        // ============================================
+        // NAVBAR SCROLL
+        // ============================================
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ============================================
+        // MENU DATA
+        // ============================================
+        const menuItems = document.querySelectorAll('.menu-item');
+        const menuCategories = document.querySelectorAll('.menu-category');
+        let activeCategory = 'all';
+        let activeDietary = [];
+        let maxPrice = 50000;
+
+        // ============================================
+        // UPDATE COUNTS
+        // ============================================
+        function updateCounts() {
+            const categories = {
+                all: menuItems.length,
+                appetizers: 0,
+                mains: 0,
+                local: 0,
+                grills: 0,
+                seafood: 0,
+                desserts: 0
+            };
+
+            const dietary = {
+                local: 0,
+                spicy: 0,
+                veggie: 0,
+                popular: 0
+            };
+
+            menuItems.forEach(item => {
+                const category = item.closest('.menu-category').dataset.category;
+                if (categories[category] !== undefined) categories[category]++;
+                
+                const dietaryAttr = item.dataset.dietary || '';
+                dietaryAttr.split(' ').forEach(d => {
+                    if (dietary[d] !== undefined) dietary[d]++;
+                });
+            });
+
+            // Update category badges
+            Object.keys(categories).forEach(key => {
+                const el = document.getElementById(`count${key.charAt(0).toUpperCase() + key.slice(1)}`);
+                if (el) el.textContent = categories[key];
+            });
+
+            // Update dietary counts
+            document.getElementById('dietLocalCount').textContent = dietary.local;
+            document.getElementById('dietSpicyCount').textContent = dietary.spicy;
+            document.getElementById('dietVeggieCount').textContent = dietary.veggie;
+            document.getElementById('dietPopularCount').textContent = dietary.popular;
+        }
+
+        // ============================================
+        // FILTER CATEGORY
+        // ============================================
+        function filterCategory(category) {
+            activeCategory = category;
+            
+            // Update nav pills
+            document.querySelectorAll('#categoryPills .nav-link').forEach(link => {
+                link.classList.toggle('active', link.dataset.category === category);
+            });
+            
+            applyFilters();
+        }
+
+        // ============================================
+        // TOGGLE DIETARY
+        // ============================================
+        function toggleDietary(type) {
+            const checkbox = document.getElementById(`diet${type.charAt(0).toUpperCase() + type.slice(1)}`);
+            const index = activeDietary.indexOf(type);
+            
+            if (checkbox.checked) {
+                if (index === -1) activeDietary.push(type);
+            } else {
+                if (index > -1) activeDietary.splice(index, 1);
+            }
+            
+            applyFilters();
+        }
+
+        // ============================================
+        // PRICE RANGE
+        // ============================================
+        const priceRange = document.getElementById('priceRange');
+        const priceDisplay = document.getElementById('priceDisplay');
+
+        priceRange.addEventListener('input', function() {
+            maxPrice = parseInt(this.value);
+            priceDisplay.textContent = maxPrice.toLocaleString() + ' SSP';
+            applyFilters();
+        });
+
+        // ============================================
+        // APPLY FILTERS
+        // ============================================
+        function applyFilters() {
+            let visibleCount = 0;
+            let categoriesVisible = new Set();
+
+            menuItems.forEach(item => {
+                const category = item.closest('.menu-category').dataset.category;
+                const price = parseInt(item.dataset.price);
+                const dietary = item.dataset.dietary || '';
+                
+                // Category filter
+                let categoryMatch = activeCategory === 'all' || category === activeCategory;
+                
+                // Price filter
+                let priceMatch = price <= maxPrice;
+                
+                // Dietary filter
+                let dietaryMatch = true;
+                if (activeDietary.length > 0) {
+                    const itemDietary = dietary.split(' ');
+                    dietaryMatch = activeDietary.some(d => itemDietary.includes(d));
+                }
+                
+                const visible = categoryMatch && priceMatch && dietaryMatch;
+                item.style.display = visible ? '' : 'none';
+                
+                if (visible) {
+                    visibleCount++;
+                    categoriesVisible.add(category);
+                }
+            });
+
+            // Show/hide categories
+            menuCategories.forEach(cat => {
+                const category = cat.dataset.category;
+                const hasVisibleItems = cat.querySelectorAll('.menu-item[style*="display: none"]').length < cat.querySelectorAll('.menu-item').length;
+                cat.style.display = hasVisibleItems ? '' : 'none';
+            });
+
+            // Show/hide no results
+            const noResults = document.getElementById('noResults');
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+            
+            // Update active filter display
+            updateActiveFiltersDisplay();
+        }
+
+        // ============================================
+        // UPDATE ACTIVE FILTERS DISPLAY
+        // ============================================
+        function updateActiveFiltersDisplay() {
+            const filters = [];
+            
+            if (activeCategory !== 'all') {
+                filters.push(`Category: ${activeCategory}`);
+            }
+            
+            if (activeDietary.length > 0) {
+                filters.push(`Dietary: ${activeDietary.join(', ')}`);
+            }
+            
+            if (maxPrice < 50000) {
+                filters.push(`Under ${maxPrice.toLocaleString()} SSP`);
+            }
+            
+            // Could add a filter display element here if needed
+        }
+
+        // ============================================
+        // RESET FILTERS
+        // ============================================
+        function resetFilters() {
+            activeCategory = 'all';
+            activeDietary = [];
+            maxPrice = 50000;
+            
+            // Reset price slider
+            priceRange.value = 50000;
+            priceDisplay.textContent = '50,000 SSP';
+            
+            // Reset checkboxes
+            document.querySelectorAll('.filter-option input[type="checkbox"]').forEach(cb => {
+                cb.checked = false;
+            });
+            
+            // Reset category nav
+            document.querySelectorAll('#categoryPills .nav-link').forEach(link => {
+                link.classList.toggle('active', link.dataset.category === 'all');
+            });
+            
+            applyFilters();
+            showToast('All filters reset', '🔄');
+        }
+
+        // ============================================
+        // ADD TO ORDER
+        // ============================================
+        function addToOrder(itemName, price) {
+            showToast(`${itemName} added to order!`, '✅', price);
+        }
+
+        // ============================================
+        // SHOW TOAST
+        // ============================================
+        function showToast(message, icon = '✅', price = null) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastPrice = document.getElementById('toastPrice');
+            
+            toastMessage.textContent = message;
+            
+            if (price) {
+                toastPrice.textContent = `SSP ${price.toLocaleString()}`;
+            } else {
+                toastPrice.textContent = '';
+            }
+            
+            toast.classList.add('show');
+            
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // ============================================
+        // SMOOTH SCROLL FOR ANCHOR LINKS
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ============================================
+        // DYNAMIC YEAR IN FOOTER
+        // ============================================
+        const footerYear = document.querySelector('.footer-bottom p');
+        if (footerYear) {
+            footerYear.textContent = footerYear.textContent.replace('2026', new Date().getFullYear());
+        }
+
+        // ============================================
+        // INIT
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCounts();
+            applyFilters();
+        });
+
+        console.log('🍽️ Jolong Bar & Restaurant - Menu Page');
+        console.log('📋 Total menu items:', menuItems.length);
+        console.log('📞 Call: +211 922 005 177');
+    </script>
+</body>
+</html>
