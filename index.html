@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -751,7 +752,10 @@
             text-align: center;
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: var(--transition);
-            cursor: default;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            color: inherit;
         }
 
         .hero-grid-item:hover {
@@ -1019,6 +1023,9 @@
             flex-direction: column;
             justify-content: flex-end;
             background: var(--white);
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
         }
 
         .service-card .card-bg {
@@ -2055,11 +2062,11 @@
             <div class="mobile-tagline">Building South Sudan's Future</div>
             <ul>
                 <li><a href="#home" class="active"><span class="icon">🏠</span> Home</a></li>
-                <li><a href="#services"><span class="icon">⚡</span> Services</a></li>
-                <li><a href="#projects"><span class="icon">📋</span> Projects</a></li>
+                <li><a href="services.html"><span class="icon">⚡</span> Services</a></li>
+                <li><a href="projects.html"><span class="icon">📋</span> Projects</a></li>
                 <li><a href="#about"><span class="icon">ℹ️</span> About</a></li>
-                <li><a href="#testimonials"><span class="icon">💬</span> Testimonials</a></li>
-                <li><a href="#contact" class="contact-mobile"><span class="icon">📞</span> Get in Touch</a></li>
+                <li><a href="testimonials.html"><span class="icon">💬</span> Testimonials</a></li>
+                <li><a href="contact.html" class="contact-mobile"><span class="icon">📞</span> Get in Touch</a></li>
             </ul>
             <div class="mobile-social">
                 <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -2120,45 +2127,45 @@
                     business divisions, serving Juba and beyond with integrity and innovation.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#services" class="btn-primary">
+                    <a href="services.html" class="btn-primary">
                         <i class="fas fa-rocket"></i> Explore Our Services
                     </a>
-                    <a href="#projects" class="btn-outline">
+                    <a href="projects.html" class="btn-outline">
                         View Our Projects <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
 
                 <div class="hero-grid" data-aos="fade-up" data-aos-delay="200">
-                    <div class="hero-grid-item">
+                    <a href="services.html#bar-restaurant" class="hero-grid-item">
                         <span class="icon">🍽️</span>
                         <div class="name">Bar & Restaurant</div>
                         <span class="status status-operational">Operational</span>
-                    </div>
-                    <div class="hero-grid-item">
+                    </a>
+                    <a href="services.html#apartments" class="hero-grid-item">
                         <span class="icon">🏢</span>
                         <div class="name">Apartments</div>
                         <span class="status status-coming">Coming Soon</span>
-                    </div>
-                    <div class="hero-grid-item">
+                    </a>
+                    <a href="services.html#transportation" class="hero-grid-item">
                         <span class="icon">🚚</span>
                         <div class="name">Transportation</div>
                         <span class="status status-operational">Operational</span>
-                    </div>
-                    <div class="hero-grid-item">
+                    </a>
+                    <a href="services.html#warehouse" class="hero-grid-item">
                         <span class="icon">🏗️</span>
                         <div class="name">Warehouse</div>
                         <span class="status status-coming">Coming Soon</span>
-                    </div>
-                    <div class="hero-grid-item">
+                    </a>
+                    <a href="services.html#farming" class="hero-grid-item">
                         <span class="icon">🌾</span>
                         <div class="name">Farming</div>
                         <span class="status status-coming">Coming Soon</span>
-                    </div>
-                    <div class="hero-grid-item">
+                    </a>
+                    <a href="services.html#ferry" class="hero-grid-item">
                         <span class="icon">⛴️</span>
                         <div class="name">Ferry Crossing</div>
                         <span class="status status-coming">Coming Soon</span>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -2212,64 +2219,64 @@
 
             <div class="services-grid">
                 <!-- Service 1 - Bar & Restaurant -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <a href="services.html#bar-restaurant" class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="card-bg" style="background-image: url('brr.jpg');"></div>
                     <span class="icon">🍽️</span>
                     <span class="status-badge operational">● Operational</span>
                     <h3>Bar & Restaurant</h3>
                     <p>Experience premium dining and entertainment at our flagship establishment.</p>
-                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
 
                 <!-- Service 2 - Apartments -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+                <a href="services.html#apartments" class="service-card" data-aos="fade-up" data-aos-delay="150">
                     <div class="card-bg" style="background-image: url('ap.jpg');"></div>
                     <span class="icon">🏢</span>
                     <span class="status-badge coming">● Coming Soon</span>
                     <h3>Apartments</h3>
                     <p>Modern, secure, and comfortable residential spaces in prime locations.</p>
-                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
 
                 <!-- Service 3 - Transportation -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <a href="services.html#transportation" class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="card-bg" style="background-image: url('hgk.jpg');"></div>
                     <span class="icon">🚚</span>
                     <span class="status-badge operational">● Operational</span>
                     <h3>Transportation</h3>
                     <p>Reliable logistics and passenger transport services across South Sudan.</p>
-                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
 
                 <!-- Service 4 - Warehouse -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+                <a href="services.html#warehouse" class="service-card" data-aos="fade-up" data-aos-delay="250">
                     <div class="card-bg" style="background-image: url('Modern Warehousing.jpg');"></div>
                     <span class="icon">🏗️</span>
                     <span class="status-badge coming">● Coming Soon</span>
                     <h3>Warehouse Building</h3>
                     <p>State-of-the-art warehousing solutions for businesses and organizations.</p>
-                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
 
                 <!-- Service 5 - Farming -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <a href="services.html#farming" class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="card-bg" style="background-image: url('farming.jpg');"></div>
                     <span class="icon">🌾</span>
                     <span class="status-badge coming">● Coming Soon</span>
                     <h3>Farming</h3>
                     <p>Sustainable agricultural practices for food security and economic growth.</p>
-                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
 
                 <!-- Service 6 - Ferry Crossing -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="350">
+                <a href="services.html#ferry" class="service-card" data-aos="fade-up" data-aos-delay="350">
                     <div class="card-bg" style="background-image: url('fr.jpg');"></div>
                     <span class="icon">⛴️</span>
                     <span class="status-badge coming">● Coming Soon</span>
                     <h3>Ferry Crossing</h3>
                     <p>Connecting communities through South Sudan's new ferry crossing service.</p>
-                    <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
             </div>
         </div>
     </section>
@@ -2514,12 +2521,12 @@
                 <div>
                     <h4>Our Services</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Bar & Restaurant</a></li>
-                        <li><a href="#">Apartments</a></li>
-                        <li><a href="#">Transportation</a></li>
-                        <li><a href="#">Warehouse Building</a></li>
-                        <li><a href="#">Farming</a></li>
-                        <li><a href="#">Ferry Crossing</a></li>
+                        <li><a href="services.html#bar-restaurant">Bar & Restaurant</a></li>
+                        <li><a href="services.html#apartments">Apartments</a></li>
+                        <li><a href="services.html#transportation">Transportation</a></li>
+                        <li><a href="services.html#warehouse">Warehouse Building</a></li>
+                        <li><a href="services.html#farming">Farming</a></li>
+                        <li><a href="services.html#ferry">Ferry Crossing</a></li>
                     </ul>
                 </div>
 
@@ -2773,3 +2780,4 @@
 
 </body>
 </html>
+```
