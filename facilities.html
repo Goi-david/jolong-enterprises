@@ -1,1 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Facilities - Jolong Warehousing</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore our state-of-the-art warehousing facilities in South Sudan. Modern, secure, and accessible storage spaces for businesses.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        /* ============================================
+                   ROOT VARIABLES
+                   ============================================ */
+        :root {
+            --primary-navy: #0a1a3a;
+            --primary-navy-light: #1a305a;
+            --primary-navy-dark: #060e1f;
+            --primary-gold: #f4c430;
+            --primary-gold-light: #fada5e;
+            --primary-gold-dark: #d4a820;
+            --accent-orange: #e67e22;
+            --accent-orange-light: #f39c12;
+            --warm-cream: #fdf8f0;
+            --warm-ivory: #faf3e8;
+            --dark-charcoal: #1a1a2e;
+            --gray: #6b7280;
+            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 30px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+            --orange-gradient: linear-gradient(135deg, #e67e22, #d35400);
+            --navy-gradient: linear-gradient(135deg, #0a1a3a, #1a305a);
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-charcoal);
+            background-color: var(--warm-cream);
+            line-height: 1.6;
+            padding-top: 56px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .gold-text {
+            color: var(--primary-gold);
+        }
+        .orange-text {
+            color: var(--accent-orange);
+        }
+
+        /* ============================================
+                   TOP BAR
+                   ============================================ */
+        .top-bar {
+            background: var(--primary-navy);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .top-bar::before {
+            content: '🏗️';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0.2;
+        }
+
+        .top-bar a {
+            color: var(--primary-gold-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* ============================================
+                   NAVBAR
+                   ============================================ */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .navbar-brand .brand-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--orange-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .navbar-brand .brand-sub {
+            display: block;
+            font-size: 0.55rem;
+            font-weight: 400;
+            color: var(--accent-orange);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            margin-top: -2px;
+        }
+
+        .nav-link {
+            color: var(--dark-charcoal) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 2px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--accent-orange);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 80%;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-orange) !important;
+        }
+
+        .btn-inquire {
+            background: var(--orange-gradient);
+            color: white !important;
+            padding: 8px 24px !important;
+            border-radius: 50px !important;
+            font-weight: 700 !important;
+            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+        }
+
+        .btn-inquire:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(230, 126, 34, 0.4);
+            color: white !important;
+        }
+
+        /* ============================================
+                   PAGE HEADER
+                   ============================================ */
+        .page-header {
+            background: linear-gradient(rgba(10, 26, 58, 0.7), rgba(10, 26, 58, 0.8)), 
+                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 0 3rem;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--orange-gradient);
+        }
+
+        .page-header h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .page-header h1 .highlight {
+            color: var(--accent-orange);
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb-custom {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-custom a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb-custom a:hover {
+            color: white;
+        }
+
+        /* ============================================
+                   SECTION HEADERS
+                   ============================================ */
+        .section-badge {
+            display: inline-block;
+            padding: 6px 20px;
+            background: rgba(230, 126, 34, 0.12);
+            color: var(--accent-orange);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--primary-navy);
+            line-height: 1.2;
+        }
+
+        .section-title .highlight {
+            color: var(--accent-orange);
+            position: relative;
+        }
+
+        .section-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--orange-gradient);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        /* ============================================
+                   FACILITIES GRID
+                   ============================================ */
+        .facilities-section {
+            padding: 80px 0;
+            background: var(--warm-cream);
+        }
+
+        .facility-detail-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .facility-detail-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-orange);
+        }
+
+        .facility-detail-card .facility-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .facility-detail-card .facility-image .facility-status {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(46, 125, 50, 0.9);
+            color: white;
+        }
+
+        .facility-detail-card .facility-image .facility-status.available {
+            background: rgba(46, 125, 50, 0.9);
+        }
+
+        .facility-detail-card .facility-image .facility-status.coming {
+            background: rgba(230, 126, 34, 0.9);
+            color: white;
+        }
+
+        .facility-detail-card .facility-body {
+            padding: 28px;
+        }
+
+        .facility-detail-card .facility-body .facility-icon {
+            font-size: 2.5rem;
+            color: var(--accent-orange);
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .facility-detail-card .facility-body h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .facility-detail-card .facility-body .location {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .facility-detail-card .facility-body .location i {
+            color: var(--accent-orange);
+            margin-right: 6px;
+        }
+
+        .facility-detail-card .facility-body .specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .facility-detail-card .facility-body .specs .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .facility-detail-card .facility-body .specs .spec-item i {
+            color: var(--primary-gold);
+            width: 18px;
+        }
+
+        .facility-detail-card .facility-body .description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .facility-detail-card .facility-body .actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-inquiry {
+            flex: 1;
+            padding: 12px;
+            background: var(--orange-gradient);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-inquiry:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(230, 126, 34, 0.3);
+        }
+
+        .btn-details {
+            padding: 12px 24px;
+            background: transparent;
+            color: var(--primary-navy);
+            border: 2px solid var(--primary-navy);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-details:hover {
+            background: var(--primary-navy);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ============================================
+                   FACILITY FEATURES
+                   ============================================ */
+        .facility-features {
+            padding: 60px 0;
+            background: var(--orange-gradient);
+            color: white;
+            text-align: center;
+        }
+
+        .facility-features .feature-item .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary-gold);
+            display: block;
+        }
+
+        .facility-features .feature-item .label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* ============================================
+                   COMPARISON TABLE
+                   ============================================ */
+        .comparison-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .comparison-table thead {
+            background: var(--navy-gradient);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 16px 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .comparison-table td {
+            padding: 14px 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .comparison-table tr:hover td {
+            background: var(--warm-cream);
+        }
+
+        .comparison-table .facility-name {
+            font-weight: 600;
+            color: var(--primary-navy);
+        }
+
+        .comparison-table .check {
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        .comparison-table .times {
+            color: var(--gray);
+        }
+
+        /* ============================================
+                   CTA
+                   ============================================ */
+        .cta-warehouse {
+            padding: 80px 0;
+            background: var(--navy-gradient);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-warehouse::before {
+            content: '🏗️';
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            font-size: 6rem;
+            opacity: 0.05;
+        }
+
+        .cta-warehouse h2 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .cta-warehouse h2 .highlight {
+            color: var(--accent-orange);
+        }
+
+        .cta-warehouse p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        /* ============================================
+                   FOOTER
+                   ============================================ */
+        .footer {
+            background: var(--primary-navy-dark);
+            color: white;
+            padding: 60px 0 0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--orange-gradient);
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand .gold {
+            color: var(--primary-gold);
+        }
+
+        .footer-about {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 350px;
+        }
+
+        .footer h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-orange);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            color: var(--primary-gold);
+            font-size: 0.7rem;
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact li i {
+            color: var(--primary-gold);
+            width: 20px;
+            margin-top: 4px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent-orange);
+            color: white;
+            transform: translateY(-4px);
+            border-color: var(--accent-orange);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 24px 0;
+            margin-top: 48px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .gold {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   TOAST
+                   ============================================ */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-navy);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-lg);
+            z-index: 9999;
+            border-left: 4px solid var(--accent-orange);
+            transform: translateX(500px);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 400px;
+        }
+
+        .toast-notification.show {
+            transform: translateX(0);
+        }
+
+        .toast-notification .toast-icon {
+            color: var(--accent-orange);
+            margin-right: 10px;
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .facility-detail-card .facility-image {
+                height: 200px;
+            }
+            
+            .facility-features .feature-item .number {
+                font-size: 2.5rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.85rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px 14px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .facility-detail-card {
+                margin-bottom: 20px;
+            }
+            
+            .facility-detail-card .facility-body .specs {
+                grid-template-columns: 1fr;
+            }
+            
+            .facility-detail-card .facility-body .actions {
+                flex-direction: column;
+            }
+            
+            .btn-details {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .facility-features .feature-item .number {
+                font-size: 2rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.75rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 10px;
+            }
+            
+            .comparison-table .facility-name {
+                font-size: 0.8rem;
+            }
+            
+            .cta-warehouse h2 {
+                font-size: 2.2rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            
+            .navbar-brand .brand-sub {
+                font-size: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-brand .brand-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .facility-features .feature-item .number {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* ============================================
+                   SCROLLBAR
+                   ============================================ */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--orange-gradient);
+            border-radius: var(--border-radius-xl);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    TOP BAR
+    ============================================ -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span class="status-dot"></span>
+                    <span class="me-3"><strong>Coming Soon</strong> • State-of-the-Art Warehousing</span>
+                    <i class="fas fa-phone-alt me-2"></i> <a href="tel:+211922005177">+211 922 005 177</a>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="warehouse.html"><i class="fas fa-arrow-left me-1"></i> Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+    NAVBAR
+    ============================================ -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="warehouse.html">
+                <span class="brand-icon"><i class="fas fa-warehouse"></i></span>
+                <div>
+                    Jolong <span class="gold-text">Warehousing</span>
+                    <span class="brand-sub">State-of-the-Art Storage Solutions</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="warehouse.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="facilities.html">Facilities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services-warehouse.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-warehouse.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-warehouse.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: var(--accent-orange) !important;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="contact-warehouse.html" class="btn btn-inquire">
+                        <i class="fas fa-warehouse me-2"></i> Inquire Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+    PAGE HEADER
+    ============================================ -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our <span class="highlight">Facilities</span></h1>
+            <p>Explore our state-of-the-art warehousing facilities designed to meet the 
+            highest standards of safety, security, and efficiency.</p>
+            <div class="breadcrumb-custom">
+                <a href="warehouse.html">Home</a>
+                <span>/</span>
+                <span>Facilities</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FACILITIES GRID
+    ============================================ -->
+    <section class="facilities-section">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge">Our Facilities</span>
+                <h2 class="section-title">State-of-the-Art <span class="highlight">Warehouses</span></h2>
+                <p class="section-subtitle" style="color:var(--gray); max-width:600px; margin:0 auto 50px;">
+                    Each of our facilities is designed with your business needs in mind — 
+                    secure, accessible, and built to international standards.
+                </p>
+            </div>
+
+            <div class="row">
+                <!-- Facility 1: Warehouse A -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="facility-detail-card">
+                        <div class="facility-image" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=500&fit=crop');">
+                            <span class="facility-status available">● Available</span>
+                        </div>
+                        <div class="facility-body">
+                            <span class="facility-icon"><i class="fas fa-warehouse"></i></span>
+                            <h3>Warehouse A</h3>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</div>
+                            <div class="specs">
+                                <span class="spec-item"><i class="fas fa-vector-square"></i> 10,000 sq.ft</span>
+                                <span class="spec-item"><i class="fas fa-shield-alt"></i> 24/7 Security</span>
+                                <span class="spec-item"><i class="fas fa-truck"></i> Loading Bay</span>
+                                <span class="spec-item"><i class="fas fa-power-off"></i> Backup Power</span>
+                            </div>
+                            <p class="description">Modern warehouse facility with 24/7 security monitoring, loading bays, and backup power supply.</p>
+                            <div class="actions">
+                                <a href="contact-warehouse.html" class="btn-inquiry">
+                                    <i class="fas fa-envelope me-1"></i> Inquire
+                                </a>
+                                <a href="#" class="btn-details" onclick="showToast('📋 Warehouse A details loaded!')">
+                                    <i class="fas fa-eye me-1"></i> Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facility 2: Warehouse B -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="facility-detail-card">
+                        <div class="facility-image" style="background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&h=500&fit=crop');">
+                            <span class="facility-status available">● Available</span>
+                        </div>
+                        <div class="facility-body">
+                            <span class="facility-icon"><i class="fas fa-warehouse"></i></span>
+                            <h3>Warehouse B</h3>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</div>
+                            <div class="specs">
+                                <span class="spec-item"><i class="fas fa-vector-square"></i> 15,000 sq.ft</span>
+                                <span class="spec-item"><i class="fas fa-shield-alt"></i> 24/7 Security</span>
+                                <span class="spec-item"><i class="fas fa-truck"></i> Loading Bay</span>
+                                <span class="spec-item"><i class="fas fa-wifi"></i> High-Speed Internet</span>
+                            </div>
+                            <p class="description">Large-scale warehouse with expansive storage space, ideal for bulk storage and distribution.</p>
+                            <div class="actions">
+                                <a href="contact-warehouse.html" class="btn-inquiry">
+                                    <i class="fas fa-envelope me-1"></i> Inquire
+                                </a>
+                                <a href="#" class="btn-details" onclick="showToast('📋 Warehouse B details loaded!')">
+                                    <i class="fas fa-eye me-1"></i> Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facility 3: Warehouse C -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="facility-detail-card">
+                        <div class="facility-image" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=500&fit=crop');">
+                            <span class="facility-status coming">● Coming Soon</span>
+                        </div>
+                        <div class="facility-body">
+                            <span class="facility-icon"><i class="fas fa-warehouse"></i></span>
+                            <h3>Warehouse C</h3>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</div>
+                            <div class="specs">
+                                <span class="spec-item"><i class="fas fa-vector-square"></i> 8,000 sq.ft</span>
+                                <span class="spec-item"><i class="fas fa-snowflake"></i> Climate Controlled</span>
+                                <span class="spec-item"><i class="fas fa-shield-alt"></i> 24/7 Security</span>
+                                <span class="spec-item"><i class="fas fa-truck"></i> Loading Bay</span>
+                            </div>
+                            <p class="description">Climate-controlled warehouse for temperature-sensitive goods and high-value inventory.</p>
+                            <div class="actions">
+                                <a href="contact-warehouse.html" class="btn-inquiry">
+                                    <i class="fas fa-envelope me-1"></i> Pre-Register
+                                </a>
+                                <a href="#" class="btn-details" onclick="showToast('📋 Warehouse C details loaded!')">
+                                    <i class="fas fa-eye me-1"></i> Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Facility 4: Warehouse D -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="facility-detail-card">
+                        <div class="facility-image" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=500&fit=crop');">
+                            <span class="facility-status available">● Available</span>
+                        </div>
+                        <div class="facility-body">
+                            <span class="facility-icon"><i class="fas fa-warehouse"></i></span>
+                            <h3>Warehouse D</h3>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</div>
+                            <div class="specs">
+                                <span class="spec-item"><i class="fas fa-vector-square"></i> 12,000 sq.ft</span>
+                                <span class="spec-item"><i class="fas fa-shield-alt"></i> 24/7 Security</span>
+                                <span class="spec-item"><i class="fas fa-truck"></i> Loading Bay</span>
+                                <span class="spec-item"><i class="fas fa-power-off"></i> Backup Power</span>
+                            </div>
+                            <p class="description">Centrally located warehouse with easy access to major transport routes for efficient logistics.</p>
+                            <div class="actions">
+                                <a href="contact-warehouse.html" class="btn-inquiry">
+                                    <i class="fas fa-envelope me-1"></i> Inquire
+                                </a>
+                                <a href="#" class="btn-details" onclick="showToast('📋 Warehouse D details loaded!')">
+                                    <i class="fas fa-eye me-1"></i> Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FACILITY FEATURES
+    ============================================ -->
+    <section class="facility-features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6 mb-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="feature-item">
+                        <span class="number">4</span>
+                        <span class="label">Warehouse Facilities</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="feature-item">
+                        <span class="number">45,000</span>
+                        <span class="label">Total sq.ft Space</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="feature-item">
+                        <span class="number">24/7</span>
+                        <span class="label">Security Monitoring</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="feature-item">
+                        <span class="number">100%</span>
+                        <span class="label">Backup Power</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    COMPARISON TABLE
+    ============================================ -->
+    <section class="comparison-section" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge">Compare Facilities</span>
+                <h2 class="section-title">Find the Right <span class="highlight">Space</span></h2>
+                <p class="section-subtitle" style="color:var(--gray); max-width:600px; margin:0 auto 50px;">
+                    Compare our warehouse facilities to find the perfect space for your storage needs.
+                </p>
+            </div>
+
+            <div class="table-responsive">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Warehouse A</th>
+                            <th>Warehouse B</th>
+                            <th>Warehouse C</th>
+                            <th>Warehouse D</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="facility-name">Size</td>
+                            <td>10,000 sq.ft</td>
+                            <td>15,000 sq.ft</td>
+                            <td>8,000 sq.ft</td>
+                            <td>12,000 sq.ft</td>
+                        </tr>
+                        <tr>
+                            <td class="facility-name">24/7 Security</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="facility-name">Loading Bay</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="facility-name">Backup Power</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="times">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="facility-name">Climate Control</td>
+                            <td><span class="times">✗</span></td>
+                            <td><span class="times">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="times">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td class="facility-name">High-Speed Internet</td>
+                            <td><span class="times">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="times">✗</span></td>
+                        </tr>
+                        <tr>
+                            <td class="facility-name">Prime Location</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="facility-name">Status</td>
+                            <td><strong style="color:var(--accent-green);">Available</strong></td>
+                            <td><strong style="color:var(--accent-green);">Available</strong></td>
+                            <td><strong style="color:var(--accent-orange);">Coming Soon</strong></td>
+                            <td><strong style="color:var(--accent-green);">Available</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    CTA
+    ============================================ -->
+    <section class="cta-warehouse">
+        <div class="container">
+            <h2>Find Your <span class="highlight">Warehouse Space</span></h2>
+            <p>Contact us today to schedule a viewing or learn more about our facilities.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="contact-warehouse.html" class="btn" style="display:inline-flex; padding:16px 48px; font-size:1.1rem; background:var(--orange-gradient); color:white; border:none; border-radius:50px; font-weight:700; text-decoration:none;">
+                    <i class="fas fa-warehouse me-2"></i> Inquire Now
+                </a>
+                <a href="tel:+211922005177" class="btn" style="display:inline-flex; padding:16px 48px; font-size:1.1rem; background:transparent; color:white; border:2px solid white; border-radius:50px; font-weight:700; text-decoration:none;">
+                    <i class="fas fa-phone me-2"></i> +211 922 005 177
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">Jolong <span class="gold">Warehousing</span></div>
+                    <p class="footer-about">
+                        State-of-the-art storage solutions for businesses and organizations in South Sudan. 
+                        Secure, accessible, and modern warehouse facilities.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="warehouse.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="facilities.html"><i class="fas fa-chevron-right"></i> Facilities</a></li>
+                        <li><a href="services-warehouse.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="about-warehouse.html"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="contact-warehouse.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
+                        <li><i class="fas fa-phone"></i> +211 922 005 177</li>
+                        <li><i class="fas fa-envelope"></i> info@jolonges.com</li>
+                        <li><i class="fas fa-clock"></i> 7:00 AM - 11:00 PM Daily</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Facility Hours</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-clock"></i> Monday - Sunday</li>
+                        <li style="color: var(--accent-orange); font-weight: 600;">7:00 AM - 11:00 PM</li>
+                        <li><i class="fas fa-warehouse"></i> 24/7 Security</li>
+                        <li><i class="fas fa-calendar-check"></i> Viewings by Appointment</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2026 <span class="gold">Jolong Warehousing</span>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="index.html" style="color: var(--accent-orange); text-decoration: none;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    TOAST
+    ============================================ -->
+    <div class="toast-notification" id="toast">
+        <div>
+            <i class="fas fa-check-circle toast-icon"></i>
+            <span id="toastMessage">Facility details loaded!</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+    SCRIPTS
+    ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        AOS.init({ duration: 600, once: true, offset: 50, easing: 'ease-in-out' });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            navbar.classList.toggle('scrolled', window.pageYOffset > 50);
+        });
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        const footerYear = document.querySelector('.footer-bottom p');
+        if (footerYear) {
+            footerYear.textContent = footerYear.textContent.replace('2026', new Date().getFullYear());
+        }
+
+        console.log('🏗️ Jolong Warehousing - Facilities Page');
+        console.log('🏢 4 state-of-the-art warehouse facilities');
+        console.log('📞 Call: +211 922 005 177');
+    </script>
+</body>
+</html>
