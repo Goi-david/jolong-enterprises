@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crops & Livestock - Jolong Farming</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore our crops and livestock at Jolong Farming - Sustainable agriculture with sorghum, maize, sunflower, vegetables, cattle, goats, and poultry in South Sudan.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        /* ============================================
+                   ROOT VARIABLES
+                   ============================================ */
+        :root {
+            --primary-navy: #0a1a3a;
+            --primary-navy-light: #1a305a;
+            --primary-navy-dark: #060e1f;
+            --primary-gold: #f4c430;
+            --primary-gold-light: #fada5e;
+            --primary-gold-dark: #d4a820;
+            --accent-green: #2e7d32;
+            --accent-green-light: #4caf50;
+            --accent-brown: #5d4037;
+            --warm-cream: #fdf8f0;
+            --warm-ivory: #faf3e8;
+            --dark-charcoal: #1a1a2e;
+            --gray: #6b7280;
+            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 30px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+            --green-gradient: linear-gradient(135deg, #2e7d32, #4caf50);
+            --navy-gradient: linear-gradient(135deg, #0a1a3a, #1a305a);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-charcoal);
+            background-color: var(--warm-cream);
+            line-height: 1.6;
+            padding-top: 56px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .gold-text {
+            color: var(--primary-gold);
+        }
+        .green-text {
+            color: var(--accent-green);
+        }
+
+        /* ============================================
+                   TOP BAR
+                   ============================================ */
+        .top-bar {
+            background: var(--primary-navy);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--accent-green);
+        }
+
+        .top-bar::before {
+            content: '🌾';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0.2;
+        }
+
+        .top-bar a {
+            color: var(--primary-gold-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .top-bar .status-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #2ecc71;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.8); }
+        }
+
+        /* ============================================
+                   NAVBAR
+                   ============================================ */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid var(--accent-green);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .navbar-brand .brand-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--green-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .navbar-brand .brand-sub {
+            display: block;
+            font-size: 0.55rem;
+            font-weight: 400;
+            color: var(--accent-green);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            margin-top: -2px;
+        }
+
+        .nav-link {
+            color: var(--dark-charcoal) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 2px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--accent-green);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 80%;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-green) !important;
+        }
+
+        .btn-contact {
+            background: var(--green-gradient);
+            color: white !important;
+            padding: 8px 24px !important;
+            border-radius: 50px !important;
+            font-weight: 700 !important;
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.4);
+            color: white !important;
+        }
+
+        /* ============================================
+                   PAGE HEADER
+                   ============================================ */
+        .page-header {
+            background: linear-gradient(rgba(10, 26, 58, 0.7), rgba(10, 26, 58, 0.8)), 
+                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 0 3rem;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--green-gradient);
+        }
+
+        .page-header h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .page-header h1 .highlight {
+            color: var(--accent-green-light);
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb-custom {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-custom a {
+            color: var(--accent-green-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb-custom a:hover {
+            color: white;
+        }
+
+        /* ============================================
+                   SECTION HEADERS
+                   ============================================ */
+        .section-badge {
+            display: inline-block;
+            padding: 6px 20px;
+            background: rgba(46, 125, 50, 0.12);
+            color: var(--accent-green);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--primary-navy);
+            line-height: 1.2;
+        }
+
+        .section-title .highlight {
+            color: var(--accent-green);
+            position: relative;
+        }
+
+        .section-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--green-gradient);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 50px;
+        }
+
+        /* ============================================
+                   CROPS SECTION
+                   ============================================ */
+        .crops-section {
+            padding: 80px 0;
+            background: var(--warm-cream);
+        }
+
+        .crop-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .crop-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-green);
+        }
+
+        .crop-card .crop-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .crop-card .crop-image .crop-badge {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 8px 16px;
+            background: rgba(10, 26, 58, 0.7);
+            color: var(--accent-green-light);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .crop-card .crop-body {
+            padding: 24px;
+        }
+
+        .crop-card .crop-body h4 {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+        }
+
+        .crop-card .crop-body p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+                   LIVESTOCK SECTION
+                   ============================================ */
+        .livestock-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .livestock-card {
+            background: var(--warm-cream);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .livestock-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-green);
+        }
+
+        .livestock-card .livestock-image {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .livestock-card .livestock-image .livestock-badge {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 8px 16px;
+            background: rgba(10, 26, 58, 0.7);
+            color: var(--accent-green-light);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .livestock-card .livestock-body {
+            padding: 24px;
+        }
+
+        .livestock-card .livestock-body h4 {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+        }
+
+        .livestock-card .livestock-body p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+                   STATS BAR
+                   ============================================ */
+        .stats-bar {
+            padding: 50px 0;
+            background: var(--green-gradient);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-bar .stat-item .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            display: block;
+        }
+
+        .stats-bar .stat-item .label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* ============================================
+                   CTA
+                   ============================================ */
+        .cta-farming {
+            padding: 80px 0;
+            background: var(--navy-gradient);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-farming::before {
+            content: '🌾';
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            font-size: 6rem;
+            opacity: 0.05;
+        }
+
+        .cta-farming h2 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .cta-farming h2 .highlight {
+            color: var(--accent-green-light);
+        }
+
+        .cta-farming p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        /* ============================================
+                   FOOTER
+                   ============================================ */
+        .footer {
+            background: var(--primary-navy-dark);
+            color: white;
+            padding: 60px 0 0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--green-gradient);
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand .gold {
+            color: var(--primary-gold);
+        }
+
+        .footer-about {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 350px;
+        }
+
+        .footer h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-green);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            color: var(--primary-gold);
+            font-size: 0.7rem;
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact li i {
+            color: var(--primary-gold);
+            width: 20px;
+            margin-top: 4px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent-green);
+            color: white;
+            transform: translateY(-4px);
+            border-color: var(--accent-green);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 24px 0;
+            margin-top: 48px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .gold {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   TOAST
+                   ============================================ */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-navy);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-lg);
+            z-index: 9999;
+            border-left: 4px solid var(--accent-green);
+            transform: translateX(500px);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 400px;
+        }
+
+        .toast-notification.show {
+            transform: translateX(0);
+        }
+
+        .toast-notification .toast-icon {
+            color: var(--accent-green-light);
+            margin-right: 10px;
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .crop-card {
+                margin-bottom: 20px;
+            }
+            
+            .livestock-card {
+                margin-bottom: 20px;
+            }
+            
+            .stats-bar .stat-item .number {
+                font-size: 2.2rem;
+            }
+            
+            .cta-farming h2 {
+                font-size: 2.2rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            
+            .navbar-brand .brand-sub {
+                font-size: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-brand .brand-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .stats-bar .stat-item .number {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* ============================================
+                   SCROLLBAR
+                   ============================================ */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--green-gradient);
+            border-radius: var(--border-radius-xl);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    TOP BAR
+    ============================================ -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span class="status-dot"></span>
+                    <span class="me-3"><strong>Operational</strong> • Growing South Sudan's Future</span>
+                    <i class="fas fa-phone-alt me-2"></i> <a href="tel:+211922005177">+211 922 005 177</a>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="farming.html"><i class="fas fa-arrow-left me-1"></i> Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+    NAVBAR
+    ============================================ -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="farming.html">
+                <span class="brand-icon"><i class="fas fa-seedling"></i></span>
+                <div>
+                    Jolong <span class="gold-text">Farming</span>
+                    <span class="brand-sub">Growing South Sudan's Future</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="farming.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="crops-livestock.html">Crops & Livestock</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-farming.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery-farming.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-farming.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: var(--accent-green) !important;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="contact-farming.html" class="btn btn-contact">
+                        <i class="fas fa-handshake me-2"></i> Partner With Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+    PAGE HEADER
+    ============================================ -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Crops & <span class="highlight">Livestock</span></h1>
+            <p>Discover our diverse agricultural products — from nutrient-rich crops 
+            to high-quality livestock — all grown and raised sustainably in South Sudan.</p>
+            <div class="breadcrumb-custom">
+                <a href="farming.html">Home</a>
+                <span>/</span>
+                <span>Crops & Livestock</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    CROPS SECTION
+    ============================================ -->
+    <section class="crops-section" id="crops">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge">Our Crops</span>
+                <h2 class="section-title">What We <span class="highlight">Grow</span></h2>
+                <p class="section-subtitle">
+                    We cultivate a variety of crops using sustainable and modern farming techniques 
+                    to ensure food security and economic growth.
+                </p>
+            </div>
+
+            <div class="row">
+                <!-- Crop 1: Sorghum -->
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="crop-card">
+                        <div class="crop-image" style="background-image: url('https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&h=400&fit=crop');">
+                            <span class="crop-badge">🌾 Staple Crop</span>
+                        </div>
+                        <div class="crop-body">
+                            <h4>Sorghum</h4>
+                            <p>Drought-resistant grain essential for food security and livestock feed. Rich in nutrients and versatile in use.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crop 2: Maize -->
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="150">
+                    <div class="crop-card">
+                        <div class="crop-image" style="background-image: url('https://images.unsplash.com/photo-1568322445332-4338e5fc4ab9?w=600&h=400&fit=crop');">
+                            <span class="crop-badge">🌽 Staple Crop</span>
+                        </div>
+                        <div class="crop-body">
+                            <h4>Maize</h4>
+                            <p>High-yield corn variety for human consumption and animal feed. Grown using sustainable farming practices.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crop 3: Sunflower -->
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="crop-card">
+                        <div class="crop-image" style="background-image: url('https://images.unsplash.com/photo-1590544669321-9b2d2b3fc26c?w=600&h=400&fit=crop');">
+                            <span class="crop-badge">🌻 Cash Crop</span>
+                        </div>
+                        <div class="crop-body">
+                            <h4>Sunflower</h4>
+                            <p>Oil-producing crop for cooking oil and industrial applications. High demand in local and regional markets.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crop 4: Vegetables -->
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="250">
+                    <div class="crop-card">
+                        <div class="crop-image" style="background-image: url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&h=400&fit=crop');">
+                            <span class="crop-badge">🥬 Fresh Produce</span>
+                        </div>
+                        <div class="crop-body">
+                            <h4>Vegetables</h4>
+                            <p>Fresh vegetables including tomatoes, onions, leafy greens, and peppers — supplying local markets daily.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crop 5: Groundnuts -->
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="crop-card">
+                        <div class="crop-image" style="background-image: url('https://images.unsplash.com/photo-1590771715061-2a4e17fbc473?w=600&h=400&fit=crop');">
+                            <span class="crop-badge">🥜 Legume</span>
+                        </div>
+                        <div class="crop-body">
+                            <h4>Groundnuts</h4>
+                            <p>Protein-rich legume for human consumption and oil production. Improves soil fertility through nitrogen fixation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crop 6: Cassava -->
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="350">
+                    <div class="crop-card">
+                        <div class="crop-image" style="background-image: url('https://images.unsplash.com/photo-1587317241670-aeccaea7be49?w=600&h=400&fit=crop');">
+                            <span class="crop-badge">🌿 Root Crop</span>
+                        </div>
+                        <div class="crop-body">
+                            <h4>Cassava</h4>
+                            <p>Drought-tolerant root crop providing carbohydrates for food security and income generation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crop 7: Sesame -->
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="crop-card">
+                        <div class="crop-image" style="background-image: url('https://images.unsplash.com/photo-1559767949-0faa5c7e9992?w=600&h=400&fit=crop');">
+                            <span class="crop-badge">🌾 Cash Crop</span>
+                        </div>
+                        <div class="crop-body">
+                            <h4>Sesame</h4>
+                            <p>High-value oilseed crop with strong export potential. Thrives in South Sudan's climate.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Crop 8: Citrus & Fruits -->
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="450">
+                    <div class="crop-card">
+                        <div class="crop-image" style="background-image: url('https://images.unsplash.com/photo-1557800636-894a64c1696f?w=600&h=400&fit=crop');">
+                            <span class="crop-badge">🍊 Orchard</span>
+                        </div>
+                        <div class="crop-body">
+                            <h4>Citrus & Fruits</h4>
+                            <p>Oranges, mangoes, and other fruits grown in our orchards for fresh consumption and juice production.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    STATS BAR
+    ============================================ -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6 mb-3" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-item">
+                        <span class="number">8+</span>
+                        <span class="label">Crop Varieties</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-item">
+                        <span class="number">500+</span>
+                        <span class="label">Hectares Under Cultivation</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-item">
+                        <span class="number">200+</span>
+                        <span class="label">Local Farmers Supported</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-item">
+                        <span class="number">1000+</span>
+                        <span class="label">Families Fed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    LIVESTOCK SECTION
+    ============================================ -->
+    <section class="livestock-section" id="livestock">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge">Our Livestock</span>
+                <h2 class="section-title">Quality <span class="highlight">Livestock</span></h2>
+                <p class="section-subtitle">
+                    We raise healthy, high-quality livestock using modern management practices 
+                    and humane animal husbandry.
+                </p>
+            </div>
+
+            <div class="row">
+                <!-- Livestock 1: Cattle -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="livestock-card">
+                        <div class="livestock-image" style="background-image: url('https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&h=400&fit=crop');">
+                            <span class="livestock-badge">🐄 Beef & Dairy</span>
+                        </div>
+                        <div class="livestock-body">
+                            <h4>Cattle</h4>
+                            <p>Quality beef and dairy cattle raised on pasture-based systems. Providing meat, milk, and breeding stock to local markets.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Livestock 2: Goats -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="livestock-card">
+                        <div class="livestock-image" style="background-image: url('https://images.unsplash.com/photo-1515823060285-40e468be6af0?w=600&h=400&fit=crop');">
+                            <span class="livestock-badge">🐐 Meat & Milk</span>
+                        </div>
+                        <div class="livestock-body">
+                            <h4>Goats</h4>
+                            <p>Hardy goat breeds adapted to local conditions. Excellent source of meat, milk, and income for rural communities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Livestock 3: Poultry -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="livestock-card">
+                        <div class="livestock-image" style="background-image: url('https://images.unsplash.com/photo-1560449758-4e64d3c6d0c4?w=600&h=400&fit=crop');">
+                            <span class="livestock-badge">🐔 Eggs & Meat</span>
+                        </div>
+                        <div class="livestock-body">
+                            <h4>Poultry</h4>
+                            <p>Modern poultry operations producing high-quality eggs and chicken meat for local consumption and markets.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Livestock 4: Sheep -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="350">
+                    <div class="livestock-card">
+                        <div class="livestock-image" style="background-image: url('https://images.unsplash.com/photo-1480044965905-02098d419e96?w=600&h=400&fit=crop');">
+                            <span class="livestock-badge">🐑 Wool & Meat</span>
+                        </div>
+                        <div class="livestock-body">
+                            <h4>Sheep</h4>
+                            <p>Dual-purpose sheep breeds providing quality meat and wool. Well-suited to South Sudan's pastoral regions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Livestock 5: Pigs -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="livestock-card">
+                        <div class="livestock-image" style="background-image: url('https://images.unsplash.com/photo-1548634994-8a0cb4e64e7c?w=600&h=400&fit=crop');">
+                            <span class="livestock-badge">🐖 Pork Production</span>
+                        </div>
+                        <div class="livestock-body">
+                            <h4>Pigs</h4>
+                            <p>Modern pig farming operations producing quality pork for local and regional markets.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Livestock 6: Fish -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="450">
+                    <div class="livestock-card">
+                        <div class="livestock-image" style="background-image: url('https://images.unsplash.com/photo-1519181122947-0864ac345ec3?w=600&h=400&fit=crop');">
+                            <span class="livestock-badge">🐟 Aquaculture</span>
+                        </div>
+                        <div class="livestock-body">
+                            <h4>Fish Farming</h4>
+                            <p>Sustainable aquaculture operations producing tilapia and catfish for local consumption and markets.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    CTA
+    ============================================ -->
+    <section class="cta-farming">
+        <div class="container">
+            <h2>Partner with <span class="highlight">Jolong Farming</span></h2>
+            <p>Whether you're looking to source quality produce, partner in agricultural development, 
+            or support local farmers — we're here to grow together.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="contact-farming.html" class="btn" style="display:inline-flex; padding:16px 48px; font-size:1.1rem; background:var(--green-gradient); color:white; border:none; border-radius:50px; font-weight:700; text-decoration:none;">
+                    <i class="fas fa-handshake me-2"></i> Partner With Us
+                </a>
+                <a href="tel:+211922005177" class="btn" style="display:inline-flex; padding:16px 48px; font-size:1.1rem; background:transparent; color:white; border:2px solid white; border-radius:50px; font-weight:700; text-decoration:none;">
+                    <i class="fas fa-phone me-2"></i> +211 922 005 177
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">Jolong <span class="gold">Farming</span></div>
+                    <p class="footer-about">
+                        Sustainable agriculture for food security and economic growth in South Sudan. 
+                        Modern farming techniques supporting local communities.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="farming.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="crops-livestock.html"><i class="fas fa-chevron-right"></i> Crops & Livestock</a></li>
+                        <li><a href="about-farming.html"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="gallery-farming.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+                        <li><a href="contact-farming.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
+                        <li><i class="fas fa-phone"></i> +211 922 005 177</li>
+                        <li><i class="fas fa-envelope"></i> info@jolonges.com</li>
+                        <li><i class="fas fa-clock"></i> 7:00 AM - 6:00 PM Daily</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Farm Hours</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-clock"></i> Monday - Sunday</li>
+                        <li style="color: var(--accent-green-light); font-weight: 600;">6:00 AM - 6:00 PM</li>
+                        <li><i class="fas fa-seedling"></i> Growing Season: Year-round</li>
+                        <li><i class="fas fa-tractor"></i> Farm Visits by Appointment</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2026 <span class="gold">Jolong Farming</span>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="index.html" style="color: var(--accent-green-light); text-decoration: none;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    TOAST
+    ============================================ -->
+    <div class="toast-notification" id="toast">
+        <div>
+            <i class="fas fa-check-circle toast-icon"></i>
+            <span id="toastMessage">Thank you for your interest!</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+    SCRIPTS
+    ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        AOS.init({ duration: 600, once: true, offset: 50, easing: 'ease-in-out' });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            navbar.classList.toggle('scrolled', window.pageYOffset > 50);
+        });
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        const footerYear = document.querySelector('.footer-bottom p');
+        if (footerYear) {
+            footerYear.textContent = footerYear.textContent.replace('2026', new Date().getFullYear());
+        }
+
+        console.log('🌾 Jolong Farming - Crops & Livestock Page');
+        console.log('🌱 8+ crop varieties, 6 livestock types');
+        console.log('📞 Call: +211 922 005 177');
+    </script>
+</body>
+</html>
