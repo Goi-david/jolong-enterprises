@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floor Plans - Jolong Apartments</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore floor plans of our premium apartments in Juba, South Sudan. 2-bedroom, 3-bedroom, and 4-bedroom layouts available.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        /* ============================================
+                   ROOT VARIABLES
+                   ============================================ */
+        :root {
+            --primary-navy: #0a1a3a;
+            --primary-navy-light: #1a305a;
+            --primary-navy-dark: #060e1f;
+            --primary-gold: #f4c430;
+            --primary-gold-light: #fada5e;
+            --primary-gold-dark: #d4a820;
+            --accent-green: #2e7d32;
+            --accent-blue: #1a5276;
+            --warm-cream: #fdf8f0;
+            --warm-ivory: #faf3e8;
+            --dark-charcoal: #1a1a2e;
+            --gray: #6b7280;
+            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 30px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+            --navy-gradient: linear-gradient(135deg, #0a1a3a, #1a305a);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-charcoal);
+            background-color: var(--warm-cream);
+            line-height: 1.6;
+            padding-top: 56px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .gold-text {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   TOP BAR
+                   ============================================ */
+        .top-bar {
+            background: var(--primary-navy);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .top-bar::before {
+            content: '📐';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0.2;
+        }
+
+        .top-bar a {
+            color: var(--primary-gold-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* ============================================
+                   NAVBAR
+                   ============================================ */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .navbar-brand .brand-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gold-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .navbar-brand .brand-sub {
+            display: block;
+            font-size: 0.55rem;
+            font-weight: 400;
+            color: var(--primary-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            margin-top: -2px;
+        }
+
+        .nav-link {
+            color: var(--dark-charcoal) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 2px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 80%;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-gold) !important;
+        }
+
+        .btn-inquire {
+            background: var(--gold-gradient);
+            color: var(--primary-navy) !important;
+            padding: 8px 24px !important;
+            border-radius: 50px !important;
+            font-weight: 700 !important;
+            box-shadow: 0 5px 15px rgba(244, 196, 48, 0.3);
+        }
+
+        .btn-inquire:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 196, 48, 0.4);
+            color: var(--primary-navy) !important;
+        }
+
+        /* ============================================
+                   PAGE HEADER
+                   ============================================ */
+        .page-header {
+            background: linear-gradient(rgba(10, 26, 58, 0.8), rgba(10, 26, 58, 0.8)), 
+                        url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1920&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 0 3rem;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .page-header h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .page-header h1 .highlight {
+            color: var(--primary-gold);
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb-custom {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-custom a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb-custom a:hover {
+            color: white;
+        }
+
+        /* ============================================
+                   FLOOR PLANS SECTION
+                   ============================================ */
+        .floor-plans-section {
+            padding: 60px 0;
+            background: var(--warm-cream);
+        }
+
+        .floor-plan-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .floor-plan-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-gold);
+        }
+
+        .floor-plan-card .floor-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            background: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .floor-plan-card .floor-image .placeholder-icon {
+            font-size: 5rem;
+            color: var(--primary-gold);
+            opacity: 0.3;
+        }
+
+        .floor-plan-card .floor-image .floor-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+        }
+
+        .floor-plan-card .floor-body {
+            padding: 24px 28px;
+        }
+
+        .floor-plan-card .floor-body h3 {
+            font-size: 1.4rem;
+            margin-bottom: 6px;
+        }
+
+        .floor-plan-card .floor-body .subtitle {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .floor-plan-card .floor-body .details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .floor-plan-card .floor-body .details .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .floor-plan-card .floor-body .details .detail-item i {
+            color: var(--primary-gold);
+            width: 18px;
+        }
+
+        .floor-plan-card .floor-body .description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .floor-plan-card .floor-body .actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-view {
+            flex: 1;
+            padding: 12px;
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-view:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(244, 196, 48, 0.3);
+        }
+
+        .btn-download {
+            padding: 12px 24px;
+            background: transparent;
+            color: var(--primary-navy);
+            border: 2px solid var(--primary-navy);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-download:hover {
+            background: var(--primary-navy);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ============================================
+                   COMPARISON TABLE
+                   ============================================ */
+        .comparison-section {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .comparison-table thead {
+            background: var(--navy-gradient);
+            color: white;
+        }
+
+        .comparison-table th {
+            padding: 16px 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .comparison-table td {
+            padding: 14px 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .comparison-table tr:hover td {
+            background: var(--warm-cream);
+        }
+
+        .comparison-table .plan-name {
+            font-weight: 600;
+            color: var(--primary-navy);
+        }
+
+        .comparison-table .check {
+            color: var(--accent-green);
+            font-weight: 700;
+        }
+
+        .comparison-table .times {
+            color: var(--gray);
+        }
+
+        /* ============================================
+                   CTA
+                   ============================================ */
+        .cta-floorplans {
+            padding: 60px 0;
+            background: var(--navy-gradient);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-floorplans::before {
+            content: '📐';
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            font-size: 6rem;
+            opacity: 0.05;
+        }
+
+        .cta-floorplans h2 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 16px;
+        }
+
+        .cta-floorplans h2 .highlight {
+            color: var(--primary-gold);
+        }
+
+        .cta-floorplans p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        /* ============================================
+                   FOOTER
+                   ============================================ */
+        .footer {
+            background: var(--primary-navy-dark);
+            color: white;
+            padding: 60px 0 0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand .gold {
+            color: var(--primary-gold);
+        }
+
+        .footer-about {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 350px;
+        }
+
+        .footer h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            color: var(--primary-gold);
+            font-size: 0.7rem;
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact li i {
+            color: var(--primary-gold);
+            width: 20px;
+            margin-top: 4px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            transform: translateY(-4px);
+            border-color: var(--primary-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 24px 0;
+            margin-top: 48px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .gold {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   TOAST
+                   ============================================ */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-navy);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-lg);
+            z-index: 9999;
+            border-left: 4px solid var(--primary-gold);
+            transform: translateX(500px);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 400px;
+        }
+
+        .toast-notification.show {
+            transform: translateX(0);
+        }
+
+        .toast-notification .toast-icon {
+            color: var(--primary-gold);
+            margin-right: 10px;
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.85rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 10px 14px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .floor-plan-card .floor-body .actions {
+                flex-direction: column;
+            }
+            
+            .btn-download {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .comparison-table {
+                font-size: 0.75rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 8px 10px;
+            }
+            
+            .comparison-table .plan-name {
+                font-size: 0.8rem;
+            }
+            
+            .cta-floorplans h2 {
+                font-size: 2.2rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            
+            .navbar-brand .brand-sub {
+                font-size: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-brand .brand-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .floor-plan-card .floor-body .details {
+                grid-template-columns: 1fr;
+            }
+            
+            .floor-plan-card .floor-image {
+                height: 180px;
+            }
+        }
+
+        /* ============================================
+                   SCROLLBAR
+                   ============================================ */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-gradient);
+            border-radius: var(--border-radius-xl);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    TOP BAR
+    ============================================ -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span class="status-dot"></span>
+                    <span class="me-3"><strong>Open Now</strong> • 7:00 AM - 11:00 PM</span>
+                    <i class="fas fa-phone-alt me-2"></i> <a href="tel:+211922005177">+211 922 005 177</a>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="apartments.html"><i class="fas fa-arrow-left me-1"></i> Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+    NAVBAR
+    ============================================ -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="apartments.html">
+                <span class="brand-icon"><i class="fas fa-building"></i></span>
+                <div>
+                    Jolong <span class="gold-text">Apartments</span>
+                    <span class="brand-sub">Premium Living in Juba</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="apartments.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="properties.html">Properties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="floor-plans.html">Floor Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-apartments.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery-apartments.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-apartments.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: var(--primary-gold) !important;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="contact-apartments.html" class="btn btn-inquire">
+                        <i class="fas fa-home me-2"></i> Inquire Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+    PAGE HEADER
+    ============================================ -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Floor <span class="highlight">Plans</span></h1>
+            <p>Explore the layouts of our premium apartments designed for modern living in Juba.</p>
+            <div class="breadcrumb-custom">
+                <a href="apartments.html">Home</a>
+                <span>/</span>
+                <span>Floor Plans</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FLOOR PLANS SECTION
+    ============================================ -->
+    <section class="floor-plans-section">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge" style="display:inline-block; padding:6px 20px; background:rgba(244,196,48,0.12); color:var(--primary-gold); border-radius:50px; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; margin-bottom:12px;">
+                    Apartment Layouts
+                </span>
+                <h2 class="section-title">Choose Your <span class="gold-text">Floor Plan</span></h2>
+                <p class="section-subtitle" style="color:var(--gray); max-width:600px; margin:0 auto 50px;">
+                    Each of our apartments is thoughtfully designed to maximize space, light, and comfort.
+                </p>
+            </div>
+
+            <div class="row">
+                <!-- Floor Plan 1 - 2 Bedroom -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="floor-plan-card">
+                        <div class="floor-image" style="background-image: url('https://placehold.co/600x400/1a305a/f4c430?text=2+Bedroom+Floor+Plan');">
+                            <span class="floor-badge">Popular</span>
+                        </div>
+                        <div class="floor-body">
+                            <h3>2 Bedroom Apartment</h3>
+                            <div class="subtitle">Jolong Gardens</div>
+                            <div class="details">
+                                <span class="detail-item"><i class="fas fa-vector-square"></i> 1,200 sq.ft</span>
+                                <span class="detail-item"><i class="fas fa-bed"></i> 2 Bedrooms</span>
+                                <span class="detail-item"><i class="fas fa-bath"></i> 2 Bathrooms</span>
+                                <span class="detail-item"><i class="fas fa-kitchen-set"></i> Modern Kitchen</span>
+                                <span class="detail-item"><i class="fas fa-door-open"></i> Balcony</span>
+                                <span class="detail-item"><i class="fas fa-car"></i> Parking</span>
+                            </div>
+                            <p class="description">Perfect for small families or professionals. Open-plan living area with modern finishes.</p>
+                            <div class="actions">
+                                <button class="btn-view" onclick="showToast('📐 2 Bedroom floor plan loaded!')">
+                                    <i class="fas fa-eye me-1"></i> View Plan
+                                </button>
+                                <button class="btn-download" onclick="showToast('📥 Downloading 2 Bedroom floor plan...')">
+                                    <i class="fas fa-download me-1"></i> Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floor Plan 2 - 3 Bedroom -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="floor-plan-card">
+                        <div class="floor-image" style="background-image: url('https://placehold.co/600x400/0a1a3a/f4c430?text=3+Bedroom+Floor+Plan');">
+                            <span class="floor-badge">Best Value</span>
+                        </div>
+                        <div class="floor-body">
+                            <h3>3 Bedroom Apartment</h3>
+                            <div class="subtitle">Jolong Heights</div>
+                            <div class="details">
+                                <span class="detail-item"><i class="fas fa-vector-square"></i> 1,500 sq.ft</span>
+                                <span class="detail-item"><i class="fas fa-bed"></i> 3 Bedrooms</span>
+                                <span class="detail-item"><i class="fas fa-bath"></i> 2 Bathrooms</span>
+                                <span class="detail-item"><i class="fas fa-kitchen-set"></i> Modern Kitchen</span>
+                                <span class="detail-item"><i class="fas fa-door-open"></i> Large Balcony</span>
+                                <span class="detail-item"><i class="fas fa-car"></i> Parking</span>
+                            </div>
+                            <p class="description">Spacious family home with separate living and dining areas, perfect for entertaining.</p>
+                            <div class="actions">
+                                <button class="btn-view" onclick="showToast('📐 3 Bedroom floor plan loaded!')">
+                                    <i class="fas fa-eye me-1"></i> View Plan
+                                </button>
+                                <button class="btn-download" onclick="showToast('📥 Downloading 3 Bedroom floor plan...')">
+                                    <i class="fas fa-download me-1"></i> Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floor Plan 3 - 4 Bedroom -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="floor-plan-card">
+                        <div class="floor-image" style="background-image: url('https://placehold.co/600x400/1a5276/f4c430?text=4+Bedroom+Floor+Plan');">
+                            <span class="floor-badge">Luxury</span>
+                        </div>
+                        <div class="floor-body">
+                            <h3>4 Bedroom Apartment</h3>
+                            <div class="subtitle">Jolong Towers</div>
+                            <div class="details">
+                                <span class="detail-item"><i class="fas fa-vector-square"></i> 2,200 sq.ft</span>
+                                <span class="detail-item"><i class="fas fa-bed"></i> 4 Bedrooms</span>
+                                <span class="detail-item"><i class="fas fa-bath"></i> 3 Bathrooms</span>
+                                <span class="detail-item"><i class="fas fa-kitchen-set"></i> Premium Kitchen</span>
+                                <span class="detail-item"><i class="fas fa-door-open"></i> Panoramic Balcony</span>
+                                <span class="detail-item"><i class="fas fa-car"></i> 2 Parking Spaces</span>
+                            </div>
+                            <p class="description">Luxury living at its finest with panoramic views, premium finishes, and exclusive amenities.</p>
+                            <div class="actions">
+                                <button class="btn-view" onclick="showToast('📐 4 Bedroom floor plan loaded!')">
+                                    <i class="fas fa-eye me-1"></i> View Plan
+                                </button>
+                                <button class="btn-download" onclick="showToast('📥 Downloading 4 Bedroom floor plan...')">
+                                    <i class="fas fa-download me-1"></i> Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    COMPARISON TABLE
+    ============================================ -->
+    <section class="comparison-section" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge" style="display:inline-block; padding:6px 20px; background:rgba(244,196,48,0.12); color:var(--primary-gold); border-radius:50px; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; margin-bottom:12px;">
+                    Compare Plans
+                </span>
+                <h2 class="section-title">Find the Perfect <span class="gold-text">Fit</span></h2>
+                <p class="section-subtitle" style="color:var(--gray); max-width:600px; margin:0 auto 50px;">
+                    Compare our floor plans to find the perfect apartment for your needs.
+                </p>
+            </div>
+
+            <div class="table-responsive">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>2 Bedroom</th>
+                            <th>3 Bedroom</th>
+                            <th>4 Bedroom</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="plan-name">Size</td>
+                            <td>1,200 sq.ft</td>
+                            <td>1,500 sq.ft</td>
+                            <td>2,200 sq.ft</td>
+                        </tr>
+                        <tr>
+                            <td class="plan-name">Bedrooms</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                        <tr>
+                            <td class="plan-name">Bathrooms</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td class="plan-name">Balcony</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="plan-name">Parking</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓ ✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="plan-name">Modern Kitchen</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="plan-name">24/7 Security</td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="plan-name">Swimming Pool Access</td>
+                            <td><span class="times">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="plan-name">Gym Access</td>
+                            <td><span class="times">✗</span></td>
+                            <td><span class="check">✓</span></td>
+                            <td><span class="check">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td class="plan-name">Annual Price</td>
+                            <td><strong style="color:var(--primary-gold);">SSP 850,000</strong></td>
+                            <td><strong style="color:var(--primary-gold);">SSP 1,200,000</strong></td>
+                            <td><strong style="color:var(--primary-gold);">SSP 1,800,000</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    CTA
+    ============================================ -->
+    <section class="cta-floorplans">
+        <div class="container">
+            <h2>Ready to Find Your <span class="highlight">Dream Home</span>?</h2>
+            <p>Contact us today to schedule a viewing or learn more about our available apartments.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="contact-apartments.html" class="btn-inquiry" style="display:inline-flex; padding:16px 48px; font-size:1.1rem; background:var(--gold-gradient); color:var(--primary-navy); border:none; border-radius:50px; font-weight:700; text-decoration:none;">
+                    <i class="fas fa-envelope me-2"></i> Inquire Now
+                </a>
+                <a href="tel:+211922005177" class="btn-download" style="display:inline-flex; padding:16px 48px; font-size:1.1rem; background:transparent; color:white; border:2px solid white; border-radius:50px; font-weight:700; text-decoration:none;">
+                    <i class="fas fa-phone me-2"></i> +211 922 005 177
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">Jolong <span class="gold">Apartments</span></div>
+                    <p class="footer-about">
+                        Premium living in Juba, South Sudan. Modern, secure, and comfortable 
+                        residential spaces designed for your lifestyle.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="apartments.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                        <li><a href="floor-plans.html"><i class="fas fa-chevron-right"></i> Floor Plans</a></li>
+                        <li><a href="about-apartments.html"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="contact-apartments.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
+                        <li><i class="fas fa-phone"></i> +211 922 005 177</li>
+                        <li><i class="fas fa-envelope"></i> info@jolonges.com</li>
+                        <li><i class="fas fa-clock"></i> 7:00 AM - 11:00 PM Daily</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Office Hours</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-clock"></i> Monday - Sunday</li>
+                        <li style="color: var(--primary-gold); font-weight: 600;">7:00 AM - 11:00 PM</li>
+                        <li><i class="fas fa-calendar-check"></i> Viewings by Appointment</li>
+                        <li><i class="fas fa-home"></i> 24/7 Security</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2026 <span class="gold">Jolong Apartments</span>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="index.html" style="color: var(--primary-gold); text-decoration: none;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    TOAST
+    ============================================ -->
+    <div class="toast-notification" id="toast">
+        <div>
+            <i class="fas fa-check-circle toast-icon"></i>
+            <span id="toastMessage">Floor plan loaded!</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+    SCRIPTS
+    ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        AOS.init({ duration: 600, once: true, offset: 50, easing: 'ease-in-out' });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            navbar.classList.toggle('scrolled', window.pageYOffset > 50);
+        });
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => toast.classList.remove('show'), 3000);
+        }
+
+        const footerYear = document.querySelector('.footer-bottom p');
+        if (footerYear) {
+            footerYear.textContent = footerYear.textContent.replace('2026', new Date().getFullYear());
+        }
+
+        console.log('📐 Jolong Apartments - Floor Plans Page');
+        console.log('📞 Call: +211 922 005 177');
+    </script>
+</body>
+</html>
