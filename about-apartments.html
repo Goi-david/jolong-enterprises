@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Jolong Apartments</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Learn about Jolong Apartments - Our story, mission, values, and commitment to providing premium living spaces in Juba, South Sudan.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        /* ============================================
+                   ROOT VARIABLES
+                   ============================================ */
+        :root {
+            --primary-navy: #0a1a3a;
+            --primary-navy-light: #1a305a;
+            --primary-navy-dark: #060e1f;
+            --primary-gold: #f4c430;
+            --primary-gold-light: #fada5e;
+            --primary-gold-dark: #d4a820;
+            --accent-green: #2e7d32;
+            --accent-blue: #1a5276;
+            --warm-cream: #fdf8f0;
+            --warm-ivory: #faf3e8;
+            --dark-charcoal: #1a1a2e;
+            --gray: #6b7280;
+            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 30px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+            --navy-gradient: linear-gradient(135deg, #0a1a3a, #1a305a);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-charcoal);
+            background-color: var(--warm-cream);
+            line-height: 1.6;
+            padding-top: 56px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .gold-text {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   TOP BAR
+                   ============================================ */
+        .top-bar {
+            background: var(--primary-navy);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .top-bar::before {
+            content: '🏢';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0.2;
+        }
+
+        .top-bar a {
+            color: var(--primary-gold-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* ============================================
+                   NAVBAR
+                   ============================================ */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .navbar-brand .brand-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gold-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .navbar-brand .brand-sub {
+            display: block;
+            font-size: 0.55rem;
+            font-weight: 400;
+            color: var(--primary-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            margin-top: -2px;
+        }
+
+        .nav-link {
+            color: var(--dark-charcoal) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 2px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 80%;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-gold) !important;
+        }
+
+        .btn-inquire {
+            background: var(--gold-gradient);
+            color: var(--primary-navy) !important;
+            padding: 8px 24px !important;
+            border-radius: 50px !important;
+            font-weight: 700 !important;
+            box-shadow: 0 5px 15px rgba(244, 196, 48, 0.3);
+        }
+
+        .btn-inquire:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 196, 48, 0.4);
+            color: var(--primary-navy) !important;
+        }
+
+        /* ============================================
+                   PAGE HEADER
+                   ============================================ */
+        .page-header {
+            background: linear-gradient(rgba(10, 26, 58, 0.8), rgba(10, 26, 58, 0.8)), 
+                        url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 0 3rem;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .page-header h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .page-header h1 .highlight {
+            color: var(--primary-gold);
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb-custom {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-custom a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb-custom a:hover {
+            color: white;
+        }
+
+        /* ============================================
+                   ABOUT STORY
+                   ============================================ */
+        .about-story {
+            padding: 80px 0;
+            background: var(--warm-cream);
+        }
+
+        .about-story .story-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about-story .story-content p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .about-story .story-image {
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+        }
+
+        .about-story .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 400px;
+        }
+
+        .about-story .story-image .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(transparent, rgba(10, 26, 58, 0.8));
+            color: white;
+        }
+
+        .about-story .story-image .image-overlay h4 {
+            color: white;
+            margin-bottom: 4px;
+        }
+
+        .about-story .story-image .image-overlay p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        /* ============================================
+                   MISSION & VALUES
+                   ============================================ */
+        .mission-values {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .mission-card {
+            background: var(--warm-cream);
+            border-radius: var(--border-radius-lg);
+            padding: 40px 30px;
+            text-align: center;
+            height: 100%;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-gold);
+        }
+
+        .mission-card .icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gold-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-navy);
+            font-size: 2rem;
+        }
+
+        .mission-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .mission-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+                   VALUES LIST
+                   ============================================ */
+        .values-list {
+            padding: 60px 0;
+            background: var(--warm-cream);
+        }
+
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 24px;
+            background: white;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            height: 100%;
+            border-left: 4px solid var(--primary-gold);
+        }
+
+        .value-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .value-item .value-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--soft-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-gold);
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .value-item .value-content h5 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .value-item .value-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+                   STATS SECTION
+                   ============================================ */
+        .stats-about {
+            padding: 60px 0;
+            background: var(--navy-gradient);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-about .stat-item {
+            padding: 20px;
+        }
+
+        .stats-about .stat-item .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-gold);
+            display: block;
+        }
+
+        .stats-about .stat-item .label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* ============================================
+                   TEAM SECTION
+                   ============================================ */
+        .team-section {
+            padding: 80px 0;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-section::before {
+            content: '🏢';
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            font-size: 8rem;
+            opacity: 0.02;
+            pointer-events: none;
+        }
+
+        .team-card {
+            background: var(--warm-cream);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            text-align: center;
+            height: 100%;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-card .team-image {
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .team-card .team-image .team-role {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px 20px;
+            background: rgba(10, 26, 58, 0.8);
+            color: var(--primary-gold);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .team-card .team-body {
+            padding: 24px;
+        }
+
+        .team-card .team-body h4 {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .team-card .team-body p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .team-card .team-body .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .team-card .team-body .team-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--soft-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-navy);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .team-card .team-body .team-social a:hover {
+            background: var(--gold-gradient);
+            transform: translateY(-3px);
+        }
+
+        /* ============================================
+                   CTA
+                   ============================================ */
+        .cta-about {
+            padding: 80px 0;
+            background: var(--navy-gradient);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-about::before {
+            content: '🏠';
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            font-size: 6rem;
+            opacity: 0.05;
+        }
+
+        .cta-about h2 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .cta-about h2 .highlight {
+            color: var(--primary-gold);
+        }
+
+        .cta-about p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        /* ============================================
+                   FOOTER
+                   ============================================ */
+        .footer {
+            background: var(--primary-navy-dark);
+            color: white;
+            padding: 60px 0 0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand .gold {
+            color: var(--primary-gold);
+        }
+
+        .footer-about {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 350px;
+        }
+
+        .footer h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            color: var(--primary-gold);
+            font-size: 0.7rem;
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact li i {
+            color: var(--primary-gold);
+            width: 20px;
+            margin-top: 4px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            transform: translateY(-4px);
+            border-color: var(--primary-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 24px 0;
+            margin-top: 48px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .gold {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-story .story-image {
+                margin-top: 30px;
+            }
+            
+            .about-story .story-image img {
+                min-height: 250px;
+            }
+            
+            .stats-about .stat-item .number {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-story .story-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .mission-card {
+                margin-bottom: 20px;
+            }
+            
+            .value-item {
+                margin-bottom: 16px;
+            }
+            
+            .team-card {
+                margin-bottom: 20px;
+            }
+            
+            .team-card .team-image {
+                height: 200px;
+            }
+            
+            .stats-about .stat-item .number {
+                font-size: 2.2rem;
+            }
+            
+            .cta-about h2 {
+                font-size: 2.2rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            
+            .navbar-brand .brand-sub {
+                font-size: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-brand .brand-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .about-story .story-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .stats-about .stat-item .number {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* ============================================
+                   SCROLLBAR
+                   ============================================ */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-gradient);
+            border-radius: var(--border-radius-xl);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    TOP BAR
+    ============================================ -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span class="status-dot"></span>
+                    <span class="me-3"><strong>Open Now</strong> • 7:00 AM - 11:00 PM</span>
+                    <i class="fas fa-phone-alt me-2"></i> <a href="tel:+211922005177">+211 922 005 177</a>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="apartments.html"><i class="fas fa-arrow-left me-1"></i> Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+    NAVBAR
+    ============================================ -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="apartments.html">
+                <span class="brand-icon"><i class="fas fa-building"></i></span>
+                <div>
+                    Jolong <span class="gold-text">Apartments</span>
+                    <span class="brand-sub">Premium Living in Juba</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="apartments.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="properties.html">Properties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="floor-plans.html">Floor Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about-apartments.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery-apartments.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-apartments.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: var(--primary-gold) !important;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="contact-apartments.html" class="btn btn-inquire">
+                        <i class="fas fa-home me-2"></i> Inquire Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+    PAGE HEADER
+    ============================================ -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About <span class="highlight">Jolong Apartments</span></h1>
+            <p>Discover the story behind Juba's premier residential community — where quality, 
+            security, and comfort come together.</p>
+            <div class="breadcrumb-custom">
+                <a href="apartments.html">Home</a>
+                <span>/</span>
+                <span>About</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    ABOUT STORY
+    ============================================ -->
+    <section class="about-story">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 story-content" data-aos="fade-right">
+                    <span class="section-badge" style="display:inline-block; padding:6px 20px; background:rgba(244,196,48,0.12); color:var(--primary-gold); border-radius:50px; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; margin-bottom:12px;">
+                        Our Story
+                    </span>
+                    <h2>Creating Homes, <span class="gold-text">Building Communities</span></h2>
+                    <p>
+                        Jolong Apartments was founded with a vision to transform residential 
+                        living in Juba. We believe that everyone deserves a place to call home — 
+                        a space that is not just functional, but beautiful, secure, and welcoming.
+                    </p>
+                    <p>
+                        Our journey began with a simple commitment: to build apartments that 
+                        exceed expectations. From the quality of construction to the care we 
+                        take in selecting locations, every detail is designed with our residents 
+                        in mind.
+                    </p>
+                    <p>
+                        Today, Jolong Apartments stands as a symbol of quality living in South 
+                        Sudan. We continue to grow, guided by our core values of integrity, 
+                        excellence, and community.
+                    </p>
+                    <div class="mt-4">
+                        <a href="properties.html" class="btn" style="background:var(--gold-gradient); border:none; color:var(--primary-navy); padding:12px 32px; border-radius:50px; font-weight:600; text-decoration:none;">
+                            <i class="fas fa-building me-2"></i> View Our Properties
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="story-image">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=600&fit=crop" alt="Jolong Apartments">
+                        <div class="image-overlay">
+                            <h4>🏢 Jolong Apartments</h4>
+                            <p>Premium living in the heart of Juba, South Sudan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    STATS SECTION
+    ============================================ -->
+    <section class="stats-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-item">
+                        <span class="number" data-count="3">0</span>
+                        <span class="label">Properties</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-item">
+                        <span class="number" data-count="50">0</span>
+                        <span class="label">Units Available</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-item">
+                        <span class="number" data-count="100">0</span>
+                        <span class="label">Happy Residents</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-item">
+                        <span class="number" data-count="98">0</span>
+                        <span class="label">Satisfaction Rate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    MISSION & VALUES
+    ============================================ -->
+    <section class="mission-values" id="mission">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge" style="display:inline-block; padding:6px 20px; background:rgba(244,196,48,0.12); color:var(--primary-gold); border-radius:50px; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; margin-bottom:12px;">
+                    Our Mission
+                </span>
+                <h2>What Drives <span class="gold-text">Us</span></h2>
+                <p class="text-muted" style="max-width: 600px; margin: 0 auto 50px;">
+                    Our mission is to provide premium residential spaces that enhance the quality 
+                    of life for our residents and contribute to the growth of Juba.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mission-card">
+                        <div class="icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h4>Quality Living</h4>
+                        <p>We build homes that are designed to last, with premium materials and 
+                        attention to every detail.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mission-card">
+                        <div class="icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Safety & Security</h4>
+                        <p>Your safety is our priority. We provide 24/7 security and ensure 
+                        our properties are safe and secure.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mission-card">
+                        <div class="icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Community</h4>
+                        <p>We foster a sense of community where residents feel connected, 
+                        valued, and at home.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    VALUES LIST
+    ============================================ -->
+    <section class="values-list">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge" style="display:inline-block; padding:6px 20px; background:rgba(244,196,48,0.12); color:var(--primary-gold); border-radius:50px; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; margin-bottom:12px;">
+                    Our Values
+                </span>
+                <h2>What We Stand <span class="gold-text">For</span></h2>
+                <p class="text-muted" style="max-width: 600px; margin: 0 auto 50px;">
+                    These core values guide everything we do at Jolong Apartments.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4" data-aos="fade-right" data-aos-delay="100">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <div class="value-content">
+                            <h5>Quality Construction</h5>
+                            <p>We use only the best materials and construction techniques to 
+                            ensure our buildings stand the test of time.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-left" data-aos-delay="200">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="value-content">
+                            <h5>Integrity</h5>
+                            <p>We believe in honest, transparent dealings with our residents, 
+                            partners, and community.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-right" data-aos-delay="300">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="value-content">
+                            <h5>Sustainability</h5>
+                            <p>We are committed to sustainable building practices and 
+                            environmentally responsible property management.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-left" data-aos-delay="400">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="value-content">
+                            <h5>Excellence</h5>
+                            <p>We strive for excellence in everything we do, from design to 
+                            maintenance to resident service.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    TEAM SECTION
+    ============================================ -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge" style="display:inline-block; padding:6px 20px; background:rgba(244,196,48,0.12); color:var(--primary-gold); border-radius:50px; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; margin-bottom:12px;">
+                    Our Team
+                </span>
+                <h2>Meet Our <span class="gold-text">Team</span></h2>
+                <p class="text-muted" style="max-width: 600px; margin: 0 auto 50px;">
+                    The dedicated professionals who make Jolong Apartments a place you'll love to call home.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-card">
+                        <div class="team-image" style="background-image: url('https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=400&h=400&fit=crop');">
+                            <div class="team-role">Property Director</div>
+                        </div>
+                        <div class="team-body">
+                            <h4>James Malual</h4>
+                            <p>15 years in real estate</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card">
+                        <div class="team-image" style="background-image: url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400&h=400&fit=crop');">
+                            <div class="team-role">Property Manager</div>
+                        </div>
+                        <div class="team-body">
+                            <h4>Mary Achol</h4>
+                            <p>10 years property management</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-card">
+                        <div class="team-image" style="background-image: url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&h=400&fit=crop');">
+                            <div class="team-role">Construction Manager</div>
+                        </div>
+                        <div class="team-body">
+                            <h4>Peter Kuol</h4>
+                            <p>12 years construction experience</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-card">
+                        <div class="team-image" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424ffe2?w=400&h=400&fit=crop');">
+                            <div class="team-role">Customer Relations</div>
+                        </div>
+                        <div class="team-body">
+                            <h4>Sarah Nyanjok</h4>
+                            <p>8 years in customer service</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    CTA
+    ============================================ -->
+    <section class="cta-about">
+        <div class="container">
+            <h2>Find Your <span class="highlight">Perfect Home</span></h2>
+            <p>Contact us today to schedule a viewing or learn more about our premium apartments in Juba.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="contact-apartments.html" class="btn" style="display:inline-flex; padding:16px 48px; font-size:1.1rem; background:var(--gold-gradient); color:var(--primary-navy); border:none; border-radius:50px; font-weight:700; text-decoration:none;">
+                    <i class="fas fa-envelope me-2"></i> Inquire Now
+                </a>
+                <a href="tel:+211922005177" class="btn" style="display:inline-flex; padding:16px 48px; font-size:1.1rem; background:transparent; color:white; border:2px solid white; border-radius:50px; font-weight:700; text-decoration:none;">
+                    <i class="fas fa-phone me-2"></i> +211 922 005 177
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">Jolong <span class="gold">Apartments</span></div>
+                    <p class="footer-about">
+                        Premium living in Juba, South Sudan. Modern, secure, and comfortable 
+                        residential spaces designed for your lifestyle.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="apartments.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                        <li><a href="floor-plans.html"><i class="fas fa-chevron-right"></i> Floor Plans</a></li>
+                        <li><a href="about-apartments.html"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="contact-apartments.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
+                        <li><i class="fas fa-phone"></i> +211 922 005 177</li>
+                        <li><i class="fas fa-envelope"></i> info@jolonges.com</li>
+                        <li><i class="fas fa-clock"></i> 7:00 AM - 11:00 PM Daily</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Office Hours</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-clock"></i> Monday - Sunday</li>
+                        <li style="color: var(--primary-gold); font-weight: 600;">7:00 AM - 11:00 PM</li>
+                        <li><i class="fas fa-calendar-check"></i> Viewings by Appointment</li>
+                        <li><i class="fas fa-home"></i> 24/7 Security</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2026 <span class="gold">Jolong Apartments</span>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="index.html" style="color: var(--primary-gold); text-decoration: none;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    SCRIPTS
+    ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 80, easing: 'ease-in-out' });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            navbar.classList.toggle('scrolled', window.pageYOffset > 50);
+        });
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stats-about .stat-item .number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.dataset.count);
+                let current = 0;
+                const increment = target / 60;
+                const duration = 2000;
+                const stepTime = duration / 60;
+                
+                const updateCounter = () => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target + (target === 98 ? '%' : '+');
+                        return;
+                    }
+                    counter.textContent = Math.floor(current) + (target === 98 ? '%' : '+');
+                    setTimeout(updateCounter, stepTime);
+                };
+                
+                updateCounter();
+            });
+        }
+
+        const statsSection = document.querySelector('.stats-about');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(statsSection);
+
+        const footerYear = document.querySelector('.footer-bottom p');
+        if (footerYear) {
+            footerYear.textContent = footerYear.textContent.replace('2026', new Date().getFullYear());
+        }
+
+        console.log('🏢 Jolong Apartments - About Page');
+        console.log('📞 Call: +211 922 005 177');
+    </script>
+</body>
+</html>
