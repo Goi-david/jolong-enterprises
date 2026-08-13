@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Jolong Bar & Restaurant</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore the gallery of Jolong Bar & Restaurant - Photos of our delicious dishes, signature cocktails, events, and the elegant atmosphere in Juba.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        /* ============================================
+                   ROOT VARIABLES
+                   ============================================ */
+        :root {
+            --primary-navy: #0a1a3a;
+            --primary-navy-light: #1a305a;
+            --primary-navy-dark: #060e1f;
+            --primary-gold: #f4c430;
+            --primary-gold-light: #fada5e;
+            --primary-gold-dark: #d4a820;
+            --accent-green: #2e7d32;
+            --accent-red: #c41e3a;
+            --warm-cream: #fdf8f0;
+            --warm-ivory: #faf3e8;
+            --dark-charcoal: #1a1a2e;
+            --warm-brown: #5d4037;
+            --soft-gold: #f5e6b8;
+            --white: #ffffff;
+            --light-gray: #f8f6f0;
+            --gray: #6b7280;
+            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 30px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+            --navy-gradient: linear-gradient(135deg, #0a1a3a, #1a305a);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-charcoal);
+            background-color: var(--warm-cream);
+            line-height: 1.6;
+            padding-top: 56px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .gold-text {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   TOP BAR
+                   ============================================ */
+        .top-bar {
+            background: var(--primary-navy);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .top-bar::before {
+            content: '📸';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0.2;
+        }
+
+        .top-bar a {
+            color: var(--primary-gold-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .top-bar .status-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #2ecc71;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        /* ============================================
+                   NAVBAR
+                   ============================================ */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .navbar-brand .brand-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gold-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .navbar-brand .brand-sub {
+            display: block;
+            font-size: 0.55rem;
+            font-weight: 400;
+            color: var(--primary-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            margin-top: -2px;
+        }
+
+        .nav-link {
+            color: var(--dark-charcoal) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 2px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 80%;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-gold) !important;
+        }
+
+        .btn-reserve {
+            background: var(--gold-gradient);
+            color: var(--primary-navy) !important;
+            padding: 8px 24px !important;
+            border-radius: 50px !important;
+            font-weight: 700 !important;
+            box-shadow: 0 5px 15px rgba(244, 196, 48, 0.3);
+        }
+
+        .btn-reserve:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 196, 48, 0.4);
+            color: var(--primary-navy) !important;
+        }
+
+        /* ============================================
+                   PAGE HEADER
+                   ============================================ */
+        .page-header {
+            background: linear-gradient(rgba(10, 26, 58, 0.8), rgba(10, 26, 58, 0.8)), 
+                        url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 0 3rem;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .page-header h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .page-header h1 .highlight {
+            color: var(--primary-gold);
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb-custom {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-custom a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb-custom a:hover {
+            color: white;
+        }
+
+        /* ============================================
+                   GALLERY FILTER
+                   ============================================ */
+        .gallery-filter {
+            padding: 30px 0;
+            background: white;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 76px;
+            z-index: 99;
+        }
+
+        .gallery-filter .nav-pills .nav-link {
+            color: var(--dark-charcoal);
+            border: 1px solid #dee2e6;
+            margin: 0.2rem;
+            border-radius: 50px;
+            padding: 10px 24px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            background: var(--warm-cream);
+        }
+
+        .gallery-filter .nav-pills .nav-link:hover {
+            background: var(--soft-gold);
+            border-color: var(--primary-gold);
+        }
+
+        .gallery-filter .nav-pills .nav-link.active {
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border-color: var(--primary-gold);
+            font-weight: 700;
+        }
+
+        /* ============================================
+                   GALLERY GRID
+                   ============================================ */
+        .gallery-section {
+            padding: 60px 0;
+            background: var(--warm-cream);
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition);
+            height: 280px;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: var(--shadow-lg);
+            z-index: 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            background: linear-gradient(transparent, rgba(10, 26, 58, 0.8));
+            color: white;
+            opacity: 0;
+            transition: var(--transition);
+            transform: translateY(20px);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-item .gallery-overlay h5 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .gallery-item .gallery-overlay p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.8rem;
+            margin-bottom: 0;
+        }
+
+        .gallery-item .gallery-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(10, 26, 58, 0.6);
+            backdrop-filter: blur(10px);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gallery-item .gallery-tag.food {
+            background: rgba(46, 125, 50, 0.6);
+        }
+
+        .gallery-item .gallery-tag.drinks {
+            background: rgba(244, 196, 48, 0.6);
+            color: var(--primary-navy);
+        }
+
+        .gallery-item .gallery-tag.events {
+            background: rgba(196, 30, 58, 0.6);
+        }
+
+        .gallery-item .gallery-tag.ambiance {
+            background: rgba(26, 48, 90, 0.6);
+        }
+
+        .gallery-item.tall {
+            height: 400px;
+        }
+
+        .gallery-item.wide {
+            height: 280px;
+        }
+
+        /* ============================================
+                   LIGHTBOX MODAL
+                   ============================================ */
+        .lightbox-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 26, 58, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 9999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .lightbox-modal.open {
+            display: flex;
+        }
+
+        .lightbox-modal .lightbox-content {
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            position: relative;
+        }
+
+        .lightbox-modal .lightbox-content img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: var(--border-radius-md);
+        }
+
+        .lightbox-modal .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-modal .lightbox-close:hover {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-modal .lightbox-caption {
+            color: white;
+            text-align: center;
+            margin-top: 16px;
+            padding: 16px;
+        }
+
+        .lightbox-modal .lightbox-caption h4 {
+            color: var(--primary-gold);
+            margin-bottom: 4px;
+        }
+
+        .lightbox-modal .lightbox-caption p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0;
+        }
+
+        .lightbox-modal .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-modal .lightbox-nav:hover {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+        }
+
+        .lightbox-modal .lightbox-nav.prev {
+            left: -70px;
+        }
+
+        .lightbox-modal .lightbox-nav.next {
+            right: -70px;
+        }
+
+        /* ============================================
+                   FOOTER
+                   ============================================ */
+        .footer {
+            background: var(--primary-navy-dark);
+            color: white;
+            padding: 60px 0 0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand .gold {
+            color: var(--primary-gold);
+        }
+
+        .footer-about {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 350px;
+        }
+
+        .footer h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            color: var(--primary-gold);
+            font-size: 0.7rem;
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact li i {
+            color: var(--primary-gold);
+            width: 20px;
+            margin-top: 4px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            transform: translateY(-4px);
+            border-color: var(--primary-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 24px 0;
+            margin-top: 48px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .gold {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .gallery-filter {
+                top: 70px;
+                padding: 20px 0;
+            }
+            
+            .gallery-item {
+                height: 220px;
+            }
+            
+            .gallery-item.tall {
+                height: 320px;
+            }
+            
+            .lightbox-modal .lightbox-nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .gallery-item {
+                height: 200px;
+            }
+            
+            .gallery-item.tall {
+                height: 260px;
+            }
+            
+            .gallery-item .gallery-overlay {
+                opacity: 1;
+                transform: translateY(0);
+                padding: 12px;
+            }
+            
+            .gallery-item .gallery-overlay h5 {
+                font-size: 0.9rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            
+            .navbar-brand .brand-sub {
+                font-size: 0.5rem;
+            }
+            
+            .lightbox-modal {
+                padding: 20px;
+            }
+            
+            .lightbox-modal .lightbox-close {
+                top: -40px;
+                right: 0;
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-brand .brand-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .gallery-filter .nav-pills .nav-link {
+                padding: 6px 14px;
+                font-size: 0.8rem;
+            }
+            
+            .gallery-item {
+                height: 160px;
+            }
+            
+            .gallery-item.tall {
+                height: 200px;
+            }
+        }
+
+        /* ============================================
+                   SCROLLBAR
+                   ============================================ */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-gradient);
+            border-radius: var(--border-radius-xl);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    TOP BAR
+    ============================================ -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span class="status-dot"></span>
+                    <span class="me-3"><strong>Open Now</strong> • 7:00 AM - 11:00 PM</span>
+                    <i class="fas fa-phone-alt me-2"></i> <a href="tel:+211922005177">+211 922 005 177</a>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="reservations.html"><i class="fas fa-calendar-check me-1"></i> Book a Table</a>
+                    <a href="bar-restaurant.html" class="ms-3"><i class="fas fa-arrow-left me-1"></i> Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+    NAVBAR
+    ============================================ -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="bar-restaurant.html">
+                <span class="brand-icon"><i class="fas fa-utensils"></i></span>
+                <div>
+                    Jolong <span class="gold-text">Bar & Restaurant</span>
+                    <span class="brand-sub">Where Juba Dines & Unwinds</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="bar-restaurant.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bar.html">Bar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-bar.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-bar.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: var(--primary-gold) !important;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="reservations.html" class="btn btn-reserve">
+                        <i class="fas fa-calendar-check me-2"></i> Book Table
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+    PAGE HEADER
+    ============================================ -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our <span class="highlight">Gallery</span></h1>
+            <p>Explore the vibrant atmosphere, delicious dishes, and memorable moments 
+            at Jolong Bar & Restaurant through our photo gallery.</p>
+            <div class="breadcrumb-custom">
+                <a href="bar-restaurant.html">Home</a>
+                <span>/</span>
+                <span>Gallery</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    GALLERY FILTER
+    ============================================ -->
+    <section class="gallery-filter">
+        <div class="container">
+            <ul class="nav nav-pills justify-content-center flex-wrap" id="galleryFilterPills">
+                <li class="nav-item">
+                    <a class="nav-link active" data-filter="all" onclick="filterGallery('all')">
+                        <i class="fas fa-images me-1"></i> All Photos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-filter="food" onclick="filterGallery('food')">
+                        <i class="fas fa-utensils me-1"></i> Food
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-filter="drinks" onclick="filterGallery('drinks')">
+                        <i class="fas fa-cocktail me-1"></i> Drinks
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-filter="events" onclick="filterGallery('events')">
+                        <i class="fas fa-music me-1"></i> Events
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-filter="ambiance" onclick="filterGallery('ambiance')">
+                        <i class="fas fa-building me-1"></i> Ambiance
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================
+    GALLERY GRID
+    ============================================ -->
+    <section class="gallery-section" id="gallerySection">
+        <div class="container">
+            <div class="row g-3" id="galleryGrid">
+                <!-- Food Items -->
+                <div class="col-lg-4 col-md-6" data-category="food" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="gallery-item" onclick="openLightbox(0)">
+                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&h=400&fit=crop" alt="Jolof Rice">
+                        <span class="gallery-tag food">🍽️ Food</span>
+                        <div class="gallery-overlay">
+                            <h5>Jolof Rice with Grilled Chicken</h5>
+                            <p>Our signature South Sudanese dish</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-category="food" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="gallery-item" onclick="openLightbox(1)">
+                        <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&h=400&fit=crop" alt="Grilled Tilapia">
+                        <span class="gallery-tag food">🍽️ Food</span>
+                        <div class="gallery-overlay">
+                            <h5>Grilled Nile Tilapia</h5>
+                            <p>Fresh catch from the Nile</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-category="food" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="gallery-item" onclick="openLightbox(2)">
+                        <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=600&h=400&fit=crop" alt="Asida">
+                        <span class="gallery-tag food">🍽️ Food</span>
+                        <div class="gallery-overlay">
+                            <h5>Asida with Meat Stew</h5>
+                            <p>Traditional South Sudanese comfort food</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drinks -->
+                <div class="col-lg-4 col-md-6" data-category="drinks" data-aos="zoom-in" data-aos-delay="250">
+                    <div class="gallery-item" onclick="openLightbox(3)">
+                        <img src="https://images.unsplash.com/photo-1514362545857-739bc6f5b5e1?w=600&h=400&fit=crop" alt="Cocktails">
+                        <span class="gallery-tag drinks">🍸 Drinks</span>
+                        <div class="gallery-overlay">
+                            <h5>Signature Cocktails</h5>
+                            <p>Handcrafted by our expert mixologists</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-category="drinks" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="gallery-item" onclick="openLightbox(4)">
+                        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&h=400&fit=crop" alt="Coffee">
+                        <span class="gallery-tag drinks">☕ Drinks</span>
+                        <div class="gallery-overlay">
+                            <h5>Freshly Brewed Coffee</h5>
+                            <p>Ethiopian coffee, freshly ground</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-category="drinks" data-aos="zoom-in" data-aos-delay="350">
+                    <div class="gallery-item" onclick="openLightbox(5)">
+                        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&h=400&fit=crop" alt="Fresh Juice">
+                        <span class="gallery-tag drinks">🧃 Drinks</span>
+                        <div class="gallery-overlay">
+                            <h5>Fresh Fruit Juices</h5>
+                            <p>Mango, passion, orange & more</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Events -->
+                <div class="col-lg-6" data-category="events" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="gallery-item tall" onclick="openLightbox(6)">
+                        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop" alt="Live Music">
+                        <span class="gallery-tag events">🎵 Events</span>
+                        <div class="gallery-overlay">
+                            <h5>Live Music Night</h5>
+                            <p>Every Friday night at Jolong</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-category="events" data-aos="zoom-in" data-aos-delay="450">
+                    <div class="gallery-item tall" onclick="openLightbox(7)">
+                        <img src="https://images.unsplash.com/photo-1530023367847-a683933f4172?w=800&h=600&fit=crop" alt="Private Event">
+                        <span class="gallery-tag events">🎉 Events</span>
+                        <div class="gallery-overlay">
+                            <h5>Private Celebrations</h5>
+                            <p>Special occasions at Jolong</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ambiance -->
+                <div class="col-lg-4 col-md-6" data-category="ambiance" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="gallery-item" onclick="openLightbox(8)">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&h=400&fit=crop" alt="Restaurant Interior">
+                        <span class="gallery-tag ambiance">🏛️ Ambiance</span>
+                        <div class="gallery-overlay">
+                            <h5>Elegant Dining Area</h5>
+                            <p>Where Juba dines in style</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-category="ambiance" data-aos="zoom-in" data-aos-delay="550">
+                    <div class="gallery-item" onclick="openLightbox(9)">
+                        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&h=400&fit=crop" alt="Bar Area">
+                        <span class="gallery-tag ambiance">🍸 Ambiance</span>
+                        <div class="gallery-overlay">
+                            <h5>The Bar Lounge</h5>
+                            <p>Perfect for after-work drinks</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-category="ambiance" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="gallery-item" onclick="openLightbox(10)">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&h=400&fit=crop" alt="Outdoor Seating">
+                        <span class="gallery-tag ambiance">🌿 Ambiance</span>
+                        <div class="gallery-overlay">
+                            <h5>Outdoor Terrace</h5>
+                            <p>Al fresco dining in Juba</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results -->
+            <div id="galleryNoResults" style="display: none; text-align: center; padding: 60px 0;">
+                <div style="font-size: 4rem; margin-bottom: 20px;">📸</div>
+                <h3>No photos found</h3>
+                <p class="text-muted">Try selecting a different category</p>
+                <button class="btn btn-primary mt-3" onclick="resetGallery()" style="background: var(--gold-gradient); border: none; color: var(--primary-navy);">
+                    <i class="fas fa-redo me-2"></i> Show All Photos
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    LIGHTBOX MODAL
+    ============================================ -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <button class="lightbox-close" onclick="closeLightbox()">
+            <i class="fas fa-times"></i>
+        </button>
+        <button class="lightbox-nav prev" onclick="changeImage(-1)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="lightbox-nav next" onclick="changeImage(1)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="Gallery Image" id="lightboxImage">
+            <div class="lightbox-caption" id="lightboxCaption">
+                <h4>Image Title</h4>
+                <p>Image description</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">Jolong <span class="gold">Bar & Restaurant</span></div>
+                    <p class="footer-about">
+                        Where Juba dines and unwinds. Experience authentic South Sudanese 
+                        cuisine, premium drinks, and warm hospitality in an elegant setting.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="bar-restaurant.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Menu</a></li>
+                        <li><a href="bar.html"><i class="fas fa-chevron-right"></i> Bar</a></li>
+                        <li><a href="events.html"><i class="fas fa-chevron-right"></i> Events</a></li>
+                        <li><a href="reservations.html"><i class="fas fa-chevron-right"></i> Reservations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
+                        <li><i class="fas fa-phone"></i> +211 922 005 177</li>
+                        <li><i class="fas fa-envelope"></i> info@jolonges.com</li>
+                        <li><i class="fas fa-clock"></i> 7:00 AM - 11:00 PM Daily</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Opening Hours</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-clock"></i> Monday - Sunday</li>
+                        <li style="color: var(--primary-gold); font-weight: 600;">7:00 AM - 11:00 PM</li>
+                        <li><i class="fas fa-music"></i> Live Music: Fridays</li>
+                        <li><i class="fas fa-glass-cheers"></i> Happy Hour: 5-7 PM Weekdays</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2026 <span class="gold">Jolong Bar & Restaurant</span>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="index.html" style="color: var(--primary-gold); text-decoration: none;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    SCRIPTS
+    ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // ============================================
+        // AOS INIT
+        // ============================================
+        AOS.init({
+            duration: 600,
+            once: true,
+            offset: 50,
+            easing: 'ease-in-out'
+        });
+
+        // ============================================
+        // NAVBAR SCROLL
+        // ============================================
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ============================================
+        // GALLERY DATA
+        // ============================================
+        const galleryData = [
+            { title: 'Jolof Rice with Grilled Chicken', description: 'Our signature South Sudanese dish', category: 'food' },
+            { title: 'Grilled Nile Tilapia', description: 'Fresh catch from the Nile', category: 'food' },
+            { title: 'Asida with Meat Stew', description: 'Traditional South Sudanese comfort food', category: 'food' },
+            { title: 'Signature Cocktails', description: 'Handcrafted by our expert mixologists', category: 'drinks' },
+            { title: 'Freshly Brewed Coffee', description: 'Ethiopian coffee, freshly ground', category: 'drinks' },
+            { title: 'Fresh Fruit Juices', description: 'Mango, passion, orange & more', category: 'drinks' },
+            { title: 'Live Music Night', description: 'Every Friday night at Jolong', category: 'events' },
+            { title: 'Private Celebrations', description: 'Special occasions at Jolong', category: 'events' },
+            { title: 'Elegant Dining Area', description: 'Where Juba dines in style', category: 'ambiance' },
+            { title: 'The Bar Lounge', description: 'Perfect for after-work drinks', category: 'ambiance' },
+            { title: 'Outdoor Terrace', description: 'Al fresco dining in Juba', category: 'ambiance' }
+        ];
+
+        // ============================================
+        // GALLERY FILTER
+        // ============================================
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        let activeFilter = 'all';
+
+        function filterGallery(category) {
+            activeFilter = category;
+            
+            document.querySelectorAll('#galleryFilterPills .nav-link').forEach(link => {
+                link.classList.toggle('active', link.dataset.filter === category);
+            });
+            
+            let visibleCount = 0;
+
+            galleryItems.forEach((item, index) => {
+                const itemCategory = item.dataset.category;
+                const visible = category === 'all' || itemCategory === category;
+                item.closest('.col-lg-4, .col-lg-6').style.display = visible ? '' : 'none';
+                if (visible) visibleCount++;
+            });
+
+            const noResults = document.getElementById('galleryNoResults');
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        // ============================================
+        // RESET GALLERY
+        // ============================================
+        function resetGallery() {
+            filterGallery('all');
+            document.querySelectorAll('#galleryFilterPills .nav-link').forEach(link => {
+                link.classList.toggle('active', link.dataset.filter === 'all');
+            });
+        }
+
+        // ============================================
+        // LIGHTBOX
+        // ============================================
+        const imageUrls = [
+            'https://images.unsplash.com/photo-1547592180-85f173990554?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1558030006-450675393462?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1514362545857-739bc6f5b5e1?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1530023367847-a683933f4172?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=800&h=600&fit=crop'
+        ];
+
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const modal = document.getElementById('lightboxModal');
+            const image = document.getElementById('lightboxImage');
+            const caption = document.getElementById('lightboxCaption');
+            
+            image.src = imageUrls[index];
+            caption.querySelector('h4').textContent = galleryData[index].title;
+            caption.querySelector('p').textContent = galleryData[index].description;
+            
+            modal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightboxModal');
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function changeImage(direction) {
+            currentImageIndex = (currentImageIndex + direction + imageUrls.length) % imageUrls.length;
+            const image = document.getElementById('lightboxImage');
+            const caption = document.getElementById('lightboxCaption');
+            
+            image.src = imageUrls[currentImageIndex];
+            caption.querySelector('h4').textContent = galleryData[currentImageIndex].title;
+            caption.querySelector('p').textContent = galleryData[currentImageIndex].description;
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+            if (e.key === 'ArrowLeft') {
+                changeImage(-1);
+            }
+            if (e.key === 'ArrowRight') {
+                changeImage(1);
+            }
+        });
+
+        // ============================================
+        // DYNAMIC YEAR IN FOOTER
+        // ============================================
+        const footerYear = document.querySelector('.footer-bottom p');
+        if (footerYear) {
+            footerYear.textContent = footerYear.textContent.replace('2026', new Date().getFullYear());
+        }
+
+        console.log('📸 Jolong Bar & Restaurant - Gallery Page');
+        console.log('🖼️ ' + galleryData.length + ' photos in gallery');
+        console.log('📞 Call: +211 922 005 177');
+    </script>
+</body>
+</html>
