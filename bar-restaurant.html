@@ -1,0 +1,1938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jolong Bar & Restaurant - Where Juba Dines & Unwinds</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Jolong Bar & Restaurant - Premium dining and entertainment in Juba, South Sudan. Enjoy authentic South Sudanese cuisine, signature cocktails, and live entertainment.">
+    <meta name="keywords" content="Jolong Bar, Juba restaurant, South Sudanese food, cocktails Juba, fine dining South Sudan">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        /* ============================================
+                   ROOT VARIABLES - SOUTH SUDAN INSPIRED
+                   ============================================ */
+        :root {
+            --primary-navy: #0a1a3a;
+            --primary-navy-light: #1a305a;
+            --primary-navy-dark: #060e1f;
+            --primary-gold: #f4c430;
+            --primary-gold-light: #fada5e;
+            --primary-gold-dark: #d4a820;
+            --accent-green: #2e7d32;
+            --accent-red: #c41e3a;
+            --warm-cream: #fdf8f0;
+            --warm-ivory: #faf3e8;
+            --dark-charcoal: #1a1a2e;
+            --warm-brown: #5d4037;
+            --soft-gold: #f5e6b8;
+            --white: #ffffff;
+            --light-gray: #f8f6f0;
+            --gray: #6b7280;
+            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 30px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+            --navy-gradient: linear-gradient(135deg, #0a1a3a, #1a305a);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-charcoal);
+            background-color: var(--warm-cream);
+            line-height: 1.6;
+            padding-top: 56px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .gold-text {
+            color: var(--primary-gold);
+        }
+
+        .navy-text {
+            color: var(--primary-navy);
+        }
+
+        /* ============================================
+                   TOP BAR
+                   ============================================ */
+        .top-bar {
+            background: var(--primary-navy);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .top-bar::before {
+            content: '🍽️';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0.2;
+        }
+
+        .top-bar a {
+            color: var(--primary-gold-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .top-bar .status-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #2ecc71;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        /* ============================================
+                   NAVBAR
+                   ============================================ */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+            background: rgba(255, 255, 255, 0.98) !important;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .navbar-brand .brand-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gold-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .navbar-brand .brand-sub {
+            display: block;
+            font-size: 0.55rem;
+            font-weight: 400;
+            color: var(--primary-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            margin-top: -2px;
+        }
+
+        .nav-link {
+            color: var(--dark-charcoal) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 2px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 80%;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-gold) !important;
+        }
+
+        .nav-link .badge-status {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #2ecc71;
+            border-radius: 50%;
+            margin-left: 4px;
+            animation: pulse-dot 2s infinite;
+        }
+
+        .btn-reserve {
+            background: var(--gold-gradient);
+            color: var(--primary-navy) !important;
+            padding: 8px 24px !important;
+            border-radius: 50px !important;
+            font-weight: 700 !important;
+            box-shadow: 0 5px 15px rgba(244, 196, 48, 0.3);
+        }
+
+        .btn-reserve::before {
+            display: none !important;
+        }
+
+        .btn-reserve:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 196, 48, 0.4);
+            color: var(--primary-navy) !important;
+        }
+
+        /* ============================================
+                   HERO SECTION
+                   ============================================ */
+        .hero-section {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(rgba(10, 26, 58, 0.7), rgba(10, 26, 58, 0.8)), 
+                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&h=1080&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 6rem 0 4rem;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: var(--gold-gradient);
+        }
+
+        .hero-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 8px 24px;
+            background: rgba(244, 196, 48, 0.15);
+            border: 1px solid rgba(244, 196, 48, 0.2);
+            border-radius: 50px;
+            color: var(--primary-gold);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge .dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #2ecc71;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse-dot 2s infinite;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+            line-height: 1.05;
+        }
+
+        .hero-title .highlight {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 600px;
+            margin-bottom: 35px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero-primary {
+            padding: 16px 40px;
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(244, 196, 48, 0.3);
+        }
+
+        .btn-hero-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(244, 196, 48, 0.4);
+            color: var(--primary-navy);
+        }
+
+        .btn-hero-secondary {
+            padding: 16px 40px;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-hero-secondary:hover {
+            background: white;
+            color: var(--primary-navy);
+            transform: translateY(-5px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat .number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            display: block;
+        }
+
+        .hero-stat .label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ============================================
+                   WELCOME SECTION
+                   ============================================ */
+        .welcome-section {
+            padding: 80px 0;
+            background: var(--warm-cream);
+            position: relative;
+        }
+
+        .welcome-section::before {
+            content: '🍽️';
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            font-size: 8rem;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        .welcome-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 50px;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--primary-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .welcome-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(244, 196, 48, 0.05), transparent 70%);
+            border-radius: 50%;
+        }
+
+        .welcome-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gold-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(244, 196, 48, 0.3);
+        }
+
+        .welcome-card h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .welcome-card p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            max-width: 700px;
+        }
+
+        .welcome-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .welcome-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--warm-cream);
+            border-radius: var(--border-radius-sm);
+            transition: var(--transition);
+        }
+
+        .welcome-feature:hover {
+            background: var(--soft-gold);
+            transform: translateX(5px);
+        }
+
+        .welcome-feature i {
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            width: 24px;
+        }
+
+        /* ============================================
+                   QUICK LINKS / SERVICES
+                   ============================================ */
+        .quick-links {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .quick-link-card {
+            background: var(--warm-cream);
+            border-radius: var(--border-radius-md);
+            padding: 30px 25px;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .quick-link-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-gold);
+            box-shadow: var(--shadow-md);
+        }
+
+        .quick-link-card .icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .quick-link-card h5 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .quick-link-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+                   FEATURED MENU ITEMS
+                   ============================================ */
+        .featured-menu {
+            padding: 80px 0;
+            background: var(--warm-cream);
+            position: relative;
+        }
+
+        .featured-menu::before {
+            content: '🍷';
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            font-size: 6rem;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 6px 20px;
+            background: rgba(244, 196, 48, 0.12);
+            color: var(--primary-gold);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--primary-navy);
+        }
+
+        .section-title .highlight {
+            color: var(--primary-gold);
+            position: relative;
+        }
+
+        .section-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold-gradient);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 50px;
+            font-size: 1.1rem;
+        }
+
+        .menu-item-card {
+            background: white;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .menu-item-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .menu-item-card .item-image {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+            background: var(--warm-cream);
+        }
+
+        .menu-item-card .item-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .menu-item-card:hover .item-image img {
+            transform: scale(1.08);
+        }
+
+        .menu-item-card .item-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+        }
+
+        .menu-item-card .item-body {
+            padding: 20px 22px;
+        }
+
+        .menu-item-card .item-body h5 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+            color: var(--primary-navy);
+        }
+
+        .menu-item-card .item-body .description {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 12px;
+        }
+
+        .menu-item-card .item-body .price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .menu-item-card .item-body .meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-bottom: 12px;
+        }
+
+        .menu-item-card .item-body .meta i {
+            color: var(--primary-gold);
+        }
+
+        .menu-item-card .item-body .btn-order {
+            padding: 8px 20px;
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .menu-item-card .item-body .btn-order:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244, 196, 48, 0.3);
+        }
+
+        /* ============================================
+                   BAR SPECIALS
+                   ============================================ */
+        .bar-specials {
+            padding: 80px 0;
+            background: var(--primary-navy);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bar-specials::before {
+            content: '🍸';
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            font-size: 8rem;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .bar-specials .section-title {
+            color: white;
+        }
+
+        .bar-specials .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .bar-specials .section-badge {
+            background: rgba(244, 196, 48, 0.15);
+            color: var(--primary-gold);
+        }
+
+        .cocktail-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-md);
+            padding: 30px 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .cocktail-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary-gold);
+        }
+
+        .cocktail-card .icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .cocktail-card h5 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .cocktail-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .cocktail-card .price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .cocktail-card .tag {
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            background: rgba(244, 196, 48, 0.15);
+            color: var(--primary-gold);
+            margin-top: 8px;
+        }
+
+        /* ============================================
+                   EVENTS & ENTERTAINMENT
+                   ============================================ */
+        .events-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .event-card {
+            background: var(--warm-cream);
+            border-radius: var(--border-radius-md);
+            padding: 30px;
+            border-left: 4px solid var(--primary-gold);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .event-card:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .event-card .event-date {
+            font-size: 0.8rem;
+            color: var(--primary-gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .event-card h5 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .event-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .event-card .event-meta {
+            display: flex;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .event-card .event-meta i {
+            color: var(--primary-gold);
+            width: 16px;
+        }
+
+        /* ============================================
+                   TESTIMONIALS
+                   ============================================ */
+        .testimonials-section {
+            padding: 80px 0;
+            background: var(--warm-cream);
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: var(--border-radius-md);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .testimonial-card .stars {
+            color: var(--primary-gold);
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 0.95rem;
+            color: var(--dark-charcoal);
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-card .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-card .author .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-navy);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-card .author .name {
+            font-weight: 600;
+            color: var(--primary-navy);
+        }
+
+        .testimonial-card .author .role {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* ============================================
+                   CTA SECTION
+                   ============================================ */
+        .cta-section {
+            padding: 80px 0;
+            background: var(--navy-gradient);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '🍽️';
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            font-size: 6rem;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .cta-section::after {
+            content: '🍸';
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            font-size: 6rem;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .cta-section h2 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .cta-section h2 .highlight {
+            color: var(--primary-gold);
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 35px;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* ============================================
+                   FOOTER
+                   ============================================ */
+        .footer {
+            background: var(--primary-navy-dark);
+            color: white;
+            padding: 60px 0 0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand .gold {
+            color: var(--primary-gold);
+        }
+
+        .footer-about {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 350px;
+        }
+
+        .footer h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            color: var(--primary-gold);
+            font-size: 0.7rem;
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact li i {
+            color: var(--primary-gold);
+            width: 20px;
+            margin-top: 4px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            transform: translateY(-4px);
+            border-color: var(--primary-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 24px 0;
+            margin-top: 48px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .gold {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .hero-stats {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            
+            .welcome-card {
+                padding: 30px;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-buttons .btn-hero-primary,
+            .hero-buttons .btn-hero-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .welcome-card h2 {
+                font-size: 2rem;
+            }
+            
+            .welcome-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            
+            .navbar-brand .brand-sub {
+                font-size: 0.5rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-buttons .btn-hero-primary,
+            .cta-buttons .btn-hero-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-section {
+                padding: 5rem 0 3rem;
+            }
+            
+            .welcome-card {
+                padding: 20px;
+            }
+            
+            .welcome-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .navbar-brand .brand-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+        }
+
+        /* ============================================
+                   SCROLLBAR
+                   ============================================ */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-gradient);
+            border-radius: var(--border-radius-xl);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(135deg, var(--primary-gold-dark), var(--primary-gold));
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    TOP BAR
+    ============================================ -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span class="status-dot"></span>
+                    <span class="me-3"><strong>Open Now</strong> • 7:00 AM - 11:00 PM</span>
+                    <i class="fas fa-phone-alt me-2"></i> <a href="tel:+211922005177">+211 922 005 177</a>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="reservations.html"><i class="fas fa-calendar-check me-1"></i> Book a Table</a>
+                    <a href="menu.html" class="ms-3"><i class="fas fa-utensils me-1"></i> View Menu</a>
+                    <a href="#contact" class="ms-3"><i class="fas fa-map-marker-alt me-1"></i> Find Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+    NAVBAR
+    ============================================ -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="bar-restaurant.html">
+                <span class="brand-icon"><i class="fas fa-utensils"></i></span>
+                <div>
+                    Jolong <span class="gold-text">Bar & Restaurant</span>
+                    <span class="brand-sub">Where Juba Dines & Unwinds</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="bar-restaurant.html">Home</a>
+                    </li>
+                    
+                    <!-- Menu Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="menuDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-utensils me-1"></i> Menu
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="menu.html?category=appetizers"><i class="fas fa-seedling me-2"></i> Appetizers</a></li>
+                            <li><a class="dropdown-item" href="menu.html?category=mains"><i class="fas fa-drumstick-bite me-2"></i> Main Courses</a></li>
+                            <li><a class="dropdown-item" href="menu.html?category=local"><i class="fas fa-flag me-2"></i> South Sudanese Dishes</a></li>
+                            <li><a class="dropdown-item" href="menu.html?category=grills"><i class="fas fa-fire me-2"></i> Grills & BBQ</a></li>
+                            <li><a class="dropdown-item" href="menu.html?category=seafood"><i class="fas fa-fish me-2"></i> Seafood</a></li>
+                            <li><a class="dropdown-item" href="menu.html?category=desserts"><i class="fas fa-cake me-2"></i> Desserts</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Bar Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="barDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-glass-cheers me-1"></i> Bar
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="bar.html?category=cocktails"><i class="fas fa-cocktail me-2"></i> Signature Cocktails</a></li>
+                            <li><a class="dropdown-item" href="bar.html?category=local"><i class="fas fa-beer me-2"></i> Local Drinks</a></li>
+                            <li><a class="dropdown-item" href="bar.html?category=spirits"><i class="fas fa-wine-bottle me-2"></i> International Spirits</a></li>
+                            <li><a class="dropdown-item" href="bar.html?category=beers"><i class="fas fa-beer me-2"></i> Beers & Wines</a></li>
+                            <li><a class="dropdown-item" href="bar.html?category=soft"><i class="fas fa-cup-water me-2"></i> Soft Drinks</a></li>
+                            <li><a class="dropdown-item" href="bar.html?category=juices"><i class="fas fa-apple-whole me-2"></i> Fresh Juices</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Events Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="eventsDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-calendar-alt me-1"></i> Events
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="events.html?type=live"><i class="fas fa-music me-2"></i> Live Music</a></li>
+                            <li><a class="dropdown-item" href="events.html?type=private"><i class="fas fa-user-plus me-2"></i> Private Events</a></li>
+                            <li><a class="dropdown-item" href="events.html?type=happy-hour"><i class="fas fa-clock me-2"></i> Happy Hour</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-bar.html">About</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-bar.html">Contact</a>
+                    </li>
+                    
+                    <!-- Back to Jolong Enterprises -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: var(--primary-gold) !important;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="reservations.html" class="btn btn-reserve">
+                        <i class="fas fa-calendar-check me-2"></i> Book Table
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+    HERO SECTION
+    ============================================ -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <div class="hero-badge">
+                        <span class="dot"></span> Now Open • 7:00 AM - 11:00 PM
+                    </div>
+                    <h1 class="hero-title">
+                        Where Juba <br><span class="highlight">Dines & Unwinds</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Experience authentic South Sudanese cuisine, signature cocktails, 
+                        and live entertainment in an elegant setting. Your premier dining 
+                        destination in the heart of Juba.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="menu.html" class="btn-hero-primary">
+                            <i class="fas fa-utensils"></i> View Menu
+                        </a>
+                        <a href="reservations.html" class="btn-hero-secondary">
+                            <i class="fas fa-calendar-check"></i> Book a Table
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span class="number">3+</span>
+                            <span class="label">Years of Excellence</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="number">100+</span>
+                            <span class="label">Menu Items</span>
+                        </div>
+                        <div class="hero-stat">
+                            <span class="number">50+</span>
+                            <span class="label">Happy Guests Daily</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    WELCOME SECTION
+    ============================================ -->
+    <section class="welcome-section" data-aos="fade-up">
+        <div class="container">
+            <div class="welcome-card">
+                <div class="welcome-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h2>Welcome to Jolong <span class="gold-text">Bar & Restaurant</span></h2>
+                <p>
+                    Located in the heart of Juba, Jolong Bar & Restaurant offers a unique 
+                    dining experience blending South Sudanese hospitality with international 
+                    cuisine. From authentic local dishes to premium grilled meats and 
+                    signature cocktails, we create memorable moments for every occasion.
+                </p>
+                <div class="welcome-features">
+                    <div class="welcome-feature">
+                        <i class="fas fa-flag"></i>
+                        <span>Authentic South Sudanese Cuisine</span>
+                    </div>
+                    <div class="welcome-feature">
+                        <i class="fas fa-cocktail"></i>
+                        <span>Signature Cocktails & Premium Bar</span>
+                    </div>
+                    <div class="welcome-feature">
+                        <i class="fas fa-music"></i>
+                        <span>Live Entertainment Nights</span>
+                    </div>
+                    <div class="welcome-feature">
+                        <i class="fas fa-users"></i>
+                        <span>Private Events & Celebrations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    QUICK LINKS
+    ============================================ -->
+    <section class="quick-links" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="quick-link-card" onclick="window.location.href='menu.html?category=appetizers'">
+                        <span class="icon">🍤</span>
+                        <h5>Appetizers</h5>
+                        <p>Start your meal right</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="quick-link-card" onclick="window.location.href='menu.html?category=mains'">
+                        <span class="icon">🥩</span>
+                        <h5>Main Courses</h5>
+                        <p>Hearty & delicious</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="quick-link-card" onclick="window.location.href='bar.html?category=cocktails'">
+                        <span class="icon">🍹</span>
+                        <h5>Signature Cocktails</h5>
+                        <p>Handcrafted perfection</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-3">
+                    <div class="quick-link-card" onclick="window.location.href='events.html'">
+                        <span class="icon">🎵</span>
+                        <h5>Live Events</h5>
+                        <p>Music & entertainment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FEATURED MENU ITEMS
+    ============================================ -->
+    <section class="featured-menu" id="menu" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-badge">Our Menu</span>
+                <h2 class="section-title">Featured <span class="highlight">Dishes</span></h2>
+                <p class="section-subtitle">
+                    Discover our most popular dishes, crafted with fresh ingredients and 
+                    authentic South Sudanese flavors.
+                </p>
+            </div>
+
+            <div class="row">
+                <!-- Item 1 - Local Dish -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&h=400&fit=crop" alt="Jolof Rice">
+                            <span class="item-badge">Local Favorite</span>
+                        </div>
+                        <div class="item-body">
+                            <h5>Jolof Rice with Grilled Chicken</h5>
+                            <div class="meta">
+                                <span><i class="fas fa-flag"></i> South Sudanese</span>
+                                <span><i class="fas fa-fire"></i> Spicy</span>
+                            </div>
+                            <p class="description">Classic West African rice dish with tender grilled chicken, vegetables, and aromatic spices.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">SSP 15,000</span>
+                                <button class="btn-order" onclick="addToOrder('Jolof Rice with Grilled Chicken', 15000)">
+                                    <i class="fas fa-plus"></i> Order
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 - Grill -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&h=400&fit=crop" alt="Grilled Tilapia">
+                            <span class="item-badge">Fresh Catch</span>
+                        </div>
+                        <div class="item-body">
+                            <h5>Grilled Nile Tilapia</h5>
+                            <div class="meta">
+                                <span><i class="fas fa-fish"></i> Fresh</span>
+                                <span><i class="fas fa-clock"></i> 20 min</span>
+                            </div>
+                            <p class="description">Fresh Nile tilapia grilled to perfection with lemon, herbs, and served with seasonal vegetables.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">SSP 20,000</span>
+                                <button class="btn-order" onclick="addToOrder('Grilled Nile Tilapia', 20000)">
+                                    <i class="fas fa-plus"></i> Order
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 - Local -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="menu-item-card">
+                        <div class="item-image">
+                            <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?w=600&h=400&fit=crop" alt="Asida">
+                            <span class="item-badge">Traditional</span>
+                        </div>
+                        <div class="item-body">
+                            <h5>Asida with Meat Stew</h5>
+                            <div class="meta">
+                                <span><i class="fas fa-flag"></i> South Sudanese</span>
+                                <span><i class="fas fa-utensils"></i> Traditional</span>
+                            </div>
+                            <p class="description">Traditional South Sudanese porridge served with rich, slow-cooked meat stew and vegetables.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">SSP 12,000</span>
+                                <button class="btn-order" onclick="addToOrder('Asida with Meat Stew', 12000)">
+                                    <i class="fas fa-plus"></i> Order
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="menu.html" class="btn-hero-primary">
+                    <i class="fas fa-utensils"></i> View Full Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    BAR SPECIALS
+    ============================================ -->
+    <section class="bar-specials" id="bar" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-badge">The Bar</span>
+                <h2 class="section-title">Signature <span class="gold-text">Cocktails</span></h2>
+                <p class="section-subtitle">
+                    Handcrafted by our expert mixologists using premium spirits and 
+                    fresh local ingredients.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="flip-up" data-aos-delay="100">
+                    <div class="cocktail-card">
+                        <span class="icon">🍹</span>
+                        <h5>Juba Sunset</h5>
+                        <p>Passion fruit, mango, rum, and ginger</p>
+                        <span class="price">SSP 15,000</span>
+                        <span class="tag">★ Signature</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="flip-up" data-aos-delay="200">
+                    <div class="cocktail-card">
+                        <span class="icon">🍸</span>
+                        <h5>Nile Breeze</h5>
+                        <p>Vodka, mint, cucumber, and lime</p>
+                        <span class="price">SSP 12,000</span>
+                        <span class="tag">★ Refreshing</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="flip-up" data-aos-delay="300">
+                    <div class="cocktail-card">
+                        <span class="icon">🥃</span>
+                        <h5>South Sudan Mule</h5>
+                        <p>Ginger beer, vodka, and lime</p>
+                        <span class="price">SSP 10,000</span>
+                        <span class="tag">★ Classic</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="flip-up" data-aos-delay="400">
+                    <div class="cocktail-card">
+                        <span class="icon">🍷</span>
+                        <h5>Savannah Spritz</h5>
+                        <p>Prosecco, elderflower, and berries</p>
+                        <span class="price">SSP 18,000</span>
+                        <span class="tag">★ Elegant</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4">
+                <a href="bar.html" class="btn-hero-primary" style="background: white; color: var(--primary-navy);">
+                    <i class="fas fa-glass-cheers"></i> Explore Full Bar Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    EVENTS SECTION
+    ============================================ -->
+    <section class="events-section" id="events" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-badge">Events</span>
+                <h2 class="section-title">Upcoming <span class="highlight">Events</span></h2>
+                <p class="section-subtitle">
+                    Join us for unforgettable evenings filled with great food, drinks, and entertainment.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4" data-aos="fade-right" data-aos-delay="100">
+                    <div class="event-card">
+                        <div class="event-date"><i class="far fa-calendar-alt me-2"></i> Every Friday • 7:00 PM - 10:00 PM</div>
+                        <h5>🎸 Live Music Night</h5>
+                        <p>Enjoy live performances from South Sudan's best musicians while dining.</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 7:00 PM - 10:00 PM</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Main Dining Area</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-left" data-aos-delay="200">
+                    <div class="event-card">
+                        <div class="event-date"><i class="far fa-calendar-alt me-2"></i> Weekdays • 5:00 PM - 7:00 PM</div>
+                        <h5>🍺 Happy Hour</h5>
+                        <p>Enjoy 50% off on select drinks and appetizers. Perfect for after-work relaxation.</p>
+                        <div class="event-meta">
+                            <span><i class="fas fa-clock"></i> 5:00 PM - 7:00 PM</span>
+                            <span><i class="fas fa-glass-cheers"></i> Bar Area</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    TESTIMONIALS
+    ============================================ -->
+    <section class="testimonials-section" data-aos="fade-up">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-badge">Testimonials</span>
+                <h2 class="section-title">What Our <span class="highlight">Guests Say</span></h2>
+                <p class="section-subtitle">
+                    Real feedback from guests who have experienced the Jolong difference.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>
+                            "The best dining experience in Juba! The grilled tilapia is incredible, 
+                            and the atmosphere is perfect for business dinners."
+                        </blockquote>
+                        <div class="author">
+                            <div class="avatar">JD</div>
+                            <div>
+                                <div class="name">John Doe</div>
+                                <div class="role">Business Executive</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>
+                            "Love the Juba Sunset cocktail! The staff is incredibly welcoming, 
+                            and the live music makes it a perfect weekend spot."
+                        </blockquote>
+                        <div class="author">
+                            <div class="avatar">MS</div>
+                            <div>
+                                <div class="name">Mary Smith</div>
+                                <div class="role">Regular Guest</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>
+                            "The best place for authentic South Sudanese food! The Asida and 
+                            Jolof Rice remind me of home. Highly recommend!"
+                        </blockquote>
+                        <div class="author">
+                            <div class="avatar">PK</div>
+                            <div>
+                                <div class="name">Peter Khamis</div>
+                                <div class="role">Food Enthusiast</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    CTA SECTION
+    ============================================ -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to <span class="highlight">Dine</span> with Us?</h2>
+            <p>
+                Book your table today and experience the best of South Sudanese hospitality 
+                at Jolong Bar & Restaurant.
+            </p>
+            <div class="cta-buttons">
+                <a href="reservations.html" class="btn-hero-primary">
+                    <i class="fas fa-calendar-check"></i> Book a Table
+                </a>
+                <a href="tel:+211922005177" class="btn-hero-secondary">
+                    <i class="fas fa-phone"></i> Call: +211 922 005 177
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">Jolong <span class="gold">Bar & Restaurant</span></div>
+                    <p class="footer-about">
+                        Where Juba dines and unwinds. Experience authentic South Sudanese 
+                        cuisine, premium drinks, and warm hospitality in an elegant setting.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="bar-restaurant.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Menu</a></li>
+                        <li><a href="bar.html"><i class="fas fa-chevron-right"></i> Bar</a></li>
+                        <li><a href="events.html"><i class="fas fa-chevron-right"></i> Events</a></li>
+                        <li><a href="reservations.html"><i class="fas fa-chevron-right"></i> Reservations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
+                        <li><i class="fas fa-phone"></i> +211 922 005 177</li>
+                        <li><i class="fas fa-envelope"></i> info@jolonges.com</li>
+                        <li><i class="fas fa-clock"></i> 7:00 AM - 11:00 PM Daily</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Opening Hours</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-clock"></i> Monday - Sunday</li>
+                        <li style="color: var(--primary-gold); font-weight: 600;">7:00 AM - 11:00 PM</li>
+                        <li><i class="fas fa-music"></i> Live Music: Fridays</li>
+                        <li><i class="fas fa-glass-cheers"></i> Happy Hour: 5-7 PM Weekdays</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2026 <span class="gold">Jolong Bar & Restaurant</span>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="index.html" style="color: var(--primary-gold); text-decoration: none;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    SCRIPTS
+    ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // ============================================
+        // AOS INIT
+        // ============================================
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 80,
+            easing: 'ease-in-out'
+        });
+
+        // ============================================
+        // NAVBAR SCROLL
+        // ============================================
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ============================================
+        // ADD TO ORDER
+        // ============================================
+        function addToOrder(itemName, price) {
+            // Simple notification
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                        position: fixed;
+                        bottom: 30px;
+                        right: 30px;
+                        background: var(--primary-navy);
+                        color: white;
+                        padding: 16px 24px;
+                        border-radius: 12px;
+                        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                        z-index: 9999;
+                        border-left: 4px solid var(--primary-gold);
+                        transform: translateX(500px);
+                        transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                    `;
+            notification.innerHTML = `
+                        <i class="fas fa-check-circle" style="color: var(--primary-gold); margin-right: 10px;"></i>
+                        ${itemName} added to order! <br>
+                        <small style="color: rgba(255,255,255,0.6);">SSP ${price.toLocaleString()}</small>
+                    `;
+            document.body.appendChild(notification);
+
+            // Show notification
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 100);
+
+            // Hide notification
+            setTimeout(() => {
+                notification.style.transform = 'translateX(500px)';
+                setTimeout(() => {
+                    notification.remove();
+                }, 500);
+            }, 3000);
+        }
+
+        // ============================================
+        // SMOOTH SCROLL FOR ANCHOR LINKS
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ============================================
+        // DYNAMIC YEAR IN FOOTER
+        // ============================================
+        const footerYear = document.querySelector('.footer-bottom p');
+        if (footerYear) {
+            footerYear.textContent = footerYear.textContent.replace('2026', new Date().getFullYear());
+        }
+
+        console.log('🍽️ Jolong Bar & Restaurant - Where Juba Dines & Unwinds');
+        console.log('📞 Call: +211 922 005 177');
+        console.log('📧 Email: info@jolonges.com');
+    </script>
+</body>
+</html>
