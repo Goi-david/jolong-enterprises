@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservations - Jolong Bar & Restaurant</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Book a table at Jolong Bar & Restaurant in Juba, South Sudan. Reserve your table for an unforgettable dining experience.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        /* ============================================
+                   ROOT VARIABLES
+                   ============================================ */
+        :root {
+            --primary-navy: #0a1a3a;
+            --primary-navy-light: #1a305a;
+            --primary-navy-dark: #060e1f;
+            --primary-gold: #f4c430;
+            --primary-gold-light: #fada5e;
+            --primary-gold-dark: #d4a820;
+            --accent-green: #2e7d32;
+            --accent-red: #c41e3a;
+            --warm-cream: #fdf8f0;
+            --warm-ivory: #faf3e8;
+            --dark-charcoal: #1a1a2e;
+            --warm-brown: #5d4037;
+            --soft-gold: #f5e6b8;
+            --white: #ffffff;
+            --light-gray: #f8f6f0;
+            --gray: #6b7280;
+            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 30px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+            --navy-gradient: linear-gradient(135deg, #0a1a3a, #1a305a);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-charcoal);
+            background-color: var(--warm-cream);
+            line-height: 1.6;
+            padding-top: 56px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .gold-text {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   TOP BAR
+                   ============================================ */
+        .top-bar {
+            background: var(--primary-navy);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .top-bar::before {
+            content: '📅';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0.2;
+        }
+
+        .top-bar a {
+            color: var(--primary-gold-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .top-bar .status-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #2ecc71;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        /* ============================================
+                   NAVBAR
+                   ============================================ */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .navbar-brand .brand-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gold-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .navbar-brand .brand-sub {
+            display: block;
+            font-size: 0.55rem;
+            font-weight: 400;
+            color: var(--primary-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            margin-top: -2px;
+        }
+
+        .nav-link {
+            color: var(--dark-charcoal) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 2px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 80%;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-gold) !important;
+        }
+
+        /* ============================================
+                   PAGE HEADER
+                   ============================================ */
+        .page-header {
+            background: linear-gradient(rgba(10, 26, 58, 0.8), rgba(10, 26, 58, 0.8)), 
+                        url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 0 3rem;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .page-header h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .page-header h1 .highlight {
+            color: var(--primary-gold);
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb-custom {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-custom a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb-custom a:hover {
+            color: white;
+        }
+
+        /* ============================================
+                   RESERVATION FORM
+                   ============================================ */
+        .reservation-section {
+            padding: 60px 0;
+            background: var(--warm-cream);
+        }
+
+        .reservation-wrapper {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 50px;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--primary-gold);
+        }
+
+        .reservation-wrapper h2 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+        }
+
+        .reservation-wrapper .form-subtitle {
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .form-control {
+            border: 2px solid #dee2e6;
+            border-radius: var(--border-radius-sm);
+            padding: 14px 18px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+            background: white;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(244, 196, 48, 0.15);
+        }
+
+        .form-control::placeholder {
+            color: #adb5bd;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--primary-navy);
+        }
+
+        .form-label .required {
+            color: var(--accent-red);
+            margin-left: 2px;
+        }
+
+        .form-select {
+            border: 2px solid #dee2e6;
+            border-radius: var(--border-radius-sm);
+            padding: 14px 18px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+            background-color: white;
+            appearance: auto;
+        }
+
+        .form-select:focus {
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(244, 196, 48, 0.15);
+        }
+
+        .btn-reserve-submit {
+            padding: 16px 48px;
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-reserve-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 196, 48, 0.3);
+        }
+
+        /* ============================================
+                   RESERVATION INFO CARDS
+                   ============================================ */
+        .reservation-info {
+            padding: 40px 0 60px;
+            background: white;
+        }
+
+        .info-card {
+            background: var(--warm-cream);
+            border-radius: var(--border-radius-md);
+            padding: 30px;
+            text-align: center;
+            height: 100%;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .info-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-gold);
+        }
+
+        .info-card .icon {
+            width: 70px;
+            height: 70px;
+            background: var(--soft-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            color: var(--primary-gold);
+            font-size: 1.8rem;
+            transition: var(--transition);
+        }
+
+        .info-card:hover .icon {
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+        }
+
+        .info-card h5 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+                   TOAST NOTIFICATION
+                   ============================================ */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-navy);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-lg);
+            z-index: 9999;
+            border-left: 4px solid var(--primary-gold);
+            transform: translateX(500px);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 400px;
+        }
+
+        .toast-notification.show {
+            transform: translateX(0);
+        }
+
+        .toast-notification .toast-icon {
+            color: var(--primary-gold);
+            margin-right: 10px;
+        }
+
+        .toast-notification .toast-sub {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            display: block;
+            margin-top: 2px;
+        }
+
+        /* ============================================
+                   FOOTER
+                   ============================================ */
+        .footer {
+            background: var(--primary-navy-dark);
+            color: white;
+            padding: 60px 0 0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand .gold {
+            color: var(--primary-gold);
+        }
+
+        .footer-about {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 350px;
+        }
+
+        .footer h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            color: var(--primary-gold);
+            font-size: 0.7rem;
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact li i {
+            color: var(--primary-gold);
+            width: 20px;
+            margin-top: 4px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            transform: translateY(-4px);
+            border-color: var(--primary-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 24px 0;
+            margin-top: 48px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .gold {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .reservation-wrapper {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .reservation-wrapper {
+                padding: 24px;
+            }
+            
+            .reservation-wrapper h2 {
+                font-size: 1.8rem;
+            }
+            
+            .info-card {
+                margin-bottom: 16px;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            
+            .navbar-brand .brand-sub {
+                font-size: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-brand .brand-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .reservation-wrapper {
+                padding: 16px;
+            }
+            
+            .btn-reserve-submit {
+                font-size: 1rem;
+                padding: 14px 32px;
+            }
+        }
+
+        /* ============================================
+                   SCROLLBAR
+                   ============================================ */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-gradient);
+            border-radius: var(--border-radius-xl);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    TOP BAR
+    ============================================ -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span class="status-dot"></span>
+                    <span class="me-3"><strong>Open Now</strong> • 7:00 AM - 11:00 PM</span>
+                    <i class="fas fa-phone-alt me-2"></i> <a href="tel:+211922005177">+211 922 005 177</a>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="bar-restaurant.html"><i class="fas fa-arrow-left me-1"></i> Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+    NAVBAR
+    ============================================ -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="bar-restaurant.html">
+                <span class="brand-icon"><i class="fas fa-utensils"></i></span>
+                <div>
+                    Jolong <span class="gold-text">Bar & Restaurant</span>
+                    <span class="brand-sub">Where Juba Dines & Unwinds</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="bar-restaurant.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bar.html">Bar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-bar.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-bar.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="reservations.html">Reservations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: var(--primary-gold) !important;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+    PAGE HEADER
+    ============================================ -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Make a <span class="highlight">Reservation</span></h1>
+            <p>Book your table at Jolong Bar & Restaurant and enjoy an unforgettable 
+            dining experience in the heart of Juba.</p>
+            <div class="breadcrumb-custom">
+                <a href="bar-restaurant.html">Home</a>
+                <span>/</span>
+                <span>Reservations</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    RESERVATION FORM
+    ============================================ -->
+    <section class="reservation-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto" data-aos="fade-up">
+                    <div class="reservation-wrapper">
+                        <h2>Book Your <span class="gold-text">Table</span></h2>
+                        <p class="form-subtitle">Fill in the details below and we'll confirm your reservation within 24 hours.</p>
+                        
+                        <form id="reservationForm" onsubmit="return submitReservation(event)">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Full Name <span class="required">*</span></label>
+                                    <input type="text" class="form-control" id="resName" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Email Address <span class="required">*</span></label>
+                                    <input type="email" class="form-control" id="resEmail" placeholder="Enter your email" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Phone Number <span class="required">*</span></label>
+                                    <input type="tel" class="form-control" id="resPhone" placeholder="Enter your phone number" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Number of Guests <span class="required">*</span></label>
+                                    <select class="form-select" id="resGuests" required>
+                                        <option value="">Select guests...</option>
+                                        <option value="1">1 Guest</option>
+                                        <option value="2">2 Guests</option>
+                                        <option value="3">3 Guests</option>
+                                        <option value="4">4 Guests</option>
+                                        <option value="5">5 Guests</option>
+                                        <option value="6">6 Guests</option>
+                                        <option value="7">7 Guests</option>
+                                        <option value="8">8 Guests</option>
+                                        <option value="9">9 Guests</option>
+                                        <option value="10">10 Guests</option>
+                                        <option value="10+">10+ Guests</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Date <span class="required">*</span></label>
+                                    <input type="date" class="form-control" id="resDate" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Time <span class="required">*</span></label>
+                                    <select class="form-select" id="resTime" required>
+                                        <option value="">Select time...</option>
+                                        <option value="07:00">7:00 AM</option>
+                                        <option value="08:00">8:00 AM</option>
+                                        <option value="09:00">9:00 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                        <option value="17:00">5:00 PM</option>
+                                        <option value="18:00">6:00 PM</option>
+                                        <option value="19:00">7:00 PM</option>
+                                        <option value="20:00">8:00 PM</option>
+                                        <option value="21:00">9:00 PM</option>
+                                        <option value="22:00">10:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Table Preference</label>
+                                    <select class="form-select" id="resTable">
+                                        <option value="">No preference</option>
+                                        <option value="indoor">Indoor Dining</option>
+                                        <option value="outdoor">Outdoor Terrace</option>
+                                        <option value="window">Window Seat</option>
+                                        <option value="private">Private Room</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Occasion</label>
+                                    <select class="form-select" id="resOccasion">
+                                        <option value="">Select occasion...</option>
+                                        <option value="birthday">Birthday</option>
+                                        <option value="anniversary">Anniversary</option>
+                                        <option value="business">Business Dinner</option>
+                                        <option value="romantic">Romantic Dinner</option>
+                                        <option value="family">Family Gathering</option>
+                                        <option value="friends">Friends Get-together</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Special Requests</label>
+                                <textarea class="form-control" id="resRequests" rows="3" placeholder="Any dietary restrictions, special arrangements, or additional requests..."></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn-reserve-submit">
+                                    <i class="fas fa-calendar-check me-2"></i> Confirm Reservation
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    RESERVATION INFO CARDS
+    ============================================ -->
+    <section class="reservation-info">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info-card">
+                        <div class="icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h5>Call Us</h5>
+                        <p><a href="tel:+211922005177" style="color: var(--primary-navy); text-decoration: none;">+211 922 005 177</a></p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-card">
+                        <div class="icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h5>Email Us</h5>
+                        <p><a href="mailto:info@jolonges.com" style="color: var(--primary-navy); text-decoration: none;">info@jolonges.com</a></p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="info-card">
+                        <div class="icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h5>Open Daily</h5>
+                        <p>7:00 AM - 11:00 PM</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="info-card">
+                        <div class="icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h5>Location</h5>
+                        <p>Juba, South Sudan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">Jolong <span class="gold">Bar & Restaurant</span></div>
+                    <p class="footer-about">
+                        Where Juba dines and unwinds. Experience authentic South Sudanese 
+                        cuisine, premium drinks, and warm hospitality in an elegant setting.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="bar-restaurant.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Menu</a></li>
+                        <li><a href="bar.html"><i class="fas fa-chevron-right"></i> Bar</a></li>
+                        <li><a href="events.html"><i class="fas fa-chevron-right"></i> Events</a></li>
+                        <li><a href="reservations.html"><i class="fas fa-chevron-right"></i> Reservations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
+                        <li><i class="fas fa-phone"></i> +211 922 005 177</li>
+                        <li><i class="fas fa-envelope"></i> info@jolonges.com</li>
+                        <li><i class="fas fa-clock"></i> 7:00 AM - 11:00 PM Daily</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Opening Hours</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-clock"></i> Monday - Sunday</li>
+                        <li style="color: var(--primary-gold); font-weight: 600;">7:00 AM - 11:00 PM</li>
+                        <li><i class="fas fa-music"></i> Live Music: Fridays</li>
+                        <li><i class="fas fa-glass-cheers"></i> Happy Hour: 5-7 PM Weekdays</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2026 <span class="gold">Jolong Bar & Restaurant</span>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="index.html" style="color: var(--primary-gold); text-decoration: none;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    TOAST NOTIFICATION
+    ============================================ -->
+    <div class="toast-notification" id="toast">
+        <div>
+            <i class="fas fa-check-circle toast-icon"></i>
+            <span id="toastMessage">Reservation confirmed!</span>
+            <span class="toast-sub" id="toastSub">We'll see you soon at Jolong Bar & Restaurant</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+    SCRIPTS
+    ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // ============================================
+        // AOS INIT
+        // ============================================
+        AOS.init({
+            duration: 600,
+            once: true,
+            offset: 50,
+            easing: 'ease-in-out'
+        });
+
+        // ============================================
+        // NAVBAR SCROLL
+        // ============================================
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ============================================
+        // SET MIN DATE FOR DATE PICKER
+        // ============================================
+        const dateInput = document.getElementById('resDate');
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const dd = String(today.getDate()).padStart(2, '0');
+        dateInput.min = `${yyyy}-${mm}-${dd}`;
+        dateInput.value = `${yyyy}-${mm}-${dd}`;
+
+        // ============================================
+        // RESERVATION FORM SUBMIT
+        // ============================================
+        function submitReservation(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('resName').value.trim();
+            const email = document.getElementById('resEmail').value.trim();
+            const phone = document.getElementById('resPhone').value.trim();
+            const guests = document.getElementById('resGuests').value;
+            const date = document.getElementById('resDate').value;
+            const time = document.getElementById('resTime').value;
+            
+            // Validation
+            if (!name || !email || !phone || !guests || !date || !time) {
+                showToast('Please fill in all required fields.', 'error');
+                return false;
+            }
+            
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                showToast('Please enter a valid email address.', 'error');
+                return false;
+            }
+            
+            // Phone validation (simple)
+            if (phone.length < 8) {
+                showToast('Please enter a valid phone number.', 'error');
+                return false;
+            }
+            
+            // Format date for display
+            const dateObj = new Date(date + 'T00:00:00');
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDate = dateObj.toLocaleDateString('en-US', options);
+            
+            // Format time
+            const timeMap = {
+                '07:00': '7:00 AM', '08:00': '8:00 AM', '09:00': '9:00 AM',
+                '10:00': '10:00 AM', '11:00': '11:00 AM', '12:00': '12:00 PM',
+                '13:00': '1:00 PM', '14:00': '2:00 PM', '15:00': '3:00 PM',
+                '16:00': '4:00 PM', '17:00': '5:00 PM', '18:00': '6:00 PM',
+                '19:00': '7:00 PM', '20:00': '8:00 PM', '21:00': '9:00 PM',
+                '22:00': '10:00 PM'
+            };
+            const formattedTime = timeMap[time] || time;
+            
+            // Guest count label
+            const guestMap = {
+                '1': '1 Guest', '2': '2 Guests', '3': '3 Guests', '4': '4 Guests',
+                '5': '5 Guests', '6': '6 Guests', '7': '7 Guests', '8': '8 Guests',
+                '9': '9 Guests', '10': '10 Guests', '10+': '10+ Guests'
+            };
+            const guestLabel = guestMap[guests] || guests;
+            
+            // Show success toast
+            showToast(
+                `🎉 Table reserved for ${guestLabel}!`,
+                'success',
+                `${formattedDate} at ${formattedTime}`
+            );
+            
+            // Reset form
+            document.getElementById('reservationForm').reset();
+            document.getElementById('resDate').value = `${yyyy}-${mm}-${dd}`;
+            
+            return false;
+        }
+
+        // ============================================
+        // SHOW TOAST
+        // ============================================
+        function showToast(message, type = 'success', subMessage = '') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            const toastSub = document.getElementById('toastSub');
+            const icon = toast.querySelector('.toast-icon');
+            
+            toastMessage.textContent = message;
+            
+            if (subMessage) {
+                toastSub.textContent = subMessage;
+                toastSub.style.display = 'block';
+            } else {
+                toastSub.style.display = 'none';
+            }
+            
+            if (type === 'error') {
+                icon.className = 'fas fa-exclamation-circle toast-icon';
+                toast.style.borderLeftColor = '#c41e3a';
+            } else {
+                icon.className = 'fas fa-check-circle toast-icon';
+                toast.style.borderLeftColor = 'var(--primary-gold)';
+            }
+            
+            toast.classList.add('show');
+            
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 6000);
+        }
+
+        // ============================================
+        // DYNAMIC YEAR IN FOOTER
+        // ============================================
+        const footerYear = document.querySelector('.footer-bottom p');
+        if (footerYear) {
+            footerYear.textContent = footerYear.textContent.replace('2026', new Date().getFullYear());
+        }
+
+        console.log('📅 Jolong Bar & Restaurant - Reservations Page');
+        console.log('🍽️ Book your table today!');
+        console.log('📞 Call: +211 922 005 177');
+        console.log('📧 Email: info@jolonges.com');
+    </script>
+</body>
+</html>
