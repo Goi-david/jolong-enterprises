@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jolong Apartments - Premium Living in Juba, South Sudan</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Jolong Apartments offers modern, secure, and comfortable residential spaces in prime locations across Juba, South Sudan. Premium living with 24/7 security.">
+    <meta name="keywords" content="Apartments Juba, Residential South Sudan, Premium living, Secure apartments, Modern housing Juba">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        /* ============================================
+                   ROOT VARIABLES
+                   ============================================ */
+        :root {
+            --primary-navy: #0a1a3a;
+            --primary-navy-light: #1a305a;
+            --primary-navy-dark: #060e1f;
+            --primary-gold: #f4c430;
+            --primary-gold-light: #fada5e;
+            --primary-gold-dark: #d4a820;
+            --accent-green: #2e7d32;
+            --accent-blue: #1a5276;
+            --accent-silver: #bdc3c7;
+            --warm-cream: #fdf8f0;
+            --warm-ivory: #faf3e8;
+            --dark-charcoal: #1a1a2e;
+            --warm-brown: #5d4037;
+            --soft-gold: #f5e6b8;
+            --white: #ffffff;
+            --light-gray: #f8f6f0;
+            --gray: #6b7280;
+            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 30px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+            --navy-gradient: linear-gradient(135deg, #0a1a3a, #1a305a);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-charcoal);
+            background-color: var(--warm-cream);
+            line-height: 1.6;
+            padding-top: 56px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .gold-text {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   TOP BAR
+                   ============================================ */
+        .top-bar {
+            background: var(--primary-navy);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .top-bar::before {
+            content: '🏢';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0.2;
+        }
+
+        .top-bar a {
+            color: var(--primary-gold-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .top-bar .status-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #2ecc71;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        /* ============================================
+                   NAVBAR
+                   ============================================ */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .navbar-brand .brand-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gold-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .navbar-brand .brand-sub {
+            display: block;
+            font-size: 0.55rem;
+            font-weight: 400;
+            color: var(--primary-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            margin-top: -2px;
+        }
+
+        .nav-link {
+            color: var(--dark-charcoal) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 2px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 80%;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-gold) !important;
+        }
+
+        .btn-inquire {
+            background: var(--gold-gradient);
+            color: var(--primary-navy) !important;
+            padding: 8px 24px !important;
+            border-radius: 50px !important;
+            font-weight: 700 !important;
+            box-shadow: 0 5px 15px rgba(244, 196, 48, 0.3);
+        }
+
+        .btn-inquire:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 196, 48, 0.4);
+            color: var(--primary-navy) !important;
+        }
+
+        /* ============================================
+                   PAGE HEADER
+                   ============================================ */
+        .page-header {
+            background: linear-gradient(rgba(10, 26, 58, 0.8), rgba(10, 26, 58, 0.8)), 
+                        url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1920&h=600&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 0 3rem;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .page-header h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .page-header h1 .highlight {
+            color: var(--primary-gold);
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb-custom {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-custom a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb-custom a:hover {
+            color: white;
+        }
+
+        /* ============================================
+                   FEATURES BANNER
+                   ============================================ */
+        .features-banner {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .feature-icon-box {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: var(--border-radius-md);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .feature-icon-box:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-gold);
+        }
+
+        .feature-icon-box .icon {
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .feature-icon-box h5 {
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+
+        .feature-icon-box p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+                   APARTMENT SHOWCASE
+                   ============================================ */
+        .apartment-showcase {
+            padding: 80px 0;
+            background: var(--warm-cream);
+        }
+
+        .apartment-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .apartment-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-gold);
+        }
+
+        .apartment-card .apartment-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .apartment-card .apartment-image .badge-status {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(46, 125, 50, 0.9);
+            color: white;
+        }
+
+        .apartment-card .apartment-image .badge-status.available {
+            background: rgba(46, 125, 50, 0.9);
+        }
+
+        .apartment-card .apartment-image .badge-status.coming {
+            background: rgba(244, 196, 48, 0.9);
+            color: var(--primary-navy);
+        }
+
+        .apartment-card .apartment-image .badge-status.sold {
+            background: rgba(196, 30, 58, 0.9);
+        }
+
+        .apartment-card .apartment-body {
+            padding: 24px 28px;
+        }
+
+        .apartment-card .apartment-body h3 {
+            font-size: 1.4rem;
+            margin-bottom: 6px;
+        }
+
+        .apartment-card .apartment-body .location {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .apartment-card .apartment-body .location i {
+            color: var(--primary-gold);
+            margin-right: 6px;
+        }
+
+        .apartment-card .apartment-body .specs {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .apartment-card .apartment-body .specs span {
+            font-size: 0.85rem;
+            color: var(--gray);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .apartment-card .apartment-body .specs i {
+            color: var(--primary-gold);
+        }
+
+        .apartment-card .apartment-body .description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .apartment-card .apartment-body .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .apartment-card .apartment-body .price .period {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--gray);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .apartment-card .apartment-body .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .btn-inquiry {
+            flex: 1;
+            padding: 12px;
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-inquiry:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(244, 196, 48, 0.3);
+        }
+
+        .btn-details {
+            padding: 12px 24px;
+            background: transparent;
+            color: var(--primary-navy);
+            border: 2px solid var(--primary-navy);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-details:hover {
+            background: var(--primary-navy);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ============================================
+                   WHY CHOOSE US
+                   ============================================ */
+        .why-choose {
+            padding: 80px 0;
+            background: var(--navy-gradient);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-choose::before {
+            content: '🏢';
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            font-size: 8rem;
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .why-choose .section-title {
+            color: white;
+        }
+
+        .why-choose .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .why-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-md);
+            padding: 30px 24px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .why-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary-gold);
+        }
+
+        .why-card .icon {
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .why-card h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .why-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+                   FLOOR PLANS SECTION
+                   ============================================ */
+        .floor-plans {
+            padding: 80px 0;
+            background: var(--warm-cream);
+        }
+
+        .floor-plan-card {
+            background: white;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .floor-plan-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .floor-plan-card .floor-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .floor-plan-card .floor-body {
+            padding: 20px 24px;
+        }
+
+        .floor-plan-card .floor-body h5 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .floor-plan-card .floor-body p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+                   TESTIMONIALS
+                   ============================================ */
+        .testimonials-apartments {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .testimonial-card {
+            background: var(--warm-cream);
+            border-radius: var(--border-radius-md);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            height: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .testimonial-card .stars {
+            color: var(--primary-gold);
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-card blockquote {
+            font-size: 0.95rem;
+            color: var(--dark-charcoal);
+            font-style: italic;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .testimonial-card .author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-card .author .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-navy);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-card .author .name {
+            font-weight: 600;
+            color: var(--primary-navy);
+        }
+
+        .testimonial-card .author .role {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        /* ============================================
+                   CTA SECTION
+                   ============================================ */
+        .cta-apartments {
+            padding: 80px 0;
+            background: var(--navy-gradient);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-apartments::before {
+            content: '🏠';
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            font-size: 6rem;
+            opacity: 0.05;
+        }
+
+        .cta-apartments::after {
+            content: '🔑';
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            font-size: 6rem;
+            opacity: 0.05;
+        }
+
+        .cta-apartments h2 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .cta-apartments h2 .highlight {
+            color: var(--primary-gold);
+        }
+
+        .cta-apartments p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        /* ============================================
+                   FOOTER
+                   ============================================ */
+        .footer {
+            background: var(--primary-navy-dark);
+            color: white;
+            padding: 60px 0 0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand .gold {
+            color: var(--primary-gold);
+        }
+
+        .footer-about {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 350px;
+        }
+
+        .footer h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            color: var(--primary-gold);
+            font-size: 0.7rem;
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact li i {
+            color: var(--primary-gold);
+            width: 20px;
+            margin-top: 4px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            transform: translateY(-4px);
+            border-color: var(--primary-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 24px 0;
+            margin-top: 48px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .gold {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   TOAST NOTIFICATION
+                   ============================================ */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-navy);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-lg);
+            z-index: 9999;
+            border-left: 4px solid var(--primary-gold);
+            transform: translateX(500px);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 400px;
+        }
+
+        .toast-notification.show {
+            transform: translateX(0);
+        }
+
+        .toast-notification .toast-icon {
+            color: var(--primary-gold);
+            margin-right: 10px;
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .apartment-card .apartment-image {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .apartment-card .apartment-body .actions {
+                flex-direction: column;
+            }
+            
+            .btn-details {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .features-banner .feature-icon-box {
+                margin-bottom: 16px;
+            }
+            
+            .why-card {
+                margin-bottom: 16px;
+            }
+            
+            .cta-apartments h2 {
+                font-size: 2.2rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            
+            .navbar-brand .brand-sub {
+                font-size: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-brand .brand-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .apartment-card .apartment-body {
+                padding: 16px 18px;
+            }
+            
+            .apartment-card .apartment-body h3 {
+                font-size: 1.2rem;
+            }
+            
+            .apartment-card .apartment-body .price {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* ============================================
+                   SCROLLBAR
+                   ============================================ */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-gradient);
+            border-radius: var(--border-radius-xl);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    TOP BAR
+    ============================================ -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span class="status-dot"></span>
+                    <span class="me-3"><strong>Open Now</strong> • 7:00 AM - 11:00 PM</span>
+                    <i class="fas fa-phone-alt me-2"></i> <a href="tel:+211922005177">+211 922 005 177</a>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="apartments.html"><i class="fas fa-building me-1"></i> View Properties</a>
+                    <a href="contact-apartments.html" class="ms-3"><i class="fas fa-envelope me-1"></i> Inquire Now</a>
+                    <a href="index.html" class="ms-3"><i class="fas fa-arrow-left me-1"></i> Jolong Enterprises</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+    NAVBAR
+    ============================================ -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="apartments.html">
+                <span class="brand-icon"><i class="fas fa-building"></i></span>
+                <div>
+                    Jolong <span class="gold-text">Apartments</span>
+                    <span class="brand-sub">Premium Living in Juba</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="apartments.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="properties.html">Properties</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="floor-plans.html">Floor Plans</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-apartments.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery-apartments.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-apartments.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: var(--primary-gold) !important;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="contact-apartments.html" class="btn btn-inquire">
+                        <i class="fas fa-home me-2"></i> Inquire Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+    PAGE HEADER
+    ============================================ -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Premium <span class="highlight">Apartments</span></h1>
+            <p>Discover modern, secure, and comfortable residential spaces in prime 
+            locations across Juba, South Sudan.</p>
+            <div class="breadcrumb-custom">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <span>Apartments</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FEATURES BANNER
+    ============================================ -->
+    <section class="features-banner" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-icon-box">
+                        <span class="icon">🔒</span>
+                        <h5>24/7 Security</h5>
+                        <p>Round-the-clock security surveillance and personnel</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-icon-box">
+                        <span class="icon">🏊</span>
+                        <h5>Modern Amenities</h5>
+                        <p>Swimming pool, gym, and recreational facilities</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-icon-box">
+                        <span class="icon">📍</span>
+                        <h5>Prime Locations</h5>
+                        <p>Strategically located in Juba's best neighborhoods</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-icon-box">
+                        <span class="icon">🛠️</span>
+                        <h5>Quality Construction</h5>
+                        <p>Built with premium materials and modern designs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    APARTMENT SHOWCASE
+    ============================================ -->
+    <section class="apartment-showcase" id="properties">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge" style="display:inline-block; padding:6px 20px; background:rgba(244,196,48,0.12); color:var(--primary-gold); border-radius:50px; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; margin-bottom:12px;">
+                    Our Properties
+                </span>
+                <h2 class="section-title">Available <span class="gold-text">Apartments</span></h2>
+                <p class="section-subtitle" style="color:var(--gray); max-width:600px; margin:0 auto 50px;">
+                    Explore our selection of premium apartments designed for modern living in Juba.
+                </p>
+            </div>
+
+            <div class="row">
+                <!-- Apartment 1 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="apartment-card">
+                        <div class="apartment-image" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&h=500&fit=crop');">
+                            <span class="badge-status available">● Available</span>
+                        </div>
+                        <div class="apartment-body">
+                            <h3>Jolong Heights</h3>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</div>
+                            <div class="specs">
+                                <span><i class="fas fa-bed"></i> 3 Bedrooms</span>
+                                <span><i class="fas fa-bath"></i> 2 Bathrooms</span>
+                                <span><i class="fas fa-vector-square"></i> 1,500 sq.ft</span>
+                            </div>
+                            <p class="description">Modern 3-bedroom apartment with balcony, modern kitchen, and 24/7 security.</p>
+                            <div class="price">
+                                SSP 1,200,000 <span class="period">/ year</span>
+                            </div>
+                            <div class="actions">
+                                <a href="contact-apartments.html" class="btn-inquiry">
+                                    <i class="fas fa-envelope me-1"></i> Inquire
+                                </a>
+                                <a href="property-detail.html" class="btn-details">
+                                    <i class="fas fa-eye me-1"></i> Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Apartment 2 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="apartment-card">
+                        <div class="apartment-image" style="background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&h=500&fit=crop');">
+                            <span class="badge-status available">● Available</span>
+                        </div>
+                        <div class="apartment-body">
+                            <h3>Jolong Gardens</h3>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</div>
+                            <div class="specs">
+                                <span><i class="fas fa-bed"></i> 2 Bedrooms</span>
+                                <span><i class="fas fa-bath"></i> 2 Bathrooms</span>
+                                <span><i class="fas fa-vector-square"></i> 1,200 sq.ft</span>
+                            </div>
+                            <p class="description">Charming 2-bedroom apartment with garden views, modern kitchen, and parking.</p>
+                            <div class="price">
+                                SSP 900,000 <span class="period">/ year</span>
+                            </div>
+                            <div class="actions">
+                                <a href="contact-apartments.html" class="btn-inquiry">
+                                    <i class="fas fa-envelope me-1"></i> Inquire
+                                </a>
+                                <a href="property-detail.html" class="btn-details">
+                                    <i class="fas fa-eye me-1"></i> Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Apartment 3 -->
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="apartment-card">
+                        <div class="apartment-image" style="background-image: url('https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=800&h=500&fit=crop');">
+                            <span class="badge-status coming">● Coming Soon</span>
+                        </div>
+                        <div class="apartment-body">
+                            <h3>Jolong Towers</h3>
+                            <div class="location"><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</div>
+                            <div class="specs">
+                                <span><i class="fas fa-bed"></i> 4 Bedrooms</span>
+                                <span><i class="fas fa-bath"></i> 3 Bathrooms</span>
+                                <span><i class="fas fa-vector-square"></i> 2,200 sq.ft</span>
+                            </div>
+                            <p class="description">Luxury 4-bedroom apartment with panoramic views, premium finishes, and pool access.</p>
+                            <div class="price">
+                                SSP 1,800,000 <span class="period">/ year</span>
+                            </div>
+                            <div class="actions">
+                                <a href="contact-apartments.html" class="btn-inquiry">
+                                    <i class="fas fa-envelope me-1"></i> Pre-Register
+                                </a>
+                                <a href="property-detail.html" class="btn-details">
+                                    <i class="fas fa-eye me-1"></i> Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-4" data-aos="fade-up">
+                <a href="properties.html" class="btn-inquiry" style="display:inline-flex; padding:16px 48px; font-size:1.1rem;">
+                    <i class="fas fa-building me-2"></i> View All Properties
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    WHY CHOOSE US
+    ============================================ -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge" style="display:inline-block; padding:6px 20px; background:rgba(244,196,48,0.15); color:var(--primary-gold); border-radius:50px; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; margin-bottom:12px;">
+                    Why Choose Us
+                </span>
+                <h2 class="section-title">The Jolong <span class="gold-text">Difference</span></h2>
+                <p class="section-subtitle" style="color:rgba(255,255,255,0.7); max-width:600px; margin:0 auto 50px;">
+                    We provide more than just a place to live — we offer a premium lifestyle.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="why-card">
+                        <span class="icon">🔒</span>
+                        <h5>Security</h5>
+                        <p>24/7 security with CCTV surveillance and trained personnel</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="why-card">
+                        <span class="icon">⚡</span>
+                        <h5>Reliable Utilities</h5>
+                        <p>Backup power, water supply, and modern infrastructure</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="why-card">
+                        <span class="icon">🏊</span>
+                        <h5>Amenities</h5>
+                        <p>Swimming pool, gym, garden, and recreational areas</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="why-card">
+                        <span class="icon">🤝</span>
+                        <h5>Professional Management</h5>
+                        <p>Dedicated property management and maintenance teams</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    TESTIMONIALS
+    ============================================ -->
+    <section class="testimonials-apartments">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge" style="display:inline-block; padding:6px 20px; background:rgba(244,196,48,0.12); color:var(--primary-gold); border-radius:50px; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; margin-bottom:12px;">
+                    Testimonials
+                </span>
+                <h2 class="section-title">What Our <span class="gold-text">Residents Say</span></h2>
+                <p class="section-subtitle" style="color:var(--gray); max-width:600px; margin:0 auto 50px;">
+                    Hear from residents who have found their perfect home at Jolong Apartments.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>
+                            "Jolong Apartments has been a wonderful home for my family. The security is excellent, and the location is perfect. Highly recommend!"
+                        </blockquote>
+                        <div class="author">
+                            <div class="avatar">JD</div>
+                            <div>
+                                <div class="name">John Doe</div>
+                                <div class="role">Resident at Jolong Heights</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>
+                            "The amenities at Jolong Gardens are fantastic. We love the garden and the community feel. It truly feels like home."
+                        </blockquote>
+                        <div class="author">
+                            <div class="avatar">MS</div>
+                            <div>
+                                <div class="name">Mary Smith</div>
+                                <div class="role">Resident at Jolong Gardens</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <blockquote>
+                            "The best residential experience in Juba. Professional management, great location, and the apartments are beautifully designed."
+                        </blockquote>
+                        <div class="author">
+                            <div class="avatar">PK</div>
+                            <div>
+                                <div class="name">Peter Khamis</div>
+                                <div class="role">Resident at Jolong Towers</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    CTA SECTION
+    ============================================ -->
+    <section class="cta-apartments">
+        <div class="container">
+            <h2>Find Your <span class="highlight">Perfect Home</span></h2>
+            <p>Contact us today to schedule a viewing or learn more about our premium apartments in Juba.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="contact-apartments.html" class="btn-inquiry" style="display:inline-flex; padding:16px 48px; font-size:1.1rem; background:var(--gold-gradient); color:var(--primary-navy); border:none; border-radius:50px; font-weight:700; text-decoration:none;">
+                    <i class="fas fa-envelope me-2"></i> Inquire Now
+                </a>
+                <a href="tel:+211922005177" class="btn-details" style="display:inline-flex; padding:16px 48px; font-size:1.1rem; background:transparent; color:white; border:2px solid white; border-radius:50px; font-weight:700; text-decoration:none;">
+                    <i class="fas fa-phone me-2"></i> +211 922 005 177
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">Jolong <span class="gold">Apartments</span></div>
+                    <p class="footer-about">
+                        Premium living in Juba, South Sudan. Modern, secure, and comfortable 
+                        residential spaces designed for your lifestyle.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="apartments.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="properties.html"><i class="fas fa-chevron-right"></i> Properties</a></li>
+                        <li><a href="floor-plans.html"><i class="fas fa-chevron-right"></i> Floor Plans</a></li>
+                        <li><a href="about-apartments.html"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="contact-apartments.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
+                        <li><i class="fas fa-phone"></i> +211 922 005 177</li>
+                        <li><i class="fas fa-envelope"></i> info@jolonges.com</li>
+                        <li><i class="fas fa-clock"></i> 7:00 AM - 11:00 PM Daily</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Office Hours</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-clock"></i> Monday - Sunday</li>
+                        <li style="color: var(--primary-gold); font-weight: 600;">7:00 AM - 11:00 PM</li>
+                        <li><i class="fas fa-calendar-check"></i> Viewings by Appointment</li>
+                        <li><i class="fas fa-home"></i> 24/7 Security</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2026 <span class="gold">Jolong Apartments</span>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="index.html" style="color: var(--primary-gold); text-decoration: none;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    TOAST NOTIFICATION
+    ============================================ -->
+    <div class="toast-notification" id="toast">
+        <div>
+            <i class="fas fa-check-circle toast-icon"></i>
+            <span id="toastMessage">Inquiry sent successfully!</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+    SCRIPTS
+    ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // ============================================
+        // AOS INIT
+        // ============================================
+        AOS.init({
+            duration: 600,
+            once: true,
+            offset: 50,
+            easing: 'ease-in-out'
+        });
+
+        // ============================================
+        // NAVBAR SCROLL
+        // ============================================
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ============================================
+        // TOAST FUNCTION
+        // ============================================
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 4000);
+        }
+
+        // ============================================
+        // INQUIRE BUTTONS
+        // ============================================
+        document.querySelectorAll('.btn-inquiry').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    showToast('📋 Thank you! We\'ll contact you shortly.');
+                }
+            });
+        });
+
+        // ============================================
+        // DYNAMIC YEAR IN FOOTER
+        // ============================================
+        const footerYear = document.querySelector('.footer-bottom p');
+        if (footerYear) {
+            footerYear.textContent = footerYear.textContent.replace('2026', new Date().getFullYear());
+        }
+
+        console.log('🏢 Jolong Apartments - Premium Living in Juba');
+        console.log('📞 Call: +211 922 005 177');
+        console.log('📧 Email: info@jolonges.com');
+    </script>
+</body>
+</html>
