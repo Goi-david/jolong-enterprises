@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar - Jolong Bar & Restaurant</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore our premium bar at Jolong Bar & Restaurant - Signature cocktails, local drinks, international spirits, beers, wines, and fresh juices in Juba.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        /* ============================================
+                   ROOT VARIABLES
+                   ============================================ */
+        :root {
+            --primary-navy: #0a1a3a;
+            --primary-navy-light: #1a305a;
+            --primary-navy-dark: #060e1f;
+            --primary-gold: #f4c430;
+            --primary-gold-light: #fada5e;
+            --primary-gold-dark: #d4a820;
+            --accent-green: #2e7d32;
+            --accent-red: #c41e3a;
+            --warm-cream: #fdf8f0;
+            --warm-ivory: #faf3e8;
+            --dark-charcoal: #1a1a2e;
+            --warm-brown: #5d4037;
+            --soft-gold: #f5e6b8;
+            --white: #ffffff;
+            --light-gray: #f8f6f0;
+            --gray: #6b7280;
+            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 30px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+            --navy-gradient: linear-gradient(135deg, #0a1a3a, #1a305a);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-charcoal);
+            background-color: var(--warm-cream);
+            line-height: 1.6;
+            padding-top: 56px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .gold-text {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   TOP BAR
+                   ============================================ */
+        .top-bar {
+            background: var(--primary-navy);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .top-bar::before {
+            content: '🍸';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0.2;
+        }
+
+        .top-bar a {
+            color: var(--primary-gold-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .top-bar .status-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: #2ecc71;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        /* ============================================
+                   NAVBAR
+                   ============================================ */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .navbar-brand .brand-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gold-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .navbar-brand .brand-sub {
+            display: block;
+            font-size: 0.55rem;
+            font-weight: 400;
+            color: var(--primary-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            margin-top: -2px;
+        }
+
+        .nav-link {
+            color: var(--dark-charcoal) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 2px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 80%;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-gold) !important;
+        }
+
+        .btn-reserve {
+            background: var(--gold-gradient);
+            color: var(--primary-navy) !important;
+            padding: 8px 24px !important;
+            border-radius: 50px !important;
+            font-weight: 700 !important;
+            box-shadow: 0 5px 15px rgba(244, 196, 48, 0.3);
+        }
+
+        .btn-reserve:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 196, 48, 0.4);
+            color: var(--primary-navy) !important;
+        }
+
+        /* ============================================
+                   PAGE HEADER
+                   ============================================ */
+        .page-header {
+            background: linear-gradient(rgba(10, 26, 58, 0.8), rgba(10, 26, 58, 0.8)), 
+                        url('https://images.unsplash.com/photo-1514362545857-739bc6f5b5e1?w=1920&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 0 3rem;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .page-header h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .page-header h1 .highlight {
+            color: var(--primary-gold);
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb-custom {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-custom a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb-custom a:hover {
+            color: white;
+        }
+
+        /* ============================================
+                   BAR CATEGORIES
+                   ============================================ */
+        .bar-categories {
+            padding: 30px 0;
+            background: white;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 76px;
+            z-index: 99;
+        }
+
+        .bar-categories .nav-pills .nav-link {
+            color: var(--dark-charcoal);
+            border: 1px solid #dee2e6;
+            margin: 0.2rem;
+            border-radius: 50px;
+            padding: 10px 24px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            background: var(--warm-cream);
+        }
+
+        .bar-categories .nav-pills .nav-link:hover {
+            background: var(--soft-gold);
+            border-color: var(--primary-gold);
+        }
+
+        .bar-categories .nav-pills .nav-link.active {
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border-color: var(--primary-gold);
+            font-weight: 700;
+        }
+
+        .bar-categories .nav-pills .nav-link .badge {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            margin-left: 6px;
+            font-weight: 600;
+        }
+
+        /* ============================================
+                   BAR ITEMS
+                   ============================================ */
+        .bar-section {
+            padding: 60px 0;
+            background: var(--warm-cream);
+        }
+
+        .bar-category-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .bar-category-title .icon {
+            font-size: 2rem;
+        }
+
+        .bar-category-title .line {
+            flex: 1;
+            height: 2px;
+            background: var(--gold-gradient);
+            opacity: 0.3;
+        }
+
+        .bar-category-subtitle {
+            color: var(--gray);
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .bar-item {
+            background: white;
+            border-radius: var(--border-radius-md);
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--primary-gold);
+            transition: var(--transition);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bar-item:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .bar-item .item-info {
+            flex: 1;
+        }
+
+        .bar-item .item-info h5 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+            color: var(--primary-navy);
+        }
+
+        .bar-item .item-info .description {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 6px;
+        }
+
+        .bar-item .item-info .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        .bar-item .item-info .meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .bar-item .item-info .meta i {
+            color: var(--primary-gold);
+        }
+
+        .bar-item .item-info .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .bar-item .item-info .tags .tag {
+            display: inline-block;
+            padding: 2px 12px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tag-signature {
+            background: rgba(244, 196, 48, 0.15);
+            color: var(--primary-gold-dark);
+        }
+
+        .tag-local {
+            background: rgba(46, 125, 50, 0.12);
+            color: var(--accent-green);
+        }
+
+        .tag-premium {
+            background: rgba(26, 48, 90, 0.12);
+            color: var(--primary-navy-light);
+        }
+
+        .tag-popular {
+            background: rgba(244, 196, 48, 0.15);
+            color: var(--primary-gold-dark);
+        }
+
+        .bar-item .item-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            font-family: 'Playfair Display', serif;
+            text-align: right;
+            min-width: 120px;
+            margin-left: 20px;
+        }
+
+        .bar-item .item-actions {
+            display: flex;
+            gap: 8px;
+            margin-left: 16px;
+        }
+
+        .btn-order-drink {
+            padding: 8px 18px;
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition);
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .btn-order-drink:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(244, 196, 48, 0.3);
+        }
+
+        /* ============================================
+                   HAPPY HOUR BANNER
+                   ============================================ */
+        .happy-hour-banner {
+            background: var(--navy-gradient);
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .happy-hour-banner::before {
+            content: '🍺';
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            font-size: 5rem;
+            opacity: 0.05;
+        }
+
+        .happy-hour-banner::after {
+            content: '🍸';
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            font-size: 5rem;
+            opacity: 0.05;
+        }
+
+        .happy-hour-banner h2 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+
+        .happy-hour-banner h2 .highlight {
+            color: var(--primary-gold);
+        }
+
+        .happy-hour-banner p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        .happy-hour-banner .hours {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(244, 196, 48, 0.15);
+            border: 2px solid var(--primary-gold);
+            border-radius: 50px;
+            color: var(--primary-gold);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .happy-hour-banner .hours i {
+            margin-right: 10px;
+        }
+
+        /* ============================================
+                   FOOTER
+                   ============================================ */
+        .footer {
+            background: var(--primary-navy-dark);
+            color: white;
+            padding: 60px 0 0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gold-gradient);
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand .gold {
+            color: var(--primary-gold);
+        }
+
+        .footer-about {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 350px;
+        }
+
+        .footer h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            color: var(--primary-gold);
+            font-size: 0.7rem;
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact li i {
+            color: var(--primary-gold);
+            width: 20px;
+            margin-top: 4px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: var(--primary-gold);
+            color: var(--primary-navy);
+            transform: translateY(-4px);
+            border-color: var(--primary-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 24px 0;
+            margin-top: 48px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .gold {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   TOAST NOTIFICATION
+                   ============================================ */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-navy);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-lg);
+            z-index: 9999;
+            border-left: 4px solid var(--primary-gold);
+            transform: translateX(500px);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 400px;
+        }
+
+        .toast-notification.show {
+            transform: translateX(0);
+        }
+
+        .toast-notification .toast-icon {
+            color: var(--primary-gold);
+            margin-right: 10px;
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .bar-categories {
+                top: 70px;
+                padding: 20px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .bar-item {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 16px;
+            }
+            
+            .bar-item .item-price {
+                text-align: left;
+                min-width: auto;
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            
+            .bar-item .item-actions {
+                margin-left: 0;
+                margin-top: 10px;
+                width: 100%;
+            }
+            
+            .btn-order-drink {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .happy-hour-banner h2 {
+                font-size: 2.2rem;
+            }
+            
+            .happy-hour-banner .hours {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            
+            .navbar-brand .brand-sub {
+                font-size: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-brand .brand-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .bar-categories .nav-pills .nav-link {
+                padding: 6px 14px;
+                font-size: 0.8rem;
+            }
+            
+            .happy-hour-banner h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* ============================================
+                   SCROLLBAR
+                   ============================================ */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-gradient);
+            border-radius: var(--border-radius-xl);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    TOP BAR
+    ============================================ -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span class="status-dot"></span>
+                    <span class="me-3"><strong>Open Now</strong> • 7:00 AM - 11:00 PM</span>
+                    <i class="fas fa-phone-alt me-2"></i> <a href="tel:+211922005177">+211 922 005 177</a>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="reservations.html"><i class="fas fa-calendar-check me-1"></i> Book a Table</a>
+                    <a href="bar-restaurant.html" class="ms-3"><i class="fas fa-arrow-left me-1"></i> Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+    NAVBAR
+    ============================================ -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="bar-restaurant.html">
+                <span class="brand-icon"><i class="fas fa-utensils"></i></span>
+                <div>
+                    Jolong <span class="gold-text">Bar & Restaurant</span>
+                    <span class="brand-sub">Where Juba Dines & Unwinds</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="bar-restaurant.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="bar.html">Bar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about-bar.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-bar.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: var(--primary-gold) !important;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="reservations.html" class="btn btn-reserve">
+                        <i class="fas fa-calendar-check me-2"></i> Book Table
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+    PAGE HEADER
+    ============================================ -->
+    <section class="page-header">
+        <div class="container">
+            <h1>The <span class="highlight">Bar</span></h1>
+            <p>Handcrafted cocktails, premium spirits, and refreshing beverages — 
+            the perfect complement to your dining experience.</p>
+            <div class="breadcrumb-custom">
+                <a href="bar-restaurant.html">Home</a>
+                <span>/</span>
+                <span>Bar</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    BAR CATEGORIES
+    ============================================ -->
+    <section class="bar-categories">
+        <div class="container">
+            <ul class="nav nav-pills justify-content-center flex-wrap" id="barCategoryPills">
+                <li class="nav-item">
+                    <a class="nav-link active" data-category="all" onclick="filterBarCategory('all')">
+                        <i class="fas fa-glass-cheers me-1"></i> All Drinks <span class="badge" id="barCountAll">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-category="cocktails" onclick="filterBarCategory('cocktails')">
+                        <i class="fas fa-cocktail me-1"></i> Cocktails <span class="badge" id="barCountCocktails">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-category="local" onclick="filterBarCategory('local')">
+                        <i class="fas fa-beer me-1"></i> Local Drinks <span class="badge" id="barCountLocal">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-category="spirits" onclick="filterBarCategory('spirits')">
+                        <i class="fas fa-wine-bottle me-1"></i> Spirits <span class="badge" id="barCountSpirits">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-category="beers" onclick="filterBarCategory('beers')">
+                        <i class="fas fa-beer me-1"></i> Beers & Wines <span class="badge" id="barCountBeers">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-category="soft" onclick="filterBarCategory('soft')">
+                        <i class="fas fa-cup-water me-1"></i> Soft Drinks <span class="badge" id="barCountSoft">0</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-category="juices" onclick="filterBarCategory('juices')">
+                        <i class="fas fa-apple-whole me-1"></i> Fresh Juices <span class="badge" id="barCountJuices">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================
+    BAR SECTION
+    ============================================ -->
+    <section class="bar-section" id="barSection">
+        <div class="container">
+            <!-- Cocktails -->
+            <div class="bar-category" data-category="cocktails">
+                <div class="bar-category-title">
+                    <span class="icon">🍹</span>
+                    <span>Signature Cocktails</span>
+                    <span class="line"></span>
+                </div>
+                <p class="bar-category-subtitle">Handcrafted by our expert mixologists using premium spirits and fresh ingredients</p>
+                
+                <div class="bar-item" data-price="15000">
+                    <div class="item-info">
+                        <h5>Juba Sunset</h5>
+                        <p class="description">Passion fruit, mango, rum, and ginger — a taste of South Sudan's vibrant spirit</p>
+                        <div class="meta">
+                            <span><i class="fas fa-clock"></i> 5 min</span>
+                            <span><i class="fas fa-glass-cheers"></i> Cocktail</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag tag-signature">★ Signature</span>
+                            <span class="tag tag-popular">⭐ Popular</span>
+                        </div>
+                    </div>
+                    <div class="item-price">SSP 15,000</div>
+                    <div class="item-actions">
+                        <button class="btn-order-drink" onclick="orderDrink('Juba Sunset', 15000)">
+                            <i class="fas fa-plus"></i> Order
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bar-item" data-price="12000">
+                    <div class="item-info">
+                        <h5>Nile Breeze</h5>
+                        <p class="description">Vodka, fresh mint, cucumber, and lime — refreshingly crisp</p>
+                        <div class="meta">
+                            <span><i class="fas fa-clock"></i> 5 min</span>
+                            <span><i class="fas fa-glass-cheers"></i> Cocktail</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag tag-signature">★ Signature</span>
+                        </div>
+                    </div>
+                    <div class="item-price">SSP 12,000</div>
+                    <div class="item-actions">
+                        <button class="btn-order-drink" onclick="orderDrink('Nile Breeze', 12000)">
+                            <i class="fas fa-plus"></i> Order
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bar-item" data-price="10000">
+                    <div class="item-info">
+                        <h5>South Sudan Mule</h5>
+                        <p class="description">Ginger beer, vodka, and fresh lime — a classic with a South Sudanese twist</p>
+                        <div class="meta">
+                            <span><i class="fas fa-clock"></i> 5 min</span>
+                            <span><i class="fas fa-glass-cheers"></i> Cocktail</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag tag-signature">★ Signature</span>
+                            <span class="tag tag-popular">⭐ Popular</span>
+                        </div>
+                    </div>
+                    <div class="item-price">SSP 10,000</div>
+                    <div class="item-actions">
+                        <button class="btn-order-drink" onclick="orderDrink('South Sudan Mule', 10000)">
+                            <i class="fas fa-plus"></i> Order
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bar-item" data-price="18000">
+                    <div class="item-info">
+                        <h5>Savannah Spritz</h5>
+                        <p class="description">Prosecco, elderflower, and fresh berries — elegant and sparkling</p>
+                        <div class="meta">
+                            <span><i class="fas fa-clock"></i> 5 min</span>
+                            <span><i class="fas fa-glass-cheers"></i> Cocktail</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag tag-signature">★ Signature</span>
+                            <span class="tag tag-premium">✨ Premium</span>
+                        </div>
+                    </div>
+                    <div class="item-price">SSP 18,000</div>
+                    <div class="item-actions">
+                        <button class="btn-order-drink" onclick="orderDrink('Savannah Spritz', 18000)">
+                            <i class="fas fa-plus"></i> Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Local Drinks -->
+            <div class="bar-category" data-category="local">
+                <div class="bar-category-title">
+                    <span class="icon">🇸🇸</span>
+                    <span>Local Drinks</span>
+                    <span class="line"></span>
+                </div>
+                <p class="bar-category-subtitle">Authentic South Sudanese beverages made with traditional recipes</p>
+                
+                <div class="bar-item" data-price="3000">
+                    <div class="item-info">
+                        <h5>South Sudanese Tea (Shai)</h5>
+                        <p class="description">Traditional spiced tea with cardamom, cinnamon, and ginger</p>
+                        <div class="meta">
+                            <span><i class="fas fa-clock"></i> 5 min</span>
+                            <span><i class="fas fa-flag"></i> South Sudanese</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag tag-local">🇸🇸 Local</span>
+                        </div>
+                    </div>
+                    <div class="item-price">SSP 3,000</div>
+                    <div class="item-actions">
+                        <button class="btn-order-drink" onclick="orderDrink('South Sudanese Tea', 3000)">
+                            <i class="fas fa-plus"></i> Order
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bar-item" data-price="4000">
+                    <div class="item-info">
+                        <h5>Freshly Brewed Coffee</h5>
+                        <p class="description">Ethiopian coffee, freshly ground and brewed to perfection</p>
+                        <div class="meta">
+                            <span><i class="fas fa-clock"></i> 5 min</span>
+                            <span><i class="fas fa-mug-hot"></i> Hot Drink</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag tag-local">🇸🇸 Local</span>
+                        </div>
+                    </div>
+                    <div class="item-price">SSP 4,000</div>
+                    <div class="item-actions">
+                        <button class="btn-order-drink" onclick="orderDrink('Freshly Brewed Coffee', 4000)">
+                            <i class="fas fa-plus"></i> Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Spirits -->
+            <div class="bar-category" data-category="spirits">
+                <div class="bar-category-title">
+                    <span class="icon">🥃</span>
+                    <span>International Spirits</span>
+                    <span class="line"></span>
+                </div>
+                <p class="bar-category-subtitle">Premium spirits from around the world</p>
+                
+                <div class="bar-item" data-price="8000">
+                    <div class="item-info">
+                        <h5>Whiskey (Jameson)</h5>
+                        <p class="description">Smooth Irish whiskey — served neat, on the rocks, or with a mixer</p>
+                        <div class="meta">
+                            <span><i class="fas fa-clock"></i> 2 min</span>
+                            <span><i class="fas fa-wine-bottle"></i> Spirits</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag tag-premium">✨ Premium</span>
+                        </div>
+                    </div>
+                    <div class="item-price">SSP 8,000</div>
+                    <div class="item-actions">
+                        <button class="btn-order-drink" onclick="orderDrink('Jameson Whiskey', 8000)">
+                            <i class="fas fa-plus"></i> Order
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bar-item" data-price="10000">
+                    <div class="item-info">
+                        <h5>Vodka (Grey Goose)</h5>
+                        <p class="description">Premium French vodka — smooth and versatile</p>
+                        <div class="meta">
+                            <span><i class="fas fa-clock"></i> 2 min</span>
+                            <span><i class="fas fa-wine-bottle"></i> Spirits</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag tag-premium">✨ Premium</span>
+                        </div>
+                    </div>
+                    <div class="item-price">SSP 10,000</div>
+                    <div class="item-actions">
+                        <button class="btn-order-drink" onclick="orderDrink('Grey Goose Vodka', 10000)">
+                            <i class="fas fa-plus"></i> Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Beers & Wines -->
+            <div class="bar-category" data-category="beers">
+                <div class="bar-category-title">
+                    <span class="icon">🍺</span>
+                    <span>Beers & Wines</span>
+                    <span class="line"></span>
+                </div>
+                <p class="bar-category-subtitle">A curated selection of local and international beers and wines</p>
+                
+                <div class="bar-item" data-price="5000">
+                    <div class="item-info">
+                        <h5>Nile Special</h5>
+                        <p class="description">South Sudan's favorite lager — crisp and refreshing</p>
+                        <div class="meta">
+                            <span><i class="fas fa-clock"></i> 2 min</span>
+                            <span><i class="fas fa-beer"></i> Local Beer</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag tag-local">🇸🇸 Local</span>
+                            <span class="tag tag-popular">⭐ Popular</span>
+                        </div>
+                    </div>
+                    <div class="item-price">SSP 5,000</div>
+                    <div class="item-actions">
+                        <button class="btn-order-drink" onclick="orderDrink('Nile Special', 5000)">
+                            <i class="fas fa-plus"></i> Order
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bar-item" data-price="4500">
+                    <div class="item-info">
+                        <h5>White Bull</h5>
+                        <p class="description">Traditional South Sudanese beer — rich and full-bodied</p>
+                        <div class="meta">
+                            <span><i class="fas fa-clock"></i> 2 min</span>
+                            <span><i class="fas fa-beer"></i> Local Beer</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag tag-local">🇸🇸 Local</span>
+                        </div>
+                    </div>
+                    <div class="item-price">SSP 4,500</div>
+                    <div class="item-actions">
+                        <button class="btn-order-drink" onclick="orderDrink('White Bull', 4500)">
+                            <i class="fas fa-plus"></i> Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Soft Drinks -->
+            <div class="bar-category" data-category="soft">
+                <div class="bar-category-title">
+                    <span class="icon">🥤</span>
+                    <span>Soft Drinks</span>
+                    <span class="line"></span>
+                </div>
+                <p class="bar-category-subtitle">Refreshing non-alcoholic beverages</p>
+                
+                <div class="bar-item" data-price="2500">
+                    <div class="item-info">
+                        <h5>Classic Soda</h5>
+                        <p class="description">Coca-Cola, Sprite, Fanta, or 7UP</p>
+                        <div class="meta">
+                            <span><i class="fas fa-clock"></i> 2 min</span>
+                            <span><i class="fas fa-cup-water"></i> Soft Drink</span>
+                        </div>
+                    </div>
+                    <div class="item-price">SSP 2,500</div>
+                    <div class="item-actions">
+                        <button class="btn-order-drink" onclick="orderDrink('Classic Soda', 2500)">
+                            <i class="fas fa-plus"></i> Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fresh Juices -->
+            <div class="bar-category" data-category="juices">
+                <div class="bar-category-title">
+                    <span class="icon">🍍</span>
+                    <span>Fresh Juices</span>
+                    <span class="line"></span>
+                </div>
+                <p class="bar-category-subtitle">Freshly squeezed and blended juices</p>
+                
+                <div class="bar-item" data-price="5000">
+                    <div class="item-info">
+                        <h5>Fresh Fruit Juice</h5>
+                        <p class="description">Choose from mango, passion fruit, orange, or mixed</p>
+                        <div class="meta">
+                            <span><i class="fas fa-clock"></i> 5 min</span>
+                            <span><i class="fas fa-apple-whole"></i> Fresh</span>
+                        </div>
+                        <div class="tags">
+                            <span class="tag tag-local">🇸🇸 Local</span>
+                        </div>
+                    </div>
+                    <div class="item-price">SSP 5,000</div>
+                    <div class="item-actions">
+                        <button class="btn-order-drink" onclick="orderDrink('Fresh Fruit Juice', 5000)">
+                            <i class="fas fa-plus"></i> Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- No Results -->
+            <div id="barNoResults" style="display: none; text-align: center; padding: 60px 0;">
+                <div style="font-size: 4rem; margin-bottom: 20px;">🍸</div>
+                <h3>No drinks found</h3>
+                <p class="text-muted">Try adjusting your filters</p>
+                <button class="btn btn-primary mt-3" onclick="resetBarFilters()" style="background: var(--gold-gradient); border: none; color: var(--primary-navy);">
+                    <i class="fas fa-redo me-2"></i> Show All Drinks
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    HAPPY HOUR BANNER
+    ============================================ -->
+    <section class="happy-hour-banner">
+        <div class="container">
+            <h2>🍺 Happy <span class="highlight">Hour</span></h2>
+            <p>Join us for the best deals in town! Enjoy 50% off select drinks and appetizers.</p>
+            <div class="hours">
+                <i class="fas fa-clock"></i> Weekdays • 5:00 PM - 7:00 PM
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">Jolong <span class="gold">Bar & Restaurant</span></div>
+                    <p class="footer-about">
+                        Where Juba dines and unwinds. Experience authentic South Sudanese 
+                        cuisine, premium drinks, and warm hospitality in an elegant setting.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="bar-restaurant.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="menu.html"><i class="fas fa-chevron-right"></i> Menu</a></li>
+                        <li><a href="bar.html"><i class="fas fa-chevron-right"></i> Bar</a></li>
+                        <li><a href="events.html"><i class="fas fa-chevron-right"></i> Events</a></li>
+                        <li><a href="reservations.html"><i class="fas fa-chevron-right"></i> Reservations</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
+                        <li><i class="fas fa-phone"></i> +211 922 005 177</li>
+                        <li><i class="fas fa-envelope"></i> info@jolonges.com</li>
+                        <li><i class="fas fa-clock"></i> 7:00 AM - 11:00 PM Daily</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Opening Hours</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-clock"></i> Monday - Sunday</li>
+                        <li style="color: var(--primary-gold); font-weight: 600;">7:00 AM - 11:00 PM</li>
+                        <li><i class="fas fa-music"></i> Live Music: Fridays</li>
+                        <li><i class="fas fa-glass-cheers"></i> Happy Hour: 5-7 PM Weekdays</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2026 <span class="gold">Jolong Bar & Restaurant</span>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="index.html" style="color: var(--primary-gold); text-decoration: none;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    TOAST NOTIFICATION
+    ============================================ -->
+    <div class="toast-notification" id="toast">
+        <div>
+            <i class="fas fa-check-circle toast-icon"></i>
+            <span id="toastMessage">Drink added to order!</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+    SCRIPTS
+    ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        // ============================================
+        // AOS INIT
+        // ============================================
+        AOS.init({
+            duration: 600,
+            once: true,
+            offset: 50,
+            easing: 'ease-in-out'
+        });
+
+        // ============================================
+        // NAVBAR SCROLL
+        // ============================================
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ============================================
+        // BAR DATA
+        // ============================================
+        const barItems = document.querySelectorAll('.bar-item');
+        const barCategories = document.querySelectorAll('.bar-category');
+        let activeBarCategory = 'all';
+
+        // ============================================
+        // UPDATE BAR COUNTS
+        // ============================================
+        function updateBarCounts() {
+            const counts = {
+                all: barItems.length,
+                cocktails: 0,
+                local: 0,
+                spirits: 0,
+                beers: 0,
+                soft: 0,
+                juices: 0
+            };
+
+            barItems.forEach(item => {
+                const category = item.closest('.bar-category').dataset.category;
+                if (counts[category] !== undefined) counts[category]++;
+            });
+
+            Object.keys(counts).forEach(key => {
+                const el = document.getElementById(`barCount${key.charAt(0).toUpperCase() + key.slice(1)}`);
+                if (el) el.textContent = counts[key];
+            });
+        }
+
+        // ============================================
+        // FILTER BAR CATEGORY
+        // ============================================
+        function filterBarCategory(category) {
+            activeBarCategory = category;
+            
+            document.querySelectorAll('#barCategoryPills .nav-link').forEach(link => {
+                link.classList.toggle('active', link.dataset.category === category);
+            });
+            
+            let visibleCount = 0;
+
+            barItems.forEach(item => {
+                const itemCategory = item.closest('.bar-category').dataset.category;
+                const visible = category === 'all' || itemCategory === category;
+                item.style.display = visible ? '' : 'none';
+                if (visible) visibleCount++;
+            });
+
+            barCategories.forEach(cat => {
+                const categoryName = cat.dataset.category;
+                const hasVisibleItems = cat.querySelectorAll('.bar-item[style*="display: none"]').length < cat.querySelectorAll('.bar-item').length;
+                cat.style.display = hasVisibleItems ? '' : 'none';
+            });
+
+            const noResults = document.getElementById('barNoResults');
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        // ============================================
+        // RESET BAR FILTERS
+        // ============================================
+        function resetBarFilters() {
+            filterBarCategory('all');
+            document.querySelectorAll('#barCategoryPills .nav-link').forEach(link => {
+                link.classList.toggle('active', link.dataset.category === 'all');
+            });
+        }
+
+        // ============================================
+        // ORDER DRINK
+        // ============================================
+        function orderDrink(name, price) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            toastMessage.textContent = `${name} added to order! (SSP ${price.toLocaleString()})`;
+            toast.classList.add('show');
+            
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // ============================================
+        // DYNAMIC YEAR IN FOOTER
+        // ============================================
+        const footerYear = document.querySelector('.footer-bottom p');
+        if (footerYear) {
+            footerYear.textContent = footerYear.textContent.replace('2026', new Date().getFullYear());
+        }
+
+        // ============================================
+        // INIT
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            updateBarCounts();
+        });
+
+        console.log('🍸 Jolong Bar & Restaurant - Bar Page');
+        console.log('🍹 Signature cocktails available');
+        console.log('📞 Call: +211 922 005 177');
+    </script>
+</body>
+</html>
