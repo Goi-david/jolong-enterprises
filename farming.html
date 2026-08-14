@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jolong Enterprises - Farming & Agriculture | South Sudan</title>
+    <title>Jolong Enterprises Limited - Building South Sudan's Future</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Jolong Enterprises provides modern farming solutions, agricultural equipment, and sustainable farming services in South Sudan." />
-    <meta property="og:title" content="Jolong Enterprises - Farming & Agriculture | South Sudan" />
-    <meta property="og:description" content="Sustainable farming solutions for food security and economic growth in South Sudan." />
+    <meta name="description" content="Jolong Enterprises provides Bar & Restaurant, Apartments, Transportation, Warehouse Building, Farming, and Ferry Crossing services in Juba, South Sudan." />
+    <meta property="og:title" content="Jolong Enterprises Limited | South Sudan" />
+    <meta property="og:description" content="Building South Sudan's Future, One Enterprise at a Time" />
     <meta property="og:type" content="website" />
 
     <!-- Font Awesome -->
@@ -39,7 +39,6 @@
             --secondary-dark: #d4a820;
             --accent-green: #2e7d32;
             --accent-green-light: #4caf50;
-            --accent-green-dark: #1b5e20;
             --accent-red: #c41e3a;
             --white: #ffffff;
             --light-gray: #f8f6f0;
@@ -83,6 +82,7 @@
             padding: 0 24px;
         }
 
+        /* Full-width sections - no white space */
         section {
             width: 100%;
         }
@@ -189,20 +189,6 @@
             border: 1px solid rgba(244, 196, 48, 0.12);
         }
 
-        .section-badge-green {
-            display: inline-block;
-            padding: 8px 24px;
-            background: rgba(46, 125, 50, 0.15);
-            color: var(--accent-green-light);
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-            border: 1px solid rgba(46, 125, 50, 0.12);
-        }
-
         .section-title {
             font-size: 3rem;
             font-weight: 800;
@@ -224,22 +210,6 @@
             width: 100%;
             height: 3px;
             background: var(--gold-gradient);
-            border-radius: 2px;
-        }
-
-        .section-title .green-highlight {
-            color: var(--accent-green);
-            position: relative;
-        }
-
-        .section-title .green-highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 4px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: var(--green-gradient);
             border-radius: 2px;
         }
 
@@ -609,7 +579,7 @@
         }
 
         /* ============================================
-                   HERO SECTION - FARMING THEMED
+                   HERO WITH ROTATING BANNERS - CENTERED
                    ============================================ */
         .hero {
             min-height: 80vh;
@@ -617,7 +587,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            padding: 120px 0 60px;
+            padding: 100px 0 60px;
             overflow: hidden;
             background: var(--primary);
             width: 100%;
@@ -660,8 +630,8 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse at 30% 50%, rgba(46, 125, 50, 0.12) 0%, transparent 70%),
-                radial-gradient(ellipse at 70% 80%, rgba(244, 196, 48, 0.06) 0%, transparent 50%);
+                radial-gradient(ellipse at 30% 50%, rgba(244, 196, 48, 0.08) 0%, transparent 70%),
+                radial-gradient(ellipse at 70% 80%, rgba(244, 196, 48, 0.05) 0%, transparent 50%);
             z-index: 1;
         }
 
@@ -728,15 +698,15 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(46, 125, 50, 0.15);
-            color: #81c784;
+            background: rgba(244, 196, 48, 0.1);
+            color: var(--secondary);
             padding: 6px 18px 6px 8px;
             border-radius: 50px;
             font-size: 0.8rem;
             font-weight: 600;
             letter-spacing: 0.5px;
             margin-bottom: 20px;
-            border: 1px solid rgba(46, 125, 50, 0.12);
+            border: 1px solid rgba(244, 196, 48, 0.12);
             backdrop-filter: blur(8px);
         }
 
@@ -744,7 +714,7 @@
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: #81c784;
+            background: var(--secondary);
             animation: pulse-dot 2s infinite;
         }
 
@@ -810,6 +780,68 @@
             animation: fadeUp 1s ease 0.6s forwards;
         }
 
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .hero-grid-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius-sm);
+            padding: 18px 14px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .hero-grid-item:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-6px);
+            border-color: var(--secondary);
+        }
+
+        .hero-grid-item .icon {
+            font-size: 1.8rem;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .hero-grid-item .name {
+            color: var(--white);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .hero-grid-item .status {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 50px;
+            font-size: 0.55rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        .status-operational {
+            background: rgba(46, 125, 50, 0.25);
+            color: #81c784;
+        }
+
+        .status-coming {
+            background: rgba(244, 196, 48, 0.2);
+            color: var(--secondary);
+        }
+
         .scroll-indicator {
             position: absolute;
             bottom: 70px;
@@ -870,102 +902,6 @@
         }
 
         /* ============================================
-                   PROMO BANNER - 0% APR
-                   ============================================ */
-        .promo-banner {
-            background: var(--green-gradient);
-            padding: 40px 0;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .promo-banner::before {
-            content: '🌾';
-            position: absolute;
-            font-size: 120px;
-            opacity: 0.05;
-            right: -20px;
-            top: -30px;
-            transform: rotate(15deg);
-        }
-
-        .promo-banner::after {
-            content: '🚜';
-            position: absolute;
-            font-size: 100px;
-            opacity: 0.05;
-            left: -10px;
-            bottom: -20px;
-            transform: rotate(-10deg);
-        }
-
-        .promo-banner .container {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .promo-banner .promo-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .promo-banner .promo-badge {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 8px 20px;
-            border-radius: 50px;
-            color: var(--white);
-            font-weight: 700;
-            font-size: 0.9rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .promo-banner .promo-text {
-            color: var(--white);
-        }
-
-        .promo-banner .promo-text h3 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 2px;
-        }
-
-        .promo-banner .promo-text h3 .highlight-gold {
-            color: var(--secondary);
-        }
-
-        .promo-banner .promo-text p {
-            opacity: 0.8;
-            font-size: 0.95rem;
-        }
-
-        .promo-banner .btn-promo {
-            display: inline-block;
-            padding: 14px 36px;
-            background: var(--white);
-            color: var(--accent-green-dark);
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: var(--transition);
-            border: 2px solid transparent;
-        }
-
-        .promo-banner .btn-promo:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-            background: var(--secondary);
-            color: var(--primary);
-        }
-
-        /* ============================================
                    STATS SECTION
                    ============================================ */
         .stats-section {
@@ -990,12 +926,12 @@
         }
 
         .stats-section::after {
-            content: '🌾 🌾 🌾';
+            content: '★ ★ ★';
             position: absolute;
-            font-size: 150px;
+            font-size: 200px;
             opacity: 0.02;
-            left: -60px;
-            bottom: -40px;
+            left: -100px;
+            bottom: -80px;
             pointer-events: none;
             color: var(--secondary);
         }
@@ -1087,9 +1023,9 @@
         }
 
         /* ============================================
-                   FARMING SERVICES
+                   SERVICES SECTION - WITH VISIBLE IMAGES
                    ============================================ */
-        .farming-services {
+        .services {
             padding: 100px 0;
             background: var(--light-gray);
             position: relative;
@@ -1097,18 +1033,18 @@
             width: 100%;
         }
 
-        .farming-services::before {
-            content: '🌱 🌱 🌱';
+        .services::before {
+            content: '◆ ◆ ◆';
             position: absolute;
-            font-size: 150px;
+            font-size: 180px;
             opacity: 0.02;
-            right: -60px;
-            top: -40px;
+            right: -80px;
+            top: -60px;
             pointer-events: none;
-            color: var(--accent-green);
+            color: var(--primary);
         }
 
-        .farming-services .container {
+        .services .container {
             position: relative;
             z-index: 2;
         }
@@ -1127,7 +1063,7 @@
             position: relative;
             overflow: hidden;
             border: 1px solid rgba(0, 0, 0, 0.04);
-            min-height: 320px;
+            min-height: 340px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -1264,7 +1200,220 @@
         }
 
         /* ============================================
-                   PARTS-A-THON PROMO SECTION
+                   PROJECTS SECTION
+                   ============================================ */
+        .projects {
+            padding: 100px 0;
+            background: var(--white);
+            position: relative;
+            width: 100%;
+        }
+
+        .projects::before {
+            content: '◇ ◇ ◇';
+            position: absolute;
+            font-size: 160px;
+            opacity: 0.015;
+            left: -60px;
+            bottom: -40px;
+            pointer-events: none;
+            color: var(--primary);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .project-card {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            background: var(--white);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-image {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project-image .project-badge {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            color: var(--white);
+        }
+
+        .project-image .project-overlay-icon {
+            font-size: 4rem;
+            opacity: 0.3;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.3));
+        }
+
+        .project-image>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-content {
+            padding: 24px 28px;
+        }
+
+        .project-content h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .project-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .project-content .meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .project-content .meta i {
+            color: var(--secondary);
+            width: 16px;
+        }
+
+        /* ============================================
+                   PROMO BANNER - 0% APR (NEW - ADDED)
+                   ============================================ */
+        .promo-banner {
+            background: var(--green-gradient);
+            padding: 40px 0;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            border-top: 3px solid var(--secondary);
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .promo-banner::before {
+            content: '🌾';
+            position: absolute;
+            font-size: 120px;
+            opacity: 0.05;
+            right: -20px;
+            top: -30px;
+            transform: rotate(15deg);
+        }
+
+        .promo-banner::after {
+            content: '🚜';
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.05;
+            left: -10px;
+            bottom: -20px;
+            transform: rotate(-10deg);
+        }
+
+        .promo-banner .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .promo-banner .promo-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .promo-banner .promo-badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 20px;
+            border-radius: 50px;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .promo-banner .promo-text {
+            color: var(--white);
+        }
+
+        .promo-banner .promo-text h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+
+        .promo-banner .promo-text h3 .highlight-gold {
+            color: var(--secondary);
+        }
+
+        .promo-banner .promo-text p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        .promo-banner .btn-promo {
+            display: inline-block;
+            padding: 14px 36px;
+            background: var(--white);
+            color: var(--accent-green-dark);
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .promo-banner .btn-promo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        /* ============================================
+                   PARTS-A-THON PROMO SECTION (NEW - ADDED)
                    ============================================ */
         .parts-athon {
             padding: 80px 0;
@@ -1345,6 +1494,16 @@
             color: var(--dark);
         }
 
+        .parts-athon-content .season-saving {
+            font-size: 0.95rem;
+            color: var(--gray);
+            margin-bottom: 24px;
+        }
+
+        .parts-athon-content .season-saving strong {
+            color: var(--accent-green);
+        }
+
         .parts-athon-image {
             position: relative;
             border-radius: var(--border-radius);
@@ -1357,13 +1516,6 @@
             justify-content: center;
             color: var(--white);
             font-size: 5rem;
-        }
-
-        .parts-athon-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
         }
 
         .parts-athon-image .image-fallback {
@@ -1383,7 +1535,7 @@
         }
 
         /* ============================================
-                   SEASONAL SAVINGS PROMO
+                   SEASONAL SAVINGS PROMO (NEW - ADDED)
                    ============================================ */
         .seasonal-savings {
             padding: 80px 0;
@@ -1392,6 +1544,8 @@
             position: relative;
             overflow: hidden;
             text-align: center;
+            border-top: 3px solid var(--secondary);
+            border-bottom: 3px solid var(--secondary);
         }
 
         .seasonal-savings::before {
@@ -1490,65 +1644,146 @@
         }
 
         /* ============================================
-                   FARMING EQUIPMENT SHOWCASE
+                   ABOUT SECTION - WITH IMAGE
                    ============================================ */
-        .equipment-showcase {
+        .about {
             padding: 100px 0;
             background: var(--light-gray);
+            position: relative;
+            overflow: hidden;
             width: 100%;
         }
 
-        .equipment-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+        .about::before {
+            content: '✦ ✦ ✦';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.02;
+            right: -80px;
+            bottom: -60px;
+            pointer-events: none;
+            color: var(--primary);
         }
 
-        .equipment-item {
-            background: var(--white);
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
             border-radius: var(--border-radius);
             overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            text-align: center;
-        }
-
-        .equipment-item:hover {
-            transform: translateY(-8px);
             box-shadow: var(--shadow-hover);
         }
 
-        .equipment-item .eq-icon {
-            font-size: 4rem;
-            padding: 40px 20px 20px;
+        .about-image img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
             display: block;
+            transition: var(--transition);
         }
 
-        .equipment-item .eq-content {
-            padding: 0 20px 24px;
+        .about-image:hover img {
+            transform: scale(1.03);
         }
 
-        .equipment-item .eq-content h4 {
-            font-size: 1.1rem;
+        .about-image .exp-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 140px;
+            height: 140px;
+            background: var(--gold-gradient);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             color: var(--primary);
-            margin-bottom: 4px;
+            box-shadow: var(--shadow-gold);
+            animation: pulse-badge 3s ease-in-out infinite;
+            z-index: 2;
         }
 
-        .equipment-item .eq-content p {
-            color: var(--gray);
-            font-size: 0.85rem;
+        @keyframes pulse-badge {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
         }
 
-        .equipment-item .eq-tag {
-            display: inline-block;
-            padding: 2px 14px;
-            background: rgba(46, 125, 50, 0.1);
-            color: var(--accent-green);
-            border-radius: 50px;
+        .about-image .exp-badge .number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            font-family: 'Playfair Display', serif;
+            line-height: 1;
+        }
+
+        .about-image .exp-badge .label {
             font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             font-weight: 600;
-            margin-top: 8px;
+        }
+
+        .about-image .image-fallback {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 6rem;
+        }
+
+        .about-content h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .about-content p {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .about-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--white);
+            border-radius: var(--border-radius-sm);
+            list-style: none;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+        }
+
+        .about-features li:hover {
+            transform: translateX(6px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-features li i {
+            color: var(--secondary);
+            font-size: 1.2rem;
         }
 
         /* ============================================
@@ -1683,7 +1918,7 @@
             right: -20%;
             width: 500px;
             height: 500px;
-            background: radial-gradient(circle, rgba(46, 125, 50, 0.06), transparent 70%);
+            background: radial-gradient(circle, rgba(244, 196, 48, 0.06), transparent 70%);
             border-radius: 50%;
             animation: float-bg 25s ease-in-out infinite reverse;
         }
@@ -1894,22 +2129,31 @@
                    RESPONSIVE
                    ============================================ */
         @media (max-width: 1200px) {
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+            }
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
             .services-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .equipment-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
         @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
             .services-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .parts-athon-grid {
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .about-grid {
                 grid-template-columns: 1fr;
             }
             .testimonials-grid {
@@ -1921,11 +2165,30 @@
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .parts-athon-grid {
+                grid-template-columns: 1fr;
+            }
             .seasonal-savings .savings-grid {
                 grid-template-columns: 1fr 1fr;
             }
-            .equipment-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .about-image img,
+            .about-image .image-fallback {
+                height: 350px;
+            }
+            .about-image .exp-badge {
+                width: 100px;
+                height: 100px;
+                bottom: -10px;
+                right: -10px;
+            }
+            .about-image .exp-badge .number {
+                font-size: 2rem;
+            }
+            .about-image .exp-badge .label {
+                font-size: 0.6rem;
+            }
+            .service-card {
+                min-height: 280px;
             }
         }
 
@@ -1940,7 +2203,24 @@
                 min-height: 70vh;
                 padding: 80px 0 40px;
             }
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+                max-width: 100%;
+            }
+            .hero-grid-item {
+                padding: 14px 10px;
+            }
+            .hero-grid-item .icon {
+                font-size: 1.5rem;
+            }
+            .hero-grid-item .name {
+                font-size: 0.7rem;
+            }
             .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .projects-grid {
                 grid-template-columns: 1fr;
             }
             .testimonials-grid {
@@ -1949,6 +2229,9 @@
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 32px;
+            }
+            .about-features {
+                grid-template-columns: 1fr;
             }
             .section-title {
                 font-size: 2.2rem;
@@ -2012,6 +2295,9 @@
                 flex-direction: column;
                 align-items: center;
             }
+            .service-card {
+                min-height: 220px;
+            }
             .promo-banner .container {
                 flex-direction: column;
                 text-align: center;
@@ -2032,14 +2318,6 @@
                 grid-template-columns: 1fr;
                 gap: 16px;
             }
-            .equipment-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 16px;
-            }
-            .equipment-item .eq-icon {
-                font-size: 3rem;
-                padding: 24px 16px 12px;
-            }
             .mobile-menu-content ul a {
                 font-size: 1.1rem;
                 padding: 14px 24px;
@@ -2048,11 +2326,28 @@
                 width: 44px;
                 height: 44px;
             }
+            .about-image img,
+            .about-image .image-fallback {
+                height: 280px;
+            }
         }
 
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 1.8rem;
+            }
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .hero-grid-item .icon {
+                font-size: 1.2rem;
+            }
+            .hero-grid-item .name {
+                font-size: 0.6rem;
+            }
+            .hero-grid-item .status {
+                font-size: 0.45rem;
+                padding: 1px 6px;
             }
             .section-title {
                 font-size: 1.8rem;
@@ -2084,6 +2379,22 @@
                 font-size: 0.5rem;
                 letter-spacing: 1px;
             }
+            .about-image img,
+            .about-image .image-fallback {
+                height: 220px;
+            }
+            .about-image .exp-badge {
+                width: 80px;
+                height: 80px;
+                bottom: -8px;
+                right: -8px;
+            }
+            .about-image .exp-badge .number {
+                font-size: 1.6rem;
+            }
+            .about-image .exp-badge .label {
+                font-size: 0.5rem;
+            }
             .back-top {
                 width: 60px;
                 height: 60px;
@@ -2099,20 +2410,6 @@
             }
             .seasonal-savings h2 {
                 font-size: 1.8rem;
-            }
-            .equipment-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-            .equipment-item .eq-icon {
-                font-size: 2.5rem;
-                padding: 16px 12px 8px;
-            }
-            .equipment-item .eq-content {
-                padding: 0 12px 16px;
-            }
-            .equipment-item .eq-content h4 {
-                font-size: 0.9rem;
             }
             .mobile-menu-content ul a {
                 font-size: 1rem;
@@ -2133,7 +2430,7 @@
     ============================================ -->
     <nav class="navbar" id="navbar">
         <div class="container">
-            <a href="index.html" class="navbar-brand">
+            <a href="#" class="navbar-brand">
                 <div class="logo-wrapper">
                     <img src="logo.png" alt="Jolong Enterprises Logo" id="logoImage" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-placeholder\'>J</span>';" />
                     <span class="logo-placeholder" style="display:none;">J</span>
@@ -2151,7 +2448,7 @@
             </button>
 
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="#home" class="active">Home</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="about.html">About</a></li>
@@ -2172,10 +2469,10 @@
             <div class="mobile-logo">Jolong Enterprises</div>
             <div class="mobile-tagline">Building South Sudan's Future</div>
             <ul>
-                <li><a href="index.html"><span class="icon">🏠</span> Home</a></li>
+                <li><a href="#home" class="active"><span class="icon">🏠</span> Home</a></li>
                 <li><a href="services.html"><span class="icon">⚡</span> Services</a></li>
                 <li><a href="projects.html"><span class="icon">📋</span> Projects</a></li>
-                <li><a href="about.html"><span class="icon">ℹ️</span> About</a></li>
+                <li><a href="#about"><span class="icon">ℹ️</span> About</a></li>
                 <li><a href="testimonials.html"><span class="icon">💬</span> Testimonials</a></li>
                 <li><a href="contact.html" class="contact-mobile"><span class="icon">📞</span> Get in Touch</a></li>
             </ul>
@@ -2200,15 +2497,15 @@
     </div>
 
     <!-- ============================================
-    HERO SECTION - FARMING
+    HERO SECTION - CENTERED
     ============================================ -->
     <section class="hero" id="home">
         <div class="hero-slideshow" id="heroSlideshow">
-            <div class="slide active" style="background-image: url('farming-hero.jpg');">
+            <div class="slide active" style="background-image: url('rtt.jpg');">
             </div>
-            <div class="slide" style="background-image: url('farming-field.jpg');">
+            <div class="slide" style="background-image: url('ap.jpg');">
             </div>
-            <div class="slide" style="background-image: url('farming-equipment.jpg');">
+            <div class="slide" style="background-image: url('tr.jpg');">
             </div>
         </div>
 
@@ -2227,22 +2524,55 @@
             <div class="hero-content">
                 <div class="hero-badge">
                     <span class="dot"></span>
-                    🌾 Sustainable Farming Solutions
+                    🇸🇸 Proudly Serving South Sudan
                 </div>
                 <h1>
-                    Growing South Sudan's<br />
-                    <span class="highlight">Agricultural Future</span>
+                    Building South Sudan's<br />
+                    <span class="highlight">Future</span>, One Enterprise at a Time
                 </h1>
                 <p>
-                    From modern equipment to sustainable practices, Jolong Enterprises is
-                    revolutionizing farming in South Sudan for food security and economic growth.
+                    From hospitality to infrastructure, we deliver excellence across six
+                    business divisions, serving Juba and beyond with integrity and innovation.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#services" class="btn-primary">
-                        <i class="fas fa-seedling"></i> Explore Farming Services
+                    <a href="services.html" class="btn-primary">
+                        <i class="fas fa-rocket"></i> Explore Our Services
                     </a>
-                    <a href="#equipment" class="btn-outline">
-                        View Equipment <i class="fas fa-arrow-right"></i>
+                    <a href="projects.html" class="btn-outline">
+                        View Our Projects <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="hero-grid" data-aos="fade-up" data-aos-delay="200">
+                    <a href="services.html#bar-restaurant" class="hero-grid-item">
+                        <span class="icon">🍽️</span>
+                        <div class="name">Bar & Restaurant</div>
+                        <span class="status status-operational">Operational</span>
+                    </a>
+                    <a href="services.html#apartments" class="hero-grid-item">
+                        <span class="icon">🏢</span>
+                        <div class="name">Apartments</div>
+                        <span class="status status-coming">Coming Soon</span>
+                    </a>
+                    <a href="services.html#transportation" class="hero-grid-item">
+                        <span class="icon">🚚</span>
+                        <div class="name">Transportation</div>
+                        <span class="status status-operational">Operational</span>
+                    </a>
+                    <a href="services.html#warehouse" class="hero-grid-item">
+                        <span class="icon">🏗️</span>
+                        <div class="name">Warehouse</div>
+                        <span class="status status-coming">Coming Soon</span>
+                    </a>
+                    <a href="services.html#farming" class="hero-grid-item">
+                        <span class="icon">🌾</span>
+                        <div class="name">Farming</div>
+                        <span class="status status-coming">Coming Soon</span>
+                    </a>
+                    <a href="services.html#ferry" class="hero-grid-item">
+                        <span class="icon">⛴️</span>
+                        <div class="name">Ferry Crossing</div>
+                        <span class="status status-coming">Coming Soon</span>
                     </a>
                 </div>
             </div>
@@ -2250,7 +2580,7 @@
     </section>
 
     <!-- ============================================
-    PROMO BANNER - 0% APR
+    PROMO BANNER - 0% APR (NEW - ADDED)
     ============================================ -->
     <section class="promo-banner">
         <div class="container">
@@ -2274,111 +2604,175 @@
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
-                    <span class="stat-icon">🌾</span>
-                    <span class="stat-number" data-count="500">0<span class="plus">+</span></span>
-                    <span class="stat-label">Hectares <span class="highlight-text">Cultivated</span></span>
+                    <span class="stat-icon">🏆</span>
+                    <span class="stat-number" data-count="3">0<span class="plus">+</span></span>
+                    <span class="stat-label">Years of <span class="highlight-text">Excellence</span></span>
                 </div>
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
-                    <span class="stat-icon">🚜</span>
-                    <span class="stat-number" data-count="25">0<span class="plus">+</span></span>
-                    <span class="stat-label">Equipment <span class="highlight-text">Units</span></span>
+                    <span class="stat-icon">📋</span>
+                    <span class="stat-number" data-count="15">0<span class="plus">+</span></span>
+                    <span class="stat-label">Projects <span class="highlight-text">Delivered</span></span>
                 </div>
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
-                    <span class="stat-icon">👨‍🌾</span>
+                    <span class="stat-icon">😊</span>
                     <span class="stat-number" data-count="50">0<span class="plus">+</span></span>
-                    <span class="stat-label">Farmers <span class="highlight-text">Trained</span></span>
+                    <span class="stat-label">Happy <span class="highlight-text">Clients</span></span>
                 </div>
                 <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
-                    <span class="stat-icon">⭐</span>
-                    <span class="stat-number" data-count="98">0<span class="plus">%</span></span>
-                    <span class="stat-label">Satisfaction <span class="highlight-text">Rate</span></span>
+                    <span class="stat-icon">🌟</span>
+                    <span class="stat-number" data-count="100">0<span class="plus">%</span></span>
+                    <span class="stat-label">Client <span class="highlight-text">Satisfaction</span></span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================
-    FARMING SERVICES
+    SERVICES SECTION - WITH VISIBLE IMAGES
     ============================================ -->
-    <section class="farming-services" id="services">
+    <section class="services" id="services">
         <div class="container">
             <div class="text-center" data-aos="fade-up">
-                <span class="section-badge-green">What We Offer</span>
+                <span class="section-badge">What We Do</span>
                 <h2 class="section-title">
-                    Our <span class="green-highlight">Farming</span> Services
+                    Our <span class="highlight">Services</span>
                 </h2>
                 <p class="section-subtitle" style="margin:0 auto 48px;">
-                    Comprehensive agricultural solutions from seed to harvest, designed for
-                    South Sudan's unique climate and growing conditions.
+                    Delivering excellence across six diverse business divisions, serving
+                    Juba and the surrounding regions with professionalism and care.
                 </p>
             </div>
 
             <div class="services-grid">
-                <!-- Service 1 - Crop Farming -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-bg" style="background-image: url('crop-farming.jpg');"></div>
-                    <span class="icon">🌾</span>
+                <!-- Service 1 - Bar & Restaurant -->
+                <a href="services.html#bar-restaurant" class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-bg" style="background-image: url('brr.jpg');"></div>
+                    <span class="icon">🍽️</span>
                     <span class="status-badge operational">● Operational</span>
-                    <h3>Crop Farming</h3>
-                    <p>Sustainable cultivation of maize, sorghum, cassava, and other staple crops for food security.</p>
+                    <h3>Bar & Restaurant</h3>
+                    <p>Experience premium dining and entertainment at our flagship establishment.</p>
                     <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
-                </div>
+                </a>
 
-                <!-- Service 2 - Equipment Sales -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="150">
-                    <div class="card-bg" style="background-image: url('equipment-sales.jpg');"></div>
-                    <span class="icon">🚜</span>
-                    <span class="status-badge operational">● Operational</span>
-                    <h3>Equipment Sales</h3>
-                    <p>High-quality tractors, harvesters, and precision farming technology with financing options.</p>
-                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
-                </div>
-
-                <!-- Service 3 - Parts & Service -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-bg" style="background-image: url('parts-service.jpg');"></div>
-                    <span class="icon">🔧</span>
-                    <span class="status-badge operational">● Operational</span>
-                    <h3>Parts & Service</h3>
-                    <p>Genuine parts and expert maintenance to keep your farming equipment running at peak performance.</p>
-                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
-                </div>
-
-                <!-- Service 4 - Precision Upgrades -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="250">
-                    <div class="card-bg" style="background-image: url('precision-upgrades.jpg');"></div>
-                    <span class="icon">📡</span>
+                <!-- Service 2 - Apartments -->
+                <a href="services.html#apartments" class="service-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="card-bg" style="background-image: url('ap.jpg');"></div>
+                    <span class="icon">🏢</span>
                     <span class="status-badge coming">● Coming Soon</span>
-                    <h3>Precision Upgrades</h3>
-                    <p>GPS-guided farming, automated irrigation, and smart technology for maximum yield.</p>
+                    <h3>Apartments</h3>
+                    <p>Modern, secure, and comfortable residential spaces in prime locations.</p>
                     <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <!-- Service 3 - Transportation -->
+                <a href="services.html#transportation" class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-bg" style="background-image: url('hgk.jpg');"></div>
+                    <span class="icon">🚚</span>
+                    <span class="status-badge operational">● Operational</span>
+                    <h3>Transportation</h3>
+                    <p>Reliable logistics and passenger transport services across South Sudan.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <!-- Service 4 - Warehouse -->
+                <a href="services.html#warehouse" class="service-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="card-bg" style="background-image: url('Modern Warehousing.jpg');"></div>
+                    <span class="icon">🏗️</span>
+                    <span class="status-badge coming">● Coming Soon</span>
+                    <h3>Warehouse Building</h3>
+                    <p>State-of-the-art warehousing solutions for businesses and organizations.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <!-- Service 5 - Farming -->
+                <a href="services.html#farming" class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-bg" style="background-image: url('farming.jpg');"></div>
+                    <span class="icon">🌾</span>
+                    <span class="status-badge coming">● Coming Soon</span>
+                    <h3>Farming</h3>
+                    <p>Sustainable agricultural practices for food security and economic growth.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+
+                <!-- Service 6 - Ferry Crossing -->
+                <a href="services.html#ferry" class="service-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="card-bg" style="background-image: url('fr.jpg');"></div>
+                    <span class="icon">⛴️</span>
+                    <span class="status-badge coming">● Coming Soon</span>
+                    <h3>Ferry Crossing</h3>
+                    <p>Connecting communities through South Sudan's new ferry crossing service.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    PROJECTS SECTION
+    ============================================ -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge">Our Portfolio</span>
+                <h2 class="section-title">
+                    Featured <span class="highlight">Projects</span>
+                </h2>
+                <p class="section-subtitle" style="margin:0 auto 48px;">
+                    Showcasing our commitment to quality and excellence across all our business divisions.
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card" data-aos="flip-up" data-aos-delay="100">
+                    <div class="project-image" style="background-image: url('ap.jpg');">
+                        <span class="project-overlay-icon">🏢</span>
+                        <span class="project-badge">Completed</span>
+                    </div>
+                    <div class="project-content">
+                        <h3> Jolong Heights</h3>
+                        <p>Iconic residential tower development featuring innovative architectural design.</p>
+                        <div class="meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Sudken, Sherikat</span>
+                            <span><i class="fas fa-calendar"></i> 2024</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Service 5 - Harvesting -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-bg" style="background-image: url('harvesting.jpg');"></div>
-                    <span class="icon">🌽</span>
-                    <span class="status-badge operational">● Operational</span>
-                    <h3>Harvesting Services</h3>
-                    <p>Professional harvesting solutions to tackle more acres and tighter windows efficiently.</p>
-                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                <div class="project-card" data-aos="flip-up" data-aos-delay="200">
+                    <div class="project-image" style="background-image: url('bar.jpg');">
+                        <span class="project-overlay-icon">🍽️</span>
+                        <span class="project-badge" style="background:var(--gold-gradient);color:var(--primary);">Operational</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Jolong Bar & Restaurant</h3>
+                        <p>Premium dining and entertainment experience in the heart of Sudken.</p>
+                        <div class="meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</span>
+                            <span><i class="fas fa-calendar"></i> 2023</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Service 6 - Used Equipment -->
-                <div class="service-card" data-aos="fade-up" data-aos-delay="350">
-                    <div class="card-bg" style="background-image: url('used-equipment.jpg');"></div>
-                    <span class="icon">🔄</span>
-                    <span class="status-badge operational">● Operational</span>
-                    <h3>Used Equipment</h3>
-                    <p>Quality pre-owned tractors, mowers, and Gator utility vehicles at affordable prices.</p>
-                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                <div class="project-card" data-aos="flip-up" data-aos-delay="300">
+                    <div class="project-image" style="background-image: url('hgk.jpg');">
+                        <span class="project-overlay-icon">🚚</span>
+                        <span class="project-badge" style="background:var(--accent-green);">Operational</span>
+                    </div>
+                    <div class="project-content">
+                        <h3>Jolong Transport Services</h3>
+                        <p>Reliable logistics and passenger transport solutions across South Sudan.</p>
+                        <div class="meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Nationwide</span>
+                            <span><i class="fas fa-calendar"></i> 2020</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================
-    PARTS-A-THON PROMO SECTION
+    PARTS-A-THON PROMO SECTION (NEW - ADDED)
     ============================================ -->
     <section class="parts-athon" id="parts-athon">
         <div class="container">
@@ -2394,7 +2788,7 @@
                         <span class="number">15%</span>
                         <span class="text">Off² Thousands of Compact Tractor Parts</span>
                     </div>
-                    <p style="font-size: 0.95rem; color: var(--gray); margin-bottom: 24px;">
+                    <p class="season-saving">
                         <strong>Season Saving:</strong> Get 15% off³ Gator strong, all seasons
                     </p>
                     <a href="#" class="btn-secondary">
@@ -2414,7 +2808,7 @@
     </section>
 
     <!-- ============================================
-    SEASONAL SAVINGS PROMO
+    SEASONAL SAVINGS PROMO (NEW - ADDED)
     ============================================ -->
     <section class="seasonal-savings" id="seasonal">
         <div class="container">
@@ -2443,69 +2837,54 @@
     </section>
 
     <!-- ============================================
-    EQUIPMENT SHOWCASE
+    ABOUT SECTION - WITH IMAGE
     ============================================ -->
-    <section class="equipment-showcase" id="equipment">
+    <section class="about" id="about">
         <div class="container">
-            <div class="text-center" data-aos="fade-up">
-                <span class="section-badge">Our Equipment</span>
-                <h2 class="section-title">
-                    Premium <span class="highlight">Farming</span> Equipment
-                </h2>
-                <p class="section-subtitle" style="margin:0 auto 48px;">
-                    Quality machinery and tools to power your farming operations.
-                </p>
-            </div>
-
-            <div class="equipment-grid">
-                <div class="equipment-item" data-aos="fade-up" data-aos-delay="100">
-                    <span class="eq-icon">🚜</span>
-                    <div class="eq-content">
-                        <h4>Compact Tractors</h4>
-                        <p>Powerful and versatile for all farm sizes</p>
-                        <span class="eq-tag">In Stock</span>
+            <div class="about-grid">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="rtt.jpg" alt="Jolong Enterprises - Building South Sudan" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'image-fallback\'><span>🏢</span></div>';" />
+                    <div class="exp-badge">
+                        <span class="number">3+</span>
+                        <span class="label">Years of Excellence</span>
                     </div>
                 </div>
-                <div class="equipment-item" data-aos="fade-up" data-aos-delay="150">
-                    <span class="eq-icon">🌾</span>
-                    <div class="eq-content">
-                        <h4>Harvesters</h4>
-                        <p>Efficient harvesting for maximum yield</p>
-                        <span class="eq-tag">Limited Stock</span>
-                    </div>
-                </div>
-                <div class="equipment-item" data-aos="fade-up" data-aos-delay="200">
-                    <span class="eq-icon">🚗</span>
-                    <div class="eq-content">
-                        <h4>Gator XUVs</h4>
-                        <p>0% APR for 48 months¹ on select models</p>
-                        <span class="eq-tag" style="background:rgba(244,196,48,0.15);color:var(--secondary);">Special Offer</span>
-                    </div>
-                </div>
-                <div class="equipment-item" data-aos="fade-up" data-aos-delay="250">
-                    <span class="eq-icon">✂️</span>
-                    <div class="eq-content">
-                        <h4>Mowers</h4>
-                        <p>Precision cutting for all terrain</p>
-                        <span class="eq-tag">In Stock</span>
-                    </div>
+                <div class="about-content" data-aos="fade-left">
+                    <span class="section-badge">About Us</span>
+                    <h2>Building South Sudan's <span class="highlight">Future</span></h2>
+                    <p>
+                        Jolong Enterprises Limited provides reliable and efficient services designed to meet the needs
+                        of individuals, businesses, and organizations in Juba, South Sudan. We focus on safe, timely,
+                        and well-coordinated solutions across all our business divisions.
+                    </p>
+                    <p>
+                        Our transportation services include the movement of goods, equipment, and supplies, ensuring
+                        secure handling and delivery. We use well-maintained vehicles suitable for different types of
+                        transport needs, including local distribution and project support services.
+                    </p>
+                    <ul class="about-features">
+                        <li><i class="fas fa-check-circle"></i> Professional & Reliable</li>
+                        <li><i class="fas fa-check-circle"></i> Customer-Focused Solutions</li>
+                        <li><i class="fas fa-check-circle"></i> Well-Maintained Facilities</li>
+                        <li><i class="fas fa-check-circle"></i> Punctual & Safe Operations</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ============================================
-    TESTIMONIALS
+    TESTIMONIALS SECTION
     ============================================ -->
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="text-center" data-aos="fade-up">
                 <span class="section-badge">Testimonials</span>
                 <h2 class="section-title">
-                    What Our <span class="highlight">Farmers Say</span>
+                    What Our <span class="highlight">Clients Say</span>
                 </h2>
                 <p class="section-subtitle" style="margin:0 auto 48px;">
-                    Real feedback from farmers who trust Jolong Enterprises for their agricultural needs.
+                    Real feedback from real clients who trust Jolong Enterprises for their business needs.
                 </p>
             </div>
 
@@ -2519,14 +2898,14 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <blockquote>
-                        "Jolong's equipment and farming support have transformed our operations. The 0% financing
-                        made it possible for us to upgrade our machinery and increase production."
+                        "Their transport services are designed to support businesses, projects, and individual clients
+                        with dependable and customer-focused solutions. Well-maintained vehicles and professional drivers."
                     </blockquote>
                     <div class="author">
-                        <div class="avatar">JA</div>
+                        <div class="avatar">JD</div>
                         <div class="info">
-                            <div class="name">John Atem</div>
-                            <div class="company">Commercial Farmer, Juba</div>
+                            <div class="name">John Doe</div>
+                            <div class="company">Regional Logistics Director</div>
                         </div>
                     </div>
                 </div>
@@ -2540,14 +2919,14 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <blockquote>
-                        "The Parts-A-Thon sale saved us thousands on tractor maintenance. Their service team is
-                        professional and always ready to help with our farming challenges."
+                        "Jolong Enterprises has been instrumental in our project logistics. Their commitment to safety
+                        and punctuality has made them our preferred partner in South Sudan."
                     </blockquote>
                     <div class="author">
-                        <div class="avatar">SM</div>
+                        <div class="avatar">MS</div>
                         <div class="info">
-                            <div class="name">Sarah Malek</div>
-                            <div class="company">Agricultural Cooperative Lead</div>
+                            <div class="name">Mary Smith</div>
+                            <div class="company">Project Manager, NGO</div>
                         </div>
                     </div>
                 </div>
@@ -2561,14 +2940,14 @@
                         <i class="fas fa-star"></i>
                     </div>
                     <blockquote>
-                        "The harvesting technology from Jolong helped us tackle more acres in less time.
-                        Their precision upgrades have been a game-changer for our farm's productivity."
+                        "The Bar & Restaurant is the go-to spot in Juba for business meetings and special occasions.
+                        Excellent service, great food, and a wonderful atmosphere."
                     </blockquote>
                     <div class="author">
-                        <div class="avatar">DK</div>
+                        <div class="avatar">PK</div>
                         <div class="info">
-                            <div class="name">David Kuol</div>
-                            <div class="company">Farm Owner, Equatoria Region</div>
+                            <div class="name">Peter Khamis</div>
+                            <div class="company">Business Executive, Juba</div>
                         </div>
                     </div>
                 </div>
@@ -2582,10 +2961,10 @@
     <section class="cta" id="contact">
         <div class="container">
             <div data-aos="zoom-in">
-                <h2>Ready to <span class="highlight">Grow</span> Your Farm?</h2>
+                <h2>Ready to Partner with <span class="highlight">Jolong</span>?</h2>
                 <p>
-                    Contact us today for equipment, parts, or farming services. Let's build
-                    a sustainable agricultural future for South Sudan together.
+                    Contact us today to discuss your project needs. From transportation to hospitality,
+                    we're here to help you succeed in South Sudan.
                 </p>
                 <div class="buttons">
                     <a href="mailto:info@jolonges.com" class="btn-primary">
@@ -2622,7 +3001,7 @@
                 <div>
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#home">Home</a></li>
                         <li><a href="services.html">Services</a></li>
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="about.html">About Us</a></li>
@@ -2637,7 +3016,7 @@
                         <li><a href="services.html#apartments">Apartments</a></li>
                         <li><a href="services.html#transportation">Transportation</a></li>
                         <li><a href="services.html#warehouse">Warehouse Building</a></li>
-                        <li><a href="farming.html">Farming</a></li>
+                        <li><a href="services.html#farming">Farming</a></li>
                         <li><a href="services.html#ferry">Ferry Crossing</a></li>
                     </ul>
                 </div>
@@ -2855,16 +3234,37 @@
                 });
             }
 
+            // ACTIVE NAV LINK
+            const sections = document.querySelectorAll('section[id], .hero');
+            const navLinksAll = document.querySelectorAll('.nav-links a, .mobile-menu-content ul a');
+
+            window.addEventListener('scroll', function() {
+                let current = 'home';
+                sections.forEach(function(section) {
+                    const sectionTop = section.offsetTop - 150;
+                    if (window.pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id') || 'home';
+                    }
+                });
+
+                navLinksAll.forEach(function(link) {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
             // DYNAMIC YEAR
             const footerYear = document.querySelector('.footer-bottom-row span:first-child');
             if (footerYear) {
                 footerYear.innerHTML = footerYear.innerHTML.replace('2026', new Date().getFullYear());
             }
 
-            console.log('🚀 Jolong Enterprises Limited - Farming Division');
-            console.log('🌾 Sustainable Agriculture for South Sudan');
+            console.log('🚀 Jolong Enterprises Limited - South Sudan');
             console.log('📧 Contact: info@jolonges.com');
             console.log('📞 Phone: +211 922 005 177');
+            console.log('🇸🇸 Proudly Serving South Sudan');
 
         });
     </script>
