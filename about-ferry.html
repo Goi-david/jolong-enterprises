@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Jolong Ferry Crossing</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Learn about Jolong Ferry Crossing - Our mission, values, and commitment to connecting communities across South Sudan's waterways.">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+    <style>
+        /* ============================================
+                   ROOT VARIABLES
+                   ============================================ */
+        :root {
+            --primary-navy: #0a1a3a;
+            --primary-navy-light: #1a305a;
+            --primary-navy-dark: #060e1f;
+            --primary-gold: #f4c430;
+            --primary-gold-light: #fada5e;
+            --primary-gold-dark: #d4a820;
+            --accent-blue: #1a5276;
+            --accent-blue-light: #2980b9;
+            --warm-cream: #fdf8f0;
+            --warm-ivory: #faf3e8;
+            --dark-charcoal: #1a1a2e;
+            --gray: #6b7280;
+            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 30px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+            --blue-gradient: linear-gradient(135deg, #1a5276, #2980b9);
+            --navy-gradient: linear-gradient(135deg, #0a1a3a, #1a305a);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-charcoal);
+            background-color: var(--warm-cream);
+            line-height: 1.6;
+            padding-top: 56px;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .gold-text {
+            color: var(--primary-gold);
+        }
+        .blue-text {
+            color: var(--accent-blue);
+        }
+
+        /* ============================================
+                   TOP BAR
+                   ============================================ */
+        .top-bar {
+            background: var(--primary-navy);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .top-bar::before {
+            content: '⛴️';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            opacity: 0.2;
+        }
+
+        .top-bar a {
+            color: var(--primary-gold-light);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .top-bar a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* ============================================
+                   NAVBAR
+                   ============================================ */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+        }
+
+        .navbar-brand .brand-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--blue-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .navbar-brand .brand-sub {
+            display: block;
+            font-size: 0.55rem;
+            font-weight: 400;
+            color: var(--accent-blue);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            margin-top: -2px;
+        }
+
+        .nav-link {
+            color: var(--dark-charcoal) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            margin: 0 2px;
+            border-radius: 4px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            position: relative;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            width: 80%;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-blue) !important;
+        }
+
+        .btn-contact {
+            background: var(--blue-gradient);
+            color: white !important;
+            padding: 8px 24px !important;
+            border-radius: 50px !important;
+            font-weight: 700 !important;
+            box-shadow: 0 5px 15px rgba(26, 82, 118, 0.3);
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(26, 82, 118, 0.4);
+            color: white !important;
+        }
+
+        /* ============================================
+                   PAGE HEADER
+                   ============================================ */
+        .page-header {
+            background: linear-gradient(rgba(10, 26, 58, 0.7), rgba(10, 26, 58, 0.8)), 
+                        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1920&h=400&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 5rem 0 3rem;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--blue-gradient);
+        }
+
+        .page-header h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .page-header h1 .highlight {
+            color: var(--primary-gold);
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb-custom {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
+
+        .breadcrumb-custom a {
+            color: var(--primary-gold);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb-custom a:hover {
+            color: white;
+        }
+
+        /* ============================================
+                   SECTION BADGE
+                   ============================================ */
+        .section-badge {
+            display: inline-block;
+            padding: 6px 20px;
+            background: rgba(26, 82, 118, 0.12);
+            color: var(--accent-blue);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        /* ============================================
+                   ABOUT STORY
+                   ============================================ */
+        .about-story {
+            padding: 80px 0;
+            background: var(--warm-cream);
+        }
+
+        .about-story .story-content h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about-story .story-content p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .about-story .story-image {
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .about-story .story-image .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(transparent, rgba(10, 26, 58, 0.8));
+            color: white;
+        }
+
+        .about-story .story-image .image-overlay h4 {
+            color: var(--accent-blue-light);
+            margin-bottom: 4px;
+        }
+
+        .about-story .story-image .image-overlay p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0;
+            font-size: 0.9rem;
+        }
+
+        /* ============================================
+                   MISSION & VALUES
+                   ============================================ */
+        .mission-values {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .mission-card {
+            background: var(--warm-cream);
+            border-radius: var(--border-radius-lg);
+            padding: 40px 30px;
+            text-align: center;
+            height: 100%;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-blue);
+        }
+
+        .mission-card .icon {
+            width: 80px;
+            height: 80px;
+            background: var(--blue-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .mission-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .mission-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+                   VALUES LIST
+                   ============================================ */
+        .values-list {
+            padding: 60px 0;
+            background: var(--warm-cream);
+        }
+
+        .value-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 24px;
+            background: white;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            height: 100%;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .value-item:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .value-item .value-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(26, 82, 118, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-blue);
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .value-item .value-content h5 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .value-item .value-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+                   TEAM SECTION
+                   ============================================ */
+        .team-section {
+            padding: 80px 0;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-section::before {
+            content: '⛴️';
+            position: absolute;
+            right: 50px;
+            bottom: 50px;
+            font-size: 8rem;
+            opacity: 0.02;
+            pointer-events: none;
+        }
+
+        .team-card {
+            background: var(--warm-cream);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            text-align: center;
+            height: 100%;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-card .team-image {
+            height: 280px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .team-card .team-image .team-role {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px 20px;
+            background: rgba(10, 26, 58, 0.8);
+            color: var(--accent-blue-light);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .team-card .team-body {
+            padding: 24px;
+        }
+
+        .team-card .team-body h4 {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .team-card .team-body p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .team-card .team-body .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .team-card .team-body .team-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(26, 82, 118, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-blue);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .team-card .team-body .team-social a:hover {
+            background: var(--blue-gradient);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ============================================
+                   STATS SECTION
+                   ============================================ */
+        .stats-about {
+            padding: 60px 0;
+            background: var(--navy-gradient);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-about .stat-item {
+            padding: 20px;
+        }
+
+        .stats-about .stat-item .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--accent-blue-light);
+            display: block;
+        }
+
+        .stats-about .stat-item .label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* ============================================
+                   CTA
+                   ============================================ */
+        .cta-about {
+            padding: 80px 0;
+            background: var(--navy-gradient);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-about::before {
+            content: '⛴️';
+            position: absolute;
+            left: 30px;
+            top: 30px;
+            font-size: 6rem;
+            opacity: 0.05;
+        }
+
+        .cta-about h2 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .cta-about h2 .highlight {
+            color: var(--accent-blue-light);
+        }
+
+        .cta-about p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        /* ============================================
+                   FOOTER
+                   ============================================ */
+        .footer {
+            background: var(--primary-navy-dark);
+            color: white;
+            padding: 60px 0 0;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--blue-gradient);
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand .gold {
+            color: var(--primary-gold);
+        }
+
+        .footer-about {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            max-width: 350px;
+        }
+
+        .footer h5 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+
+        .footer h5::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent-blue);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            color: var(--primary-gold);
+            font-size: 0.7rem;
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact li i {
+            color: var(--primary-gold);
+            width: 20px;
+            margin-top: 4px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            text-decoration: none;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent-blue);
+            color: white;
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 24px 0;
+            margin-top: 48px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom .gold {
+            color: var(--primary-gold);
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-story .story-image {
+                height: 300px;
+                margin-top: 30px;
+            }
+            
+            .stats-about .stat-item .number {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-story .story-content h2 {
+                font-size: 2.2rem;
+            }
+            
+            .mission-card {
+                margin-bottom: 20px;
+            }
+            
+            .value-item {
+                margin-bottom: 16px;
+            }
+            
+            .team-card {
+                margin-bottom: 20px;
+            }
+            
+            .team-card .team-image {
+                height: 200px;
+            }
+            
+            .stats-about .stat-item .number {
+                font-size: 2.2rem;
+            }
+            
+            .cta-about h2 {
+                font-size: 2.2rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            
+            .navbar-brand .brand-sub {
+                font-size: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-brand .brand-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .about-story .story-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .stats-about .stat-item .number {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* ============================================
+                   SCROLLBAR
+                   ============================================ */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--blue-gradient);
+            border-radius: var(--border-radius-xl);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    TOP BAR
+    ============================================ -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span class="status-dot"></span>
+                    <span class="me-3"><strong>Coming Soon</strong> • Connecting Communities Across South Sudan</span>
+                    <i class="fas fa-phone-alt me-2"></i> <a href="tel:+211922005177">+211 922 005 177</a>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="ferry.html"><i class="fas fa-arrow-left me-1"></i> Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+    NAVBAR
+    ============================================ -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+        <div class="container">
+            <a class="navbar-brand" href="ferry.html">
+                <span class="brand-icon"><i class="fas fa-ship"></i></span>
+                <div>
+                    Jolong <span class="gold-text">Ferry Crossing</span>
+                    <span class="brand-sub">Connecting Communities</span>
+                </div>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="ferry.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="routes.html">Our Routes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services-ferry.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about-ferry.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact-ferry.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" style="color: var(--accent-blue) !important;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <a href="contact-ferry.html" class="btn btn-contact">
+                        <i class="fas fa-ship me-2"></i> Book Crossing
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+    PAGE HEADER
+    ============================================ -->
+    <section class="page-header">
+        <div class="container">
+            <h1>About <span class="highlight">Jolong Ferry Crossing</span></h1>
+            <p>Discover our commitment to connecting communities across South Sudan's 
+            waterways through safe and reliable ferry services.</p>
+            <div class="breadcrumb-custom">
+                <a href="ferry.html">Home</a>
+                <span>/</span>
+                <span>About</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    ABOUT STORY
+    ============================================ -->
+    <section class="about-story">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 story-content" data-aos="fade-right">
+                    <span class="section-badge">Our Story</span>
+                    <h2>Connecting South Sudan's <span class="blue-text">Communities</span></h2>
+                    <p>
+                        Jolong Ferry Crossing was founded with a vision to provide safe, 
+                        reliable, and efficient water transportation across South Sudan's 
+                        rivers and waterways. We understand that ferries are lifelines for 
+                        communities, connecting people to essential services and opportunities.
+                    </p>
+                    <p>
+                        Our journey began with a commitment to building modern, safe ferry 
+                        vessels and developing routes that serve the needs of communities, 
+                        businesses, and travelers. Today, we are proud to be a trusted 
+                        water transport provider in South Sudan.
+                    </p>
+                    <p>
+                        We are dedicated to safety, reliability, and community service. 
+                        Every crossing we make is a testament to our commitment to connecting 
+                        South Sudan.
+                    </p>
+                    <div class="mt-4">
+                        <a href="routes.html" class="btn" style="background:var(--blue-gradient); border:none; color:white; padding:12px 32px; border-radius:50px; font-weight:600; text-decoration:none;">
+                            <i class="fas fa-ship me-2"></i> Explore Our Routes
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="story-image">
+                        <div class="image-overlay">
+                            <h4>⛴️ Jolong Ferry Crossing</h4>
+                            <p>Connecting communities across South Sudan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    STATS SECTION
+    ============================================ -->
+    <section class="stats-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-item">
+                        <span class="number" data-count="3">0</span>
+                        <span class="label">Ferry Routes</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-item">
+                        <span class="number" data-count="5">0</span>
+                        <span class="label">Ferry Vessels</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-item">
+                        <span class="number" data-count="1000">0</span>
+                        <span class="label">Passengers Daily</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-item">
+                        <span class="number" data-count="98">0</span>
+                        <span class="label">Reliability Rate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    MISSION & VALUES
+    ============================================ -->
+    <section class="mission-values" id="mission">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge">Our Mission</span>
+                <h2>What Drives <span class="blue-text">Us</span></h2>
+                <p class="text-muted" style="max-width: 600px; margin: 0 auto 50px;">
+                    Our mission is to provide safe, reliable, and accessible water 
+                    transportation that connects communities and supports development 
+                    in South Sudan.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="mission-card">
+                        <div class="icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Safety</h4>
+                        <p>We prioritize the safety of our passengers, crew, and cargo 
+                        with strict safety protocols and equipment.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mission-card">
+                        <div class="icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>Reliability</h4>
+                        <p>We are committed to being a dependable transport provider you 
+                        can count on for your crossings.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="mission-card">
+                        <div class="icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Community</h4>
+                        <p>We believe in the power of connection and work to serve the 
+                        communities that rely on our ferries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    VALUES LIST
+    ============================================ -->
+    <section class="values-list">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge">Our Values</span>
+                <h2>What We Stand <span class="blue-text">For</span></h2>
+                <p class="text-muted" style="max-width: 600px; margin: 0 auto 50px;">
+                    These core values guide everything we do at Jolong Ferry Crossing.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4" data-aos="fade-right" data-aos-delay="100">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-ship"></i>
+                        </div>
+                        <div class="value-content">
+                            <h5>Safety First</h5>
+                            <p>We maintain the highest safety standards on every crossing 
+                            to protect our passengers and crew.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-left" data-aos-delay="200">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="value-content">
+                            <h5>Integrity</h5>
+                            <p>We operate with honesty, transparency, and fairness in all 
+                            our business dealings.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-right" data-aos-delay="300">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="value-content">
+                            <h5>Community Focus</h5>
+                            <p>We are committed to serving the communities that depend on 
+                            our ferry services.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4" data-aos="fade-left" data-aos-delay="400">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="value-content">
+                            <h5>Excellence</h5>
+                            <p>We strive for excellence in every aspect of our service, 
+                            from maintenance to customer care.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    TEAM SECTION
+    ============================================ -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge">Our Team</span>
+                <h2>Meet Our <span class="blue-text">Team</span></h2>
+                <p class="text-muted" style="max-width: 600px; margin: 0 auto 50px;">
+                    The dedicated professionals behind Jolong Ferry Crossing's reliable service.
+                </p>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-card">
+                        <div class="team-image" style="background-image: url('https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=400&h=400&fit=crop');">
+                            <div class="team-role">Ferry Operations Director</div>
+                        </div>
+                        <div class="team-body">
+                            <h4>James Malual</h4>
+                            <p>18 years maritime experience</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card">
+                        <div class="team-image" style="background-image: url('https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400&h=400&fit=crop');">
+                            <div class="team-role">Fleet Manager</div>
+                        </div>
+                        <div class="team-body">
+                            <h4>Mary Achol</h4>
+                            <p>12 years fleet management</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-card">
+                        <div class="team-image" style="background-image: url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=400&h=400&fit=crop');">
+                            <div class="team-role">Head Captain</div>
+                        </div>
+                        <div class="team-body">
+                            <h4>Peter Kuol</h4>
+                            <p>15 years on the water</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-card">
+                        <div class="team-image" style="background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424ffe2?w=400&h=400&fit=crop');">
+                            <div class="team-role">Customer Relations</div>
+                        </div>
+                        <div class="team-body">
+                            <h4>Sarah Nyanjok</h4>
+                            <p>8 years customer service</p>
+                            <div class="team-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    CTA
+    ============================================ -->
+    <section class="cta-about">
+        <div class="container">
+            <h2>Ready to <span class="highlight">Cross</span>?</h2>
+            <p>Contact us today to book your ferry crossing or learn more about our services.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="contact-ferry.html" class="btn" style="display:inline-flex; padding:16px 48px; font-size:1.1rem; background:var(--blue-gradient); color:white; border:none; border-radius:50px; font-weight:700; text-decoration:none;">
+                    <i class="fas fa-ship me-2"></i> Book a Crossing
+                </a>
+                <a href="tel:+211922005177" class="btn" style="display:inline-flex; padding:16px 48px; font-size:1.1rem; background:transparent; color:white; border:2px solid white; border-radius:50px; font-weight:700; text-decoration:none;">
+                    <i class="fas fa-phone me-2"></i> +211 922 005 177
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">Jolong <span class="gold">Ferry Crossing</span></div>
+                    <p class="footer-about">
+                        Connecting communities across South Sudan's waterways. Safe, reliable, 
+                        and efficient water transportation for people and goods.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="ferry.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="routes.html"><i class="fas fa-chevron-right"></i> Our Routes</a></li>
+                        <li><a href="services-ferry.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="about-ferry.html"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="contact-ferry.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
+                        <li><i class="fas fa-phone"></i> +211 922 005 177</li>
+                        <li><i class="fas fa-envelope"></i> info@jolonges.com</li>
+                        <li><i class="fas fa-clock"></i> 6:00 AM - 6:00 PM Daily</li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <h5>Operating Hours</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-clock"></i> Monday - Sunday</li>
+                        <li style="color: var(--primary-gold); font-weight: 600;">6:00 AM - 6:00 PM</li>
+                        <li><i class="fas fa-ship"></i> 3 Ferry Routes</li>
+                        <li><i class="fas fa-calendar-check"></i> Book in Advance</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">&copy; 2026 <span class="gold">Jolong Ferry Crossing</span>. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="index.html" style="color: var(--primary-gold); text-decoration: none;">
+                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+    SCRIPTS
+    ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 80, easing: 'ease-in-out' });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            navbar.classList.toggle('scrolled', window.pageYOffset > 50);
+        });
+
+        // Counter Animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stats-about .stat-item .number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.dataset.count);
+                let current = 0;
+                const increment = target / 60;
+                const duration = 2000;
+                const stepTime = duration / 60;
+                
+                const updateCounter = () => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target.toLocaleString() + (target === 98 ? '%' : '+');
+                        return;
+                    }
+                    counter.textContent = Math.floor(current).toLocaleString() + (target === 98 ? '%' : '+');
+                    setTimeout(updateCounter, stepTime);
+                };
+                
+                updateCounter();
+            });
+        }
+
+        const statsSection = document.querySelector('.stats-about');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(statsSection);
+
+        const footerYear = document.querySelector('.footer-bottom p');
+        if (footerYear) {
+            footerYear.textContent = footerYear.textContent.replace('2026', new Date().getFullYear());
+        }
+
+        console.log('⛴️ Jolong Ferry Crossing - About Page');
+        console.log('🌊 Connecting communities across South Sudan');
+        console.log('📞 Call: +211 922 005 177');
+    </script>
+</body>
+</html>
