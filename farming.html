@@ -1,61 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jolong Farming - Sustainable Agriculture in South Sudan</title>
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jolong Enterprises - Farming & Agriculture | South Sudan</title>
+
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Jolong Farming - Sustainable agricultural practices for food security and economic growth in South Sudan. Modern farming techniques and community support.">
-    <meta name="keywords" content="Farming South Sudan, Agriculture, Sustainable farming, Food security, Crop production, Livestock farming">
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+    <meta name="description" content="Jolong Enterprises provides modern farming solutions, agricultural equipment, and sustainable farming services in South Sudan." />
+    <meta property="og:title" content="Jolong Enterprises - Farming & Agriculture | South Sudan" />
+    <meta property="og:description" content="Sustainable farming solutions for food security and economic growth in South Sudan." />
+    <meta property="og:type" content="website" />
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
     <!-- AOS Animation -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
     <style>
         /* ============================================
-                   ROOT VARIABLES
+                   RESET - FULL SCREEN
                    ============================================ */
-        :root {
-            --primary-navy: #0a1a3a;
-            --primary-navy-light: #1a305a;
-            --primary-navy-dark: #060e1f;
-            --primary-gold: #f4c430;
-            --primary-gold-light: #fada5e;
-            --primary-gold-dark: #d4a820;
-            --accent-green: #2e7d32;
-            --accent-green-light: #4caf50;
-            --accent-brown: #5d4037;
-            --warm-cream: #fdf8f0;
-            --warm-ivory: #faf3e8;
-            --dark-charcoal: #1a1a2e;
-            --gray: #6b7280;
-            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
-            --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.12);
-            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
-            --border-radius-sm: 8px;
-            --border-radius-md: 12px;
-            --border-radius-lg: 20px;
-            --border-radius-xl: 30px;
-            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
-            --green-gradient: linear-gradient(135deg, #2e7d32, #4caf50);
-            --navy-gradient: linear-gradient(135deg, #0a1a3a, #1a305a);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0a1a3a;
+            --primary-light: #1a305a;
+            --primary-dark: #060e1f;
+            --secondary: #f4c430;
+            --secondary-light: #fada5e;
+            --secondary-dark: #d4a820;
+            --accent-green: #2e7d32;
+            --accent-green-light: #4caf50;
+            --accent-green-dark: #1b5e20;
+            --accent-red: #c41e3a;
+            --white: #ffffff;
+            --light-gray: #f8f6f0;
+            --gray: #6b7280;
+            --dark: #0d1b3e;
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.15);
+            --shadow-gold: 0 8px 32px rgba(244, 196, 48, 0.25);
+            --shadow-green: 0 8px 32px rgba(46, 125, 50, 0.25);
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --border-radius: 20px;
+            --border-radius-sm: 12px;
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+            --green-gradient: linear-gradient(135deg, #2e7d32, #1b5e20);
         }
 
         html {
@@ -63,516 +61,1565 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark-charcoal);
-            background-color: var(--warm-cream);
-            line-height: 1.6;
-            padding-top: 56px;
+            font-family: 'Inter', sans-serif;
+            background: var(--primary);
+            color: var(--dark);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        h1, h2, h3, h4, h5 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            color: var(--primary-navy);
         }
 
-        .gold-text {
-            color: var(--primary-gold);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
         }
-        .green-text {
-            color: var(--accent-green);
+
+        section {
+            width: 100%;
         }
 
         /* ============================================
-                   TOP BAR
+                   BUTTONS
                    ============================================ */
-        .top-bar {
-            background: var(--primary-navy);
-            color: white;
-            padding: 8px 0;
-            font-size: 0.85rem;
+        .btn-primary {
+            display: inline-block;
+            padding: 16px 40px;
+            background: var(--gold-gradient);
+            color: var(--primary);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            box-shadow: var(--shadow-gold);
             position: relative;
             overflow: hidden;
-            border-bottom: 2px solid var(--accent-green);
         }
 
-        .top-bar::before {
-            content: '🌾';
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5rem;
-            opacity: 0.2;
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 40px rgba(244, 196, 48, 0.4);
         }
 
-        .top-bar a {
-            color: var(--primary-gold-light);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .top-bar a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-
-        .top-bar .status-dot {
+        .btn-secondary {
             display: inline-block;
-            width: 10px;
-            height: 10px;
-            background: #2ecc71;
-            border-radius: 50%;
-            margin-right: 6px;
-            animation: pulse-dot 2s infinite;
+            padding: 16px 40px;
+            background: var(--green-gradient);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            box-shadow: var(--shadow-green);
         }
 
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(0.8); }
+        .btn-secondary:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 12px 40px rgba(46, 125, 50, 0.4);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 16px 40px;
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline-green {
+            display: inline-block;
+            padding: 14px 32px;
+            background: transparent;
+            color: var(--accent-green);
+            border: 2px solid var(--accent-green);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .btn-outline-green:hover {
+            background: var(--accent-green);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* ============================================
+                   SECTION HEADERS
+                   ============================================ */
+        .section-badge {
+            display: inline-block;
+            padding: 8px 24px;
+            background: rgba(244, 196, 48, 0.15);
+            color: var(--secondary);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            border: 1px solid rgba(244, 196, 48, 0.12);
+        }
+
+        .section-badge-green {
+            display: inline-block;
+            padding: 8px 24px;
+            background: rgba(46, 125, 50, 0.15);
+            color: var(--accent-green-light);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            border: 1px solid rgba(46, 125, 50, 0.12);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .section-title .highlight {
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .section-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold-gradient);
+            border-radius: 2px;
+        }
+
+        .section-title .green-highlight {
+            color: var(--accent-green);
+            position: relative;
+        }
+
+        .section-title .green-highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--green-gradient);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.15rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin-bottom: 48px;
+        }
+
+        .text-center {
+            text-align: center;
         }
 
         /* ============================================
                    NAVBAR
                    ============================================ */
         .navbar {
-            background: rgba(255, 255, 255, 0.98) !important;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: var(--shadow-sm);
-            padding: 0.5rem 0;
-            border-bottom: 3px solid var(--accent-green);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
             transition: var(--transition);
+            background: rgba(10, 26, 58, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 2px solid rgba(244, 196, 48, 0.12);
         }
 
         .navbar.scrolled {
-            box-shadow: var(--shadow-md);
+            background: rgba(10, 26, 58, 0.98);
+            padding: 10px 0;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
         }
 
         .navbar-brand {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary-navy);
+            gap: 14px;
+            text-decoration: none;
         }
 
-        .navbar-brand .brand-icon {
-            width: 45px;
-            height: 45px;
-            background: var(--green-gradient);
+        .navbar-brand .logo-wrapper {
+            width: 50px;
+            height: 50px;
             border-radius: 12px;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1.4rem;
+            background: var(--white);
+            border: 2px solid var(--secondary);
+            flex-shrink: 0;
         }
 
-        .navbar-brand .brand-sub {
-            display: block;
-            font-size: 0.55rem;
-            font-weight: 400;
-            color: var(--accent-green);
-            letter-spacing: 2px;
+        .navbar-brand .logo-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .navbar-brand .logo-wrapper .logo-placeholder {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .navbar-brand .brand-text {
+            color: var(--white);
+        }
+
+        .navbar-brand .brand-text h2 {
+            font-size: 1.2rem;
+            margin: 0;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-brand .brand-text h2 .gold {
+            color: var(--secondary);
+        }
+
+        .navbar-brand .brand-text span {
+            font-size: 0.65rem;
+            opacity: 0.7;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            font-family: 'Poppins', sans-serif;
-            margin-top: -2px;
+            font-weight: 400;
+            font-family: 'Inter', sans-serif;
+            display: block;
         }
 
-        .nav-link {
-            color: var(--dark-charcoal) !important;
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 50px;
             font-weight: 500;
-            padding: 0.5rem 1rem !important;
-            margin: 0 2px;
-            border-radius: 4px;
-            transition: var(--transition);
             font-size: 0.9rem;
+            transition: var(--transition);
             position: relative;
         }
 
-        .nav-link::before {
+        .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: 4px;
             left: 50%;
             transform: translateX(-50%);
             width: 0;
             height: 2px;
-            background: var(--accent-green);
+            background: var(--secondary);
             transition: var(--transition);
         }
 
-        .nav-link:hover::before,
-        .nav-link.active::before {
-            width: 80%;
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 60%;
         }
 
-        .nav-link:hover, .nav-link.active {
-            color: var(--accent-green) !important;
+        .nav-links a:hover {
+            color: var(--white);
         }
 
-        .btn-contact {
-            background: var(--green-gradient);
-            color: white !important;
-            padding: 8px 24px !important;
-            border-radius: 50px !important;
-            font-weight: 700 !important;
-            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+        .nav-links a.active {
+            color: var(--secondary);
         }
 
-        .btn-contact:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(46, 125, 50, 0.4);
-            color: white !important;
+        .nav-links .contact-btn {
+            background: var(--gold-gradient);
+            color: var(--primary) !important;
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+        }
+
+        .nav-links .contact-btn::after {
+            display: none !important;
+        }
+
+        .nav-links .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
         }
 
         /* ============================================
-                   PAGE HEADER
+                   MOBILE DROPDOWN MENU
                    ============================================ */
-        .page-header {
-            background: linear-gradient(rgba(10, 26, 58, 0.7), rgba(10, 26, 58, 0.8)), 
-                        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1920&h=600&fit=crop');
-            background-size: cover;
-            background-position: center;
-            padding: 5rem 0 3rem;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-
-        .page-header::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
             left: 0;
-            right: 0;
-            height: 5px;
-            background: var(--green-gradient);
-        }
-
-        .page-header h1 {
-            color: white;
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-        }
-
-        .page-header h1 .highlight {
-            color: var(--accent-green-light);
-        }
-
-        .page-header p {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .breadcrumb-custom {
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 26, 58, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 12px;
-            margin-top: 20px;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 0.9rem;
         }
 
-        .breadcrumb-custom a {
-            color: var(--accent-green-light);
-            text-decoration: none;
-            transition: var(--transition);
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            visibility: visible;
         }
 
-        .breadcrumb-custom a:hover {
-            color: white;
-        }
-
-        /* ============================================
-                   FEATURES BANNER
-                   ============================================ */
-        .features-banner {
-            padding: 60px 0;
-            background: white;
-        }
-
-        .feature-icon-box {
+        .mobile-menu-content {
             text-align: center;
-            padding: 30px 20px;
-            border-radius: var(--border-radius-md);
-            transition: var(--transition);
-            height: 100%;
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 40px;
+            transform: translateY(40px) scale(0.95);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            max-width: 90%;
         }
 
-        .feature-icon-box:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--accent-green);
+        .mobile-menu-overlay.open .mobile-menu-content {
+            transform: translateY(0) scale(1);
         }
 
-        .feature-icon-box .icon {
-            font-size: 2.5rem;
-            color: var(--accent-green);
-            display: block;
-            margin-bottom: 12px;
-        }
-
-        .feature-icon-box h5 {
-            font-size: 1.1rem;
-            margin-bottom: 6px;
-        }
-
-        .feature-icon-box p {
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-bottom: 0;
-        }
-
-        /* ============================================
-                   ABOUT FARMING
-                   ============================================ */
-        .about-farming {
-            padding: 80px 0;
-            background: var(--warm-cream);
-        }
-
-        .about-farming .about-image {
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            height: 400px;
-            background: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=600&fit=crop');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .about-farming .about-image .image-overlay {
+        .mobile-menu-content .menu-close {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 30px;
-            background: linear-gradient(transparent, rgba(10, 26, 58, 0.8));
-            color: white;
-        }
-
-        .about-farming .about-image .image-overlay h4 {
-            color: var(--accent-green-light);
-            margin-bottom: 4px;
-        }
-
-        .about-farming .about-image .image-overlay p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 0;
-            font-size: 0.9rem;
-        }
-
-        .about-farming .content h2 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-        }
-
-        .about-farming .content p {
-            color: var(--gray);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 16px;
-        }
-
-        /* ============================================
-                   SERVICES / CROPS
-                   ============================================ */
-        .crops-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .crop-card {
-            background: var(--warm-cream);
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
+            top: 30px;
+            right: 30px;
+            font-size: 2rem;
+            color: var(--white);
+            cursor: pointer;
+            background: none;
+            border: none;
             transition: var(--transition);
-            height: 100%;
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            padding: 10px;
         }
 
-        .crop-card:hover {
-            transform: translateY(-12px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent-green);
+        .mobile-menu-content .menu-close:hover {
+            color: var(--secondary);
+            transform: rotate(90deg);
         }
 
-        .crop-card .crop-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .crop-card .crop-image .crop-badge {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 8px 16px;
-            background: rgba(10, 26, 58, 0.7);
-            color: var(--accent-green-light);
-            font-size: 0.7rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .crop-card .crop-body {
-            padding: 20px 24px;
-        }
-
-        .crop-card .crop-body h4 {
-            font-size: 1.2rem;
-            margin-bottom: 6px;
-        }
-
-        .crop-card .crop-body p {
-            color: var(--gray);
-            font-size: 0.95rem;
-            margin-bottom: 0;
-        }
-
-        /* ============================================
-                   SUSTAINABLE PRACTICES
-                   ============================================ */
-        .sustainable-section {
-            padding: 80px 0;
-            background: var(--green-gradient);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sustainable-section::before {
-            content: '🌾';
-            position: absolute;
-            right: 50px;
-            bottom: 50px;
-            font-size: 8rem;
-            opacity: 0.05;
-            pointer-events: none;
-        }
-
-        .sustainable-section .section-title {
-            color: white;
-        }
-
-        .sustainable-section .section-subtitle {
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .practice-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: var(--border-radius-md);
-            padding: 30px 24px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: var(--transition);
-            height: 100%;
-        }
-
-        .practice-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.15);
-            border-color: var(--primary-gold);
-        }
-
-        .practice-card .icon {
-            font-size: 2.5rem;
-            color: var(--primary-gold);
-            display: block;
-            margin-bottom: 16px;
-        }
-
-        .practice-card h5 {
-            color: white;
-            font-size: 1.1rem;
+        .mobile-menu-content .mobile-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--secondary);
+            font-family: 'Playfair Display', serif;
             margin-bottom: 8px;
         }
 
-        .practice-card p {
-            color: rgba(255, 255, 255, 0.8);
+        .mobile-menu-content .mobile-tagline {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .mobile-menu-content ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .mobile-menu-content ul a {
+            display: block;
+            padding: 16px 32px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            border-radius: var(--border-radius-sm);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .mobile-menu-content ul a:hover,
+        .mobile-menu-content ul a.active {
+            color: var(--secondary);
+            background: rgba(244, 196, 48, 0.08);
+            border-color: rgba(244, 196, 48, 0.15);
+            transform: translateX(8px);
+        }
+
+        .mobile-menu-content ul a .icon {
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        .mobile-menu-content ul a.contact-mobile {
+            background: var(--gold-gradient);
+            color: var(--primary) !important;
+            margin-top: 16px;
+            font-weight: 700;
+            border: none;
+        }
+
+        .mobile-menu-content ul a.contact-mobile:hover {
+            transform: translateX(8px) scale(1.02);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .mobile-menu-content .mobile-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .mobile-menu-content .mobile-social a {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .mobile-menu-content .mobile-social a:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        /* ============================================
+                   FLAG STRIP
+                   ============================================ */
+        .flag-strip {
+            display: flex;
+            height: 6px;
+            width: 100%;
+        }
+
+        .flag-strip .black {
+            flex: 1;
+            background: #000000;
+        }
+        .flag-strip .red {
+            flex: 1;
+            background: #c41e3a;
+        }
+        .flag-strip .green {
+            flex: 1;
+            background: #2e7d32;
+        }
+        .flag-strip .blue {
+            flex: 1;
+            background: #0a1a3a;
+        }
+        .flag-strip .yellow {
+            flex: 1;
+            background: #f4c430;
+        }
+
+        /* ============================================
+                   HERO SECTION - FARMING THEMED
+                   ============================================ */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 120px 0 60px;
+            overflow: hidden;
+            background: var(--primary);
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-slideshow {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .hero-slideshow .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transform: scale(1.05);
+            transition: opacity 1.5s ease, transform 8s ease;
+        }
+
+        .hero-slideshow .slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .hero-slideshow .slide::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 26, 58, 0.7);
+        }
+
+        .hero-slideshow .slide::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 50%, rgba(46, 125, 50, 0.12) 0%, transparent 70%),
+                radial-gradient(ellipse at 70% 80%, rgba(244, 196, 48, 0.06) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .slide-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            display: flex;
+            gap: 14px;
+        }
+
+        .slide-dots .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .slide-dots .dot::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .slide-dots .dot.active::after {
+            border-color: var(--secondary);
+        }
+
+        .slide-dots .dot.active {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            box-shadow: 0 0 30px rgba(244, 196, 48, 0.3);
+            transform: scale(1.2);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(46, 125, 50, 0.15);
+            color: #81c784;
+            padding: 6px 18px 6px 8px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(46, 125, 50, 0.12);
+            backdrop-filter: blur(8px);
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #81c784;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.4;
+                transform: scale(0.8);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 16px;
+            color: var(--white);
+            opacity: 0;
+            animation: fadeUp 1s ease 0.2s forwards;
+            text-align: center;
+        }
+
+        .hero h1 .highlight {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 1.2vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 680px;
+            line-height: 1.8;
+            margin: 0 auto 28px;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.4s forwards;
+            text-align: center;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.6s forwards;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            animation: bounceDown 2.5s infinite;
+        }
+
+        .scroll-indicator .mouse {
+            width: 22px;
+            height: 34px;
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .scroll-indicator .mouse::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 2px;
+            animation: scrollWheel 1.8s infinite;
+        }
+
+        @keyframes scrollWheel {
+            0% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(16px);
+            }
+        }
+
+        @keyframes bounceDown {
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(6px);
+            }
+        }
+
+        /* ============================================
+                   PROMO BANNER - 0% APR
+                   ============================================ */
+        .promo-banner {
+            background: var(--green-gradient);
+            padding: 40px 0;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-banner::before {
+            content: '🌾';
+            position: absolute;
+            font-size: 120px;
+            opacity: 0.05;
+            right: -20px;
+            top: -30px;
+            transform: rotate(15deg);
+        }
+
+        .promo-banner::after {
+            content: '🚜';
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.05;
+            left: -10px;
+            bottom: -20px;
+            transform: rotate(-10deg);
+        }
+
+        .promo-banner .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .promo-banner .promo-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .promo-banner .promo-badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 20px;
+            border-radius: 50px;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .promo-banner .promo-text {
+            color: var(--white);
+        }
+
+        .promo-banner .promo-text h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+
+        .promo-banner .promo-text h3 .highlight-gold {
+            color: var(--secondary);
+        }
+
+        .promo-banner .promo-text p {
+            opacity: 0.8;
             font-size: 0.95rem;
-            margin-bottom: 0;
+        }
+
+        .promo-banner .btn-promo {
+            display: inline-block;
+            padding: 14px 36px;
+            background: var(--white);
+            color: var(--accent-green-dark);
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .promo-banner .btn-promo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            background: var(--secondary);
+            color: var(--primary);
         }
 
         /* ============================================
                    STATS SECTION
                    ============================================ */
-        .stats-farming {
+        .stats-section {
             padding: 60px 0;
-            background: var(--primary-navy);
-            color: white;
+            background: var(--primary);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid var(--secondary);
+            width: 100%;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(244, 196, 48, 0.05), transparent 70%);
+            border-radius: 50%;
+            animation: float-bg 20s ease-in-out infinite;
+        }
+
+        .stats-section::after {
+            content: '🌾 🌾 🌾';
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.02;
+            left: -60px;
+            bottom: -40px;
+            pointer-events: none;
+            color: var(--secondary);
+        }
+
+        @keyframes float-bg {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(30px, -30px) scale(1.1);
+            }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            padding: 32px 24px;
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
 
-        .stats-farming .stat-item {
-            padding: 20px;
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold-gradient);
+            opacity: 0;
+            transition: var(--transition);
         }
 
-        .stats-farming .stat-item .number {
+        .stat-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(244, 196, 48, 0.2);
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-card .stat-icon {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 12px;
+            color: var(--secondary);
+        }
+
+        .stat-card .stat-number {
             font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 800;
-            color: var(--accent-green-light);
+            color: var(--secondary);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-card .stat-number .plus {
+            font-size: 2rem;
+        }
+
+        .stat-card .stat-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        .stat-card .stat-label .highlight-text {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* ============================================
+                   FARMING SERVICES
+                   ============================================ */
+        .farming-services {
+            padding: 100px 0;
+            background: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .farming-services::before {
+            content: '🌱 🌱 🌱';
+            position: absolute;
+            font-size: 150px;
+            opacity: 0.02;
+            right: -60px;
+            top: -40px;
+            pointer-events: none;
+            color: var(--accent-green);
+        }
+
+        .farming-services .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            background: var(--white);
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .service-card .card-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.35;
+            transition: var(--transition);
+            z-index: 0;
+        }
+
+        .service-card:hover .card-bg {
+            opacity: 0.60;
+            transform: scale(1.08);
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom,
+                    rgba(10, 26, 58, 0.40) 0%,
+                    rgba(10, 26, 58, 0.60) 25%,
+                    rgba(10, 26, 58, 0.80) 55%,
+                    rgba(10, 26, 58, 0.95) 100%);
+            z-index: 0;
+            opacity: 0.70;
+            transition: var(--transition);
+        }
+
+        .service-card:hover::after {
+            opacity: 0.55;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold-gradient);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card>*:not(.card-bg) {
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-card .icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            display: block;
+            color: var(--secondary);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .service-card .status-badge {
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--secondary);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            width: fit-content;
+        }
+
+        .service-card .status-badge.operational {
+            background: rgba(46, 125, 50, 0.25);
+            color: #81c784;
+            border-color: rgba(46, 125, 50, 0.2);
+        }
+
+        .service-card .status-badge.coming {
+            background: rgba(244, 196, 48, 0.2);
+            color: var(--secondary);
+            border-color: rgba(244, 196, 48, 0.15);
+        }
+
+        .service-card p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .service-card .learn-more {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            background: rgba(244, 196, 48, 0.15);
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(244, 196, 48, 0.2);
+            width: fit-content;
+        }
+
+        .service-card .learn-more:hover {
+            gap: 14px;
+            color: var(--primary);
+            background: var(--secondary);
+            border-color: var(--secondary);
+            transform: translateX(4px);
+        }
+
+        /* ============================================
+                   PARTS-A-THON PROMO SECTION
+                   ============================================ */
+        .parts-athon {
+            padding: 80px 0;
+            background: var(--white);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .parts-athon::before {
+            content: '🔧';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.02;
+            right: -60px;
+            bottom: -60px;
+            transform: rotate(20deg);
+        }
+
+        .parts-athon-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .parts-athon-content .promo-tag {
+            display: inline-block;
+            padding: 6px 20px;
+            background: var(--accent-red);
+            color: var(--white);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .parts-athon-content h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .parts-athon-content h2 .highlight {
+            color: var(--accent-red);
+        }
+
+        .parts-athon-content p {
+            color: var(--gray);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .parts-athon-content .discount-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(196, 30, 58, 0.08);
+            padding: 12px 24px;
+            border-radius: var(--border-radius-sm);
+            border: 2px solid rgba(196, 30, 58, 0.15);
+            margin-bottom: 24px;
+        }
+
+        .parts-athon-content .discount-badge .number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-red);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .parts-athon-content .discount-badge .text {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .parts-athon-image {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            min-height: 350px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 5rem;
+        }
+
+        .parts-athon-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
 
-        .stats-farming .stat-item .label {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
+        .parts-athon-image .image-fallback {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .parts-athon-image .image-fallback .big-icon {
+            font-size: 5rem;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .parts-athon-image .image-fallback p {
+            font-size: 1rem;
+            opacity: 0.6;
+        }
+
+        /* ============================================
+                   SEASONAL SAVINGS PROMO
+                   ============================================ */
+        .seasonal-savings {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0a1a3a, #1a305a);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .seasonal-savings::before {
+            content: '❄️';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.03;
+            left: -80px;
+            top: -60px;
+        }
+
+        .seasonal-savings::after {
+            content: '🌾';
+            position: absolute;
+            font-size: 180px;
+            opacity: 0.03;
+            right: -60px;
+            bottom: -40px;
+        }
+
+        .seasonal-savings .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .seasonal-savings .savings-badge {
+            display: inline-block;
+            padding: 8px 24px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 50px;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 4px;
+            letter-spacing: 2px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            margin-bottom: 16px;
+        }
+
+        .seasonal-savings h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .seasonal-savings h2 .highlight {
+            color: var(--secondary);
+        }
+
+        .seasonal-savings p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .seasonal-savings .savings-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .seasonal-savings .savings-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            padding: 32px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .seasonal-savings .savings-item:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(244, 196, 48, 0.2);
+        }
+
+        .seasonal-savings .savings-item .icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .seasonal-savings .savings-item h4 {
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .seasonal-savings .savings-item p {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* ============================================
+                   FARMING EQUIPMENT SHOWCASE
+                   ============================================ */
+        .equipment-showcase {
+            padding: 100px 0;
+            background: var(--light-gray);
+            width: 100%;
+        }
+
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .equipment-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            text-align: center;
+        }
+
+        .equipment-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .equipment-item .eq-icon {
+            font-size: 4rem;
+            padding: 40px 20px 20px;
+            display: block;
+        }
+
+        .equipment-item .eq-content {
+            padding: 0 20px 24px;
+        }
+
+        .equipment-item .eq-content h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .equipment-item .eq-content p {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        .equipment-item .eq-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            background: rgba(46, 125, 50, 0.1);
+            color: var(--accent-green);
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-top: 8px;
         }
 
         /* ============================================
                    TESTIMONIALS
                    ============================================ */
-        .testimonials-farming {
-            padding: 80px 0;
-            background: var(--warm-cream);
+        .testimonials {
+            padding: 100px 0;
+            background: var(--white);
+            position: relative;
+            width: 100%;
+        }
+
+        .testimonials::before {
+            content: '" " "';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.015;
+            left: -60px;
+            top: -40px;
+            pointer-events: none;
+            color: var(--primary);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
 
         .testimonial-card {
-            background: white;
-            border-radius: var(--border-radius-md);
-            padding: 30px;
-            box-shadow: var(--shadow-sm);
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+            padding: 36px 32px;
             transition: var(--transition);
-            height: 100%;
             border: 1px solid rgba(0, 0, 0, 0.04);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold-gradient);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover::before {
+            opacity: 1;
         }
 
         .testimonial-card:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-md);
+            box-shadow: var(--shadow);
+            background: var(--white);
         }
 
         .testimonial-card .stars {
-            color: var(--primary-gold);
+            color: var(--secondary);
             margin-bottom: 12px;
             font-size: 0.9rem;
         }
 
         .testimonial-card blockquote {
-            font-size: 0.95rem;
-            color: var(--dark-charcoal);
-            font-style: italic;
+            font-size: 1rem;
+            color: var(--dark);
             line-height: 1.7;
+            font-style: italic;
             margin-bottom: 16px;
         }
 
@@ -586,164 +1633,128 @@
             width: 48px;
             height: 48px;
             border-radius: 50%;
-            background: var(--green-gradient);
+            background: var(--gold-gradient);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--primary);
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
-        .testimonial-card .author .name {
+        .testimonial-card .author .info .name {
             font-weight: 600;
-            color: var(--primary-navy);
+            color: var(--primary);
         }
 
-        .testimonial-card .author .role {
+        .testimonial-card .author .info .company {
             font-size: 0.85rem;
             color: var(--gray);
         }
 
         /* ============================================
-                   CTA
+                   CTA SECTION
                    ============================================ */
-        .cta-farming {
+        .cta {
             padding: 80px 0;
-            background: var(--navy-gradient);
-            text-align: center;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             position: relative;
             overflow: hidden;
+            text-align: center;
+            width: 100%;
         }
 
-        .cta-farming::before {
-            content: '🌾';
+        .cta::before {
+            content: '';
             position: absolute;
-            left: 30px;
-            top: 30px;
-            font-size: 6rem;
-            opacity: 0.05;
+            top: -50%;
+            left: -30%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(244, 196, 48, 0.08), transparent 70%);
+            border-radius: 50%;
+            animation: float-bg 20s ease-in-out infinite;
         }
 
-        .cta-farming h2 {
-            color: white;
+        .cta::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(46, 125, 50, 0.06), transparent 70%);
+            border-radius: 50%;
+            animation: float-bg 25s ease-in-out infinite reverse;
+        }
+
+        .cta .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta h2 {
             font-size: 3rem;
+            color: var(--white);
             margin-bottom: 16px;
         }
 
-        .cta-farming h2 .highlight {
-            color: var(--accent-green-light);
+        .cta h2 .highlight {
+            color: var(--secondary);
         }
 
-        .cta-farming p {
-            color: rgba(255, 255, 255, 0.8);
+        .cta p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.2rem;
             max-width: 600px;
-            margin: 0 auto 30px;
-            font-size: 1.1rem;
+            margin: 0 auto 32px;
+        }
+
+        .cta .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
         }
 
         /* ============================================
                    FOOTER
                    ============================================ */
         .footer {
-            background: var(--primary-navy-dark);
-            color: white;
+            background: var(--primary-dark);
+            color: var(--white);
             padding: 60px 0 0;
             position: relative;
+            width: 100%;
         }
 
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: var(--green-gradient);
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        .footer-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 15px;
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
         }
 
-        .footer-brand .gold {
-            color: var(--primary-gold);
+        .footer-brand h3 .gold {
+            color: var(--secondary);
         }
 
-        .footer-about {
+        .footer-brand p {
             color: rgba(255, 255, 255, 0.6);
-            line-height: 1.8;
-            margin-bottom: 20px;
-            max-width: 350px;
-        }
-
-        .footer h5 {
-            color: white;
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 12px;
-        }
-
-        .footer h5::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--accent-green);
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-gold);
-            transform: translateX(5px);
-        }
-
-        .footer-links a i {
-            color: var(--primary-gold);
-            font-size: 0.7rem;
-        }
-
-        .footer-contact li {
-            display: flex;
-            gap: 12px;
-            color: rgba(255, 255, 255, 0.5);
-            margin-bottom: 12px;
             font-size: 0.95rem;
-        }
-
-        .footer-contact li i {
-            color: var(--primary-gold);
-            width: 20px;
-            margin-top: 4px;
+            line-height: 1.7;
+            margin-bottom: 16px;
         }
 
         .footer-social {
             display: flex;
             gap: 12px;
-            margin-top: 20px;
         }
 
         .footer-social a {
@@ -754,459 +1765,729 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.4);
+            text-decoration: none;
             transition: var(--transition);
             border: 1px solid rgba(255, 255, 255, 0.06);
-            text-decoration: none;
         }
 
         .footer-social a:hover {
-            background: var(--accent-green);
-            color: white;
+            background: var(--secondary);
+            color: var(--primary);
             transform: translateY(-4px);
-            border-color: var(--accent-green);
+            border-color: var(--secondary);
+        }
+
+        .footer h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(4px);
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        .footer-contact li i {
+            color: var(--secondary);
+            width: 20px;
+            margin-top: 4px;
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
             padding: 24px 0;
-            margin-top: 48px;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
             color: rgba(255, 255, 255, 0.3);
             font-size: 0.85rem;
+            text-align: center;
         }
 
         .footer-bottom .gold {
-            color: var(--primary-gold);
+            color: var(--secondary);
+        }
+
+        .footer-bottom .footer-bottom-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         /* ============================================
-                   TOAST
+                   BACK TO TOP BUTTON
                    ============================================ */
-        .toast-notification {
+        .back-top {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: var(--primary-navy);
-            color: white;
-            padding: 16px 24px;
-            border-radius: var(--border-radius-md);
-            box-shadow: var(--shadow-lg);
-            z-index: 9999;
-            border-left: 4px solid var(--accent-green);
-            transform: translateX(500px);
-            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            max-width: 400px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: var(--shadow-gold);
+            z-index: 900;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.9);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
         }
 
-        .toast-notification.show {
-            transform: translateX(0);
+        .back-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
         }
 
-        .toast-notification .toast-icon {
-            color: var(--accent-green-light);
-            margin-right: 10px;
+        .back-top:hover {
+            transform: translateY(-6px) scale(1.08);
+            box-shadow: 0 12px 40px rgba(244, 196, 48, 0.4);
+        }
+
+        .back-top:active {
+            transform: scale(0.95);
         }
 
         /* ============================================
                    RESPONSIVE
                    ============================================ */
+        @media (max-width: 1200px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .equipment-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 992px) {
-            .page-header h1 {
-                font-size: 2.8rem;
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
             }
-            
-            .about-farming .about-image {
-                height: 300px;
-                margin-top: 30px;
+            .parts-athon-grid {
+                grid-template-columns: 1fr;
             }
-            
-            .stats-farming .stat-item .number {
-                font-size: 2.8rem;
+            .testimonials-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .seasonal-savings .savings-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .equipment-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 768px) {
-            .page-header h1 {
+            .menu-toggle {
+                display: flex;
+            }
+            .nav-links {
+                display: none !important;
+            }
+            .hero {
+                min-height: 70vh;
+                padding: 80px 0 40px;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .section-title {
                 font-size: 2.2rem;
             }
-            
-            .about-farming .content h2 {
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            .stat-card {
+                padding: 24px 16px;
+            }
+            .stat-card .stat-number {
                 font-size: 2.2rem;
             }
-            
-            .crop-card {
-                margin-bottom: 20px;
+            .stat-card .stat-label {
+                font-size: 0.75rem;
             }
-            
-            .practice-card {
-                margin-bottom: 16px;
-            }
-            
-            .stats-farming .stat-item .number {
+            .cta h2 {
                 font-size: 2.2rem;
             }
-            
-            .cta-farming h2 {
+            .hero-buttons {
+                flex-direction: column;
+            }
+            .hero-buttons .btn-primary,
+            .hero-buttons .btn-outline {
+                text-align: center;
+                width: 100%;
+            }
+            .cta .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cta .buttons .btn-primary,
+            .cta .buttons .btn-outline {
+                width: 100%;
+                text-align: center;
+            }
+            .slide-dots {
+                bottom: 16px;
+                gap: 10px;
+            }
+            .slide-dots .dot {
+                width: 10px;
+                height: 10px;
+            }
+            .scroll-indicator {
+                display: none;
+            }
+            .navbar-brand .logo-wrapper {
+                width: 40px;
+                height: 40px;
+            }
+            .navbar-brand .brand-text h2 {
+                font-size: 1rem;
+            }
+            .navbar-brand .brand-text span {
+                font-size: 0.55rem;
+                letter-spacing: 2px;
+            }
+            .footer-bottom .footer-bottom-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .promo-banner .container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .promo-banner .promo-content {
+                justify-content: center;
+            }
+            .parts-athon-grid {
+                gap: 30px;
+            }
+            .parts-athon-content h2 {
+                font-size: 2rem;
+            }
+            .seasonal-savings h2 {
                 font-size: 2.2rem;
             }
-            
-            .navbar-brand {
-                font-size: 1.2rem;
+            .seasonal-savings .savings-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
             }
-            
-            .navbar-brand .brand-sub {
-                font-size: 0.5rem;
+            .equipment-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+            .equipment-item .eq-icon {
+                font-size: 3rem;
+                padding: 24px 16px 12px;
+            }
+            .mobile-menu-content ul a {
+                font-size: 1.1rem;
+                padding: 14px 24px;
+            }
+            .mobile-menu-content .mobile-social a {
+                width: 44px;
+                height: 44px;
             }
         }
 
         @media (max-width: 480px) {
-            .page-header h1 {
+            .hero h1 {
                 font-size: 1.8rem;
             }
-            
-            .navbar-brand .brand-icon {
-                width: 35px;
-                height: 35px;
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .stat-card {
+                padding: 18px 12px;
+            }
+            .stat-card .stat-number {
+                font-size: 1.8rem;
+            }
+            .stat-card .stat-icon {
+                font-size: 1.8rem;
+            }
+            .stat-card .stat-label {
+                font-size: 0.65rem;
+            }
+            .navbar-brand .logo-wrapper {
+                width: 34px;
+                height: 34px;
+            }
+            .navbar-brand .brand-text h2 {
+                font-size: 0.85rem;
+            }
+            .navbar-brand .brand-text span {
+                font-size: 0.5rem;
+                letter-spacing: 1px;
+            }
+            .back-top {
+                width: 60px;
+                height: 60px;
+                font-size: 1.4rem;
+                bottom: 16px;
+                right: 16px;
+            }
+            .promo-banner .promo-text h3 {
+                font-size: 1.3rem;
+            }
+            .parts-athon-content .discount-badge .number {
+                font-size: 2rem;
+            }
+            .seasonal-savings h2 {
+                font-size: 1.8rem;
+            }
+            .equipment-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .equipment-item .eq-icon {
+                font-size: 2.5rem;
+                padding: 16px 12px 8px;
+            }
+            .equipment-item .eq-content {
+                padding: 0 12px 16px;
+            }
+            .equipment-item .eq-content h4 {
+                font-size: 0.9rem;
+            }
+            .mobile-menu-content ul a {
                 font-size: 1rem;
+                padding: 12px 20px;
             }
-            
-            .about-farming .content h2 {
-                font-size: 1.8rem;
+            .mobile-menu-content .mobile-social a {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
             }
-            
-            .stats-farming .stat-item .number {
-                font-size: 1.8rem;
-            }
-        }
-
-        /* ============================================
-                   SCROLLBAR
-                   ============================================ */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--warm-cream);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--green-gradient);
-            border-radius: var(--border-radius-xl);
         }
     </style>
 </head>
 <body>
 
     <!-- ============================================
-    TOP BAR
+    NAVBAR
     ============================================ -->
-    <div class="top-bar">
+    <nav class="navbar" id="navbar">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <span class="status-dot"></span>
-                    <span class="me-3"><strong>Operational</strong> • Growing South Sudan's Future</span>
-                    <i class="fas fa-phone-alt me-2"></i> <a href="tel:+211922005177">+211 922 005 177</a>
+            <a href="index.html" class="navbar-brand">
+                <div class="logo-wrapper">
+                    <img src="logo.png" alt="Jolong Enterprises Logo" id="logoImage" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'logo-placeholder\'>J</span>';" />
+                    <span class="logo-placeholder" style="display:none;">J</span>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <a href="farming.html"><i class="fas fa-seedling me-1"></i> Our Farms</a>
-                    <a href="contact-farming.html" class="ms-3"><i class="fas fa-envelope me-1"></i> Contact</a>
-                    <a href="index.html" class="ms-3"><i class="fas fa-arrow-left me-1"></i> Jolong Enterprises</a>
+                <div class="brand-text">
+                    <h2>Jolong <span class="gold">Enterprises</span></h2>
+                    <span>Building South Sudan's Future</span>
                 </div>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html" class="contact-btn">Get in Touch</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ============================================
+    MOBILE MENU OVERLAY
+    ============================================ -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <button class="menu-close" id="mobileMenuClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="mobile-menu-content">
+            <div class="mobile-logo">Jolong Enterprises</div>
+            <div class="mobile-tagline">Building South Sudan's Future</div>
+            <ul>
+                <li><a href="index.html"><span class="icon">🏠</span> Home</a></li>
+                <li><a href="services.html"><span class="icon">⚡</span> Services</a></li>
+                <li><a href="projects.html"><span class="icon">📋</span> Projects</a></li>
+                <li><a href="about.html"><span class="icon">ℹ️</span> About</a></li>
+                <li><a href="testimonials.html"><span class="icon">💬</span> Testimonials</a></li>
+                <li><a href="contact.html" class="contact-mobile"><span class="icon">📞</span> Get in Touch</a></li>
+            </ul>
+            <div class="mobile-social">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
 
     <!-- ============================================
-    NAVBAR
+    FLAG STRIP
     ============================================ -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="navbar">
+    <div class="flag-strip">
+        <div class="black"></div>
+        <div class="red"></div>
+        <div class="green"></div>
+        <div class="blue"></div>
+        <div class="yellow"></div>
+    </div>
+
+    <!-- ============================================
+    HERO SECTION - FARMING
+    ============================================ -->
+    <section class="hero" id="home">
+        <div class="hero-slideshow" id="heroSlideshow">
+            <div class="slide active" style="background-image: url('farming-hero.jpg');">
+            </div>
+            <div class="slide" style="background-image: url('farming-field.jpg');">
+            </div>
+            <div class="slide" style="background-image: url('farming-equipment.jpg');">
+            </div>
+        </div>
+
+        <div class="slide-dots" id="slideDots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="mouse"></div>
+        </div>
+
         <div class="container">
-            <a class="navbar-brand" href="farming.html">
-                <span class="brand-icon"><i class="fas fa-seedling"></i></span>
-                <div>
-                    Jolong <span class="gold-text">Farming</span>
-                    <span class="brand-sub">Growing South Sudan's Future</span>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    🌾 Sustainable Farming Solutions
                 </div>
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="farming.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="crops-livestock.html">Crops & Livestock</a>
-                    </li>
-                   
-                    <li class="nav-item">
-                        <a class="nav-link" href="about-farming.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery-farming.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact-farming.html">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html" style="color: var(--accent-green) !important;">
-                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
-                        </a>
-                    </li>
-                </ul>
-                
-                <div class="d-flex align-items-center">
-                    <a href="contact-farming.html" class="btn btn-contact">
-                        <i class="fas fa-handshake me-2"></i> Partner With Us
+                <h1>
+                    Growing South Sudan's<br />
+                    <span class="highlight">Agricultural Future</span>
+                </h1>
+                <p>
+                    From modern equipment to sustainable practices, Jolong Enterprises is
+                    revolutionizing farming in South Sudan for food security and economic growth.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn-primary">
+                        <i class="fas fa-seedling"></i> Explore Farming Services
+                    </a>
+                    <a href="#equipment" class="btn-outline">
+                        View Equipment <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </div>
-    </nav>
-
-    <!-- ============================================
-    PAGE HEADER
-    ============================================ -->
-    <section class="page-header">
-        <div class="container">
-            <h1>Sustainable <span class="highlight">Farming</span></h1>
-            <p>Growing South Sudan's future through sustainable agricultural practices, 
-            food security initiatives, and community empowerment.</p>
-            <div class="breadcrumb-custom">
-                <a href="index.html">Home</a>
-                <span>/</span>
-                <span>Farming</span>
-            </div>
-        </div>
     </section>
 
     <!-- ============================================
-    FEATURES BANNER
+    PROMO BANNER - 0% APR
     ============================================ -->
-    <section class="features-banner" data-aos="fade-up">
+    <section class="promo-banner">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-icon-box">
-                        <span class="icon">🌾</span>
-                        <h5>Sustainable Agriculture</h5>
-                        <p>Environmentally friendly farming practices</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-icon-box">
-                        <span class="icon">🌽</span>
-                        <h5>Food Security</h5>
-                        <p>Ensuring reliable food supply for communities</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-icon-box">
-                        <span class="icon">🐄</span>
-                        <h5>Livestock Farming</h5>
-                        <p>Quality livestock production and management</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-icon-box">
-                        <span class="icon">🤝</span>
-                        <h5>Community Support</h5>
-                        <p>Empowering local farmers and communities</p>
-                    </div>
+            <div class="promo-content">
+                <span class="promo-badge">🔥 LIMITED OFFER</span>
+                <div class="promo-text">
+                    <h3>0% <span class="highlight-gold">APR</span> for 48 months¹</h3>
+                    <p>On select Gator™ XUVs through September 1. Shop now!</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-    ABOUT FARMING
-    ============================================ -->
-    <section class="about-farming">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 content" data-aos="fade-right">
-                    <span class="section-badge" style="display:inline-block; padding:6px 20px; background:rgba(46,125,50,0.12); color:var(--accent-green); border-radius:50px; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; margin-bottom:12px;">
-                        Our Mission
-                    </span>
-                    <h2>Growing South Sudan's <span class="green-text">Future</span></h2>
-                    <p>
-                        Jolong Farming is dedicated to sustainable agricultural practices that 
-                        ensure food security and economic growth for South Sudan. We believe that 
-                        agriculture is the backbone of our nation's development.
-                    </p>
-                    <p>
-                        Through modern farming techniques, crop diversification, and livestock 
-                        management, we are building a resilient agricultural sector that benefits 
-                        communities across South Sudan.
-                    </p>
-                    <p>
-                        Our commitment extends beyond farming — we support local farmers with 
-                        training, resources, and market access to create lasting impact.
-                    </p>
-                    <div class="mt-4">
-                        <a href="about-farming.html" class="btn" style="background:var(--green-gradient); border:none; color:white; padding:12px 32px; border-radius:50px; font-weight:600; text-decoration:none;">
-                            <i class="fas fa-seedling me-2"></i> Learn More
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="about-image">
-                        <div class="image-overlay">
-                            <h4>🌾 Jolong Farming</h4>
-                            <p>Sustainable agriculture for a prosperous South Sudan</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-    CROPS SECTION
-    ============================================ -->
-    <section class="crops-section" id="crops">
-        <div class="container">
-            <div class="text-center" data-aos="fade-up">
-                <span class="section-badge" style="display:inline-block; padding:6px 20px; background:rgba(46,125,50,0.12); color:var(--accent-green); border-radius:50px; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; margin-bottom:12px;">
-                    Our Crops
-                </span>
-                <h2 class="section-title">What We <span class="green-text">Grow</span></h2>
-                <p class="section-subtitle" style="color:var(--gray); max-width:600px; margin:0 auto 50px;">
-                    We cultivate a variety of crops using sustainable and modern farming techniques.
-                </p>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="crop-card">
-                        <div class="crop-image" style="background-image: url('Sorghum.jpg');">
-                            <span class="crop-badge">Staple Crop</span>
-                        </div>
-                        <div class="crop-body">
-                            <h4>🌾 Sorghum</h4>
-                            <p>Drought-resistant grain essential for food security and livestock feed.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="crop-card">
-                        <div class="crop-image" style="background-image: url('Maize.jpg');">
-                            <span class="crop-badge">Staple Crop</span>
-                        </div>
-                        <div class="crop-body">
-                            <h4>🌽 Maize</h4>
-                            <p>High-yield corn variety for human consumption and animal feed.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="crop-card">
-                        <div class="crop-image" style="background-image: url('Sunflower.jpg');">
-                            <span class="crop-badge">Cash Crop</span>
-                        </div>
-                        <div class="crop-body">
-                            <h4>🌻 Sunflower</h4>
-                            <p>Oil-producing crop for cooking oil and industrial applications.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="crop-card">
-                        <div class="crop-image" style="background-image: url('Vegetables.jpg');">
-                            <span class="crop-badge">Vegetable</span>
-                        </div>
-                        <div class="crop-body">
-                            <h4>🥬 Vegetables</h4>
-                            <p>Fresh vegetables including tomatoes, onions, and leafy greens.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================================
-    SUSTAINABLE PRACTICES
-    ============================================ -->
-    <section class="sustainable-section">
-        <div class="container">
-            <div class="text-center" data-aos="fade-up">
-                <span class="section-badge" style="display:inline-block; padding:6px 20px; background:rgba(255,255,255,0.15); color:var(--primary-gold); border-radius:50px; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; margin-bottom:12px;">
-                    Sustainable Practices
-                </span>
-                <h2 class="section-title">Our <span class="gold-text">Approach</span></h2>
-                <p class="section-subtitle" style="color:rgba(255,255,255,0.8); max-width:600px; margin:0 auto 50px;">
-                    We are committed to environmentally responsible farming practices.
-                </p>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="practice-card">
-                        <span class="icon">🌱</span>
-                        <h5>Organic Farming</h5>
-                        <p>Using natural fertilizers and pest control methods</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="practice-card">
-                        <span class="icon">💧</span>
-                        <h5>Water Conservation</h5>
-                        <p>Efficient irrigation and water management systems</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="practice-card">
-                        <span class="icon">🌿</span>
-                        <h5>Crop Rotation</h5>
-                        <p>Maintaining soil health through diverse crop cycles</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="practice-card">
-                        <span class="icon">🤝</span>
-                        <h5>Community Engagement</h5>
-                        <p>Training and supporting local farmers</p>
-                    </div>
-                </div>
-            </div>
+            <a href="#" class="btn-promo">
+                <i class="fas fa-shopping-cart"></i> Shop XUVs
+            </a>
         </div>
     </section>
 
     <!-- ============================================
     STATS SECTION
     ============================================ -->
-    <section class="stats-farming">
+    <section class="stats-section" id="stats">
         <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="stat-item">
-                        <span class="number" data-count="500">0</span>
-                        <span class="label">Hectares Under Cultivation</span>
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="stat-icon">🌾</span>
+                    <span class="stat-number" data-count="500">0<span class="plus">+</span></span>
+                    <span class="stat-label">Hectares <span class="highlight-text">Cultivated</span></span>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="stat-icon">🚜</span>
+                    <span class="stat-number" data-count="25">0<span class="plus">+</span></span>
+                    <span class="stat-label">Equipment <span class="highlight-text">Units</span></span>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <span class="stat-icon">👨‍🌾</span>
+                    <span class="stat-number" data-count="50">0<span class="plus">+</span></span>
+                    <span class="stat-label">Farmers <span class="highlight-text">Trained</span></span>
+                </div>
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="400">
+                    <span class="stat-icon">⭐</span>
+                    <span class="stat-number" data-count="98">0<span class="plus">%</span></span>
+                    <span class="stat-label">Satisfaction <span class="highlight-text">Rate</span></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    FARMING SERVICES
+    ============================================ -->
+    <section class="farming-services" id="services">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge-green">What We Offer</span>
+                <h2 class="section-title">
+                    Our <span class="green-highlight">Farming</span> Services
+                </h2>
+                <p class="section-subtitle" style="margin:0 auto 48px;">
+                    Comprehensive agricultural solutions from seed to harvest, designed for
+                    South Sudan's unique climate and growing conditions.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service 1 - Crop Farming -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-bg" style="background-image: url('crop-farming.jpg');"></div>
+                    <span class="icon">🌾</span>
+                    <span class="status-badge operational">● Operational</span>
+                    <h3>Crop Farming</h3>
+                    <p>Sustainable cultivation of maize, sorghum, cassava, and other staple crops for food security.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </div>
+
+                <!-- Service 2 - Equipment Sales -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="card-bg" style="background-image: url('equipment-sales.jpg');"></div>
+                    <span class="icon">🚜</span>
+                    <span class="status-badge operational">● Operational</span>
+                    <h3>Equipment Sales</h3>
+                    <p>High-quality tractors, harvesters, and precision farming technology with financing options.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </div>
+
+                <!-- Service 3 - Parts & Service -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-bg" style="background-image: url('parts-service.jpg');"></div>
+                    <span class="icon">🔧</span>
+                    <span class="status-badge operational">● Operational</span>
+                    <h3>Parts & Service</h3>
+                    <p>Genuine parts and expert maintenance to keep your farming equipment running at peak performance.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </div>
+
+                <!-- Service 4 - Precision Upgrades -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="card-bg" style="background-image: url('precision-upgrades.jpg');"></div>
+                    <span class="icon">📡</span>
+                    <span class="status-badge coming">● Coming Soon</span>
+                    <h3>Precision Upgrades</h3>
+                    <p>GPS-guided farming, automated irrigation, and smart technology for maximum yield.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </div>
+
+                <!-- Service 5 - Harvesting -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-bg" style="background-image: url('harvesting.jpg');"></div>
+                    <span class="icon">🌽</span>
+                    <span class="status-badge operational">● Operational</span>
+                    <h3>Harvesting Services</h3>
+                    <p>Professional harvesting solutions to tackle more acres and tighter windows efficiently.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </div>
+
+                <!-- Service 6 - Used Equipment -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="350">
+                    <div class="card-bg" style="background-image: url('used-equipment.jpg');"></div>
+                    <span class="icon">🔄</span>
+                    <span class="status-badge operational">● Operational</span>
+                    <h3>Used Equipment</h3>
+                    <p>Quality pre-owned tractors, mowers, and Gator utility vehicles at affordable prices.</p>
+                    <span class="learn-more">Learn More <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    PARTS-A-THON PROMO SECTION
+    ============================================ -->
+    <section class="parts-athon" id="parts-athon">
+        <div class="container">
+            <div class="parts-athon-grid">
+                <div class="parts-athon-content" data-aos="fade-right">
+                    <span class="promo-tag">🔥 Special Offer</span>
+                    <h2>Time to Harvest? <br><span class="highlight">Time to Automate.</span></h2>
+                    <p>
+                        Harvest technology to tackle more acres and tighter windows – 
+                        maximize your yield with our advanced harvesting solutions.
+                    </p>
+                    <div class="discount-badge">
+                        <span class="number">15%</span>
+                        <span class="text">Off² Thousands of Compact Tractor Parts</span>
+                    </div>
+                    <p style="font-size: 0.95rem; color: var(--gray); margin-bottom: 24px;">
+                        <strong>Season Saving:</strong> Get 15% off³ Gator strong, all seasons
+                    </p>
+                    <a href="#" class="btn-secondary">
+                        <i class="fas fa-tools"></i> Dig in at Parts-A-Thon
+                    </a>
+                </div>
+                <div class="parts-athon-image" data-aos="fade-left">
+                    <div class="image-fallback">
+                        <span class="big-icon">🔧</span>
+                        <h3 style="color: var(--white); font-size: 1.5rem; margin-top: 16px;">Parts-A-Thon</h3>
+                        <p>15% Off Thousands of Parts</p>
+                        <p style="font-size: 0.85rem; opacity: 0.5;">Visit our service center today</p>
                     </div>
                 </div>
-                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="stat-item">
-                        <span class="number" data-count="200">0</span>
-                        <span class="label">Local Farmers Supported</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    SEASONAL SAVINGS PROMO
+    ============================================ -->
+    <section class="seasonal-savings" id="seasonal">
+        <div class="container">
+            <span class="savings-badge">❄️ Seasonal Savings</span>
+            <h2>Season Saving: <span class="highlight">Get 15% Off</span></h2>
+            <p>Gator strong, all seasons. Prepare your equipment for every weather condition.</p>
+
+            <div class="savings-grid">
+                <div class="savings-item" data-aos="fade-up" data-aos-delay="100">
+                    <span class="icon">❄️</span>
+                    <h4>Winter Protection</h4>
+                    <p>Cold-weather kits and maintenance packages</p>
+                </div>
+                <div class="savings-item" data-aos="fade-up" data-aos-delay="200">
+                    <span class="icon">🌧️</span>
+                    <h4>Rain-Ready Equipment</h4>
+                    <p>Water-resistant parts and seasonal upgrades</p>
+                </div>
+                <div class="savings-item" data-aos="fade-up" data-aos-delay="300">
+                    <span class="icon">☀️</span>
+                    <h4>Summer Service</h4>
+                    <p>Heat protection and cooling system maintenance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    EQUIPMENT SHOWCASE
+    ============================================ -->
+    <section class="equipment-showcase" id="equipment">
+        <div class="container">
+            <div class="text-center" data-aos="fade-up">
+                <span class="section-badge">Our Equipment</span>
+                <h2 class="section-title">
+                    Premium <span class="highlight">Farming</span> Equipment
+                </h2>
+                <p class="section-subtitle" style="margin:0 auto 48px;">
+                    Quality machinery and tools to power your farming operations.
+                </p>
+            </div>
+
+            <div class="equipment-grid">
+                <div class="equipment-item" data-aos="fade-up" data-aos-delay="100">
+                    <span class="eq-icon">🚜</span>
+                    <div class="eq-content">
+                        <h4>Compact Tractors</h4>
+                        <p>Powerful and versatile for all farm sizes</p>
+                        <span class="eq-tag">In Stock</span>
                     </div>
                 </div>
-                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="stat-item">
-                        <span class="number" data-count="10">0</span>
-                        <span class="label">Crop Varieties</span>
+                <div class="equipment-item" data-aos="fade-up" data-aos-delay="150">
+                    <span class="eq-icon">🌾</span>
+                    <div class="eq-content">
+                        <h4>Harvesters</h4>
+                        <p>Efficient harvesting for maximum yield</p>
+                        <span class="eq-tag">Limited Stock</span>
                     </div>
                 </div>
-                <div class="col-md-3 col-6" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="stat-item">
-                        <span class="number" data-count="1000">0</span>
-                        <span class="label">Families Fed</span>
+                <div class="equipment-item" data-aos="fade-up" data-aos-delay="200">
+                    <span class="eq-icon">🚗</span>
+                    <div class="eq-content">
+                        <h4>Gator XUVs</h4>
+                        <p>0% APR for 48 months¹ on select models</p>
+                        <span class="eq-tag" style="background:rgba(244,196,48,0.15);color:var(--secondary);">Special Offer</span>
+                    </div>
+                </div>
+                <div class="equipment-item" data-aos="fade-up" data-aos-delay="250">
+                    <span class="eq-icon">✂️</span>
+                    <div class="eq-content">
+                        <h4>Mowers</h4>
+                        <p>Precision cutting for all terrain</p>
+                        <span class="eq-tag">In Stock</span>
                     </div>
                 </div>
             </div>
@@ -1216,82 +2497,78 @@
     <!-- ============================================
     TESTIMONIALS
     ============================================ -->
-    <section class="testimonials-farming">
+    <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="text-center" data-aos="fade-up">
-                <span class="section-badge" style="display:inline-block; padding:6px 20px; background:rgba(46,125,50,0.12); color:var(--accent-green); border-radius:50px; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:2px; margin-bottom:12px;">
-                    Testimonials
-                </span>
-                <h2 class="section-title">What Our <span class="green-text">Partners Say</span></h2>
-                <p class="section-subtitle" style="color:var(--gray); max-width:600px; margin:0 auto 50px;">
-                    Hear from the farmers and communities we work with.
+                <span class="section-badge">Testimonials</span>
+                <h2 class="section-title">
+                    What Our <span class="highlight">Farmers Say</span>
+                </h2>
+                <p class="section-subtitle" style="margin:0 auto 48px;">
+                    Real feedback from farmers who trust Jolong Enterprises for their agricultural needs.
                 </p>
             </div>
 
-            <div class="row">
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial-card">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <blockquote>
-                            "Jolong Farming has transformed our community. The training and support 
-                            has helped us increase our yields significantly."
-                        </blockquote>
-                        <div class="author">
-                            <div class="avatar">JD</div>
-                            <div>
-                                <div class="name">John Doe</div>
-                                <div class="role">Local Farmer</div>
-                            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>
+                        "Jolong's equipment and farming support have transformed our operations. The 0% financing
+                        made it possible for us to upgrade our machinery and increase production."
+                    </blockquote>
+                    <div class="author">
+                        <div class="avatar">JA</div>
+                        <div class="info">
+                            <div class="name">John Atem</div>
+                            <div class="company">Commercial Farmer, Juba</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-card">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <blockquote>
-                            "The sustainable farming practices taught by Jolong have improved our 
-                            soil quality and crop production dramatically."
-                        </blockquote>
-                        <div class="author">
-                            <div class="avatar">MS</div>
-                            <div>
-                                <div class="name">Mary Smith</div>
-                                <div class="role">Community Leader</div>
-                            </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>
+                        "The Parts-A-Thon sale saved us thousands on tractor maintenance. Their service team is
+                        professional and always ready to help with our farming challenges."
+                    </blockquote>
+                    <div class="author">
+                        <div class="avatar">SM</div>
+                        <div class="info">
+                            <div class="name">Sarah Malek</div>
+                            <div class="company">Agricultural Cooperative Lead</div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="testimonial-card">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <blockquote>
-                            "Jolong Farming is leading the way in agricultural development in South 
-                            Sudan. We are proud to be their partners."
-                        </blockquote>
-                        <div class="author">
-                            <div class="avatar">PK</div>
-                            <div>
-                                <div class="name">Peter Khamis</div>
-                                <div class="role">NGO Partner</div>
-                            </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <blockquote>
+                        "The harvesting technology from Jolong helped us tackle more acres in less time.
+                        Their precision upgrades have been a game-changer for our farm's productivity."
+                    </blockquote>
+                    <div class="author">
+                        <div class="avatar">DK</div>
+                        <div class="info">
+                            <div class="name">David Kuol</div>
+                            <div class="company">Farm Owner, Equatoria Region</div>
                         </div>
                     </div>
                 </div>
@@ -1300,20 +2577,24 @@
     </section>
 
     <!-- ============================================
-    CTA
+    CTA SECTION
     ============================================ -->
-    <section class="cta-farming">
+    <section class="cta" id="contact">
         <div class="container">
-            <h2>Partner with <span class="highlight">Jolong Farming</span></h2>
-            <p>Join us in building a sustainable agricultural future for South Sudan. 
-            Whether you're a farmer, business, or organization, we'd love to work with you.</p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <a href="contact-farming.html" class="btn" style="display:inline-flex; padding:16px 48px; font-size:1.1rem; background:var(--green-gradient); color:white; border:none; border-radius:50px; font-weight:700; text-decoration:none;">
-                    <i class="fas fa-handshake me-2"></i> Partner With Us
-                </a>
-                <a href="tel:+211922005177" class="btn" style="display:inline-flex; padding:16px 48px; font-size:1.1rem; background:transparent; color:white; border:2px solid white; border-radius:50px; font-weight:700; text-decoration:none;">
-                    <i class="fas fa-phone me-2"></i> +211 922 005 177
-                </a>
+            <div data-aos="zoom-in">
+                <h2>Ready to <span class="highlight">Grow</span> Your Farm?</h2>
+                <p>
+                    Contact us today for equipment, parts, or farming services. Let's build
+                    a sustainable agricultural future for South Sudan together.
+                </p>
+                <div class="buttons">
+                    <a href="mailto:info@jolonges.com" class="btn-primary">
+                        <i class="fas fa-envelope"></i> Email Us
+                    </a>
+                    <a href="tel:+211922005177" class="btn-outline">
+                        <i class="fas fa-phone"></i> Call Us
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1321,149 +2602,272 @@
     <!-- ============================================
     FOOTER
     ============================================ -->
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="footer-brand">Jolong <span class="gold">Farming</span></div>
-                    <p class="footer-about">
-                        Sustainable agriculture for food security and economic growth in South Sudan. 
-                        Modern farming techniques supporting local communities.
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Jolong <span class="gold">Enterprises</span> Ltd</h3>
+                    <p>
+                        Building South Sudan's future through excellence in hospitality,
+                        infrastructure, transportation, and agriculture.
                     </p>
                     <div class="footer-social">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                
-                <div class="col-lg-2 col-md-4 mb-4">
-                    <h5>Quick Links</h5>
+
+                <div>
+                    <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="farming.html"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="crops.html"><i class="fas fa-chevron-right"></i> Crops</a></li>
-                        <li><a href="livestock.html"><i class="fas fa-chevron-right"></i> Livestock</a></li>
-                        <li><a href="about-farming.html"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li><a href="contact-farming.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
                     </ul>
                 </div>
-                
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h5>Contact Info</h5>
+
+                <div>
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html#bar-restaurant">Bar & Restaurant</a></li>
+                        <li><a href="services.html#apartments">Apartments</a></li>
+                        <li><a href="services.html#transportation">Transportation</a></li>
+                        <li><a href="services.html#warehouse">Warehouse Building</a></li>
+                        <li><a href="farming.html">Farming</a></li>
+                        <li><a href="services.html#ferry">Ferry Crossing</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Contact Info</h4>
                     <ul class="footer-contact">
                         <li><i class="fas fa-map-marker-alt"></i> Juba, South Sudan</li>
-                        <li><i class="fas fa-phone"></i> +211 922 005 177</li>
                         <li><i class="fas fa-envelope"></i> info@jolonges.com</li>
-                        <li><i class="fas fa-clock"></i> 7:00 AM - 6:00 PM Daily</li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-3 col-md-4 mb-4">
-                    <h5>Farm Hours</h5>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-clock"></i> Monday - Sunday</li>
-                        <li style="color: var(--accent-green-light); font-weight: 600;">6:00 AM - 6:00 PM</li>
-                        <li><i class="fas fa-seedling"></i> Growing Season: Year-round</li>
-                        <li><i class="fas fa-tractor"></i> Farm Visits by Appointment</li>
+                        <li><i class="fas fa-phone"></i> +211 922 005 177</li>
+                        <li><i class="fas fa-phone"></i> +1 315 254 6046</li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <p class="mb-0">&copy; 2026 <span class="gold">Jolong Farming</span>. All Rights Reserved.</p>
-                    </div>
-                    <div class="col-md-6 text-md-end">
-                        <a href="index.html" style="color: var(--accent-green-light); text-decoration: none;">
-                            <i class="fas fa-arrow-left me-1"></i> Jolong Enterprises
+                <div class="footer-bottom-row">
+                    <span>&copy; 2026 <span class="gold">Jolong Enterprises Limited</span>. All Rights Reserved. 🇸🇸</span>
+                    <span>
+                        <a href="#" class="back-top-link" id="backTopLink" style="color: var(--secondary); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                            <i class="fas fa-arrow-up"></i> Back to Top
                         </a>
-                    </div>
+                    </span>
                 </div>
             </div>
         </div>
     </footer>
 
     <!-- ============================================
-    TOAST
+    BACK TO TOP BUTTON
     ============================================ -->
-    <div class="toast-notification" id="toast">
-        <div>
-            <i class="fas fa-check-circle toast-icon"></i>
-            <span id="toastMessage">Thank you for your interest!</span>
-        </div>
-    </div>
+    <button class="back-top" id="backTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <!-- ============================================
     SCRIPTS
     ============================================ -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js">
+    </script>
+
     <script>
-        AOS.init({ duration: 600, once: true, offset: 50, easing: 'ease-in-out' });
+        document.addEventListener('DOMContentLoaded', function() {
 
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', function() {
-            navbar.classList.toggle('scrolled', window.pageYOffset > 50);
-        });
-
-        // Counter Animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stats-farming .stat-item .number');
-            
-            counters.forEach(counter => {
-                const target = parseInt(counter.dataset.count);
-                let current = 0;
-                const increment = target / 60;
-                const duration = 2000;
-                const stepTime = duration / 60;
-                
-                const updateCounter = () => {
-                    current += increment;
-                    if (current >= target) {
-                        counter.textContent = target + '+';
-                        return;
-                    }
-                    counter.textContent = Math.floor(current) + '+';
-                    setTimeout(updateCounter, stepTime);
-                };
-                
-                updateCounter();
+            // AOS INIT
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 80,
+                easing: 'ease-in-out'
             });
-        }
 
-        const statsSection = document.querySelector('.stats-farming');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounters();
-                    observer.unobserve(entry.target);
+            // HERO SLIDESHOW
+            (function() {
+                const slides = document.querySelectorAll('.hero-slideshow .slide');
+                const dots = document.querySelectorAll('.slide-dots .dot');
+                let current = 0;
+                let interval;
+
+                function goTo(index) {
+                    slides.forEach(s => s.classList.remove('active'));
+                    dots.forEach(d => d.classList.remove('active'));
+                    slides[index].classList.add('active');
+                    dots[index].classList.add('active');
+                    current = index;
+                }
+
+                function nextSlide() {
+                    goTo((current + 1) % slides.length);
+                }
+
+                function startSlideshow() {
+                    interval = setInterval(nextSlide, 5500);
+                }
+
+                function stopSlideshow() {
+                    clearInterval(interval);
+                }
+
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', function() {
+                        stopSlideshow();
+                        goTo(index);
+                        startSlideshow();
+                    });
+                });
+
+                goTo(0);
+                startSlideshow();
+
+                const hero = document.querySelector('.hero');
+                hero.addEventListener('mouseenter', stopSlideshow);
+                hero.addEventListener('mouseleave', startSlideshow);
+            })();
+
+            // NAVBAR SCROLL
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
                 }
             });
-        }, { threshold: 0.3 });
 
-        observer.observe(statsSection);
+            // MOBILE MENU
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileOverlay = document.getElementById('mobileMenuOverlay');
+            const mobileClose = document.getElementById('mobileMenuClose');
 
-        // Toast function
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            const toastMessage = document.getElementById('toastMessage');
-            toastMessage.textContent = message;
-            toast.classList.add('show');
-            clearTimeout(toast._timeout);
-            toast._timeout = setTimeout(() => toast.classList.remove('show'), 3000);
-        }
+            function openMobileMenu() {
+                mobileOverlay.classList.add('open');
+                menuToggle.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
 
-        const footerYear = document.querySelector('.footer-bottom p');
-        if (footerYear) {
-            footerYear.textContent = footerYear.textContent.replace('2026', new Date().getFullYear());
-        }
+            function closeMobileMenu() {
+                mobileOverlay.classList.remove('open');
+                menuToggle.classList.remove('active');
+                document.body.style.overflow = '';
+            }
 
-        console.log('🌾 Jolong Farming - Sustainable Agriculture in South Sudan');
-        console.log('📞 Call: +211 922 005 177');
-        console.log('🌱 Growing South Sudan\'s Future');
+            menuToggle.addEventListener('click', openMobileMenu);
+            mobileClose.addEventListener('click', closeMobileMenu);
+
+            mobileOverlay.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    closeMobileMenu();
+                });
+            });
+
+            mobileOverlay.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeMobileMenu();
+                }
+            });
+
+            // COUNTER ANIMATION
+            const counters = document.querySelectorAll('[data-count]');
+
+            const counterObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.dataset.count);
+                        const duration = 2000;
+                        const startTime = performance.now();
+
+                        function updateCounter(currentTime) {
+                            const elapsed = currentTime - startTime;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            const current = Math.floor(eased * target);
+                            el.innerHTML = current.toLocaleString() + '<span class="plus">' + (el.dataset
+                                .count > 0 ? '+' : '%') + '</span>';
+                            if (progress < 1) requestAnimationFrame(updateCounter);
+                            else {
+                                el.innerHTML = target.toLocaleString() + '<span class="plus">' + (el.dataset
+                                    .count > 0 ? '+' : '%') + '</span>';
+                            }
+                        }
+                        requestAnimationFrame(updateCounter);
+                        counterObserver.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            counters.forEach(function(counter) {
+                counterObserver.observe(counter);
+            });
+
+            // SMOOTH SCROLL
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        const offsetTop = target.offsetTop - 80;
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // BACK TO TOP
+            const backTop = document.getElementById('backTop');
+            const backTopLink = document.getElementById('backTopLink');
+
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 400) {
+                    backTop.classList.add('visible');
+                } else {
+                    backTop.classList.remove('visible');
+                }
+            });
+
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            backTop.addEventListener('click', scrollToTop);
+
+            if (backTopLink) {
+                backTopLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    scrollToTop();
+                });
+            }
+
+            // DYNAMIC YEAR
+            const footerYear = document.querySelector('.footer-bottom-row span:first-child');
+            if (footerYear) {
+                footerYear.innerHTML = footerYear.innerHTML.replace('2026', new Date().getFullYear());
+            }
+
+            console.log('🚀 Jolong Enterprises Limited - Farming Division');
+            console.log('🌾 Sustainable Agriculture for South Sudan');
+            console.log('📧 Contact: info@jolonges.com');
+            console.log('📞 Phone: +211 922 005 177');
+
+        });
     </script>
+
 </body>
 </html>
