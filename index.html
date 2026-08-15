@@ -179,7 +179,7 @@
         }
 
         /* ============================================
-                   NAVBAR
+                   NAVBAR - LOGO SIZE INCREASED
                    ============================================ */
         .navbar {
             position: fixed;
@@ -215,15 +215,15 @@
         }
 
         .navbar-brand .logo-wrapper {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             background: var(--white);
-            border: 2px solid var(--secondary);
+            border: 3px solid var(--secondary);
             flex-shrink: 0;
         }
 
@@ -234,7 +234,7 @@
         }
 
         .navbar-brand .logo-wrapper .logo-placeholder {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             font-weight: 800;
             color: var(--primary);
             font-family: 'Playfair Display', serif;
@@ -245,7 +245,7 @@
         }
 
         .navbar-brand .brand-text h2 {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             margin: 0;
             line-height: 1.2;
             letter-spacing: 0.5px;
@@ -256,7 +256,7 @@
         }
 
         .navbar-brand .brand-text span {
-            font-size: 0.65rem;
+            font-size: 0.7rem;
             opacity: 0.7;
             letter-spacing: 3px;
             text-transform: uppercase;
@@ -1901,14 +1901,17 @@
                 display: none;
             }
             .navbar-brand .logo-wrapper {
-                width: 40px;
-                height: 40px;
+                width: 50px;
+                height: 50px;
+            }
+            .navbar-brand .logo-wrapper .logo-placeholder {
+                font-size: 2rem;
             }
             .navbar-brand .brand-text h2 {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             .navbar-brand .brand-text span {
-                font-size: 0.55rem;
+                font-size: 0.6rem;
                 letter-spacing: 2px;
             }
             .footer-bottom .footer-bottom-row {
@@ -1969,11 +1972,14 @@
                 font-size: 0.65rem;
             }
             .navbar-brand .logo-wrapper {
-                width: 34px;
-                height: 34px;
+                width: 44px;
+                height: 44px;
+            }
+            .navbar-brand .logo-wrapper .logo-placeholder {
+                font-size: 1.6rem;
             }
             .navbar-brand .brand-text h2 {
-                font-size: 0.85rem;
+                font-size: 0.9rem;
             }
             .navbar-brand .brand-text span {
                 font-size: 0.5rem;
@@ -2092,7 +2098,7 @@
     ============================================ -->
     <section class="hero" id="home">
         <div class="hero-slideshow" id="heroSlideshow">
-            <div class="slide active" style="background-image: url('ghg.jpg');">
+            <div class="slide active" style="background-image: url('rtt.jpg');">
             </div>
             <div class="slide" style="background-image: url('ap.jpg');">
             </div>
@@ -2135,32 +2141,32 @@
                 </div>
 
                 <div class="hero-grid" data-aos="fade-up" data-aos-delay="200">
-                    <a href="bar-restaurant.html" class="hero-grid-item">
+                    <a href="services.html#bar-restaurant" class="hero-grid-item">
                         <span class="icon">🍽️</span>
                         <div class="name">Bar & Restaurant</div>
                         <span class="status status-operational">Operational</span>
                     </a>
-                    <a href="apartments.html" class="hero-grid-item">
+                    <a href="services.html#apartments" class="hero-grid-item">
                         <span class="icon">🏢</span>
                         <div class="name">Apartments</div>
                         <span class="status status-coming">Coming Soon</span>
                     </a>
-                    <a href="transportation.html" class="hero-grid-item">
+                    <a href="services.html#transportation" class="hero-grid-item">
                         <span class="icon">🚚</span>
                         <div class="name">Transportation</div>
                         <span class="status status-operational">Operational</span>
                     </a>
-                    <a href="warehouse.html" class="hero-grid-item">
+                    <a href="services.html#warehouse" class="hero-grid-item">
                         <span class="icon">🏗️</span>
                         <div class="name">Warehouse</div>
                         <span class="status status-coming">Coming Soon</span>
                     </a>
-                    <a href="farming.html" class="hero-grid-item">
+                    <a href="services.html#farming" class="hero-grid-item">
                         <span class="icon">🌾</span>
                         <div class="name">Farming</div>
                         <span class="status status-coming">Coming Soon</span>
                     </a>
-                    <a href="ferry.html" class="hero-grid-item">
+                    <a href="services.html#ferry" class="hero-grid-item">
                         <span class="icon">⛴️</span>
                         <div class="name">Ferry Crossing</div>
                         <span class="status status-coming">Coming Soon</span>
@@ -2218,7 +2224,7 @@
 
             <div class="services-grid">
                 <!-- Service 1 - Bar & Restaurant -->
-                <a href="bar-restaurant.html" class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <a href="services.html#bar-restaurant" class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="card-bg" style="background-image: url('brr.jpg');"></div>
                     <span class="icon">🍽️</span>
                     <span class="status-badge operational">● Operational</span>
@@ -2228,7 +2234,7 @@
                 </a>
 
                 <!-- Service 2 - Apartments -->
-                <a href="apartments.html" class="service-card" data-aos="fade-up" data-aos-delay="150">
+                <a href="services.html#apartments" class="service-card" data-aos="fade-up" data-aos-delay="150">
                     <div class="card-bg" style="background-image: url('ap.jpg');"></div>
                     <span class="icon">🏢</span>
                     <span class="status-badge coming">● Coming Soon</span>
@@ -2238,7 +2244,7 @@
                 </a>
 
                 <!-- Service 3 - Transportation -->
-                <a href="transportation.html" class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <a href="services.html#transportation" class="service-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="card-bg" style="background-image: url('hgk.jpg');"></div>
                     <span class="icon">🚚</span>
                     <span class="status-badge operational">● Operational</span>
@@ -2248,7 +2254,7 @@
                 </a>
 
                 <!-- Service 4 - Warehouse -->
-                <a href="warehouse.html" class="service-card" data-aos="fade-up" data-aos-delay="250">
+                <a href="services.html#warehouse" class="service-card" data-aos="fade-up" data-aos-delay="250">
                     <div class="card-bg" style="background-image: url('Modern Warehousing.jpg');"></div>
                     <span class="icon">🏗️</span>
                     <span class="status-badge coming">● Coming Soon</span>
@@ -2258,7 +2264,7 @@
                 </a>
 
                 <!-- Service 5 - Farming -->
-                <a href="farming.html" class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <a href="services.html#farming" class="service-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="card-bg" style="background-image: url('farming.jpg');"></div>
                     <span class="icon">🌾</span>
                     <span class="status-badge coming">● Coming Soon</span>
@@ -2268,7 +2274,7 @@
                 </a>
 
                 <!-- Service 6 - Ferry Crossing -->
-                <a href="ferry.html" class="service-card" data-aos="fade-up" data-aos-delay="350">
+                <a href="services.html#ferry" class="service-card" data-aos="fade-up" data-aos-delay="350">
                     <div class="card-bg" style="background-image: url('fr.jpg');"></div>
                     <span class="icon">⛴️</span>
                     <span class="status-badge coming">● Coming Soon</span>
@@ -2281,7 +2287,8 @@
     </section>
 
     <!-- ============================================
-    PROJECTS SECTION    ============================================ -->
+    PROJECTS SECTION
+    ============================================ -->
     <section class="projects" id="projects">
         <div class="container">
             <div class="text-center" data-aos="fade-up">
@@ -2519,12 +2526,12 @@
                 <div>
                     <h4>Our Services</h4>
                     <ul class="footer-links">
-                        <li><a href="bar-restaurant.html">Bar & Restaurant</a></li>
-                        <li><a href="apartments.html">Apartments</a></li>
-                        <li><a href="transportation.html">Transportation</a></li>
-                        <li><a href="warehouse.html">Warehouse Building</a></li>
-                        <li><a href="farming.html">Farming</a></li>
-                        <li><a href="ferry.html">Ferry Crossing</a></li>
+                        <li><a href="services.html#bar-restaurant">Bar & Restaurant</a></li>
+                        <li><a href="services.html#apartments">Apartments</a></li>
+                        <li><a href="services.html#transportation">Transportation</a></li>
+                        <li><a href="services.html#warehouse">Warehouse Building</a></li>
+                        <li><a href="services.html#farming">Farming</a></li>
+                        <li><a href="services.html#ferry">Ferry Crossing</a></li>
                     </ul>
                 </div>
 
