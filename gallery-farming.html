@@ -6,7 +6,7 @@
     <title>Gallery - Jolong Farming</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Explore the gallery of Jolong Farming - Photos of our crops, livestock, farm operations, and sustainable agriculture in South Sudan.">
+    <meta name="description" content="Explore the gallery of Jolong Farming - Photos of our crops, livestock, tractors, farm operations, and sustainable agriculture in South Sudan.">
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -397,6 +397,10 @@
 
         .gallery-item .gallery-tag.livestock {
             background: rgba(93, 64, 55, 0.7);
+        }
+
+        .gallery-item .gallery-tag.tractor {
+            background: rgba(230, 126, 34, 0.7);
         }
 
         .gallery-item .gallery-tag.farm {
@@ -876,7 +880,7 @@
         <div class="container">
             <h1>Our <span class="highlight">Gallery</span></h1>
             <p>Explore the beauty of sustainable agriculture — from our lush crops and 
-            healthy livestock to our dedicated farming community.</p>
+            healthy livestock to our modern tractors and dedicated farming community.</p>
             <div class="breadcrumb-custom">
                 <a href="farming.html">Home</a>
                 <span>/</span>
@@ -904,6 +908,11 @@
                 <li class="nav-item">
                     <a class="nav-link" data-filter="livestock" onclick="filterGallery('livestock')">
                         <i class="fas fa-paw me-1"></i> Livestock
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-filter="tractor" onclick="filterGallery('tractor')">
+                        <i class="fas fa-tractor me-1"></i> Tractors
                     </a>
                 </li>
                 <li class="nav-item">
@@ -1005,8 +1014,57 @@
                     </div>
                 </div>
 
+                <!-- TRACTORS - 4 Images in 3-Layer Format -->
+                <!-- Tractor 1: 4500 Series (t45.jpg) - First row, left -->
+                <div class="col-lg-4 col-md-6" data-category="tractor" data-aos="zoom-in" data-aos-delay="425">
+                    <div class="gallery-item" onclick="openLightbox(12)">
+                        <img src="t45.jpg" alt="Jolong 4500 Series Tractor">
+                        <span class="gallery-tag tractor">🚜 Tractor</span>
+                        <div class="gallery-overlay">
+                            <h5>Jolong 4500 Series</h5>
+                            <p>120 HP • Heavy-duty tractor for large-scale farming</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tractor 2: 3000 Series (t300.jpg) - First row, center -->
+                <div class="col-lg-4 col-md-6" data-category="tractor" data-aos="zoom-in" data-aos-delay="450">
+                    <div class="gallery-item" onclick="openLightbox(13)">
+                        <img src="t300.jpg" alt="Jolong 3000 Series Tractor">
+                        <span class="gallery-tag tractor">🚜 Tractor</span>
+                        <div class="gallery-overlay">
+                            <h5>Jolong 3000 Series</h5>
+                            <p>75 HP • Versatile mid-range tractor</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tractor 3: 2000 Series (t200.jpg) - First row, right -->
+                <div class="col-lg-4 col-md-6" data-category="tractor" data-aos="zoom-in" data-aos-delay="475">
+                    <div class="gallery-item" onclick="openLightbox(14)">
+                        <img src="t200.jpg" alt="Jolong 2000 Series Tractor">
+                        <span class="gallery-tag tractor">🚜 Tractor</span>
+                        <div class="gallery-overlay">
+                            <h5>Jolong 2000 Series</h5>
+                            <p>45 HP • Compact tractor for small farms</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tractor 4: Harvester Pro (hp.jpg) - Second row, spanning full width (tall) -->
+                <div class="col-lg-12" data-category="tractor" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="gallery-item tall" onclick="openLightbox(15)">
+                        <img src="hp.jpg" alt="Jolong Harvester Pro">
+                        <span class="gallery-tag tractor">🚜 Harvester</span>
+                        <div class="gallery-overlay">
+                            <h5>Jolong Harvester Pro</h5>
+                            <p>150 HP • Combine harvester for efficient grain harvesting</p>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Farm Operations -->
-                <div class="col-lg-6" data-category="farm" data-aos="zoom-in" data-aos-delay="450">
+                <div class="col-lg-6" data-category="farm" data-aos="zoom-in" data-aos-delay="550">
                     <div class="gallery-item tall" onclick="openLightbox(7)">
                         <img src="pa.jpg" alt="Farm Landscape">
                         <span class="gallery-tag farm">🚜 Farm</span>
@@ -1017,7 +1075,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6" data-category="farm" data-aos="zoom-in" data-aos-delay="500">
+                <div class="col-lg-6" data-category="farm" data-aos="zoom-in" data-aos-delay="600">
                     <div class="gallery-item tall" onclick="openLightbox(8)">
                         <img src="ir.jpg" alt="Irrigation System">
                         <span class="gallery-tag farm">💧 Farm</span>
@@ -1029,7 +1087,7 @@
                 </div>
 
                 <!-- Community -->
-                <div class="col-lg-4 col-md-6" data-category="community" data-aos="zoom-in" data-aos-delay="550">
+                <div class="col-lg-4 col-md-6" data-category="community" data-aos="zoom-in" data-aos-delay="650">
                     <div class="gallery-item" onclick="openLightbox(9)">
                         <img src="ft.jpg" alt="Farmers Training">
                         <span class="gallery-tag community">👥 Community</span>
@@ -1040,7 +1098,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6" data-category="community" data-aos="zoom-in" data-aos-delay="600">
+                <div class="col-lg-4 col-md-6" data-category="community" data-aos="zoom-in" data-aos-delay="700">
                     <div class="gallery-item" onclick="openLightbox(10)">
                         <img src="ce.jpg" alt="Community">
                         <span class="gallery-tag community">👥 Community</span>
@@ -1051,7 +1109,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6" data-category="community" data-aos="zoom-in" data-aos-delay="650">
+                <div class="col-lg-4 col-md-6" data-category="community" data-aos="zoom-in" data-aos-delay="750">
                     <div class="gallery-item" onclick="openLightbox(11)">
                         <img src="hc.jpg" alt="Harvest Celebration">
                         <span class="gallery-tag community">🌾 Community</span>
@@ -1179,7 +1237,7 @@
         });
 
         // ============================================
-        // GALLERY DATA
+        // GALLERY DATA (Updated with Tractors)
         // ============================================
         const galleryData = [
             { title: 'Flourishing Sorghum Fields', description: 'Drought-resistant grain ready for harvest', category: 'crops' },
@@ -1193,22 +1251,30 @@
             { title: 'Modern Irrigation Systems', description: 'Efficient water management', category: 'farm' },
             { title: 'Farmers Training Program', description: 'Empowering local farmers', category: 'community' },
             { title: 'Community Engagement', description: 'Building strong rural communities', category: 'community' },
-            { title: 'Harvest Celebration', description: 'Celebrating a successful season', category: 'community' }
+            { title: 'Harvest Celebration', description: 'Celebrating a successful season', category: 'community' },
+            { title: 'Jolong 4500 Series', description: '120 HP • Heavy-duty tractor for large-scale farming', category: 'tractor' },
+            { title: 'Jolong 3000 Series', description: '75 HP • Versatile mid-range tractor', category: 'tractor' },
+            { title: 'Jolong 2000 Series', description: '45 HP • Compact tractor for small farms', category: 'tractor' },
+            { title: 'Jolong Harvester Pro', description: '150 HP • Combine harvester for efficient grain harvesting', category: 'tractor' }
         ];
 
         const imageUrls = [
-            'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1568322445332-4338e5fc4ab9?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1590544669321-9b2d2b3fc26c?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1515823060285-40e468be6af0?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1560449758-4e64d3c6d0c4?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1543269865-cbf427effbad?w=800&h=600&fit=crop',
-            'https://images.unsplash.com/photo-1593113598332-cd288d649433?w=800&h=600&fit=crop'
+            'Sorghum.jpg',
+            'Maize.jpg',
+            'Sunflower.jpg',
+            'Vegetables.jpg',
+            'cows.webp',
+            'goats.jpg',
+            'birds.jpg',
+            'pa.jpg',
+            'ir.jpg',
+            'ft.jpg',
+            'ce.jpg',
+            'hc.jpg',
+            't45.jpg',
+            't300.jpg',
+            't200.jpg',
+            'hp.jpg'
         ];
 
         let currentImageIndex = 0;
@@ -1221,7 +1287,7 @@
                 link.classList.toggle('active', link.dataset.filter === category);
             });
 
-            const items = document.querySelectorAll('#galleryGrid .col-lg-4, #galleryGrid .col-lg-6');
+            const items = document.querySelectorAll('#galleryGrid .col-lg-4, #galleryGrid .col-lg-6, #galleryGrid .col-lg-12');
             let visibleCount = 0;
 
             items.forEach(item => {
@@ -1291,6 +1357,7 @@
 
         console.log('📸 Jolong Farming - Gallery Page');
         console.log('🖼️ ' + galleryData.length + ' photos in gallery');
+        console.log('🚜 4 tractor images added: t45.jpg, t300.jpg, t200.jpg, hp.jpg');
         console.log('📞 Call: +211 922 005 177');
     </script>
 </body>
