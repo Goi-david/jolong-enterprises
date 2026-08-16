@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports & Analytics - Jolong Enterprises</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style>
+        :root {
+            --primary-navy: #0a1a3a;
+            --primary-gold: #f4c430;
+            --accent-green: #2e7d32;
+            --accent-blue: #1a5276;
+            --accent-orange: #e67e22;
+            --warm-cream: #fdf8f0;
+            --gray: #6b7280;
+            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.12);
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--warm-cream);
+            padding-top: 80px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: var(--border-radius-md);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            height: 100%;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-card .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-card .stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .stat-card .stat-change {
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .stat-card .stat-change.up {
+            color: var(--accent-green);
+        }
+
+        .stat-card .stat-change.down {
+            color: #c41e3a;
+        }
+
+        .chart-container {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            height: 100%;
+        }
+
+        .chart-container h6 {
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .btn-gold {
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border: none;
+            border-radius: 50px;
+            padding: 10px 28px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(244, 196, 48, 0.3);
+            color: var(--primary-navy);
+        }
+
+        .btn-outline-gold {
+            background: transparent;
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+            border-radius: 50px;
+            padding: 10px 28px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-outline-gold:hover {
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border-color: var(--primary-gold);
+        }
+
+        .report-item {
+            background: white;
+            border-radius: var(--border-radius-md);
+            padding: 16px 20px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+            margin-bottom: 12px;
+            border-left: 4px solid var(--primary-gold);
+        }
+
+        .report-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(4px);
+        }
+
+        .report-item .report-info h6 {
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .report-item .report-info small {
+            color: var(--gray);
+        }
+
+        @media (max-width: 768px) {
+            .report-item {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
+            .report-item .report-actions {
+                width: 100%;
+                display: flex;
+                gap: 8px;
+            }
+            .report-item .report-actions .btn {
+                flex: 1;
+                text-align: center;
+            }
+            .stat-card .stat-number {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stat-card .stat-number {
+                font-size: 1.4rem;
+            }
+            .chart-container {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="row mb-4">
+            <div class="col-lg-8">
+                <h2 style="font-family:'Playfair Display',serif;font-weight:800;color:var(--primary-navy);">
+                    <i class="fas fa-chart-line" style="color:var(--primary-gold);"></i> Reports & Analytics
+                </h2>
+                <p class="text-muted">Track your business performance across all divisions.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                <button class="btn-gold me-2" onclick="exportCSV()">
+                    <i class="fas fa-file-csv"></i> Export CSV
+                </button>
+                <button class="btn-outline-gold" onclick="exportPDF()">
+                    <i class="fas fa-file-pdf"></i> Export PDF
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="row g-4 mb-4">
+            <div class="col-xl-3 col-lg-6">
+                <div class="stat-card">
+                    <div class="stat-number" style="color:var(--primary-gold);">6</div>
+                    <div class="stat-label">Business Divisions</div>
+                    <div class="stat-change up"><i class="fas fa-arrow-up"></i> +2 this year</div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+                <div class="stat-card">
+                    <div class="stat-number" style="color:var(--accent-green);">1,247</div>
+                    <div class="stat-label">Total Visitors</div>
+                    <div class="stat-change up"><i class="fas fa-arrow-up"></i> +18% this month</div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+                <div class="stat-card">
+                    <div class="stat-number" style="color:var(--accent-blue);">89</div>
+                    <div class="stat-label">Total Bookings</div>
+                    <div class="stat-change up"><i class="fas fa-arrow-up"></i> +12% this month</div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+                <div class="stat-card">
+                    <div class="stat-number" style="color:var(--accent-orange);">94%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                    <div class="stat-change up"><i class="fas fa-arrow-up"></i> +2% this month</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="row g-4 mb-4">
+            <div class="col-lg-8">
+                <div class="chart-container">
+                    <h6><i class="fas fa-chart-bar" style="color:var(--primary-gold);"></i> Monthly Bookings</h6>
+                    <canvas id="bookingsChart" height="250"></canvas>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="chart-container">
+                    <h6><i class="fas fa-chart-pie" style="color:var(--primary-gold);"></i> Division Performance</h6>
+                    <canvas id="divisionChart" height="250"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reports List -->
+        <div class="row">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5><i class="fas fa-file-alt" style="color:var(--primary-gold);"></i> Available Reports</h5>
+                    <button class="btn-gold btn-sm" onclick="generateReport()">
+                        <i class="fas fa-plus"></i> Generate Report
+                    </button>
+                </div>
+
+                <div id="reportList">
+                    <div class="report-item">
+                        <div class="report-info">
+                            <h6>📊 Monthly Performance Report - August 2026</h6>
+                            <small>Generated: Aug 16, 2026 • 1.2 MB</small>
+                        </div>
+                        <div class="report-actions">
+                            <button class="btn btn-sm btn-outline-primary" onclick="showToast('📄 Opening report...')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="btn btn-sm btn-outline-success" onclick="showToast('📥 Downloading...')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" onclick="showToast('🗑️ Report deleted!')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="report-item">
+                        <div class="report-info">
+                            <h6>📈 Division Analytics - Q2 2026</h6>
+                            <small>Generated: Jul 1, 2026 • 856 KB</small>
+                        </div>
+                        <div class="report-actions">
+                            <button class="btn btn-sm btn-outline-primary" onclick="showToast('📄 Opening report...')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="btn btn-sm btn-outline-success" onclick="showToast('📥 Downloading...')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" onclick="showToast('🗑️ Report deleted!')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="report-item">
+                        <div class="report-info">
+                            <h6>👥 User Engagement Report</h6>
+                            <small>Generated: Jun 30, 2026 • 2.3 MB</small>
+                        </div>
+                        <div class="report-actions">
+                            <button class="btn btn-sm btn-outline-primary" onclick="showToast('📄 Opening report...')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="btn btn-sm btn-outline-success" onclick="showToast('📥 Downloading...')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" onclick="showToast('🗑️ Report deleted!')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="report-item">
+                        <div class="report-info">
+                            <h6>📊 Booking Summary - All Divisions</h6>
+                            <small>Generated: Jun 15, 2026 • 1.8 MB</small>
+                        </div>
+                        <div class="report-actions">
+                            <button class="btn btn-sm btn-outline-primary" onclick="showToast('📄 Opening report...')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="btn btn-sm btn-outline-success" onclick="showToast('📥 Downloading...')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" onclick="showToast('🗑️ Report deleted!')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="report-item">
+                        <div class="report-info">
+                            <h6>💰 Revenue Report - Hospitality Division</h6>
+                            <small>Generated: Jun 1, 2026 • 654 KB</small>
+                        </div>
+                        <div class="report-actions">
+                            <button class="btn btn-sm btn-outline-primary" onclick="showToast('📄 Opening report...')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="btn btn-sm btn-outline-success" onclick="showToast('📥 Downloading...')">
+                                <i class="fas fa-download"></i> Download
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" onclick="showToast('🗑️ Report deleted!')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        // ============================================
+        // CHARTS
+        // ============================================
+        // Bookings Chart
+        const ctx1 = document.getElementById('bookingsChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+                datasets: [{
+                    label: 'Bookings',
+                    data: [12, 19, 15, 22, 28, 24, 30, 35],
+                    backgroundColor: [
+                        'rgba(244, 196, 48, 0.6)',
+                        'rgba(244, 196, 48, 0.6)',
+                        'rgba(244, 196, 48, 0.6)',
+                        'rgba(244, 196, 48, 0.6)',
+                        'rgba(244, 196, 48, 0.6)',
+                        'rgba(244, 196, 48, 0.6)',
+                        'rgba(244, 196, 48, 0.6)',
+                        'rgba(244, 196, 48, 0.6)'
+                    ],
+                    borderColor: 'rgba(244, 196, 48, 1)',
+                    borderWidth: 2,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    }
+                }
+            }
+        });
+
+        // Division Chart
+        const ctx2 = document.getElementById('divisionChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+                labels: ['Bar & Restaurant', 'Apartments', 'Transportation', 'Farming', 'Ferry', 'Warehouse'],
+                datasets: [{
+                    data: [30, 20, 18, 15, 10, 7],
+                    backgroundColor: [
+                        '#f4c430',
+                        '#1a5276',
+                        '#2e7d32',
+                        '#e67e22',
+                        '#17a2b8',
+                        '#6c757d'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            boxWidth: 12,
+                            padding: 12,
+                            font: { size: 11 }
+                        }
+                    }
+                }
+            }
+        });
+
+        // ============================================
+        // TOAST
+        // ============================================
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed; bottom: 30px; right: 30px;
+                background: var(--primary-navy); color: white;
+                padding: 16px 24px; border-radius: 12px;
+                box-shadow: var(--shadow-md);
+                z-index: 9999;
+                border-left: 4px solid var(--primary-gold);
+                transform: translateX(500px);
+                transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                max-width: 400px;
+                font-family: 'Poppins', sans-serif;
+            `;
+            toast.innerHTML = `<i class="fas fa-check-circle" style="color:var(--primary-gold);margin-right:10px;"></i> ${message}`;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.transform = 'translateX(0)', 100);
+            setTimeout(() => {
+                toast.style.transform = 'translateX(500px)';
+                setTimeout(() => toast.remove(), 500);
+            }, 3000);
+        }
+
+        // ============================================
+        // EXPORT FUNCTIONS
+        // ============================================
+        function exportCSV() {
+            const data = [
+                ['Division', 'Bookings', 'Revenue'],
+                ['Bar & Restaurant', '45', '$12,000'],
+                ['Apartments', '30', '$8,500'],
+                ['Transportation', '28', '$6,200'],
+                ['Farming', '22', '$4,800'],
+                ['Ferry Crossing', '15', '$3,100'],
+                ['Warehousing', '10', '$2,500']
+            ];
+            let csv = data.map(row => row.join(',')).join('\n');
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'jolong-report-' + new Date().toISOString().slice(0,10) + '.csv';
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('📥 CSV exported successfully!');
+        }
+
+        function exportPDF() {
+            showToast('📄 PDF export started...');
+            setTimeout(() => {
+                showToast('📥 PDF exported successfully!');
+            }, 1500);
+        }
+
+        function generateReport() {
+            showToast('📊 Generating new report...');
+            setTimeout(() => {
+                const list = document.getElementById('reportList');
+                const item = document.createElement('div');
+                item.className = 'report-item';
+                const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+                item.innerHTML = `
+                    <div class="report-info">
+                        <h6>📊 Custom Report - ${date}</h6>
+                        <small>Generated: Just now • 0 KB</small>
+                    </div>
+                    <div class="report-actions">
+                        <button class="btn btn-sm btn-outline-primary" onclick="showToast('📄 Opening report...')">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                        <button class="btn btn-sm btn-outline-success" onclick="showToast('📥 Downloading...')">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                        <button class="btn btn-sm btn-outline-danger" onclick="this.parentElement.parentElement.remove(); showToast('🗑️ Report deleted!')">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                `;
+                list.prepend(item);
+                showToast('✅ Report generated successfully!');
+            }, 1000);
+        }
+
+        console.log('📊 Reports & Analytics - Charts, exports, and report management');
+        console.log('📁 5 reports available');
+        console.log('📈 Chart.js integrated for data visualization');
+    </script>
+</body>
+</html>
