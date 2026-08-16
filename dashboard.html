@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jolong Enterprises - Dashboard</title>
+    <title>Jolong Enterprises - Admin Dashboard</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,6 +28,7 @@
             --accent-green: #2e7d32;
             --accent-blue: #1a5276;
             --accent-orange: #e67e22;
+            --accent-red: #c41e3a;
             --warm-cream: #fdf8f0;
             --warm-ivory: #faf3e8;
             --dark-charcoal: #1a1a2e;
@@ -40,6 +41,7 @@
             --border-radius-lg: 20px;
             --border-radius-xl: 30px;
             --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
         }
 
         * {
@@ -52,31 +54,122 @@
             font-family: 'Poppins', sans-serif;
             background: var(--warm-cream);
             color: var(--dark-charcoal);
-            padding-top: 56px;
+            padding-top: 0;
             overflow-x: hidden;
+        }
+
+        /* ============================================
+                   LOGIN PAGE
+                   ============================================ */
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-navy);
+            background-image: radial-gradient(ellipse at 30% 50%, rgba(244, 196, 48, 0.05) 0%, transparent 70%),
+                              radial-gradient(ellipse at 70% 80%, rgba(244, 196, 48, 0.03) 0%, transparent 50%);
+            padding: 20px;
+        }
+
+        .login-box {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 50px 40px;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: var(--shadow-lg);
+            border-top: 5px solid var(--primary-gold);
+        }
+
+        .login-box .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-box .logo h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            color: var(--primary-navy);
+        }
+
+        .login-box .logo h2 .gold {
+            color: var(--primary-gold);
+        }
+
+        .login-box .logo p {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        .login-box .form-control {
+            border: 2px solid #dee2e6;
+            border-radius: var(--border-radius-sm);
+            padding: 14px 18px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+
+        .login-box .form-control:focus {
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(244, 196, 48, 0.15);
+        }
+
+        .login-box .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .login-box .btn-login:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 196, 48, 0.3);
+        }
+
+        /* ============================================
+                   DASHBOARD (Hidden by default)
+                   ============================================ */
+        .dashboard-wrapper {
+            display: none;
+            min-height: 100vh;
+        }
+
+        .dashboard-wrapper.active {
+            display: flex;
         }
 
         /* ============================================
                    NAVBAR
                    ============================================ */
-        .navbar {
+        .navbar-dash {
             background: rgba(10, 26, 58, 0.98) !important;
             backdrop-filter: blur(16px);
             padding: 0.5rem 0;
             border-bottom: 3px solid var(--primary-gold);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
         }
 
-        .navbar-brand {
+        .navbar-dash .navbar-brand {
             font-size: 1.5rem;
             font-weight: 700;
             color: white !important;
         }
 
-        .navbar-brand .gold {
+        .navbar-dash .navbar-brand .gold {
             color: var(--primary-gold);
         }
 
-        .nav-link {
+        .navbar-dash .nav-link {
             color: rgba(255, 255, 255, 0.7) !important;
             font-weight: 500;
             padding: 0.5rem 1.2rem !important;
@@ -84,13 +177,13 @@
             transition: var(--transition);
         }
 
-        .nav-link:hover,
-        .nav-link.active {
+        .navbar-dash .nav-link:hover,
+        .navbar-dash .nav-link.active {
             color: var(--primary-gold) !important;
             background: rgba(244, 196, 48, 0.08);
         }
 
-        .nav-link i {
+        .navbar-dash .nav-link i {
             margin-right: 8px;
         }
 
@@ -108,25 +201,22 @@
         }
 
         /* ============================================
-                   DASHBOARD LAYOUT
+                   SIDEBAR
                    ============================================ */
-        .dashboard-wrapper {
-            display: flex;
-            min-height: 100vh;
-        }
-
-        /* Sidebar */
         .sidebar {
             width: 280px;
             background: var(--primary-navy);
             color: white;
             padding: 24px 0;
-            position: sticky;
+            position: fixed;
             top: 72px;
-            height: calc(100vh - 72px);
+            left: 0;
+            bottom: 0;
             overflow-y: auto;
             flex-shrink: 0;
             border-right: 2px solid rgba(244, 196, 48, 0.1);
+            z-index: 999;
+            transition: transform 0.3s ease;
         }
 
         .sidebar .sidebar-brand {
@@ -160,6 +250,7 @@
             border-radius: 0;
             border-left: 3px solid transparent;
             font-size: 0.9rem;
+            cursor: pointer;
         }
 
         .sidebar .nav-link:hover,
@@ -187,10 +278,18 @@
             background: var(--accent-green);
         }
 
-        /* Main Content */
+        .sidebar .nav-link .badge.blue {
+            background: var(--accent-blue);
+        }
+
+        /* ============================================
+                   MAIN CONTENT
+                   ============================================ */
         .main-content {
             flex: 1;
             padding: 30px;
+            margin-left: 280px;
+            margin-top: 72px;
         }
 
         /* ============================================
@@ -341,7 +440,7 @@
             color: var(--gray);
         }
 
-        .item-list .item .item-status {
+        .item-status {
             font-size: 0.7rem;
             font-weight: 600;
             padding: 4px 12px;
@@ -363,6 +462,11 @@
             color: var(--primary-gold-dark);
         }
 
+        .item-status.inactive {
+            background: rgba(196, 30, 58, 0.12);
+            color: var(--accent-red);
+        }
+
         /* ============================================
                    FORMS
                    ============================================ */
@@ -373,6 +477,7 @@
             font-family: 'Poppins', sans-serif;
             transition: var(--transition);
             background: white;
+            width: 100%;
         }
 
         .form-control-dash:focus {
@@ -396,39 +501,176 @@
             color: var(--primary-navy);
         }
 
+        .btn-gold-outline {
+            background: transparent;
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+            border-radius: 50px;
+            padding: 10px 28px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-gold-outline:hover {
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border-color: var(--primary-gold);
+        }
+
+        .btn-danger-outline {
+            background: transparent;
+            color: var(--accent-red);
+            border: 2px solid var(--accent-red);
+            border-radius: 50px;
+            padding: 10px 28px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-danger-outline:hover {
+            background: var(--accent-red);
+            color: white;
+        }
+
+        /* ============================================
+                   MODAL
+                   ============================================ */
+        .modal-custom {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 26, 58, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-custom.open {
+            display: flex;
+        }
+
+        .modal-custom .modal-box {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 40px;
+            animation: modalIn 0.3s ease;
+        }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .modal-custom .modal-box .modal-header-custom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--warm-cream);
+        }
+
+        .modal-custom .modal-box .modal-header-custom h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin: 0;
+        }
+
+        .modal-custom .modal-box .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-custom .modal-box .modal-close:hover {
+            color: var(--accent-red);
+            transform: rotate(90deg);
+        }
+
+        /* ============================================
+                   TOAST
+                   ============================================ */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-navy);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-lg);
+            z-index: 99999;
+            border-left: 4px solid var(--primary-gold);
+            transform: translateX(500px);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 400px;
+        }
+
+        .toast-notification.show {
+            transform: translateX(0);
+        }
+
+        .toast-notification .toast-icon {
+            color: var(--primary-gold);
+            margin-right: 10px;
+        }
+
         /* ============================================
                    RESPONSIVE
                    ============================================ */
         @media (max-width: 992px) {
             .sidebar {
-                width: 220px;
+                transform: translateX(-100%);
+            }
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+            .menu-toggle {
+                display: block !important;
             }
         }
 
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            padding: 8px;
+        }
+
         @media (max-width: 768px) {
-            .dashboard-wrapper {
-                flex-direction: column;
-            }
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-                top: 0;
-                border-right: none;
-                border-bottom: 2px solid rgba(244, 196, 48, 0.1);
-                padding: 16px 0;
-            }
-            .sidebar .sidebar-brand {
-                padding: 0 16px 16px;
-            }
-            .sidebar .nav-link {
-                padding: 10px 16px !important;
-            }
-            .main-content {
-                padding: 16px;
-            }
             .stat-card .stat-number {
                 font-size: 1.8rem;
+            }
+            .login-box {
+                padding: 30px 24px;
+            }
+            .modal-custom .modal-box {
+                padding: 24px;
+                margin: 16px;
+            }
+            .card-dashboard .card-header-custom {
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-start;
             }
         }
 
@@ -439,10 +681,12 @@
             .stat-card .stat-number {
                 font-size: 1.4rem;
             }
-            .card-dashboard .card-header-custom {
-                flex-direction: column;
-                gap: 8px;
-                align-items: flex-start;
+            .navbar-dash .navbar-brand {
+                font-size: 1.2rem;
+            }
+            .sidebar .nav-link {
+                padding: 10px 16px !important;
+                font-size: 0.85rem;
             }
         }
 
@@ -466,60 +710,75 @@
 <body>
 
     <!-- ============================================
-    NAVBAR
+    LOGIN PAGE
     ============================================ -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                Jolong <span class="gold">Enterprises</span>
-                <small style="display:block;font-size:0.5rem;letter-spacing:2px;color:var(--primary-gold);">Dashboard</small>
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#" onclick="showSection('overview')">
-                            <i class="fas fa-th-large"></i> Dashboard
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="showSection('content')">
-                            <i class="fas fa-edit"></i> Content
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="showSection('users')">
-                            <i class="fas fa-users"></i> Users
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="showSection('settings')">
-                            <i class="fas fa-cog"></i> Settings
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="logout()">
-                            <i class="fas fa-sign-out-alt"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item ms-lg-3">
-                        <div class="user-avatar">JD</div>
-                    </li>
-                </ul>
+    <div class="login-page" id="loginPage">
+        <div class="login-box">
+            <div class="logo">
+                <h2>Jolong <span class="gold">Enterprises</span></h2>
+                <p>Admin Dashboard Login</p>
             </div>
+            <form onsubmit="login(event)">
+                <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="loginEmail" value="admin@jolonges.com" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" id="loginPassword" value="admin123" required>
+                </div>
+                <button type="submit" class="btn-login">
+                    <i class="fas fa-sign-in-alt me-2"></i> Login
+                </button>
+                <div class="text-center mt-3">
+                    <small class="text-muted">Demo: admin@jolonges.com / admin123</small>
+                </div>
+            </form>
         </div>
-    </nav>
+    </div>
 
     <!-- ============================================
     DASHBOARD WRAPPER
     ============================================ -->
-    <div class="dashboard-wrapper">
+    <div class="dashboard-wrapper" id="dashboardWrapper">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-dash navbar-expand-lg navbar-dark">
+            <div class="container-fluid px-4">
+                <button class="menu-toggle" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#">
+                    Jolong <span class="gold">Enterprises</span>
+                    <small style="display:block;font-size:0.5rem;letter-spacing:2px;color:var(--primary-gold);">Admin Panel</small>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="dashNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item">
+                            <span class="nav-link" style="color:rgba(255,255,255,0.5) !important;font-size:0.8rem;">
+                                <i class="fas fa-user"></i> <span id="currentUser">Admin</span>
+                            </span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="logout()">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <div class="user-avatar" id="userAvatar">A</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
         <!-- Sidebar -->
-        <aside class="sidebar">
+        <aside class="sidebar" id="sidebar">
             <div class="sidebar-brand">
                 <h4>Jolong <span class="gold">Enterprises</span></h4>
                 <small>Admin Panel</small>
@@ -527,42 +786,42 @@
             
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#" onclick="showSection('overview')">
+                    <a class="nav-link active" onclick="showSection('overview')">
                         <i class="fas fa-th-large"></i> Overview
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="showSection('content')">
-                        <i class="fas fa-edit"></i> Content Management
-                        <span class="badge">6</span>
+                    <a class="nav-link" onclick="showSection('divisions')">
+                        <i class="fas fa-cubes"></i> Divisions
+                        <span class="badge" id="divisionCount">6</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="showSection('services')">
-                        <i class="fas fa-cubes"></i> Services
-                        <span class="badge green">6</span>
+                    <a class="nav-link" onclick="showSection('services')">
+                        <i class="fas fa-list"></i> Services
+                        <span class="badge green" id="serviceCount">6</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="showSection('projects')">
+                    <a class="nav-link" onclick="showSection('projects')">
                         <i class="fas fa-folder-open"></i> Projects
-                        <span class="badge">3</span>
+                        <span class="badge blue" id="projectCount">3</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="showSection('testimonials')">
+                    <a class="nav-link" onclick="showSection('testimonials')">
                         <i class="fas fa-quote-right"></i> Testimonials
-                        <span class="badge">9</span>
+                        <span class="badge" id="testimonialCount">9</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="showSection('users')">
+                    <a class="nav-link" onclick="showSection('users')">
                         <i class="fas fa-users"></i> Users
-                        <span class="badge">12</span>
+                        <span class="badge green" id="userCount">12</span>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" onclick="showSection('settings')">
+                    <a class="nav-link" onclick="showSection('settings')">
                         <i class="fas fa-cog"></i> Settings
                     </a>
                 </li>
@@ -581,43 +840,35 @@
             <section id="section-overview" class="content-section active">
                 <div class="section-header">
                     <h2>Dashboard Overview</h2>
-                    <p>Welcome back, Admin! Here's a summary of your website.</p>
+                    <p>Welcome back, <span id="welcomeUser">Admin</span>! Here's a summary of your website.</p>
                 </div>
 
-                <div class="row g-4 mb-4">
+                <div class="row g-4 mb-4" id="statsContainer">
                     <div class="col-xl-3 col-lg-6">
                         <div class="stat-card">
-                            <div class="stat-icon gold">
-                                <i class="fas fa-cubes"></i>
-                            </div>
-                            <div class="stat-number">6</div>
+                            <div class="stat-icon gold"><i class="fas fa-cubes"></i></div>
+                            <div class="stat-number" id="statDivisions">6</div>
                             <div class="stat-label">Business Divisions</div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6">
                         <div class="stat-card">
-                            <div class="stat-icon blue">
-                                <i class="fas fa-folder-open"></i>
-                            </div>
-                            <div class="stat-number">3</div>
+                            <div class="stat-icon blue"><i class="fas fa-folder-open"></i></div>
+                            <div class="stat-number" id="statProjects">3</div>
                             <div class="stat-label">Projects</div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6">
                         <div class="stat-card">
-                            <div class="stat-icon green">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="stat-number">12</div>
+                            <div class="stat-icon green"><i class="fas fa-users"></i></div>
+                            <div class="stat-number" id="statUsers">12</div>
                             <div class="stat-label">Registered Users</div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6">
                         <div class="stat-card">
-                            <div class="stat-icon orange">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="stat-number">5</div>
+                            <div class="stat-icon orange"><i class="fas fa-envelope"></i></div>
+                            <div class="stat-number" id="statMessages">5</div>
                             <div class="stat-label">Messages</div>
                         </div>
                     </div>
@@ -630,7 +881,7 @@
                                 <h6><i class="fas fa-clock"></i> Recent Activity</h6>
                                 <small class="text-muted">Last 7 days</small>
                             </div>
-                            <div class="card-body-custom item-list">
+                            <div class="card-body-custom item-list" id="recentActivity">
                                 <div class="item">
                                     <div class="item-info">
                                         <h6>New User Registered</h6>
@@ -671,25 +922,25 @@
                             <div class="card-body-custom">
                                 <div class="row g-3">
                                     <div class="col-6">
-                                        <div class="p-3 bg-warm-cream rounded text-center">
+                                        <div class="p-3 bg-warm-cream rounded text-center" style="background:var(--warm-cream);">
                                             <div style="font-size:1.5rem;font-weight:700;color:var(--primary-gold);">24</div>
                                             <small class="text-muted">Inquiries</small>
                                         </div>
                                     </div>
                                     <div class="col-6">
-                                        <div class="p-3 bg-warm-cream rounded text-center">
+                                        <div class="p-3 bg-warm-cream rounded text-center" style="background:var(--warm-cream);">
                                             <div style="font-size:1.5rem;font-weight:700;color:var(--accent-green);">18</div>
                                             <small class="text-muted">Bookings</small>
                                         </div>
                                     </div>
                                     <div class="col-6">
-                                        <div class="p-3 bg-warm-cream rounded text-center">
+                                        <div class="p-3 bg-warm-cream rounded text-center" style="background:var(--warm-cream);">
                                             <div style="font-size:1.5rem;font-weight:700;color:var(--accent-blue);">12</div>
                                             <small class="text-muted">New Visitors</small>
                                         </div>
                                     </div>
                                     <div class="col-6">
-                                        <div class="p-3 bg-warm-cream rounded text-center">
+                                        <div class="p-3 bg-warm-cream rounded text-center" style="background:var(--warm-cream);">
                                             <div style="font-size:1.5rem;font-weight:700;color:var(--accent-orange);">3</div>
                                             <small class="text-muted">Pending Tasks</small>
                                         </div>
@@ -701,93 +952,22 @@
                 </div>
             </section>
 
-            <!-- ============ CONTENT MANAGEMENT ============ -->
-            <section id="section-content" class="content-section">
+            <!-- ============ DIVISIONS ============ -->
+            <section id="section-divisions" class="content-section">
                 <div class="section-header">
-                    <h2>Content Management</h2>
-                    <p>Manage all content across your 6 business divisions.</p>
+                    <h2>Divisions Management</h2>
+                    <p>Manage all 6 business divisions.</p>
                 </div>
 
                 <div class="card-dashboard">
                     <div class="card-header-custom">
                         <h6><i class="fas fa-cubes"></i> Business Divisions</h6>
-                        <a href="#" class="btn-gold btn-sm" onclick="addDivision()">
+                        <button class="btn-gold btn-sm" onclick="openModal('division')">
                             <i class="fas fa-plus"></i> Add Division
-                        </a>
+                        </button>
                     </div>
                     <div class="card-body-custom item-list" id="divisionList">
-                        <div class="item">
-                            <div class="item-info">
-                                <h6>🍽️ Bar & Restaurant</h6>
-                                <small>Operational • 5 menu items</small>
-                            </div>
-                            <div>
-                                <button class="btn btn-sm btn-outline-primary me-1" onclick="editDivision('Bar & Restaurant')">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <span class="item-status active">Active</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-info">
-                                <h6>🏢 Apartments</h6>
-                                <small>Coming Soon • 3 properties</small>
-                            </div>
-                            <div>
-                                <button class="btn btn-sm btn-outline-primary me-1" onclick="editDivision('Apartments')">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <span class="item-status coming">Coming Soon</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-info">
-                                <h6>🚚 Transportation</h6>
-                                <small>Operational • 4 services</small>
-                            </div>
-                            <div>
-                                <button class="btn btn-sm btn-outline-primary me-1" onclick="editDivision('Transportation')">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <span class="item-status active">Active</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-info">
-                                <h6>🏗️ Warehousing</h6>
-                                <small>Coming Soon • 4 facilities</small>
-                            </div>
-                            <div>
-                                <button class="btn btn-sm btn-outline-primary me-1" onclick="editDivision('Warehousing')">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <span class="item-status coming">Coming Soon</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-info">
-                                <h6>🌾 Farming</h6>
-                                <small>Operational • 8 crops, 4 tractors</small>
-                            </div>
-                            <div>
-                                <button class="btn btn-sm btn-outline-primary me-1" onclick="editDivision('Farming')">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <span class="item-status active">Active</span>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="item-info">
-                                <h6>⛴️ Ferry Crossing</h6>
-                                <small>Coming Soon • 6 routes</small>
-                            </div>
-                            <div>
-                                <button class="btn btn-sm btn-outline-primary me-1" onclick="editDivision('Ferry Crossing')">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <span class="item-status coming">Coming Soon</span>
-                            </div>
-                        </div>
+                        <!-- Dynamically loaded -->
                     </div>
                 </div>
             </section>
@@ -802,13 +982,13 @@
                 <div class="card-dashboard">
                     <div class="card-header-custom">
                         <h6><i class="fas fa-list"></i> All Services</h6>
-                        <a href="#" class="btn-gold btn-sm" onclick="addService()">
+                        <button class="btn-gold btn-sm" onclick="openModal('service')">
                             <i class="fas fa-plus"></i> Add Service
-                        </a>
+                        </button>
                     </div>
                     <div class="card-body-custom">
                         <div class="table-responsive">
-                            <table class="table table-hover">
+                            <table class="table table-hover" id="serviceTable">
                                 <thead>
                                     <tr>
                                         <th>Service</th>
@@ -817,61 +997,8 @@
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Bar & Restaurant</td>
-                                        <td>Hospitality</td>
-                                        <td><span class="item-status active">Active</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Apartments</td>
-                                        <td>Real Estate</td>
-                                        <td><span class="item-status coming">Coming Soon</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Transportation</td>
-                                        <td>Logistics</td>
-                                        <td><span class="item-status active">Active</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Warehousing</td>
-                                        <td>Storage</td>
-                                        <td><span class="item-status coming">Coming Soon</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Farming</td>
-                                        <td>Agriculture</td>
-                                        <td><span class="item-status active">Active</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ferry Crossing</td>
-                                        <td>Transportation</td>
-                                        <td><span class="item-status coming">Coming Soon</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-sm btn-outline-danger"><i class="fas fa-trash"></i></button>
-                                        </td>
-                                    </tr>
+                                <tbody id="serviceList">
+                                    <!-- Dynamically loaded -->
                                 </tbody>
                             </table>
                         </div>
@@ -889,32 +1016,12 @@
                 <div class="card-dashboard">
                     <div class="card-header-custom">
                         <h6><i class="fas fa-folder-open"></i> Featured Projects</h6>
-                        <a href="#" class="btn-gold btn-sm" onclick="addProject()">
+                        <button class="btn-gold btn-sm" onclick="openModal('project')">
                             <i class="fas fa-plus"></i> Add Project
-                        </a>
+                        </button>
                     </div>
-                    <div class="card-body-custom item-list">
-                        <div class="item">
-                            <div class="item-info">
-                                <h6>56 Jolong Heights</h6>
-                                <small>Apartments • New York • Completed</small>
-                            </div>
-                            <span class="item-status active">Completed</span>
-                        </div>
-                        <div class="item">
-                            <div class="item-info">
-                                <h6>Jolong Bar & Restaurant</h6>
-                                <small>Hospitality • Juba • Operational</small>
-                            </div>
-                            <span class="item-status active">Operational</span>
-                        </div>
-                        <div class="item">
-                            <div class="item-info">
-                                <h6>Jolong Transport Services</h6>
-                                <small>Transportation • Nationwide • Operational</small>
-                            </div>
-                            <span class="item-status active">Operational</span>
-                        </div>
+                    <div class="card-body-custom item-list" id="projectList">
+                        <!-- Dynamically loaded -->
                     </div>
                 </div>
             </section>
@@ -923,38 +1030,18 @@
             <section id="section-testimonials" class="content-section">
                 <div class="section-header">
                     <h2>Testimonials Management</h2>
-                    <p>Manage client testimonials across the website.</p>
+                    <p>Manage client testimonials.</p>
                 </div>
 
                 <div class="card-dashboard">
                     <div class="card-header-custom">
                         <h6><i class="fas fa-quote-right"></i> Client Testimonials</h6>
-                        <a href="#" class="btn-gold btn-sm" onclick="addTestimonial()">
+                        <button class="btn-gold btn-sm" onclick="openModal('testimonial')">
                             <i class="fas fa-plus"></i> Add Testimonial
-                        </a>
+                        </button>
                     </div>
-                    <div class="card-body-custom item-list">
-                        <div class="item">
-                            <div class="item-info">
-                                <h6>⭐⭐⭐⭐⭐ "Best transport services in Juba"</h6>
-                                <small>John Doe • Regional Logistics Director</small>
-                            </div>
-                            <span class="item-status active">Published</span>
-                        </div>
-                        <div class="item">
-                            <div class="item-info">
-                                <h6>⭐⭐⭐⭐⭐ "Amazing dining experience"</h6>
-                                <small>Peter Khamis • Business Executive</small>
-                            </div>
-                            <span class="item-status active">Published</span>
-                        </div>
-                        <div class="item">
-                            <div class="item-info">
-                                <h6>⭐⭐⭐⭐⭐ "Professional and reliable"</h6>
-                                <small>Mary Smith • Project Manager</small>
-                            </div>
-                            <span class="item-status pending">Pending Review</span>
-                        </div>
+                    <div class="card-body-custom item-list" id="testimonialList">
+                        <!-- Dynamically loaded -->
                     </div>
                 </div>
             </section>
@@ -963,15 +1050,15 @@
             <section id="section-users" class="content-section">
                 <div class="section-header">
                     <h2>User Management</h2>
-                    <p>Manage registered users and their permissions.</p>
+                    <p>Manage registered users.</p>
                 </div>
 
                 <div class="card-dashboard">
                     <div class="card-header-custom">
                         <h6><i class="fas fa-users"></i> Registered Users</h6>
-                        <a href="#" class="btn-gold btn-sm" onclick="addUser()">
+                        <button class="btn-gold btn-sm" onclick="openModal('user')">
                             <i class="fas fa-plus"></i> Add User
-                        </a>
+                        </button>
                     </div>
                     <div class="card-body-custom">
                         <div class="table-responsive">
@@ -985,34 +1072,8 @@
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>John Doe</td>
-                                        <td>john@email.com</td>
-                                        <td>Admin</td>
-                                        <td><span class="item-status active">Active</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mary Smith</td>
-                                        <td>mary@email.com</td>
-                                        <td>User</td>
-                                        <td><span class="item-status active">Active</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Peter Khamis</td>
-                                        <td>peter@email.com</td>
-                                        <td>User</td>
-                                        <td><span class="item-status pending">Pending</span></td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
-                                        </td>
-                                    </tr>
+                                <tbody id="userList">
+                                    <!-- Dynamically loaded -->
                                 </tbody>
                             </table>
                         </div>
@@ -1034,24 +1095,24 @@
                                 <h6><i class="fas fa-globe"></i> General Settings</h6>
                             </div>
                             <div class="card-body-custom">
-                                <form onsubmit="saveSettings(event)">
+                                <form id="settingsForm">
                                     <div class="mb-3">
                                         <label class="form-label">Site Title</label>
-                                        <input type="text" class="form-control form-control-dash" value="Jolong Enterprises Limited" required>
+                                        <input type="text" class="form-control form-control-dash" id="siteTitle" value="Jolong Enterprises Limited" required>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Tagline</label>
-                                        <input type="text" class="form-control form-control-dash" value="Building South Sudan's Future" required>
+                                        <input type="text" class="form-control form-control-dash" id="siteTagline" value="Building South Sudan's Future" required>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Contact Email</label>
-                                        <input type="email" class="form-control form-control-dash" value="info@jolonges.com" required>
+                                        <input type="email" class="form-control form-control-dash" id="siteEmail" value="info@jolonges.com" required>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label">Phone Number</label>
-                                        <input type="text" class="form-control form-control-dash" value="+211 922 005 177" required>
+                                        <input type="text" class="form-control form-control-dash" id="sitePhone" value="+211 922 005 177" required>
                                     </div>
-                                    <button type="submit" class="btn-gold">
+                                    <button type="submit" class="btn-gold" onclick="saveSettings(event)">
                                         <i class="fas fa-save"></i> Save Settings
                                     </button>
                                 </form>
@@ -1066,20 +1127,20 @@
                             <div class="card-body-custom">
                                 <div class="mb-3">
                                     <label class="form-label">Primary Color</label>
-                                    <div class="d-flex gap-2">
-                                        <div style="width:40px;height:40px;border-radius:50%;background:#0a1a3a;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 2px #ccc;"></div>
-                                        <div style="width:40px;height:40px;border-radius:50%;background:#f4c430;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 2px #ccc;"></div>
-                                        <div style="width:40px;height:40px;border-radius:50%;background:#2e7d32;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 2px #ccc;"></div>
-                                        <div style="width:40px;height:40px;border-radius:50%;background:#1a5276;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 2px #ccc;"></div>
-                                        <div style="width:40px;height:40px;border-radius:50%;background:#e67e22;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 2px #ccc;"></div>
+                                    <div class="d-flex gap-2 flex-wrap">
+                                        <div style="width:40px;height:40px;border-radius:50%;background:#0a1a3a;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 2px #ccc;" onclick="selectColor('#0a1a3a')"></div>
+                                        <div style="width:40px;height:40px;border-radius:50%;background:#f4c430;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 2px #ccc;" onclick="selectColor('#f4c430')"></div>
+                                        <div style="width:40px;height:40px;border-radius:50%;background:#2e7d32;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 2px #ccc;" onclick="selectColor('#2e7d32')"></div>
+                                        <div style="width:40px;height:40px;border-radius:50%;background:#1a5276;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 2px #ccc;" onclick="selectColor('#1a5276')"></div>
+                                        <div style="width:40px;height:40px;border-radius:50%;background:#e67e22;cursor:pointer;border:2px solid #fff;box-shadow:0 0 0 2px #ccc;" onclick="selectColor('#e67e22')"></div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Theme Mode</label>
-                                    <select class="form-control form-control-dash">
-                                        <option>Light</option>
-                                        <option>Dark</option>
-                                        <option>Auto</option>
+                                    <select class="form-control form-control-dash" id="themeMode">
+                                        <option value="light">Light</option>
+                                        <option value="dark">Dark</option>
+                                        <option value="auto">Auto</option>
                                     </select>
                                 </div>
                                 <button class="btn-gold" onclick="saveAppearance()">
@@ -1095,11 +1156,26 @@
     </div>
 
     <!-- ============================================
-    TOAST NOTIFICATION
+    MODAL
     ============================================ -->
-    <div class="toast-notification" id="toast" style="position:fixed;bottom:30px;right:30px;background:var(--primary-navy);color:white;padding:16px 24px;border-radius:12px;box-shadow:var(--shadow-lg);z-index:9999;border-left:4px solid var(--primary-gold);transform:translateX(500px);transition:transform 0.5s cubic-bezier(0.68,-0.55,0.265,1.55);max-width:400px;">
+    <div class="modal-custom" id="modal">
+        <div class="modal-box">
+            <div class="modal-header-custom">
+                <h5 id="modalTitle">Add New</h5>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Dynamically loaded -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+    TOAST
+    ============================================ -->
+    <div class="toast-notification" id="toast">
         <div>
-            <i class="fas fa-check-circle toast-icon" style="color:var(--primary-gold);margin-right:10px;"></i>
+            <i class="fas fa-check-circle toast-icon"></i>
             <span id="toastMessage">Action completed successfully!</span>
         </div>
     </div>
@@ -1111,26 +1187,738 @@
     
     <script>
         // ============================================
+        // DATA STORE (localStorage)
+        // ============================================
+        function getData(key) {
+            try {
+                return JSON.parse(localStorage.getItem('jolong_' + key)) || [];
+            } catch {
+                return [];
+            }
+        }
+
+        function setData(key, data) {
+            localStorage.setItem('jolong_' + key, JSON.stringify(data));
+        }
+
+        // ============================================
+        // DEFAULT DATA
+        // ============================================
+        function initDefaultData() {
+            if (!localStorage.getItem('jolong_divisions')) {
+                setData('divisions', [
+                    { id: 1, name: 'Bar & Restaurant', icon: '🍽️', status: 'active', description: 'Premium dining and entertainment' },
+                    { id: 2, name: 'Apartments', icon: '🏢', status: 'coming', description: 'Modern residential spaces' },
+                    { id: 3, name: 'Transportation', icon: '🚚', status: 'active', description: 'Logistics and passenger transport' },
+                    { id: 4, name: 'Warehousing', icon: '🏗️', status: 'coming', description: 'State-of-the-art storage' },
+                    { id: 5, name: 'Farming', icon: '🌾', status: 'active', description: 'Sustainable agriculture' },
+                    { id: 6, name: 'Ferry Crossing', icon: '⛴️', status: 'coming', description: 'Water transportation' }
+                ]);
+            }
+
+            if (!localStorage.getItem('jolong_services')) {
+                setData('services', [
+                    { id: 1, name: 'Bar & Restaurant', division: 'Hospitality', status: 'active' },
+                    { id: 2, name: 'Apartments', division: 'Real Estate', status: 'coming' },
+                    { id: 3, name: 'Transportation', division: 'Logistics', status: 'active' },
+                    { id: 4, name: 'Warehousing', division: 'Storage', status: 'coming' },
+                    { id: 5, name: 'Farming', division: 'Agriculture', status: 'active' },
+                    { id: 6, name: 'Ferry Crossing', division: 'Transportation', status: 'coming' }
+                ]);
+            }
+
+            if (!localStorage.getItem('jolong_projects')) {
+                setData('projects', [
+                    { id: 1, name: '56 Jolong Heights', division: 'Apartments', location: 'New York', status: 'completed' },
+                    { id: 2, name: 'Jolong Bar & Restaurant', division: 'Hospitality', location: 'Juba', status: 'operational' },
+                    { id: 3, name: 'Jolong Transport Services', division: 'Transportation', location: 'Nationwide', status: 'operational' }
+                ]);
+            }
+
+            if (!localStorage.getItem('jolong_testimonials')) {
+                setData('testimonials', [
+                    { id: 1, name: 'John Doe', company: 'Regional Logistics Director', content: 'Best transport services in Juba', rating: 5, status: 'published' },
+                    { id: 2, name: 'Peter Khamis', company: 'Business Executive', content: 'Amazing dining experience', rating: 5, status: 'published' },
+                    { id: 3, name: 'Mary Smith', company: 'Project Manager', content: 'Professional and reliable', rating: 5, status: 'pending' }
+                ]);
+            }
+
+            if (!localStorage.getItem('jolong_users')) {
+                setData('users', [
+                    { id: 1, name: 'John Doe', email: 'john@email.com', role: 'admin', status: 'active' },
+                    { id: 2, name: 'Mary Smith', email: 'mary@email.com', role: 'user', status: 'active' },
+                    { id: 3, name: 'Peter Khamis', email: 'peter@email.com', role: 'user', status: 'pending' }
+                ]);
+            }
+
+            if (!localStorage.getItem('jolong_settings')) {
+                setData('settings', {
+                    siteTitle: 'Jolong Enterprises Limited',
+                    tagline: 'Building South Sudan\'s Future',
+                    email: 'info@jolonges.com',
+                    phone: '+211 922 005 177',
+                    primaryColor: '#0a1a3a'
+                });
+            }
+        }
+
+        // ============================================
+        // AUTHENTICATION
+        // ============================================
+        let currentUser = null;
+
+        function login(e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            // Demo authentication
+            if (email === 'admin@jolonges.com' && password === 'admin123') {
+                currentUser = { name: 'Admin', email: email, role: 'admin' };
+                localStorage.setItem('jolong_user', JSON.stringify(currentUser));
+                showDashboard();
+                showToast('✅ Welcome back, Admin!');
+            } else {
+                showToast('❌ Invalid email or password', 'error');
+            }
+        }
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                currentUser = null;
+                localStorage.removeItem('jolong_user');
+                document.getElementById('loginPage').style.display = 'flex';
+                document.getElementById('dashboardWrapper').classList.remove('active');
+                showToast('👋 Logged out successfully!');
+            }
+        }
+
+        function checkAuth() {
+            const saved = localStorage.getItem('jolong_user');
+            if (saved) {
+                currentUser = JSON.parse(saved);
+                showDashboard();
+                showToast('👋 Welcome back, ' + currentUser.name + '!');
+            }
+        }
+
+        function showDashboard() {
+            document.getElementById('loginPage').style.display = 'none';
+            document.getElementById('dashboardWrapper').classList.add('active');
+            document.getElementById('currentUser').textContent = currentUser ? currentUser.name : 'Admin';
+            document.getElementById('welcomeUser').textContent = currentUser ? currentUser.name : 'Admin';
+            document.getElementById('userAvatar').textContent = currentUser ? currentUser.name.charAt(0) : 'A';
+            loadAllData();
+        }
+
+        // ============================================
+        // LOAD ALL DATA
+        // ============================================
+        function loadAllData() {
+            loadDivisions();
+            loadServices();
+            loadProjects();
+            loadTestimonials();
+            loadUsers();
+            updateStats();
+        }
+
+        // ============================================
+        // DIVISIONS
+        // ============================================
+        function loadDivisions() {
+            const divisions = getData('divisions');
+            const list = document.getElementById('divisionList');
+            list.innerHTML = '';
+            divisions.forEach(d => {
+                const statusClass = d.status === 'active' ? 'active' : d.status === 'coming' ? 'coming' : 'inactive';
+                const statusText = d.status.charAt(0).toUpperCase() + d.status.slice(1);
+                list.innerHTML += `
+                    <div class="item">
+                        <div class="item-info">
+                            <h6>${d.icon} ${d.name}</h6>
+                            <small>${d.description || 'No description'}</small>
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-outline-primary me-1" onclick="editDivision(${d.id})">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger me-1" onclick="deleteDivision(${d.id})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                            <span class="item-status ${statusClass}">${statusText}</span>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('divisionCount').textContent = divisions.length;
+        }
+
+        function addDivision(data) {
+            const divisions = getData('divisions');
+            const newId = divisions.length > 0 ? Math.max(...divisions.map(d => d.id)) + 1 : 1;
+            divisions.push({ id: newId, ...data });
+            setData('divisions', divisions);
+            loadDivisions();
+            updateStats();
+            closeModal();
+            showToast('✅ Division added successfully!');
+        }
+
+        function editDivision(id) {
+            const divisions = getData('divisions');
+            const division = divisions.find(d => d.id === id);
+            if (!division) return;
+            // Open modal with edit form
+            openModal('division', division);
+        }
+
+        function deleteDivision(id) {
+            if (!confirm('Are you sure you want to delete this division?')) return;
+            let divisions = getData('divisions');
+            divisions = divisions.filter(d => d.id !== id);
+            setData('divisions', divisions);
+            loadDivisions();
+            updateStats();
+            showToast('🗑️ Division deleted successfully!');
+        }
+
+        // ============================================
+        // SERVICES
+        // ============================================
+        function loadServices() {
+            const services = getData('services');
+            const list = document.getElementById('serviceList');
+            list.innerHTML = '';
+            services.forEach(s => {
+                const statusClass = s.status === 'active' ? 'active' : s.status === 'coming' ? 'coming' : 'inactive';
+                const statusText = s.status.charAt(0).toUpperCase() + s.status.slice(1);
+                list.innerHTML += `
+                    <tr>
+                        <td>${s.name}</td>
+                        <td>${s.division}</td>
+                        <td><span class="item-status ${statusClass}">${statusText}</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary me-1" onclick="editService(${s.id})">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" onclick="deleteService(${s.id})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+            document.getElementById('serviceCount').textContent = services.length;
+        }
+
+        function addService(data) {
+            const services = getData('services');
+            const newId = services.length > 0 ? Math.max(...services.map(s => s.id)) + 1 : 1;
+            services.push({ id: newId, ...data });
+            setData('services', services);
+            loadServices();
+            updateStats();
+            closeModal();
+            showToast('✅ Service added successfully!');
+        }
+
+        function editService(id) {
+            const services = getData('services');
+            const service = services.find(s => s.id === id);
+            if (!service) return;
+            openModal('service', service);
+        }
+
+        function deleteService(id) {
+            if (!confirm('Are you sure you want to delete this service?')) return;
+            let services = getData('services');
+            services = services.filter(s => s.id !== id);
+            setData('services', services);
+            loadServices();
+            updateStats();
+            showToast('🗑️ Service deleted successfully!');
+        }
+
+        // ============================================
+        // PROJECTS
+        // ============================================
+        function loadProjects() {
+            const projects = getData('projects');
+            const list = document.getElementById('projectList');
+            list.innerHTML = '';
+            projects.forEach(p => {
+                const statusClass = p.status === 'completed' || p.status === 'operational' ? 'active' : 'coming';
+                const statusText = p.status.charAt(0).toUpperCase() + p.status.slice(1);
+                list.innerHTML += `
+                    <div class="item">
+                        <div class="item-info">
+                            <h6>${p.name}</h6>
+                            <small>${p.division} • ${p.location || 'N/A'}</small>
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-outline-primary me-1" onclick="editProject(${p.id})">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger me-1" onclick="deleteProject(${p.id})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                            <span class="item-status ${statusClass}">${statusText}</span>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('projectCount').textContent = projects.length;
+        }
+
+        function addProject(data) {
+            const projects = getData('projects');
+            const newId = projects.length > 0 ? Math.max(...projects.map(p => p.id)) + 1 : 1;
+            projects.push({ id: newId, ...data });
+            setData('projects', projects);
+            loadProjects();
+            updateStats();
+            closeModal();
+            showToast('✅ Project added successfully!');
+        }
+
+        function editProject(id) {
+            const projects = getData('projects');
+            const project = projects.find(p => p.id === id);
+            if (!project) return;
+            openModal('project', project);
+        }
+
+        function deleteProject(id) {
+            if (!confirm('Are you sure you want to delete this project?')) return;
+            let projects = getData('projects');
+            projects = projects.filter(p => p.id !== id);
+            setData('projects', projects);
+            loadProjects();
+            updateStats();
+            showToast('🗑️ Project deleted successfully!');
+        }
+
+        // ============================================
+        // TESTIMONIALS
+        // ============================================
+        function loadTestimonials() {
+            const testimonials = getData('testimonials');
+            const list = document.getElementById('testimonialList');
+            list.innerHTML = '';
+            testimonials.forEach(t => {
+                const statusClass = t.status === 'published' ? 'active' : 'pending';
+                const statusText = t.status.charAt(0).toUpperCase() + t.status.slice(1);
+                const stars = '⭐'.repeat(t.rating || 5);
+                list.innerHTML += `
+                    <div class="item">
+                        <div class="item-info">
+                            <h6>${stars} "${t.content}"</h6>
+                            <small>${t.name} • ${t.company || ''}</small>
+                        </div>
+                        <div>
+                            <button class="btn btn-sm btn-outline-primary me-1" onclick="editTestimonial(${t.id})">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger me-1" onclick="deleteTestimonial(${t.id})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                            <span class="item-status ${statusClass}">${statusText}</span>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('testimonialCount').textContent = testimonials.length;
+        }
+
+        function addTestimonial(data) {
+            const testimonials = getData('testimonials');
+            const newId = testimonials.length > 0 ? Math.max(...testimonials.map(t => t.id)) + 1 : 1;
+            testimonials.push({ id: newId, ...data });
+            setData('testimonials', testimonials);
+            loadTestimonials();
+            updateStats();
+            closeModal();
+            showToast('✅ Testimonial added successfully!');
+        }
+
+        function editTestimonial(id) {
+            const testimonials = getData('testimonials');
+            const testimonial = testimonials.find(t => t.id === id);
+            if (!testimonial) return;
+            openModal('testimonial', testimonial);
+        }
+
+        function deleteTestimonial(id) {
+            if (!confirm('Are you sure you want to delete this testimonial?')) return;
+            let testimonials = getData('testimonials');
+            testimonials = testimonials.filter(t => t.id !== id);
+            setData('testimonials', testimonials);
+            loadTestimonials();
+            updateStats();
+            showToast('🗑️ Testimonial deleted successfully!');
+        }
+
+        // ============================================
+        // USERS
+        // ============================================
+        function loadUsers() {
+            const users = getData('users');
+            const list = document.getElementById('userList');
+            list.innerHTML = '';
+            users.forEach(u => {
+                const statusClass = u.status === 'active' ? 'active' : 'pending';
+                const statusText = u.status.charAt(0).toUpperCase() + u.status.slice(1);
+                list.innerHTML += `
+                    <tr>
+                        <td>${u.name}</td>
+                        <td>${u.email}</td>
+                        <td><span class="badge bg-${u.role === 'admin' ? 'gold' : 'info'}">${u.role}</span></td>
+                        <td><span class="item-status ${statusClass}">${statusText}</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-primary me-1" onclick="editUser(${u.id})">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" onclick="deleteUser(${u.id})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+            document.getElementById('userCount').textContent = users.length;
+        }
+
+        function addUser(data) {
+            const users = getData('users');
+            const newId = users.length > 0 ? Math.max(...users.map(u => u.id)) + 1 : 1;
+            users.push({ id: newId, ...data });
+            setData('users', users);
+            loadUsers();
+            updateStats();
+            closeModal();
+            showToast('✅ User added successfully!');
+        }
+
+        function editUser(id) {
+            const users = getData('users');
+            const user = users.find(u => u.id === id);
+            if (!user) return;
+            openModal('user', user);
+        }
+
+        function deleteUser(id) {
+            if (!confirm('Are you sure you want to delete this user?')) return;
+            let users = getData('users');
+            users = users.filter(u => u.id !== id);
+            setData('users', users);
+            loadUsers();
+            updateStats();
+            showToast('🗑️ User deleted successfully!');
+        }
+
+        // ============================================
+        // UPDATE STATS
+        // ============================================
+        function updateStats() {
+            const divisions = getData('divisions');
+            const services = getData('services');
+            const projects = getData('projects');
+            const testimonials = getData('testimonials');
+            const users = getData('users');
+            
+            document.getElementById('statDivisions').textContent = divisions.length;
+            document.getElementById('statProjects').textContent = projects.length;
+            document.getElementById('statUsers').textContent = users.length;
+            document.getElementById('statMessages').textContent = testimonials.filter(t => t.status === 'pending').length;
+        }
+
+        // ============================================
+        // MODAL SYSTEM
+        // ============================================
+        let modalType = '';
+        let editId = null;
+
+        function openModal(type, data = null) {
+            modalType = type;
+            editId = data ? data.id : null;
+            const modal = document.getElementById('modal');
+            const title = document.getElementById('modalTitle');
+            const body = document.getElementById('modalBody');
+
+            const typeNames = {
+                division: 'Division',
+                service: 'Service',
+                project: 'Project',
+                testimonial: 'Testimonial',
+                user: 'User'
+            };
+
+            title.textContent = data ? `Edit ${typeNames[type]}` : `Add New ${typeNames[type]}`;
+
+            let html = '';
+            switch(type) {
+                case 'division':
+                    html = `
+                        <form onsubmit="submitModalForm(event)">
+                            <div class="mb-3">
+                                <label class="form-label">Name</label>
+                                <input type="text" class="form-control form-control-dash" id="f_name" value="${data ? data.name : ''}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Icon (emoji)</label>
+                                <input type="text" class="form-control form-control-dash" id="f_icon" value="${data ? data.icon : '🏢'}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Description</label>
+                                <textarea class="form-control form-control-dash" id="f_description" rows="2">${data ? data.description : ''}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-control form-control-dash" id="f_status">
+                                    <option value="active" ${data && data.status === 'active' ? 'selected' : ''}>Active</option>
+                                    <option value="coming" ${data && data.status === 'coming' ? 'selected' : ''}>Coming Soon</option>
+                                    <option value="inactive" ${data && data.status === 'inactive' ? 'selected' : ''}>Inactive</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-gold w-100">${data ? 'Update' : 'Add'} Division</button>
+                        </form>
+                    `;
+                    break;
+                case 'service':
+                    html = `
+                        <form onsubmit="submitModalForm(event)">
+                            <div class="mb-3">
+                                <label class="form-label">Service Name</label>
+                                <input type="text" class="form-control form-control-dash" id="f_name" value="${data ? data.name : ''}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Division</label>
+                                <input type="text" class="form-control form-control-dash" id="f_division" value="${data ? data.division : ''}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-control form-control-dash" id="f_status">
+                                    <option value="active" ${data && data.status === 'active' ? 'selected' : ''}>Active</option>
+                                    <option value="coming" ${data && data.status === 'coming' ? 'selected' : ''}>Coming Soon</option>
+                                    <option value="inactive" ${data && data.status === 'inactive' ? 'selected' : ''}>Inactive</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-gold w-100">${data ? 'Update' : 'Add'} Service</button>
+                        </form>
+                    `;
+                    break;
+                case 'project':
+                    html = `
+                        <form onsubmit="submitModalForm(event)">
+                            <div class="mb-3">
+                                <label class="form-label">Project Name</label>
+                                <input type="text" class="form-control form-control-dash" id="f_name" value="${data ? data.name : ''}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Division</label>
+                                <input type="text" class="form-control form-control-dash" id="f_division" value="${data ? data.division : ''}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Location</label>
+                                <input type="text" class="form-control form-control-dash" id="f_location" value="${data ? data.location : ''}">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-control form-control-dash" id="f_status">
+                                    <option value="operational" ${data && data.status === 'operational' ? 'selected' : ''}>Operational</option>
+                                    <option value="completed" ${data && data.status === 'completed' ? 'selected' : ''}>Completed</option>
+                                    <option value="coming" ${data && data.status === 'coming' ? 'selected' : ''}>Coming Soon</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-gold w-100">${data ? 'Update' : 'Add'} Project</button>
+                        </form>
+                    `;
+                    break;
+                case 'testimonial':
+                    html = `
+                        <form onsubmit="submitModalForm(event)">
+                            <div class="mb-3">
+                                <label class="form-label">Name</label>
+                                <input type="text" class="form-control form-control-dash" id="f_name" value="${data ? data.name : ''}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Company/Role</label>
+                                <input type="text" class="form-control form-control-dash" id="f_company" value="${data ? data.company : ''}">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Testimonial</label>
+                                <textarea class="form-control form-control-dash" id="f_content" rows="3" required>${data ? data.content : ''}</textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Rating</label>
+                                <select class="form-control form-control-dash" id="f_rating">
+                                    <option value="5" ${data && data.rating === 5 ? 'selected' : ''}>⭐⭐⭐⭐⭐</option>
+                                    <option value="4" ${data && data.rating === 4 ? 'selected' : ''}>⭐⭐⭐⭐</option>
+                                    <option value="3" ${data && data.rating === 3 ? 'selected' : ''}>⭐⭐⭐</option>
+                                    <option value="2" ${data && data.rating === 2 ? 'selected' : ''}>⭐⭐</option>
+                                    <option value="1" ${data && data.rating === 1 ? 'selected' : ''}>⭐</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-control form-control-dash" id="f_status">
+                                    <option value="published" ${data && data.status === 'published' ? 'selected' : ''}>Published</option>
+                                    <option value="pending" ${data && data.status === 'pending' ? 'selected' : ''}>Pending Review</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-gold w-100">${data ? 'Update' : 'Add'} Testimonial</button>
+                        </form>
+                    `;
+                    break;
+                case 'user':
+                    html = `
+                        <form onsubmit="submitModalForm(event)">
+                            <div class="mb-3">
+                                <label class="form-label">Name</label>
+                                <input type="text" class="form-control form-control-dash" id="f_name" value="${data ? data.name : ''}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="email" class="form-control form-control-dash" id="f_email" value="${data ? data.email : ''}" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Role</label>
+                                <select class="form-control form-control-dash" id="f_role">
+                                    <option value="user" ${data && data.role === 'user' ? 'selected' : ''}>User</option>
+                                    <option value="admin" ${data && data.role === 'admin' ? 'selected' : ''}>Admin</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Status</label>
+                                <select class="form-control form-control-dash" id="f_status">
+                                    <option value="active" ${data && data.status === 'active' ? 'selected' : ''}>Active</option>
+                                    <option value="pending" ${data && data.status === 'pending' ? 'selected' : ''}>Pending</option>
+                                    <option value="inactive" ${data && data.status === 'inactive' ? 'selected' : ''}>Inactive</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-gold w-100">${data ? 'Update' : 'Add'} User</button>
+                        </form>
+                    `;
+                    break;
+            }
+
+            body.innerHTML = html;
+            modal.classList.add('open');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('open');
+            editId = null;
+        }
+
+        function submitModalForm(e) {
+            e.preventDefault();
+            const form = e.target;
+            const data = {};
+
+            const fields = ['name', 'icon', 'description', 'division', 'location', 'company', 'content', 'rating', 'email', 'role', 'status'];
+            fields.forEach(f => {
+                const el = document.getElementById('f_' + f);
+                if (el) data[f] = el.value;
+            });
+
+            // Handle specific types
+            switch(modalType) {
+                case 'division':
+                    if (!data.icon) data.icon = '🏢';
+                    if (!data.description) data.description = '';
+                    if (editId) {
+                        const divisions = getData('divisions');
+                        const index = divisions.findIndex(d => d.id === editId);
+                        if (index !== -1) {
+                            divisions[index] = { ...divisions[index], ...data };
+                            setData('divisions', divisions);
+                            loadDivisions();
+                            updateStats();
+                            closeModal();
+                            showToast('✅ Division updated successfully!');
+                        }
+                    } else {
+                        addDivision(data);
+                    }
+                    break;
+                case 'service':
+                    if (editId) {
+                        const services = getData('services');
+                        const index = services.findIndex(s => s.id === editId);
+                        if (index !== -1) {
+                            services[index] = { ...services[index], ...data };
+                            setData('services', services);
+                            loadServices();
+                            updateStats();
+                            closeModal();
+                            showToast('✅ Service updated successfully!');
+                        }
+                    } else {
+                        addService(data);
+                    }
+                    break;
+                case 'project':
+                    if (editId) {
+                        const projects = getData('projects');
+                        const index = projects.findIndex(p => p.id === editId);
+                        if (index !== -1) {
+                            projects[index] = { ...projects[index], ...data };
+                            setData('projects', projects);
+                            loadProjects();
+                            updateStats();
+                            closeModal();
+                            showToast('✅ Project updated successfully!');
+                        }
+                    } else {
+                        addProject(data);
+                    }
+                    break;
+                case 'testimonial':
+                    if (editId) {
+                        const testimonials = getData('testimonials');
+                        const index = testimonials.findIndex(t => t.id === editId);
+                        if (index !== -1) {
+                            testimonials[index] = { ...testimonials[index], ...data };
+                            setData('testimonials', testimonials);
+                            loadTestimonials();
+                            updateStats();
+                            closeModal();
+                            showToast('✅ Testimonial updated successfully!');
+                        }
+                    } else {
+                        addTestimonial(data);
+                    }
+                    break;
+                case 'user':
+                    if (editId) {
+                        const users = getData('users');
+                        const index = users.findIndex(u => u.id === editId);
+                        if (index !== -1) {
+                            users[index] = { ...users[index], ...data };
+                            setData('users', users);
+                            loadUsers();
+                            updateStats();
+                            closeModal();
+                            showToast('✅ User updated successfully!');
+                        }
+                    } else {
+                        addUser(data);
+                    }
+                    break;
+            }
+        }
+
+        // ============================================
         // SECTION NAVIGATION
         // ============================================
         function showSection(section) {
-            // Hide all sections
-            document.querySelectorAll('.content-section').forEach(el => {
-                el.classList.remove('active');
-            });
-            
-            // Show selected section
+            document.querySelectorAll('.content-section').forEach(el => el.classList.remove('active'));
             const target = document.getElementById('section-' + section);
-            if (target) {
-                target.classList.add('active');
-            }
-            
-            // Update sidebar links
-            document.querySelectorAll('.sidebar .nav-link').forEach(link => {
-                link.classList.remove('active');
-            });
-            
-            // Find and activate matching sidebar link
+            if (target) target.classList.add('active');
+
+            document.querySelectorAll('.sidebar .nav-link').forEach(link => link.classList.remove('active'));
             document.querySelectorAll('.sidebar .nav-link').forEach(link => {
                 if (link.textContent.toLowerCase().includes(section)) {
                     link.classList.add('active');
@@ -1139,112 +1927,119 @@
                     link.classList.add('active');
                 }
             });
-            
-            // Update top nav
-            document.querySelectorAll('.navbar .nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.textContent.toLowerCase().includes(section) || 
-                    (section === 'overview' && link.textContent.includes('Dashboard'))) {
-                    link.classList.add('active');
-                }
-            });
+
+            // Close sidebar on mobile
+            if (window.innerWidth <= 992) {
+                document.getElementById('sidebar').classList.remove('open');
+            }
+        }
+
+        function toggleSidebar() {
+            document.getElementById('sidebar').classList.toggle('open');
         }
 
         // ============================================
-        // CRUD FUNCTIONS (Demo)
+        // SETTINGS
         // ============================================
-        function addDivision() {
-            showToast('📋 Opening Add Division form...');
-        }
-
-        function editDivision(name) {
-            showToast('✏️ Editing: ' + name);
-        }
-
-        function addService() {
-            showToast('📋 Opening Add Service form...');
-        }
-
-        function addProject() {
-            showToast('📋 Opening Add Project form...');
-        }
-
-        function addTestimonial() {
-            showToast('📋 Opening Add Testimonial form...');
-        }
-
-        function addUser() {
-            showToast('📋 Opening Add User form...');
-        }
-
         function saveSettings(e) {
             e.preventDefault();
+            const settings = {
+                siteTitle: document.getElementById('siteTitle').value,
+                tagline: document.getElementById('siteTagline').value,
+                email: document.getElementById('siteEmail').value,
+                phone: document.getElementById('sitePhone').value
+            };
+            setData('settings', settings);
             showToast('✅ Settings saved successfully!');
         }
 
+        function selectColor(color) {
+            document.documentElement.style.setProperty('--primary-navy', color);
+            const settings = getData('settings');
+            settings.primaryColor = color;
+            setData('settings', settings);
+            showToast('🎨 Color updated!');
+        }
+
         function saveAppearance() {
-            showToast('🎨 Appearance settings saved!');
-        }
-
-        function logout() {
-            if (confirm('Are you sure you want to logout?')) {
-                showToast('👋 Logged out successfully!');
-                setTimeout(() => {
-                    window.location.href = 'index.html';
-                }, 1500);
+            const mode = document.getElementById('themeMode').value;
+            if (mode === 'dark') {
+                document.body.style.background = '#1a1a2e';
+                document.body.style.color = 'white';
+            } else if (mode === 'light') {
+                document.body.style.background = 'var(--warm-cream)';
+                document.body.style.color = 'var(--dark-charcoal)';
+            } else {
+                document.body.style.background = '';
+                document.body.style.color = '';
             }
+            showToast('🎨 Appearance saved!');
         }
 
         // ============================================
-        // TOAST NOTIFICATION
+        // TOAST
         // ============================================
-        function showToast(message) {
+        function showToast(message, type = 'success') {
             const toast = document.getElementById('toast');
             const toastMessage = document.getElementById('toastMessage');
+            const icon = toast.querySelector('.toast-icon');
             
             toastMessage.textContent = message;
-            toast.classList.add('show');
             
-            clearTimeout(toast._timeout);
-            toast._timeout = setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
-
-        // ============================================
-        // DYNAMIC YEAR
-        // ============================================
-        document.querySelectorAll('.footer-bottom p').forEach(el => {
-            if (el) {
-                el.textContent = el.textContent.replace('2026', new Date().getFullYear());
+            if (type === 'error') {
+                icon.className = 'fas fa-exclamation-circle toast-icon';
+                toast.style.borderLeftColor = '#c41e3a';
+            } else {
+                icon.className = 'fas fa-check-circle toast-icon';
+                toast.style.borderLeftColor = 'var(--primary-gold)';
             }
-        });
+            
+            toast.classList.add('show');
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => toast.classList.remove('show'), 4000);
+        }
 
         // ============================================
         // KEYBOARD SHORTCUTS
         // ============================================
         document.addEventListener('keydown', function(e) {
-            // Ctrl + 1-6 to navigate sections
             if (e.ctrlKey && e.key >= '1' && e.key <= '6') {
                 e.preventDefault();
-                const sections = ['overview', 'content', 'services', 'projects', 'testimonials', 'users'];
+                const sections = ['overview', 'divisions', 'services', 'projects', 'testimonials', 'users'];
                 const index = parseInt(e.key) - 1;
-                if (sections[index]) {
-                    showSection(sections[index]);
-                }
+                if (sections[index]) showSection(sections[index]);
             }
-            // Escape to close modals or notifications
             if (e.key === 'Escape') {
-                document.querySelectorAll('.modal.show').forEach(el => {
-                    // Close any open modals if Bootstrap is loaded
-                });
+                if (document.getElementById('modal').classList.contains('open')) {
+                    closeModal();
+                }
             }
         });
 
-        console.log('🛠️ Jolong Enterprises - Admin Dashboard');
-        console.log('📊 6 business divisions, 3 projects, 12 users');
+        // ============================================
+        // INIT
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            initDefaultData();
+            checkAuth();
+            
+            // Close sidebar on outside click (mobile)
+            document.addEventListener('click', function(e) {
+                const sidebar = document.getElementById('sidebar');
+                const toggle = document.querySelector('.menu-toggle');
+                if (window.innerWidth <= 992 && sidebar.classList.contains('open')) {
+                    if (!sidebar.contains(e.target) && !toggle.contains(e.target)) {
+                        sidebar.classList.remove('open');
+                    }
+                }
+            });
+        });
+
+        console.log('🛠️ Jolong Enterprises - Complete Admin Dashboard');
+        console.log('📊 6 business divisions, full CRUD operations');
         console.log('⌨️ Shortcuts: Ctrl+1-6 to navigate sections');
-        console.log('📧 info@jolonges.com');
+        console.log('📧 admin@jolonges.com / admin123');
+        console.log('💾 All data stored in localStorage');
     </script>
 </body>
 </html>
