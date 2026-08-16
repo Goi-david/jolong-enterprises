@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - Jolong Enterprises</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+                   ROOT VARIABLES
+                   ============================================ */
+        :root {
+            --primary-navy: #0a1a3a;
+            --primary-navy-light: #1a305a;
+            --primary-navy-dark: #060e1f;
+            --primary-gold: #f4c430;
+            --primary-gold-light: #fada5e;
+            --primary-gold-dark: #d4a820;
+            --accent-green: #2e7d32;
+            --accent-blue: #1a5276;
+            --accent-orange: #e67e22;
+            --accent-red: #c41e3a;
+            --warm-cream: #fdf8f0;
+            --warm-ivory: #faf3e8;
+            --dark-charcoal: #1a1a2e;
+            --gray: #6b7280;
+            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.15);
+            --border-radius-sm: 8px;
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --border-radius-xl: 30px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+            --green-gradient: linear-gradient(135deg, #2e7d32, #4caf50);
+            --blue-gradient: linear-gradient(135deg, #1a5276, #2980b9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--warm-cream);
+            color: var(--dark-charcoal);
+            padding-top: 0;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+                   LOGIN / REGISTER
+                   ============================================ */
+        .auth-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-navy);
+            background-image: radial-gradient(ellipse at 30% 50%, rgba(244, 196, 48, 0.05) 0%, transparent 70%),
+                              radial-gradient(ellipse at 70% 80%, rgba(244, 196, 48, 0.03) 0%, transparent 50%);
+            padding: 20px;
+        }
+
+        .auth-box {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 50px 40px;
+            max-width: 440px;
+            width: 100%;
+            box-shadow: var(--shadow-lg);
+            border-top: 5px solid var(--primary-gold);
+        }
+
+        .auth-box .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .auth-box .logo h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            color: var(--primary-navy);
+        }
+
+        .auth-box .logo h2 .gold {
+            color: var(--primary-gold);
+        }
+
+        .auth-box .logo p {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        .auth-box .form-control {
+            border: 2px solid #dee2e6;
+            border-radius: var(--border-radius-sm);
+            padding: 14px 18px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
+
+        .auth-box .form-control:focus {
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(244, 196, 48, 0.15);
+        }
+
+        .auth-box .btn-auth {
+            width: 100%;
+            padding: 14px;
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .auth-box .btn-auth:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(244, 196, 48, 0.3);
+        }
+
+        .auth-box .auth-link {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .auth-box .auth-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ============================================
+                   USER DASHBOARD
+                   ============================================ */
+        .user-dashboard {
+            display: none;
+            min-height: 100vh;
+        }
+
+        .user-dashboard.active {
+            display: block;
+        }
+
+        /* Navbar */
+        .navbar-user {
+            background: rgba(10, 26, 58, 0.98) !important;
+            backdrop-filter: blur(16px);
+            padding: 0.5rem 0;
+            border-bottom: 3px solid var(--primary-gold);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .navbar-user .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white !important;
+        }
+
+        .navbar-user .navbar-brand .gold {
+            color: var(--primary-gold);
+        }
+
+        .navbar-user .nav-link {
+            color: rgba(255, 255, 255, 0.7) !important;
+            font-weight: 500;
+            padding: 0.5rem 1.2rem !important;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .navbar-user .nav-link:hover,
+        .navbar-user .nav-link.active {
+            color: var(--primary-gold) !important;
+            background: rgba(244, 196, 48, 0.08);
+        }
+
+        .navbar-user .nav-link i {
+            margin-right: 8px;
+        }
+
+        /* Main Content */
+        .user-content {
+            padding: 30px;
+            margin-top: 72px;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .profile-card .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--gold-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-navy);
+            border: 4px solid var(--warm-cream);
+        }
+
+        .profile-card .badge-role {
+            display: inline-block;
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(244, 196, 48, 0.12);
+            color: var(--primary-gold);
+        }
+
+        .stat-card-user {
+            background: white;
+            border-radius: var(--border-radius-md);
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            height: 100%;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .stat-card-user:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-card-user .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .stat-card-user .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-card-user .stat-label {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        /* Booking Cards */
+        .booking-card {
+            background: white;
+            border-radius: var(--border-radius-md);
+            padding: 20px 24px;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--primary-gold);
+            transition: var(--transition);
+            margin-bottom: 16px;
+        }
+
+        .booking-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(4px);
+        }
+
+        .booking-card .booking-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .booking-card .booking-header h6 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .booking-card .booking-details {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .booking-card .booking-details i {
+            color: var(--primary-gold);
+            width: 18px;
+        }
+
+        .status-badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 50px;
+        }
+
+        .status-badge.confirmed {
+            background: rgba(46, 125, 50, 0.12);
+            color: var(--accent-green);
+        }
+
+        .status-badge.pending {
+            background: rgba(230, 126, 34, 0.12);
+            color: var(--accent-orange);
+        }
+
+        .status-badge.completed {
+            background: rgba(26, 82, 118, 0.12);
+            color: var(--accent-blue);
+        }
+
+        .status-badge.cancelled {
+            background: rgba(196, 30, 58, 0.12);
+            color: var(--accent-red);
+        }
+
+        /* ============================================
+                   TOAST
+                   ============================================ */
+        .toast-notification {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-navy);
+            color: white;
+            padding: 16px 24px;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-lg);
+            z-index: 99999;
+            border-left: 4px solid var(--primary-gold);
+            transform: translateX(500px);
+            transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            max-width: 400px;
+        }
+
+        .toast-notification.show {
+            transform: translateX(0);
+        }
+
+        .toast-notification .toast-icon {
+            color: var(--primary-gold);
+            margin-right: 10px;
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 768px) {
+            .auth-box {
+                padding: 30px 24px;
+            }
+            .user-content {
+                padding: 16px;
+            }
+            .profile-card .avatar {
+                width: 80px;
+                height: 80px;
+                font-size: 2rem;
+            }
+            .stat-card-user .stat-number {
+                font-size: 1.4rem;
+            }
+            .booking-card .booking-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .booking-card .booking-details {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .navbar-user .navbar-brand {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .auth-box {
+                padding: 20px 16px;
+            }
+            .user-content {
+                padding: 12px;
+            }
+            .stat-card-user {
+                padding: 16px;
+            }
+            .stat-card-user .stat-number {
+                font-size: 1.2rem;
+            }
+            .booking-card {
+                padding: 16px;
+            }
+        }
+
+        /* ============================================
+                   SCROLLBAR
+                   ============================================ */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--warm-cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold-gradient);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    AUTH PAGE (Login / Register)
+    ============================================ -->
+    <div class="auth-page" id="authPage">
+        <div class="auth-box">
+            <div class="logo">
+                <h2>Jolong <span class="gold">Enterprises</span></h2>
+                <p id="authSubtitle">Sign in to your account</p>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" onsubmit="userLogin(event)">
+                <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="userLoginEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" id="userLoginPassword" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="btn-auth">
+                    <i class="fas fa-sign-in-alt me-2"></i> Sign In
+                </button>
+                <div class="text-center mt-3">
+                    <small>Don't have an account? <span class="auth-link" onclick="showRegister()">Register here</span></small>
+                </div>
+                <div class="text-center mt-2">
+                    <small class="text-muted">Demo: user@jolonges.com / user123</small>
+                </div>
+            </form>
+
+            <!-- Register Form -->
+            <form id="registerForm" style="display:none;" onsubmit="userRegister(event)">
+                <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="regName" placeholder="Enter your full name" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="regEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" id="regPassword" placeholder="Create a password" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="regPasswordConfirm" placeholder="Confirm your password" required>
+                </div>
+                <button type="submit" class="btn-auth">
+                    <i class="fas fa-user-plus me-2"></i> Create Account
+                </button>
+                <div class="text-center mt-3">
+                    <small>Already have an account? <span class="auth-link" onclick="showLogin()">Sign in here</span></small>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ============================================
+    USER DASHBOARD
+    ============================================ -->
+    <div class="user-dashboard" id="userDashboard">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-user navbar-expand-lg navbar-dark">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand" href="#">
+                    Jolong <span class="gold">Enterprises</span>
+                    <small style="display:block;font-size:0.5rem;letter-spacing:2px;color:var(--primary-gold);">User Dashboard</small>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#userNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="userNav">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" onclick="showUserSection('dashboard')">
+                                <i class="fas fa-th-large"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showUserSection('profile')">
+                                <i class="fas fa-user"></i> Profile
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showUserSection('bookings')">
+                                <i class="fas fa-calendar-check"></i> Bookings
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showUserSection('saved')">
+                                <i class="fas fa-heart"></i> Saved
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showUserSection('messages')">
+                                <i class="fas fa-envelope"></i> Messages
+                                <span class="badge bg-danger ms-1">3</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="userLogout()">
+                                <i class="fas fa-sign-out-alt"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item ms-lg-3">
+                            <div class="user-avatar" id="userAvatarSmall" style="width:40px;height:40px;border-radius:50%;background:var(--gold-gradient);display:flex;align-items:center;justify-content:center;color:var(--primary-navy);font-weight:700;font-size:1.1rem;">U</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <div class="user-content" id="userContent">
+
+            <!-- ============ DASHBOARD ============ -->
+            <section id="user-section-dashboard" class="content-section active">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="profile-card">
+                            <div class="avatar" id="userAvatar">U</div>
+                            <h4 id="userDisplayName">User</h4>
+                            <p class="text-muted" id="userDisplayEmail">user@email.com</p>
+                            <span class="badge-role" id="userDisplayRole">Member</span>
+                            <div class="mt-3">
+                                <button class="btn btn-sm btn-gold" onclick="showUserSection('profile')">
+                                    <i class="fas fa-edit"></i> Edit Profile
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row g-4">
+                            <div class="col-sm-6">
+                                <div class="stat-card-user">
+                                    <div class="stat-icon">📅</div>
+                                    <div class="stat-number" id="userBookingCount">0</div>
+                                    <div class="stat-label">Total Bookings</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="stat-card-user">
+                                    <div class="stat-icon">⭐</div>
+                                    <div class="stat-number" id="userSavedCount">0</div>
+                                    <div class="stat-label">Saved Items</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="stat-card-user">
+                                    <div class="stat-icon">💬</div>
+                                    <div class="stat-number" id="userMessageCount">0</div>
+                                    <div class="stat-label">Unread Messages</div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="stat-card-user">
+                                    <div class="stat-icon">🏆</div>
+                                    <div class="stat-number" id="userMemberSince">2026</div>
+                                    <div class="stat-label">Member Since</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Bookings -->
+                <div class="mt-4">
+                    <h5 class="mb-3"><i class="fas fa-clock"></i> Recent Bookings</h5>
+                    <div id="recentBookings">
+                        <!-- Dynamically loaded -->
+                        <div class="booking-card">
+                            <div class="booking-header">
+                                <h6>🍽️ Bar & Restaurant - Table for 4</h6>
+                                <span class="status-badge confirmed">Confirmed</span>
+                            </div>
+                            <div class="booking-details">
+                                <span><i class="fas fa-calendar-alt"></i> Aug 20, 2026</span>
+                                <span><i class="fas fa-clock"></i> 7:00 PM</span>
+                                <span><i class="fas fa-user"></i> 4 Guests</span>
+                            </div>
+                        </div>
+                        <div class="booking-card">
+                            <div class="booking-header">
+                                <h6>⛴️ Ferry Crossing - Juba River</h6>
+                                <span class="status-badge pending">Pending</span>
+                            </div>
+                            <div class="booking-details">
+                                <span><i class="fas fa-calendar-alt"></i> Aug 22, 2026</span>
+                                <span><i class="fas fa-clock"></i> 9:00 AM</span>
+                                <span><i class="fas fa-user"></i> 2 Passengers</span>
+                            </div>
+                        </div>
+                        <div class="booking-card">
+                            <div class="booking-header">
+                                <h6>🏢 Apartments - Jolong Heights Viewing</h6>
+                                <span class="status-badge completed">Completed</span>
+                            </div>
+                            <div class="booking-details">
+                                <span><i class="fas fa-calendar-alt"></i> Aug 15, 2026</span>
+                                <span><i class="fas fa-clock"></i> 2:00 PM</span>
+                                <span><i class="fas fa-user"></i> 2 People</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ PROFILE ============ -->
+            <section id="user-section-profile" class="content-section">
+                <h4 class="mb-4">My Profile</h4>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card-dashboard">
+                            <div class="card-header-custom" style="background:white;border-bottom:1px solid rgba(0,0,0,0.04);padding:16px 24px;">
+                                <h6><i class="fas fa-user-edit"></i> Personal Information</h6>
+                            </div>
+                            <div class="card-body-custom" style="padding:24px;">
+                                <form id="profileForm" onsubmit="updateProfile(event)">
+                                    <div class="mb-3">
+                                        <label class="form-label">Full Name</label>
+                                        <input type="text" class="form-control form-control-dash" id="profileName" value="User" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Email Address</label>
+                                        <input type="email" class="form-control form-control-dash" id="profileEmail" value="user@email.com" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control form-control-dash" id="profilePhone" value="+211 900 000 000">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Location</label>
+                                        <input type="text" class="form-control form-control-dash" id="profileLocation" value="Juba, South Sudan">
+                                    </div>
+                                    <button type="submit" class="btn-gold">
+                                        <i class="fas fa-save"></i> Update Profile
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card-dashboard">
+                            <div class="card-header-custom" style="background:white;border-bottom:1px solid rgba(0,0,0,0.04);padding:16px 24px;">
+                                <h6><i class="fas fa-key"></i> Security</h6>
+                            </div>
+                            <div class="card-body-custom" style="padding:24px;">
+                                <form id="passwordForm" onsubmit="updatePassword(event)">
+                                    <div class="mb-3">
+                                        <label class="form-label">Current Password</label>
+                                        <input type="password" class="form-control form-control-dash" placeholder="Enter current password" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">New Password</label>
+                                        <input type="password" class="form-control form-control-dash" placeholder="Enter new password" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Confirm Password</label>
+                                        <input type="password" class="form-control form-control-dash" placeholder="Confirm new password" required>
+                                    </div>
+                                    <button type="submit" class="btn-gold">
+                                        <i class="fas fa-key"></i> Change Password
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ BOOKINGS ============ -->
+            <section id="user-section-bookings" class="content-section">
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4>My Bookings</h4>
+                    <button class="btn btn-gold btn-sm" onclick="showToast('📋 New booking form opened!')">
+                        <i class="fas fa-plus"></i> New Booking
+                    </button>
+                </div>
+
+                <div id="allBookings">
+                    <div class="booking-card">
+                        <div class="booking-header">
+                            <h6>🍽️ Bar & Restaurant - Table for 4</h6>
+                            <span class="status-badge confirmed">Confirmed</span>
+                        </div>
+                        <div class="booking-details">
+                            <span><i class="fas fa-calendar-alt"></i> Aug 20, 2026</span>
+                            <span><i class="fas fa-clock"></i> 7:00 PM</span>
+                            <span><i class="fas fa-user"></i> 4 Guests</span>
+                            <span><i class="fas fa-tag"></i> Booking #JOL-001</span>
+                        </div>
+                        <div class="mt-2">
+                            <button class="btn btn-sm btn-outline-primary" onclick="showToast('📋 Viewing booking details...')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" onclick="showToast('❌ Booking cancelled!')">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="booking-card">
+                        <div class="booking-header">
+                            <h6>⛴️ Ferry Crossing - Juba River</h6>
+                            <span class="status-badge pending">Pending</span>
+                        </div>
+                        <div class="booking-details">
+                            <span><i class="fas fa-calendar-alt"></i> Aug 22, 2026</span>
+                            <span><i class="fas fa-clock"></i> 9:00 AM</span>
+                            <span><i class="fas fa-user"></i> 2 Passengers</span>
+                            <span><i class="fas fa-tag"></i> Booking #JOL-002</span>
+                        </div>
+                        <div class="mt-2">
+                            <button class="btn btn-sm btn-outline-primary" onclick="showToast('📋 Viewing booking details...')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" onclick="showToast('❌ Booking cancelled!')">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="booking-card">
+                        <div class="booking-header">
+                            <h6>🏢 Apartments - Jolong Heights Viewing</h6>
+                            <span class="status-badge completed">Completed</span>
+                        </div>
+                        <div class="booking-details">
+                            <span><i class="fas fa-calendar-alt"></i> Aug 15, 2026</span>
+                            <span><i class="fas fa-clock"></i> 2:00 PM</span>
+                            <span><i class="fas fa-user"></i> 2 People</span>
+                            <span><i class="fas fa-tag"></i> Booking #JOL-003</span>
+                        </div>
+                        <div class="mt-2">
+                            <button class="btn btn-sm btn-outline-primary" onclick="showToast('📋 Viewing booking details...')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="booking-card">
+                        <div class="booking-header">
+                            <h6>🚚 Transportation - Logistics Service</h6>
+                            <span class="status-badge confirmed">Confirmed</span>
+                        </div>
+                        <div class="booking-details">
+                            <span><i class="fas fa-calendar-alt"></i> Aug 25, 2026</span>
+                            <span><i class="fas fa-clock"></i> 8:00 AM</span>
+                            <span><i class="fas fa-box"></i> 2 Tons Cargo</span>
+                            <span><i class="fas fa-tag"></i> Booking #JOL-004</span>
+                        </div>
+                        <div class="mt-2">
+                            <button class="btn btn-sm btn-outline-primary" onclick="showToast('📋 Viewing booking details...')">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                            <button class="btn btn-sm btn-outline-danger" onclick="showToast('❌ Booking cancelled!')">
+                                <i class="fas fa-times"></i> Cancel
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ SAVED ============ -->
+            <section id="user-section-saved" class="content-section">
+                <h4 class="mb-4"><i class="fas fa-heart" style="color:var(--accent-red);"></i> Saved Items</h4>
+                <div class="row g-4" id="savedItems">
+                    <div class="col-md-4">
+                        <div class="card-dashboard">
+                            <div class="card-body-custom" style="padding:16px;">
+                                <div style="height:150px;background:var(--warm-cream);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,var(--primary-navy),var(--accent-blue));color:white;">🏢</div>
+                                <h6 class="mt-3">Jolong Heights</h6>
+                                <p class="text-muted small">3 Bedroom • 1,500 sq.ft</p>
+                                <button class="btn btn-sm btn-gold-outline" onclick="showToast('📋 Viewing property...')">View Details</button>
+                                <button class="btn btn-sm btn-danger-outline ms-1" onclick="showToast('🗑️ Removed from saved!')"><i class="fas fa-heart-broken"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-dashboard">
+                            <div class="card-body-custom" style="padding:16px;">
+                                <div style="height:150px;background:var(--warm-cream);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,var(--primary-gold),var(--accent-orange));color:white;">🍽️</div>
+                                <h6 class="mt-3">Jolong Bar & Restaurant</h6>
+                                <p class="text-muted small">Fine Dining • Juba</p>
+                                <button class="btn btn-sm btn-gold-outline" onclick="showToast('📋 Viewing restaurant...')">View Details</button>
+                                <button class="btn btn-sm btn-danger-outline ms-1" onclick="showToast('🗑️ Removed from saved!')"><i class="fas fa-heart-broken"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card-dashboard">
+                            <div class="card-body-custom" style="padding:16px;">
+                                <div style="height:150px;background:var(--warm-cream);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:3rem;background:linear-gradient(135deg,var(--accent-green),var(--accent-green-light));color:white;">🚚</div>
+                                <h6 class="mt-3">Jolong Transport</h6>
+                                <p class="text-muted small">Logistics • Nationwide</p>
+                                <button class="btn btn-sm btn-gold-outline" onclick="showToast('📋 Viewing service...')">View Details</button>
+                                <button class="btn btn-sm btn-danger-outline ms-1" onclick="showToast('🗑️ Removed from saved!')"><i class="fas fa-heart-broken"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============ MESSAGES ============ -->
+            <section id="user-section-messages" class="content-section">
+                <h4 class="mb-4"><i class="fas fa-envelope"></i> Messages</h4>
+                <div id="messageList">
+                    <div class="booking-card" style="border-left-color:var(--accent-green);">
+                        <div class="booking-header">
+                            <h6>📩 Booking Confirmed - Jolong Heights</h6>
+                            <span class="status-badge" style="background:rgba(46,125,50,0.12);color:var(--accent-green);">Read</span>
+                        </div>
+                        <p class="small text-muted">Your viewing appointment for Jolong Heights has been confirmed for Aug 20, 2026 at 2:00 PM.</p>
+                        <small class="text-muted"><i class="far fa-clock"></i> 2 hours ago</small>
+                    </div>
+                    <div class="booking-card" style="border-left-color:var(--accent-orange);">
+                        <div class="booking-header">
+                            <h6>⏳ Pending Confirmation - Ferry Crossing</h6>
+                            <span class="status-badge" style="background:rgba(230,126,34,0.12);color:var(--accent-orange);">Unread</span>
+                        </div>
+                        <p class="small text-muted">Your ferry booking for Juba River Crossing is awaiting confirmation. We'll notify you shortly.</p>
+                        <small class="text-muted"><i class="far fa-clock"></i> 5 hours ago</small>
+                    </div>
+                    <div class="booking-card" style="border-left-color:var(--accent-blue);">
+                        <div class="booking-header">
+                            <h6>⭐ New Offer - Jolong Apartments</h6>
+                            <span class="status-badge" style="background:rgba(26,82,118,0.12);color:var(--accent-blue);">Read</span>
+                        </div>
+                        <p class="small text-muted">Special offer on Jolong Gardens apartments! 10% off for new tenants. Contact us today.</p>
+                        <small class="text-muted"><i class="far fa-clock"></i> 1 day ago</small>
+                    </div>
+                    <div class="booking-card" style="border-left-color:var(--primary-gold);">
+                        <div class="booking-header">
+                            <h6>🍽️ Reservation Reminder - Bar & Restaurant</h6>
+                            <span class="status-badge" style="background:rgba(244,196,48,0.12);color:var(--primary-gold-dark);">Unread</span>
+                        </div>
+                        <p class="small text-muted">Reminder: Your reservation at Jolong Bar & Restaurant is tomorrow at 7:00 PM for 4 guests.</p>
+                        <small class="text-muted"><i class="far fa-clock"></i> 2 days ago</small>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- ============================================
+    TOAST
+    ============================================ -->
+    <div class="toast-notification" id="toast">
+        <div>
+            <i class="fas fa-check-circle toast-icon"></i>
+            <span id="toastMessage">Action completed successfully!</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+    SCRIPTS
+    ============================================ -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // ============================================
+        // DATA STORE
+        // ============================================
+        function getUserData(key) {
+            try {
+                return JSON.parse(localStorage.getItem('jolong_user_' + key)) || null;
+            } catch {
+                return null;
+            }
+        }
+
+        function setUserData(key, data) {
+            localStorage.setItem('jolong_user_' + key, JSON.stringify(data));
+        }
+
+        let currentUser = null;
+
+        // ============================================
+        // AUTH
+        // ============================================
+        function showLogin() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('authSubtitle').textContent = 'Sign in to your account';
+        }
+
+        function showRegister() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+            document.getElementById('authSubtitle').textContent = 'Create your account';
+        }
+
+        function userLogin(e) {
+            e.preventDefault();
+            const email = document.getElementById('userLoginEmail').value;
+            const password = document.getElementById('userLoginPassword').value;
+
+            // Demo authentication
+            if (email === 'user@jolonges.com' && password === 'user123') {
+                currentUser = { name: 'User', email: email, role: 'user', phone: '+211 900 000 000', location: 'Juba, South Sudan' };
+                setUserData('session', currentUser);
+                showUserDashboard();
+                showToast('👋 Welcome back, User!');
+            } else {
+                showToast('❌ Invalid email or password', 'error');
+            }
+        }
+
+        function userRegister(e) {
+            e.preventDefault();
+            const name = document.getElementById('regName').value;
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            const confirm = document.getElementById('regPasswordConfirm').value;
+
+            if (password !== confirm) {
+                showToast('❌ Passwords do not match!', 'error');
+                return;
+            }
+
+            if (name && email && password) {
+                currentUser = { name: name, email: email, role: 'user', phone: '', location: '' };
+                setUserData('session', currentUser);
+                showUserDashboard();
+                showToast('🎉 Account created successfully!');
+            } else {
+                showToast('❌ Please fill in all fields', 'error');
+            }
+        }
+
+        function userLogout() {
+            if (confirm('Are you sure you want to logout?')) {
+                currentUser = null;
+                localStorage.removeItem('jolong_user_session');
+                document.getElementById('userDashboard').classList.remove('active');
+                document.getElementById('authPage').style.display = 'flex';
+                showToast('👋 Logged out successfully!');
+            }
+        }
+
+        function checkUserAuth() {
+            const saved = getUserData('session');
+            if (saved) {
+                currentUser = saved;
+                showUserDashboard();
+            }
+        }
+
+        function showUserDashboard() {
+            document.getElementById('authPage').style.display = 'none';
+            document.getElementById('userDashboard').classList.add('active');
+            
+            // Update user info
+            document.getElementById('userDisplayName').textContent = currentUser.name || 'User';
+            document.getElementById('userDisplayEmail').textContent = currentUser.email || 'user@email.com';
+            document.getElementById('userDisplayRole').textContent = currentUser.role === 'admin' ? 'Admin' : 'Member';
+            document.getElementById('userAvatar').textContent = (currentUser.name || 'U').charAt(0);
+            document.getElementById('userAvatarSmall').textContent = (currentUser.name || 'U').charAt(0);
+            
+            // Update profile form
+            document.getElementById('profileName').value = currentUser.name || '';
+            document.getElementById('profileEmail').value = currentUser.email || '';
+            document.getElementById('profilePhone').value = currentUser.phone || '';
+            document.getElementById('profileLocation').value = currentUser.location || '';
+            
+            // Update stats
+            document.getElementById('userBookingCount').textContent = '4';
+            document.getElementById('userSavedCount').textContent = '3';
+            document.getElementById('userMessageCount').textContent = '3';
+            document.getElementById('userMemberSince').textContent = new Date().getFullYear();
+            
+            showUserSection('dashboard');
+        }
+
+        // ============================================
+        // SECTION NAVIGATION
+        // ============================================
+        function showUserSection(section) {
+            document.querySelectorAll('#userContent .content-section').forEach(el => el.classList.remove('active'));
+            const target = document.getElementById('user-section-' + section);
+            if (target) target.classList.add('active');
+
+            document.querySelectorAll('.navbar-user .nav-link').forEach(link => link.classList.remove('active'));
+            document.querySelectorAll('.navbar-user .nav-link').forEach(link => {
+                if (link.textContent.toLowerCase().includes(section)) {
+                    link.classList.add('active');
+                }
+                if (section === 'dashboard' && link.textContent.includes('Dashboard')) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // ============================================
+        // PROFILE
+        // ============================================
+        function updateProfile(e) {
+            e.preventDefault();
+            currentUser.name = document.getElementById('profileName').value;
+            currentUser.email = document.getElementById('profileEmail').value;
+            currentUser.phone = document.getElementById('profilePhone').value;
+            currentUser.location = document.getElementById('profileLocation').value;
+            setUserData('session', currentUser);
+            
+            document.getElementById('userDisplayName').textContent = currentUser.name;
+            document.getElementById('userDisplayEmail').textContent = currentUser.email;
+            document.getElementById('userAvatar').textContent = currentUser.name.charAt(0);
+            document.getElementById('userAvatarSmall').textContent = currentUser.name.charAt(0);
+            
+            showToast('✅ Profile updated successfully!');
+        }
+
+        function updatePassword(e) {
+            e.preventDefault();
+            showToast('🔑 Password changed successfully!');
+        }
+
+        // ============================================
+        // TOAST
+        // ============================================
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            const icon = toast.querySelector('.toast-icon');
+            
+            toastMessage.textContent = message;
+            
+            if (type === 'error') {
+                icon.className = 'fas fa-exclamation-circle toast-icon';
+                toast.style.borderLeftColor = '#c41e3a';
+            } else {
+                icon.className = 'fas fa-check-circle toast-icon';
+                toast.style.borderLeftColor = 'var(--primary-gold)';
+            }
+            
+            toast.classList.add('show');
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => toast.classList.remove('show'), 4000);
+        }
+
+        // ============================================
+        // INIT
+        // ============================================
+        document.addEventListener('DOMContentLoaded', function() {
+            checkUserAuth();
+        });
+
+        console.log('👤 Jolong Enterprises - User Dashboard');
+        console.log('📧 user@jolonges.com / user123');
+        console.log('💾 Data stored in localStorage');
+    </script>
+</body>
+</html>
