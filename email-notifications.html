@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Notifications - Jolong Enterprises</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-navy: #0a1a3a;
+            --primary-gold: #f4c430;
+            --accent-green: #2e7d32;
+            --accent-blue: #1a5276;
+            --accent-orange: #e67e22;
+            --warm-cream: #fdf8f0;
+            --gray: #6b7280;
+            --shadow-sm: 0 2px 15px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 5px 25px rgba(0, 0, 0, 0.12);
+            --border-radius-md: 12px;
+            --border-radius-lg: 20px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --gold-gradient: linear-gradient(135deg, #f4c430, #d4a820);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--warm-cream);
+            padding-top: 80px;
+        }
+
+        .email-card {
+            background: white;
+            border-radius: var(--border-radius-md);
+            padding: 20px 24px;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--primary-gold);
+            transition: var(--transition);
+            margin-bottom: 16px;
+        }
+
+        .email-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(4px);
+        }
+
+        .email-card .email-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .email-card .email-header h6 {
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .email-card .email-details {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .email-card .email-details i {
+            color: var(--primary-gold);
+            width: 18px;
+        }
+
+        .btn-gold {
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border: none;
+            border-radius: 50px;
+            padding: 10px 28px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(244, 196, 48, 0.3);
+            color: var(--primary-navy);
+        }
+
+        .btn-outline-gold {
+            background: transparent;
+            color: var(--primary-gold);
+            border: 2px solid var(--primary-gold);
+            border-radius: 50px;
+            padding: 10px 28px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-outline-gold:hover {
+            background: var(--gold-gradient);
+            color: var(--primary-navy);
+            border-color: var(--primary-gold);
+        }
+
+        .compose-box {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .form-control-custom {
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 12px 16px;
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+            width: 100%;
+        }
+
+        .form-control-custom:focus {
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(244, 196, 48, 0.15);
+        }
+
+        .template-card {
+            background: var(--warm-cream);
+            border-radius: var(--border-radius-md);
+            padding: 16px 20px;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            transition: var(--transition);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .template-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .template-card .template-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .email-card .email-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .email-card .email-details {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .compose-box {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .compose-box {
+                padding: 16px;
+            }
+            .template-card {
+                padding: 12px;
+            }
+            .template-card .template-icon {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="mb-4" style="font-family:'Playfair Display',serif;font-weight:800;color:var(--primary-navy);">
+                    <i class="fas fa-envelope" style="color:var(--primary-gold);"></i> Email Notifications
+                </h2>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Compose Section -->
+            <div class="col-lg-5">
+                <div class="compose-box">
+                    <h6 class="mb-3"><i class="fas fa-pen"></i> Compose Notification</h6>
+                    <form id="emailForm" onsubmit="sendEmail(event)">
+                        <div class="mb-3">
+                            <label class="form-label">Send To</label>
+                            <select class="form-control-custom" id="emailRecipient" required>
+                                <option value="">Select recipient...</option>
+                                <option value="all">All Users</option>
+                                <option value="admins">Admins Only</option>
+                                <option value="users">Users Only</option>
+                                <option value="custom">Custom Email</option>
+                            </select>
+                        </div>
+                        <div class="mb-3" id="customEmailField" style="display:none;">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control-custom" id="customEmail" placeholder="Enter email address">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Subject</label>
+                            <input type="text" class="form-control-custom" id="emailSubject" placeholder="Email subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control-custom" id="emailMessage" rows="5" placeholder="Write your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-gold w-100">
+                            <i class="fas fa-paper-plane"></i> Send Notification
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Templates -->
+                <div class="mt-4">
+                    <h6 class="mb-3"><i class="fas fa-copy"></i> Quick Templates</h6>
+                    <div class="row g-2">
+                        <div class="col-6">
+                            <div class="template-card" onclick="loadTemplate('booking')">
+                                <span class="template-icon">📅</span>
+                                <small>Booking Confirmation</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="template-card" onclick="loadTemplate('promo')">
+                                <span class="template-icon">🎉</span>
+                                <small>Promotional</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="template-card" onclick="loadTemplate('welcome')">
+                                <span class="template-icon">👋</span>
+                                <small>Welcome Message</small>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="template-card" onclick="loadTemplate('reminder')">
+                                <span class="template-icon">⏰</span>
+                                <small>Reminder</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email History -->
+            <div class="col-lg-7">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h6><i class="fas fa-history"></i> Notification History</h6>
+                    <span class="badge bg-gold" style="background:var(--gold-gradient);color:var(--primary-navy);padding:6px 14px;">12 Sent</span>
+                </div>
+
+                <div id="emailHistory">
+                    <div class="email-card">
+                        <div class="email-header">
+                            <h6>📬 Booking Confirmation - Jolong Heights</h6>
+                            <span class="status-badge" style="font-size:0.7rem;font-weight:600;padding:4px 12px;border-radius:50px;background:rgba(46,125,50,0.12);color:var(--accent-green);">Delivered</span>
+                        </div>
+                        <div class="email-details">
+                            <span><i class="fas fa-user"></i> Sent to: All Users</span>
+                            <span><i class="fas fa-clock"></i> 2 hours ago</span>
+                            <span><i class="fas fa-users"></i> 24 recipients</span>
+                        </div>
+                    </div>
+
+                    <div class="email-card" style="border-left-color:var(--accent-orange);">
+                        <div class="email-header">
+                            <h6>🎉 Special Offer - Jolong Apartments</h6>
+                            <span class="status-badge" style="font-size:0.7rem;font-weight:600;padding:4px 12px;border-radius:50px;background:rgba(230,126,34,0.12);color:var(--accent-orange);">Pending</span>
+                        </div>
+                        <div class="email-details">
+                            <span><i class="fas fa-user"></i> Sent to: Users Only</span>
+                            <span><i class="fas fa-clock"></i> 5 hours ago</span>
+                            <span><i class="fas fa-users"></i> 18 recipients</span>
+                        </div>
+                    </div>
+
+                    <div class="email-card" style="border-left-color:var(--accent-blue);">
+                        <div class="email-header">
+                            <h6>👋 Welcome New User - Mary Achol</h6>
+                            <span class="status-badge" style="font-size:0.7rem;font-weight:600;padding:4px 12px;border-radius:50px;background:rgba(26,82,118,0.12);color:var(--accent-blue);">Delivered</span>
+                        </div>
+                        <div class="email-details">
+                            <span><i class="fas fa-user"></i> Sent to: Custom</span>
+                            <span><i class="fas fa-clock"></i> 1 day ago</span>
+                            <span><i class="fas fa-users"></i> 1 recipient</span>
+                        </div>
+                    </div>
+
+                    <div class="email-card" style="border-left-color:var(--accent-green);">
+                        <div class="email-header">
+                            <h6>⏰ Ferry Booking Reminder</h6>
+                            <span class="status-badge" style="font-size:0.7rem;font-weight:600;padding:4px 12px;border-radius:50px;background:rgba(46,125,50,0.12);color:var(--accent-green);">Delivered</span>
+                        </div>
+                        <div class="email-details">
+                            <span><i class="fas fa-user"></i> Sent to: All Users</span>
+                            <span><i class="fas fa-clock"></i> 3 days ago</span>
+                            <span><i class="fas fa-users"></i> 32 recipients</span>
+                        </div>
+                    </div>
+
+                    <div class="email-card" style="border-left-color:var(--accent-red);">
+                        <div class="email-header">
+                            <h6>❌ Failed: Maintenance Notice</h6>
+                            <span class="status-badge" style="font-size:0.7rem;font-weight:600;padding:4px 12px;border-radius:50px;background:rgba(196,30,58,0.12);color:var(--accent-red);">Failed</span>
+                        </div>
+                        <div class="email-details">
+                            <span><i class="fas fa-user"></i> Sent to: All Users</span>
+                            <span><i class="fas fa-clock"></i> 1 week ago</span>
+                            <span><i class="fas fa-exclamation-triangle"></i> Server error</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // SHOW/HIDE CUSTOM EMAIL
+        // ============================================
+        document.getElementById('emailRecipient').addEventListener('change', function() {
+            document.getElementById('customEmailField').style.display = this.value === 'custom' ? 'block' : 'none';
+        });
+
+        // ============================================
+        // LOAD TEMPLATES
+        // ============================================
+        const templates = {
+            booking: {
+                subject: 'Booking Confirmation - Jolong Enterprises',
+                message: 'Dear Valued Customer,\n\nYour booking has been confirmed! We look forward to serving you.\n\nDetails:\n- Service: [Service Name]\n- Date: [Date]\n- Time: [Time]\n- Reference: JOL-' + Math.floor(Math.random() * 1000).toString().padStart(3, '0') + '\n\nThank you for choosing Jolong Enterprises!\n\nBest regards,\nThe Jolong Team'
+            },
+            promo: {
+                subject: '🎉 Special Offer Just for You!',
+                message: 'Dear Customer,\n\nWe are excited to offer you an exclusive discount on our services!\n\n🔹 20% OFF on all bookings\n🔹 Free upgrade on selected services\n🔹 Limited time offer - Book now!\n\nUse code: JOLONG20 at checkout.\n\nDon\'t miss out on this amazing opportunity!\n\nBest regards,\nThe Jolong Team'
+            },
+            welcome: {
+                subject: '👋 Welcome to Jolong Enterprises!',
+                message: 'Dear [Name],\n\nWelcome to the Jolong Enterprises family! We are thrilled to have you on board.\n\nExplore our services:\n🍽️ Bar & Restaurant\n🏢 Apartments\n🚚 Transportation\n🌾 Farming\n⛴️ Ferry Crossing\n🏗️ Warehousing\n\nStart exploring today!\n\nBest regards,\nThe Jolong Team'
+            },
+            reminder: {
+                subject: '⏰ Reminder: Upcoming Booking',
+                message: 'Dear Customer,\n\nThis is a friendly reminder about your upcoming booking with Jolong Enterprises.\n\n📅 Date: [Date]\n⏰ Time: [Time]\n📍 Location: [Location]\n\nPlease arrive 15 minutes early.\n\nIf you need to reschedule, please contact us at +211 922 005 177.\n\nBest regards,\nThe Jolong Team'
+            }
+        };
+
+        function loadTemplate(type) {
+            const template = templates[type];
+            if (template) {
+                document.getElementById('emailSubject').value = template.subject;
+                document.getElementById('emailMessage').value = template.message;
+                showToast('📝 Template loaded: ' + type.charAt(0).toUpperCase() + type.slice(1));
+            }
+        }
+
+        // ============================================
+        // SEND EMAIL
+        // ============================================
+        function sendEmail(e) {
+            e.preventDefault();
+            const recipient = document.getElementById('emailRecipient').value;
+            const subject = document.getElementById('emailSubject').value;
+            const message = document.getElementById('emailMessage').value;
+
+            if (!recipient || !subject || !message) {
+                showToast('❌ Please fill in all fields', 'error');
+                return;
+            }
+
+            // Show sending state
+            const btn = e.target.querySelector('.btn-gold');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                // Add to history
+                const history = document.getElementById('emailHistory');
+                const card = document.createElement('div');
+                card.className = 'email-card';
+                const recipientText = recipient === 'all' ? 'All Users' : 
+                                     recipient === 'admins' ? 'Admins Only' : 
+                                     recipient === 'users' ? 'Users Only' : 'Custom';
+                const count = recipient === 'all' ? '24' : recipient === 'users' ? '18' : '1';
+                card.innerHTML = `
+                    <div class="email-header">
+                        <h6>📬 ${subject}</h6>
+                        <span class="status-badge" style="font-size:0.7rem;font-weight:600;padding:4px 12px;border-radius:50px;background:rgba(46,125,50,0.12);color:var(--accent-green);">Delivered</span>
+                    </div>
+                    <div class="email-details">
+                        <span><i class="fas fa-user"></i> Sent to: ${recipientText}</span>
+                        <span><i class="fas fa-clock"></i> Just now</span>
+                        <span><i class="fas fa-users"></i> ${count} recipients</span>
+                    </div>
+                `;
+                history.prepend(card);
+
+                // Reset form
+                document.getElementById('emailForm').reset();
+                document.getElementById('customEmailField').style.display = 'none';
+
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+
+                showToast('✅ Email sent successfully!');
+            }, 1500);
+        }
+
+        // ============================================
+        // TOAST
+        // ============================================
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            const colors = {
+                success: 'var(--accent-green)',
+                error: '#c41e3a',
+                info: 'var(--accent-blue)'
+            };
+            toast.style.cssText = `
+                position: fixed; bottom: 30px; right: 30px;
+                background: var(--primary-navy); color: white;
+                padding: 16px 24px; border-radius: 12px;
+                box-shadow: var(--shadow-md);
+                z-index: 9999;
+                border-left: 4px solid ${colors[type] || 'var(--primary-gold)'};
+                transform: translateX(500px);
+                transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                max-width: 400px;
+                font-family: 'Poppins', sans-serif;
+            `;
+            const icon = type === 'error' ? 'fa-exclamation-circle' : 'fa-check-circle';
+            toast.innerHTML = `<i class="fas ${icon}" style="color:${colors[type] || 'var(--primary-gold)'};margin-right:10px;"></i> ${message}`;
+            document.body.appendChild(toast);
+            setTimeout(() => toast.style.transform = 'translateX(0)', 100);
+            setTimeout(() => {
+                toast.style.transform = 'translateX(500px)';
+                setTimeout(() => toast.remove(), 500);
+            }, 4000);
+        }
+
+        console.log('📧 Email Notification System');
+        console.log('📝 4 templates available');
+        console.log('📬 12 sent notifications');
+    </script>
+</body>
+</html>
