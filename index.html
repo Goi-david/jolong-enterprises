@@ -132,7 +132,7 @@
 
         .btn-login {
             display: inline-block;
-            padding: 8px 22px;
+            padding: 8px 20px;
             background: transparent;
             color: var(--white);
             border: 2px solid rgba(255, 255, 255, 0.3);
@@ -153,7 +153,7 @@
 
         .btn-register {
             display: inline-block;
-            padding: 8px 22px;
+            padding: 8px 20px;
             background: var(--gold-gradient);
             color: var(--primary);
             border: none;
@@ -173,7 +173,7 @@
 
         .btn-logout {
             display: inline-block;
-            padding: 8px 22px;
+            padding: 8px 20px;
             background: rgba(196, 30, 58, 0.2);
             color: #ef5350;
             border: 2px solid rgba(196, 30, 58, 0.3);
@@ -194,7 +194,7 @@
 
         .btn-dashboard {
             display: inline-block;
-            padding: 8px 22px;
+            padding: 8px 20px;
             background: rgba(46, 125, 50, 0.2);
             color: #81c784;
             border: 2px solid rgba(46, 125, 50, 0.3);
@@ -262,7 +262,7 @@
         }
 
         /* ============================================
-                   NAVBAR - LOGO SIZE INCREASED
+                   NAVBAR
                    ============================================ */
         .navbar {
             position: fixed;
@@ -270,7 +270,7 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 16px 0;
+            padding: 12px 0;
             transition: var(--transition);
             background: rgba(10, 26, 58, 0.92);
             backdrop-filter: blur(16px);
@@ -279,7 +279,7 @@
 
         .navbar.scrolled {
             background: rgba(10, 26, 58, 0.98);
-            padding: 10px 0;
+            padding: 8px 0;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
 
@@ -295,12 +295,13 @@
             align-items: center;
             gap: 14px;
             text-decoration: none;
+            flex-shrink: 0;
         }
 
         .navbar-brand .logo-wrapper {
-            width: 70px;
-            height: 70px;
-            border-radius: 16px;
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
             overflow: hidden;
             display: flex;
             align-items: center;
@@ -317,7 +318,7 @@
         }
 
         .navbar-brand .logo-wrapper .logo-placeholder {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: var(--primary);
             font-family: 'Playfair Display', serif;
@@ -328,7 +329,7 @@
         }
 
         .navbar-brand .brand-text h2 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin: 0;
             line-height: 1.2;
             letter-spacing: 0.5px;
@@ -339,7 +340,7 @@
         }
 
         .navbar-brand .brand-text span {
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             opacity: 0.7;
             letter-spacing: 3px;
             text-transform: uppercase;
@@ -351,17 +352,18 @@
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 4px;
             list-style: none;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            padding: 8px 18px;
+            padding: 6px 14px;
             border-radius: 50px;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             transition: var(--transition);
             position: relative;
         }
@@ -369,7 +371,7 @@
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: 4px;
+            bottom: 2px;
             left: 50%;
             transform: translateX(-50%);
             width: 0;
@@ -394,9 +396,10 @@
         .nav-links .contact-btn {
             background: var(--gold-gradient);
             color: var(--primary) !important;
-            padding: 10px 28px;
+            padding: 8px 22px;
             border-radius: 50px;
             font-weight: 700;
+            font-size: 0.85rem;
         }
 
         .nav-links .contact-btn::after {
@@ -410,8 +413,14 @@
 
         .nav-links .auth-divider {
             color: rgba(255, 255, 255, 0.15);
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             margin: 0 2px;
+        }
+
+        .nav-links .auth-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .menu-toggle {
@@ -526,8 +535,8 @@
 
         .mobile-menu-content ul a {
             display: block;
-            padding: 16px 32px;
-            font-size: 1.2rem;
+            padding: 14px 32px;
+            font-size: 1.1rem;
             font-weight: 600;
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
@@ -685,7 +694,7 @@
         }
 
         /* ============================================
-                   HERO WITH ROTATING BANNERS - CENTERED
+                   HERO
                    ============================================ */
         .hero {
             min-height: 80vh;
@@ -1129,7 +1138,7 @@
         }
 
         /* ============================================
-                   SERVICES SECTION - WITH VISIBLE IMAGES
+                   SERVICES SECTION
                    ============================================ */
         .services {
             padding: 100px 0;
@@ -1421,7 +1430,7 @@
         }
 
         /* ============================================
-                   ABOUT SECTION - WITH IMAGE
+                   ABOUT SECTION
                    ============================================ */
         .about {
             padding: 100px 0;
@@ -1754,8 +1763,7 @@
             margin-bottom: 6px;
         }
 
-        .auth-modal .form-group input,
-        .auth-modal .form-group select {
+        .auth-modal .form-group input {
             width: 100%;
             padding: 12px 16px;
             border: 2px solid rgba(0, 0, 0, 0.08);
@@ -1766,17 +1774,11 @@
             font-family: 'Inter', sans-serif;
         }
 
-        .auth-modal .form-group input:focus,
-        .auth-modal .form-group select:focus {
+        .auth-modal .form-group input:focus {
             outline: none;
             border-color: var(--secondary);
             background: var(--white);
             box-shadow: 0 0 0 4px rgba(244, 196, 48, 0.1);
-        }
-
-        .auth-modal .form-group select {
-            appearance: none;
-            cursor: pointer;
         }
 
         .auth-modal .btn-submit {
@@ -2413,22 +2415,25 @@
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="testimonials.html">Testimonials</a></li>
-                <!-- Auth Buttons - Desktop -->
-                <li id="authButtonsDesktop">
+                
+                <!-- Auth Buttons - Desktop (visible when logged out) -->
+                <li id="authButtonsDesktop" class="auth-group">
                     <a href="#" class="btn-login" onclick="openLoginModal()"><i class="fas fa-sign-in-alt"></i> Login</a>
-                    <span class="auth-divider">|</span>
                     <a href="#" class="btn-register" onclick="openRegisterModal()"><i class="fas fa-user-plus"></i> Register</a>
                 </li>
-                <!-- User Dashboard - Desktop (hidden by default) -->
-                <li id="userDashboardDesktop" style="display:none;">
+                
+                <!-- User Dashboard - Desktop (visible when logged in as user) -->
+                <li id="userDashboardDesktop" class="auth-group" style="display:none;">
                     <a href="#" class="btn-dashboard" onclick="goToDashboard('user')"><i class="fas fa-user"></i> Dashboard</a>
                     <a href="#" class="btn-logout" onclick="logoutUser()"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </li>
-                <!-- Admin Dashboard - Desktop (hidden by default) -->
-                <li id="adminDashboardDesktop" style="display:none;">
+                
+                <!-- Admin Dashboard - Desktop (visible when logged in as admin) -->
+                <li id="adminDashboardDesktop" class="auth-group" style="display:none;">
                     <a href="#" class="btn-dashboard" onclick="goToDashboard('admin')"><i class="fas fa-user-cog"></i> Admin</a>
                     <a href="#" class="btn-logout" onclick="logoutUser()"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </li>
+                
                 <li><a href="contact.html" class="contact-btn">Get in Touch</a></li>
             </ul>
         </div>
@@ -2453,7 +2458,7 @@
                 <li><a href="contact.html" class="contact-mobile"><span class="icon">📞</span> Get in Touch</a></li>
             </ul>
 
-            <!-- Mobile Auth Section -->
+            <!-- Mobile Auth Section (visible when logged out) -->
             <div class="mobile-auth" id="mobileAuthSection">
                 <a href="#" class="auth-btn login-mobile" onclick="openLoginModal(); closeMobileMenu();">
                     <i class="fas fa-sign-in-alt"></i> Login
@@ -2463,7 +2468,7 @@
                 </a>
             </div>
 
-            <!-- Mobile Dashboard Section (hidden by default) -->
+            <!-- Mobile Dashboard Section (visible when logged in) -->
             <div class="mobile-auth" id="mobileDashboardSection" style="display:none;">
                 <a href="#" class="auth-btn dashboard-mobile" id="mobileDashboardBtn" onclick="goToDashboard('user'); closeMobileMenu();">
                     <i class="fas fa-user"></i> Dashboard
@@ -2559,7 +2564,7 @@
     </div>
 
     <!-- ============================================
-    HERO SECTION - CENTERED
+    HERO SECTION
     ============================================ -->
     <section class="hero" id="home">
         <div class="hero-slideshow" id="heroSlideshow">
@@ -2672,7 +2677,7 @@
     </section>
 
     <!-- ============================================
-    SERVICES SECTION - WITH VISIBLE IMAGES
+    SERVICES SECTION
     ============================================ -->
     <section class="services" id="services">
         <div class="container">
@@ -2816,7 +2821,7 @@
     </section>
 
     <!-- ============================================
-    ABOUT SECTION - WITH IMAGE
+    ABOUT SECTION
     ============================================ -->
     <section class="about" id="about">
         <div class="container">
@@ -3044,7 +3049,6 @@
         let currentUser = null;
         let selectedRole = 'user';
 
-        // Check if user is already logged in
         function checkAuthState() {
             const savedUser = localStorage.getItem('jolong_user');
             if (savedUser) {
@@ -3060,18 +3064,17 @@
         function updateUIForLoggedInUser() {
             if (!currentUser) return;
 
-            // Hide auth buttons, show dashboard
             document.getElementById('authButtonsDesktop').style.display = 'none';
             document.getElementById('mobileAuthSection').style.display = 'none';
 
             if (currentUser.role === 'admin') {
-                document.getElementById('adminDashboardDesktop').style.display = 'inline-block';
+                document.getElementById('adminDashboardDesktop').style.display = 'flex';
                 document.getElementById('userDashboardDesktop').style.display = 'none';
-                document.getElementById('mobileDashboardBtn').textContent = '🔑 Admin Dashboard';
+                document.getElementById('mobileDashboardBtn').innerHTML = '<i class="fas fa-user-cog"></i> Admin Dashboard';
             } else {
-                document.getElementById('userDashboardDesktop').style.display = 'inline-block';
+                document.getElementById('userDashboardDesktop').style.display = 'flex';
                 document.getElementById('adminDashboardDesktop').style.display = 'none';
-                document.getElementById('mobileDashboardBtn').textContent = '👤 User Dashboard';
+                document.getElementById('mobileDashboardBtn').innerHTML = '<i class="fas fa-user"></i> User Dashboard';
             }
 
             document.getElementById('mobileDashboardSection').style.display = 'block';
@@ -3080,12 +3083,8 @@
         function goToDashboard(role) {
             if (role === 'admin' && currentUser && currentUser.role === 'admin') {
                 alert('🔑 Welcome to the Admin Dashboard!\n\nYou have access to manage users, content, and site settings.');
-                // Redirect to admin dashboard page
-                // window.location.href = 'admin-dashboard.html';
             } else if (role === 'user' && currentUser && currentUser.role === 'user') {
                 alert('👤 Welcome to your User Dashboard!\n\nYou can manage your profile, bookings, and preferences.');
-                // Redirect to user dashboard page
-                // window.location.href = 'user-dashboard.html';
             } else {
                 alert('⚠️ Access denied. You do not have permission to view this dashboard.');
             }
@@ -3095,7 +3094,7 @@
             if (confirm('Are you sure you want to logout?')) {
                 localStorage.removeItem('jolong_user');
                 currentUser = null;
-                document.getElementById('authButtonsDesktop').style.display = 'inline-block';
+                document.getElementById('authButtonsDesktop').style.display = 'flex';
                 document.getElementById('userDashboardDesktop').style.display = 'none';
                 document.getElementById('adminDashboardDesktop').style.display = 'none';
                 document.getElementById('mobileAuthSection').style.display = 'block';
@@ -3119,7 +3118,6 @@
             document.getElementById('authSwitchLink').textContent = 'Create Account';
             document.getElementById('authModal').classList.add('open');
             document.body.style.overflow = 'hidden';
-            // Clear errors
             document.getElementById('loginError').classList.remove('show');
             document.getElementById('registerError').classList.remove('show');
         }
@@ -3133,7 +3131,6 @@
             document.getElementById('authSwitchLink').textContent = 'Sign In';
             document.getElementById('authModal').classList.add('open');
             document.body.style.overflow = 'hidden';
-            // Clear errors
             document.getElementById('loginError').classList.remove('show');
             document.getElementById('registerError').classList.remove('show');
         }
@@ -3158,14 +3155,12 @@
             });
         }
 
-        // Close modal on outside click
         document.getElementById('authModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeAuthModal();
             }
         });
 
-        // Close on Escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 closeAuthModal();
@@ -3180,7 +3175,6 @@
             const email = document.getElementById('loginEmail').value.trim();
             const password = document.getElementById('loginPassword').value.trim();
 
-            // Demo credentials
             const demoUsers = {
                 'user@jolong.com': { password: 'user123', name: 'John User', role: 'user' },
                 'admin@jolong.com': { password: 'admin123', name: 'Admin User', role: 'admin' }
@@ -3195,7 +3189,7 @@
                 localStorage.setItem('jolong_user', JSON.stringify(currentUser));
                 updateUIForLoggedInUser();
                 closeAuthModal();
-                alert(`✅ Welcome back, ${currentUser.name}!`);
+                alert('✅ Welcome back, ' + currentUser.name + '!');
             } else {
                 document.getElementById('loginError').textContent = 'Invalid email or password. Try: user@jolong.com / user123 or admin@jolong.com / admin123';
                 document.getElementById('loginError').classList.add('show');
@@ -3220,7 +3214,6 @@
                 return;
             }
 
-            // Create new user (in real app, this would be an API call)
             currentUser = {
                 email: email,
                 name: name,
@@ -3229,12 +3222,9 @@
             localStorage.setItem('jolong_user', JSON.stringify(currentUser));
             updateUIForLoggedInUser();
             closeAuthModal();
-            alert(`🎉 Welcome, ${name}! Your ${selectedRole} account has been created successfully.`);
+            alert('🎉 Welcome, ' + name + '! Your ' + selectedRole + ' account has been created successfully.');
         }
 
-        // ============================================
-        // MOBILE MENU HELPER
-        // ============================================
         function closeMobileMenu() {
             document.getElementById('mobileMenuOverlay').classList.remove('open');
             document.getElementById('menuToggle').classList.remove('active');
@@ -3246,7 +3236,6 @@
         // ============================================
         document.addEventListener('DOMContentLoaded', function() {
 
-            // AOS INIT
             AOS.init({
                 duration: 800,
                 once: true,
@@ -3254,7 +3243,6 @@
                 easing: 'ease-in-out'
             });
 
-            // Check auth state
             checkAuthState();
 
             // HERO SLIDESHOW
